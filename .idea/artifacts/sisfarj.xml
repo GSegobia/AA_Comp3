@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="sisfarj">
+    <output-path>$PROJECT_DIR$/out/artifacts/sisfarj</output-path>
+    <root id="archive" name="sisfarj.war">
+      <element id="javaee-facet-resources" facet="SISFARJ/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="SISFARJ" />
+        </element>
+      </element>
+      <element id="javaee-facet-resources" facet="SISFARJ/web/Web2" />
+    </root>
+  </artifact>
+</component>
