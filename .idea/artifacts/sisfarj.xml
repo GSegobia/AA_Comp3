@@ -7,6 +7,13 @@
         <element id="directory" name="classes">
           <element id="module-output" name="SISFARJ" />
         </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Java EE 6-Java EE 6" />
+          <element id="file-copy" path="$PROJECT_DIR$/SISFARJ/lib/annotations-java8.jar" />
+          <element id="library" level="project" name="Maven: org.clojure:clojure:1.7.0" />
+          <element id="library" level="project" name="Maven: org.clojure:java.jdbc:0.7.7" />
+          <element id="library" level="project" name="Maven: postgresql:postgresql:9.1-901-1.jdbc4" />
+        </element>
       </element>
       <element id="javaee-facet-resources" facet="SISFARJ/web/Web2" />
     </root>
