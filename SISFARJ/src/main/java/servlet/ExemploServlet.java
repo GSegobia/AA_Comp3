@@ -25,5 +25,3 @@ public class ExemploServlet extends HttpServlet {
     }
 
 }
-
-

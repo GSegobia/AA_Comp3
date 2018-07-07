@@ -8,36 +8,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0f1d0d63-0965-4bc9-869a-19706696be73" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/artifacts/SISFARJ_javaEEApplication_exploded.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_javaee_web_api_7_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/lib.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SISFARJ/META-INF/application.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SISFARJ/src/main/java/dados/DAO.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SISFARJ/src/main/java/dados/UsuarioDAO.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SISFARJ/web/Exemplo.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SISFARJ/web/META-INF/MANIFEST.MF" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Java_EE_6_Java_EE_6.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SISFARJ/target/classes/Usuario/ListaUsuarios.class" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/SISFARJ/src/main/java/Usuario/ListaUsuarios.java" afterPath="$PROJECT_DIR$/SISFARJ/src/main/java/servlet/ExemploServlet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SISFARJ/target/classes/dados/Database.class" afterPath="$PROJECT_DIR$/SISFARJ/target/classes/dados/Database.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SISFARJ/target/classes/dados/UsuarioData.class" afterPath="$PROJECT_DIR$/SISFARJ/target/classes/dados/UsuarioData.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SISFARJ/target/classes/dominio/DiretorTecnico.class" afterPath="$PROJECT_DIR$/SISFARJ/target/classes/dominio/DiretorTecnico.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SISFARJ/target/classes/dominio/Secretario.class" afterPath="$PROJECT_DIR$/SISFARJ/target/classes/dominio/Secretario.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SISFARJ/target/classes/dominio/TecnicoAssociacao.class" afterPath="$PROJECT_DIR$/SISFARJ/target/classes/dominio/TecnicoAssociacao.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SISFARJ/target/classes/dominio/Usuario.class" afterPath="$PROJECT_DIR$/SISFARJ/target/classes/dominio/Usuario.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/sisfarj.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/sisfarj.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SISFARJ/SISFARJ.iml" afterPath="$PROJECT_DIR$/SISFARJ/SISFARJ.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SISFARJ/pom.xml" afterPath="$PROJECT_DIR$/SISFARJ/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SISFARJ/src/main/java/dados/Database.java" afterPath="$PROJECT_DIR$/SISFARJ/src/main/java/dados/Database.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SISFARJ/src/main/java/dados/UsuarioData.java" afterPath="$PROJECT_DIR$/SISFARJ/src/main/java/dados/UsuarioData.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SISFARJ/src/main/java/dominio/DiretorTecnico.java" afterPath="$PROJECT_DIR$/SISFARJ/src/main/java/dominio/DiretorTecnico.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SISFARJ/src/main/java/dominio/Secretario.java" afterPath="$PROJECT_DIR$/SISFARJ/src/main/java/dominio/Secretario.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SISFARJ/src/main/java/dominio/TecnicoAssociacao.java" afterPath="$PROJECT_DIR$/SISFARJ/src/main/java/dominio/TecnicoAssociacao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SISFARJ/src/main/java/dominio/Usuario.java" afterPath="$PROJECT_DIR$/SISFARJ/src/main/java/dominio/Usuario.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SISFARJ/web/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/SISFARJ/web/WEB-INF/web.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SISFARJ/src/main/java/servlet/ExemploServlet.java" afterPath="$PROJECT_DIR$/SISFARJ/src/main/java/servlet/ExemploServlet.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/SISFARJ/target/" />
@@ -165,8 +136,8 @@
       <file leaf-file-name="ExemploServlet.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/SISFARJ/src/main/java/servlet/ExemploServlet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="17" column="78" lean-forward="false" selection-start-line="17" selection-start-column="78" selection-end-line="17" selection-end-column="78" />
+            <state relative-caret-position="400">
+              <caret line="27" column="0" lean-forward="true" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -1250,16 +1221,15 @@
       <workItem from="1530805514344" duration="5735000" />
       <workItem from="1530902588341" duration="3113000" />
       <workItem from="1530905722918" duration="3662000" />
-      <workItem from="1530931202474" duration="8964000" />
+      <workItem from="1530931202474" duration="9037000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="21474000" />
+    <option name="totallyTimeSpent" value="21547000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1920" y="-3" width="1920" height="1083" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1283,7 +1253,7 @@
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2781186" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.36707565" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24270834" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -1688,8 +1658,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/SISFARJ/src/main/java/servlet/ExemploServlet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="17" column="78" lean-forward="false" selection-start-line="17" selection-start-column="78" selection-end-line="17" selection-end-column="78" />
+        <state relative-caret-position="400">
+          <caret line="27" column="0" lean-forward="true" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
           <folding />
         </state>
       </provider>
