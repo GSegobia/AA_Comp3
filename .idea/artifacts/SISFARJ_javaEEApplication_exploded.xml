@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-ear" name="SISFARJ:javaEEApplication exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/SISFARJ_javaEEApplication_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="SISFARJ/javaeeApplication/javaEEApplication" />
+      <element id="artifact" artifact-name="sisfarj" />
+    </root>
+  </artifact>
+</component>

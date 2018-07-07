@@ -14,19 +14,17 @@ public class UsuarioData {
 
     @NotNull
     public static Usuario get(int usuarioId) {
-        //return UsuarioDAO.findAndGetById(usuarioId);
-        return new Usuario("Secretario Padrao","secretario-rj@sisfarj.com", "123456", 1);
+        return UsuarioDAO.findAndGet(usuarioId);
     }
 
     @NotNull
     public static Usuario get(String nome, String email) {
         //return UsuarioDAO.findAndGet(nome,email);
-        return new Usuario(nome,email, "123456", 1);
+        return new Usuario(-1,nome,email, "123456", 1);
     }
 
     public static boolean checaExistencia(Usuario usuario) {
-        //return UsuarioDAO.find(usuario);
-        return true;
+        return UsuarioDAO.find(usuario.getId());
     }
 
     public static boolean checaPermissao() {

@@ -1,6 +1,7 @@
 package dados;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.sql.Statement;
 
 /**
@@ -10,7 +11,6 @@ public class Database {
 
     private static Database instance;
     private static Connection conn;
-    private static Statement stmt;
 
     public static Database getInstance() {
         if(instance == null) {
@@ -26,6 +26,7 @@ public class Database {
 
         if(conn == null){
             try {
+                Class.forName("org.postgresql.Driver");
                 conn = DriverManager.getConnection(url,usuario,senha);
             } catch(Exception e ){
                 System.err.println(e.toString());
@@ -33,8 +34,20 @@ public class Database {
         }
         return conn;
     }
-    public static void main(String args[]){
-        Database.getConnect();
-    }
 
+    public static ResultSet doQuery(String query){
+        Statement stmt;
+        ResultSet rs = null;
+        conn = Database.getConnect();
+
+        try{
+            stmt = conn.createStatement();
+            rs = stmt.executeQuery(query);
+        } catch(Exception e) {
+            System.err.println(e.toString());
+        }
+
+        return rs;
+
+    }
 }

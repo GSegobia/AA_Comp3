@@ -7,8 +7,8 @@ import dados.UsuarioData;
  */
 public class TecnicoAssociacao extends Usuario {
 
-    public TecnicoAssociacao(String nome,String email, String senha){
-        super(nome,email,senha,2);
+    public TecnicoAssociacao(int id,String nome,String email, String senha){
+        super(id,nome,email,senha,2);
     }
 
     public void listarCompeticoesParaInscreverAtleta() {}

@@ -11,7 +11,8 @@ public class Usuario {
     private String senha;
     private int permissao_id;
 
-    public Usuario(String nome,String email, String senha, int permissao_id){
+    public Usuario(int id,String nome,String email, String senha, int permissao_id){
+        this.id = id;
         this.nome = nome;
         this.email = email;
         this.senha = senha;
@@ -49,8 +50,8 @@ public class Usuario {
         return this.permissao_id;
     }
 
-    public boolean criarUsuario(String nome,String email, String senha, int permissao_id) {
-        Usuario novo_usuario = new Usuario(nome,email, senha, permissao_id);
+    public boolean criarUsuario(int id,String nome,String email, String senha, int permissao_id) {
+        Usuario novo_usuario = new Usuario(id,nome,email, senha, permissao_id);
 
         return UsuarioData.create(novo_usuario);
     }

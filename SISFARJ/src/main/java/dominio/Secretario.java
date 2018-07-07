@@ -5,8 +5,8 @@ package dominio;
  */
 public class Secretario extends Usuario {
 
-    public Secretario(String nome,String email, String senha){
-        super(nome,email,senha,3);
+    public Secretario(int id,String nome,String email, String senha){
+        super(id,nome,email,senha,3);
     }
 
     public void cadastrarAtleta() {}
