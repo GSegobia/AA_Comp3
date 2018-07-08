@@ -1,18 +1,18 @@
 package dados;
+
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
-import dados.Database;
-import dominio.Modelo;
 
 /**
  * Created by over on 06/07/18.
  */
-public abstract class DAO {
-    public abstract Modelo mapModel(ResultSet rs);
-    public abstract boolean find(int id);
-    public abstract Modelo findAndGet(int id);
-    public abstract boolean create(Modelo modelo);
-    public abstract boolean update(Modelo modelo);
-    public abstract ArrayList<Modelo> findAll();
+public interface DAO<Model> {
+    Model mapModel(ResultSet rs) throws ClassNotFoundException, SQLException;
+    boolean exists(int id) throws ClassNotFoundException, SQLException;
+    Model get(int id) throws ClassNotFoundException, SQLException;
+    boolean create(Model modelo) throws ClassNotFoundException, SQLException;
+    boolean update(Model modelo) throws ClassNotFoundException, SQLException;
+    ArrayList<Model> findAll() throws ClassNotFoundException, SQLException;
 
 }

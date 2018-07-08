@@ -1,7 +1,5 @@
 package dominio;
 
-import dados.UsuarioData;
-
 /**
  * Created by over on 05/07/18.
  */

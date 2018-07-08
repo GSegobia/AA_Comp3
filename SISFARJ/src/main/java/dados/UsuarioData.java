@@ -1,6 +1,9 @@
 package dados;
+
 import dominio.Usuario;
-import org.jetbrains.annotations.NotNull;
+
+import java.sql.SQLException;
+
 /**
  * Created by over on 05/07/18.
  */
@@ -12,21 +15,19 @@ public class UsuarioData {
         return "123456";
     }
 
-    @NotNull
-    public static Usuario get(int usuarioId) {
+    public static Usuario get(int usuarioId) throws SQLException, ClassNotFoundException {
         UsuarioDAO DAO = new UsuarioDAO();
-        return (Usuario) DAO.findAndGet(usuarioId);
+        return DAO.get(usuarioId);
     }
 
-    @NotNull
     public static Usuario get(String nome, String email) {
-        //return UsuarioDAO.findAndGet(nome,email);
+        //return UsuarioDAO.get(nome,email);
         return new Usuario(-1,nome,email, "123456", 1);
     }
 
-    public static boolean checaExistencia(Usuario usuario) {
+    public static boolean checaExistencia(Usuario usuario) throws SQLException, ClassNotFoundException {
         UsuarioDAO DAO = new UsuarioDAO();
-        return DAO.find(usuario.getId());
+        return DAO.exists(usuario.getId());
     }
 
     public static boolean checaPermissao(int numeroPermissao, Usuario usuario) {

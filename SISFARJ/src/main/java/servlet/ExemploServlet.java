@@ -2,6 +2,7 @@ package servlet;
 
 import dados.UsuarioDAO;
 import dominio.Usuario;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -17,7 +18,15 @@ public class ExemploServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         //MAS NAO É O DAO QUE DEVE FAZER ISSO AQUI, É APENAS UM EXEMPLO!!@#!@#
         UsuarioDAO DAO = new UsuarioDAO();
-        Usuario u = (Usuario) DAO.findAndGet(1);
+        Usuario u = null;
+        try {
+            u = DAO.get(1);
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+            request.getRequestDispatcher("ExemploErro.jsp").forward(request, response);
+            return;
+        }
 
         //nome do atributo a ser enviado para o servlet e ser recuperado usando request.getAttribute(nomeDoAtributo);
         request.setAttribute("nome",u.getNome());
