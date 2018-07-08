@@ -18,10 +18,10 @@ public class ExemploServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         //MAS NAO É O DAO QUE DEVE FAZER ISSO AQUI, É APENAS UM EXEMPLO!!@#!@#
-        UsuarioDAO DAO = new UsuarioDAO();
         Usuario u = null;
+
         try {
-            u = DAO.get(1);
+            u = Usuario.getUsuario(3);
         }
         catch (Exception e) {
             e.printStackTrace();

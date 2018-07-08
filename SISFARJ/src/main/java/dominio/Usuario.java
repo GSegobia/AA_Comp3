@@ -40,30 +40,34 @@ public class Usuario {
         this.senha = novaSenha;
     }
 
-    public Usuario getUsuario(int usuarioId) throws SQLException, ClassNotFoundException {
+    public static Usuario getUsuario(int usuarioId) throws SQLException, ClassNotFoundException {
         return UsuarioData.get(usuarioId);
     }
 
-    public boolean criarUsuario(int id,String nome,String email, String senha, int permissao_id) throws SQLException, ClassNotFoundException{
+    public static boolean criarUsuario(int id,String nome,String email, String senha, int permissao_id) throws SQLException, ClassNotFoundException{
         Usuario novo_usuario = new Usuario(id,nome,email, senha, permissao_id);
         return UsuarioData.create(novo_usuario);
     }
 
-    public boolean updateUsuario(int id,String nome,String email, String senha, int permissao_id) throws SQLException, ClassNotFoundException {
+    public static boolean updateUsuario(int id,String nome,String email, String senha, int permissao_id) throws SQLException, ClassNotFoundException {
         Usuario usuarioAtualizado = new Usuario(id,nome,email, senha, permissao_id);
 
         return UsuarioData.update(usuarioAtualizado);
     }
 
-    public boolean checaPermissao(int numeroPermissao, int idUsuario) throws SQLException, ClassNotFoundException {
+    public static boolean updateUsuario(Usuario usuarioAtualizado) throws SQLException, ClassNotFoundException {
+        return UsuarioData.update(usuarioAtualizado);
+    }
+
+    public static boolean checaPermissao(int numeroPermissao, int idUsuario) throws SQLException, ClassNotFoundException {
         return UsuarioData.checaPermissao(numeroPermissao,idUsuario);
     }
 
-    public boolean solicitarNovaSenha(int idUsuario) throws SQLException, ClassNotFoundException {
-        return UsuarioData.gerarNovaSenha(this.getUsuario(idUsuario));
+    public static boolean solicitarNovaSenha(int idUsuario) throws SQLException, ClassNotFoundException {
+        return UsuarioData.gerarNovaSenha(getUsuario(idUsuario));
     }
 
-    public boolean verificarExistencia(int idUsuario) throws SQLException, ClassNotFoundException {
-        return UsuarioData.checaExistencia(this.getUsuario(idUsuario));
+    public static boolean verificarExistencia(int idUsuario) throws SQLException, ClassNotFoundException {
+        return UsuarioData.checaExistencia(getUsuario(idUsuario));
     }
 }

@@ -7,15 +7,7 @@ import java.sql.*;
  */
 public class Database {
 
-    private static Database instance;
     private static Connection conn;
-
-    public static Database getInstance() {
-        if(instance == null) {
-            instance = new Database();
-        }
-        return instance;
-    }
 
     public static Connection getConnect() throws ClassNotFoundException, SQLException {
         String url = "jdbc:postgresql://localhost:5432/sisfarj";

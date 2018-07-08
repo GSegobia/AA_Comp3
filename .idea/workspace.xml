@@ -8,18 +8,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0f1d0d63-0965-4bc9-869a-19706696be73" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dictionaries/over.xml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SISFARJ/target/classes/dominio/Modelo.class" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SISFARJ/target/classes/dados/Database.class" afterPath="$PROJECT_DIR$/SISFARJ/target/classes/dados/Database.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SISFARJ/target/classes/dados/UsuarioDAO.class" afterPath="$PROJECT_DIR$/SISFARJ/target/classes/dados/UsuarioDAO.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SISFARJ/target/classes/servlet/ExemploServlet.class" afterPath="$PROJECT_DIR$/SISFARJ/target/classes/servlet/ExemploServlet.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SISFARJ/src/main/java/dados/Database.java" afterPath="$PROJECT_DIR$/SISFARJ/src/main/java/dados/Database.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SISFARJ/src/main/java/dados/UsuarioDAO.java" afterPath="$PROJECT_DIR$/SISFARJ/src/main/java/dados/UsuarioDAO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SISFARJ/src/main/java/dados/UsuarioData.java" afterPath="$PROJECT_DIR$/SISFARJ/src/main/java/dados/UsuarioData.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SISFARJ/src/main/java/dominio/Usuario.java" afterPath="$PROJECT_DIR$/SISFARJ/src/main/java/dominio/Usuario.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SISFARJ/src/main/java/servlet/ExemploServlet.java" afterPath="$PROJECT_DIR$/SISFARJ/src/main/java/servlet/ExemploServlet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SISFARJ/web/ExemploErro.jsp" afterPath="$PROJECT_DIR$/SISFARJ/web/ExemploErro.jsp" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/SISFARJ/target/" />
@@ -148,37 +140,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Usuario.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Usuario.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/SISFARJ/src/main/java/dominio/Usuario.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="157">
-              <caret line="42" column="60" lean-forward="false" selection-start-line="42" selection-start-column="60" selection-end-line="42" selection-end-column="60" />
+            <state relative-caret-position="417">
+              <caret line="58" column="8" lean-forward="false" selection-start-line="58" selection-start-column="8" selection-end-line="58" selection-end-column="8" />
               <folding>
                 <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Database.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/SISFARJ/src/main/java/dados/Database.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="500">
-              <caret line="25" column="39" lean-forward="false" selection-start-line="25" selection-start-column="39" selection-end-line="25" selection-end-column="39" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UsuarioData.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SISFARJ/src/main/java/dados/UsuarioData.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="9" column="26" lean-forward="true" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#178#179#0" expanded="true" />
-                <element signature="e#209#210#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -187,8 +155,8 @@
       <file leaf-file-name="ExemploServlet.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SISFARJ/src/main/java/servlet/ExemploServlet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="254">
-              <caret line="21" column="25" lean-forward="true" selection-start-line="21" selection-start-column="25" selection-end-line="21" selection-end-column="25" />
+            <state relative-caret-position="280">
+              <caret line="22" column="13" lean-forward="true" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -285,13 +253,13 @@
         <option value="$PROJECT_DIR$/SISFARJ/pom.xml" />
         <option value="$PROJECT_DIR$/SISFARJ/src/main/java/servlet/ListaUsuarios.java" />
         <option value="$PROJECT_DIR$/SISFARJ/src/main/java/dominio/Modelo.java" />
-        <option value="$PROJECT_DIR$/SISFARJ/src/main/java/servlet/ExemploServlet.java" />
         <option value="$PROJECT_DIR$/SISFARJ/web/ExemploErro.jsp" />
         <option value="$PROJECT_DIR$/SISFARJ/src/main/java/dados/DAO.java" />
         <option value="$PROJECT_DIR$/SISFARJ/src/main/java/dados/UsuarioDAO.java" />
-        <option value="$PROJECT_DIR$/SISFARJ/src/main/java/dados/Database.java" />
         <option value="$PROJECT_DIR$/SISFARJ/src/main/java/dados/UsuarioData.java" />
+        <option value="$PROJECT_DIR$/SISFARJ/src/main/java/dados/Database.java" />
         <option value="$PROJECT_DIR$/SISFARJ/src/main/java/dominio/Usuario.java" />
+        <option value="$PROJECT_DIR$/SISFARJ/src/main/java/servlet/ExemploServlet.java" />
       </list>
     </option>
   </component>
@@ -392,6 +360,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AA_Comp3" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SISFARJ" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WEB-INF" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1284,12 +1270,12 @@
       <workItem from="1530905722918" duration="3662000" />
       <workItem from="1530931202474" duration="9124000" />
       <workItem from="1530941555137" duration="163000" />
-      <workItem from="1531075418967" duration="9685000" />
+      <workItem from="1531075418967" duration="10275000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="31482000" />
+    <option name="totallyTimeSpent" value="32072000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1920" y="-3" width="1920" height="1083" extended-state="6" />
@@ -1722,14 +1708,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SISFARJ/src/main/java/servlet/ExemploServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="254">
-          <caret line="21" column="25" lean-forward="true" selection-start-line="21" selection-start-column="25" selection-end-line="21" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/SISFARJ/web/Exemplo.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="140">
@@ -1756,16 +1734,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SISFARJ/src/main/java/dominio/Usuario.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="157">
-          <caret line="42" column="60" lean-forward="false" selection-start-line="42" selection-start-column="60" selection-end-line="42" selection-end-column="60" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/SISFARJ/src/main/java/dados/UsuarioDAO.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="220">
@@ -1782,9 +1750,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/SISFARJ/src/main/java/dados/Database.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="111">
+          <caret line="13" column="34" lean-forward="true" selection-start-line="13" selection-start-column="34" selection-end-line="13" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/SISFARJ/src/main/java/dados/UsuarioData.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
+        <state relative-caret-position="60">
           <caret line="9" column="26" lean-forward="true" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1794,11 +1770,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SISFARJ/src/main/java/dados/Database.java">
+    <entry file="file://$PROJECT_DIR$/SISFARJ/src/main/java/servlet/ExemploServlet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="500">
-          <caret line="25" column="39" lean-forward="false" selection-start-line="25" selection-start-column="39" selection-end-line="25" selection-end-column="39" />
+        <state relative-caret-position="280">
+          <caret line="22" column="13" lean-forward="true" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SISFARJ/src/main/java/dominio/Usuario.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="417">
+          <caret line="58" column="8" lean-forward="false" selection-start-line="58" selection-start-column="8" selection-end-line="58" selection-end-column="8" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
