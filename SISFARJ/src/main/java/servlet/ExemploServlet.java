@@ -17,10 +17,10 @@ public class ExemploServlet extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        //MAS NAO É O DAO QUE DEVE FAZER ISSO AQUI, É APENAS UM EXEMPLO!!@#!@#
         Usuario u = null;
 
         try {
+            //Alguns metodos de usuario são estáticos
             u = Usuario.getUsuario(3);
         }
         catch (Exception e) {
