@@ -62,7 +62,9 @@ public class UsuarioDAO implements DAO<Usuario> {
 
     public boolean update(Usuario modelo) throws ClassNotFoundException, SQLException {
         Usuario u = modelo;
+
         int linhasAtualizadas = 0;
+
         String query = String.format(
                 "UPDATE usuario SET nome=\'%s\', email=\'%s\', senha=\'%s\',permissao_id=%d where id=%d;",
                 u.getNome(),u.getEmail(),u.getSenha(),u.getPermissaoId(),u.getId()
@@ -83,7 +85,5 @@ public class UsuarioDAO implements DAO<Usuario> {
         }
 
         return usuarios;
-
     }
-
 }

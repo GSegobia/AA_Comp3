@@ -47,9 +47,11 @@ public class Database {
     public static int doUpdate(String query) throws ClassNotFoundException, SQLException {
         Statement stmt;
         int updatesDone = 0;
+
         conn = Database.getConnect();
         stmt = conn.createStatement();
         updatesDone = stmt.executeUpdate(query);
+
         return updatesDone;
     }
 }

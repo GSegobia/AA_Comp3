@@ -9,8 +9,6 @@ import java.sql.SQLException;
  */
 public class UsuarioData {
 
-    private Usuario usuario;
-
     private static String gerarSenha(){
         return "123456";
     }
@@ -20,35 +18,36 @@ public class UsuarioData {
         return DAO.get(usuarioId);
     }
 
-    public static Usuario get(String nome, String email) {
-        //return UsuarioDAO.get(nome,email);
-        return new Usuario(-1,nome,email, "123456", 1);
-    }
-
     public static boolean checaExistencia(Usuario usuario) throws SQLException, ClassNotFoundException {
         UsuarioDAO DAO = new UsuarioDAO();
         return DAO.exists(usuario.getId());
     }
 
-    public static boolean checaPermissao(int numeroPermissao, Usuario usuario) {
-        return numeroPermissao == usuario.getPermissaoId();
+    public static boolean checaPermissao(int numeroPermissao, int idUsuario) throws SQLException, ClassNotFoundException {
+        return numeroPermissao == getPermissao(idUsuario);
     }
 
-    private int getPermissao(Usuario usuario) {
-        return usuario.getPermissaoId();
+    private static int getPermissao(int idUsuario) throws SQLException, ClassNotFoundException {
+        UsuarioDAO DAO = new UsuarioDAO();
+
+        Usuario u = DAO.get(idUsuario);
+
+        return u.getPermissaoId();
     }
 
-    public static boolean create(Usuario usuario) {
-        //return UsuarioDAO.create(usuario);
-        return true;
+    public static boolean create(Usuario usuario) throws SQLException, ClassNotFoundException{
+        UsuarioDAO DAO = new UsuarioDAO();
+
+        return DAO.create(usuario);
     }
 
-    private static boolean update(Usuario usuario) {
-        //return UsuarioDAO.update(usuario);
-        return true;
+    public static boolean update(Usuario usuario) throws SQLException, ClassNotFoundException {
+        UsuarioDAO DAO = new UsuarioDAO();
+
+        return DAO.update(usuario);
     }
 
-    public static boolean gerarNovaSenha(Usuario usuario){
+    public static boolean gerarNovaSenha(Usuario usuario) throws SQLException, ClassNotFoundException {
         String novaSenha = gerarSenha();
 
         usuario.setSenha(novaSenha);

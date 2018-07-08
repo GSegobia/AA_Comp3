@@ -15,6 +15,7 @@ public class ExemploServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
     }
+
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         //MAS NAO É O DAO QUE DEVE FAZER ISSO AQUI, É APENAS UM EXEMPLO!!@#!@#
         UsuarioDAO DAO = new UsuarioDAO();
@@ -24,6 +25,7 @@ public class ExemploServlet extends HttpServlet {
         }
         catch (Exception e) {
             e.printStackTrace();
+            //envia pra página do erro, possivel também um catch para cada tipo de erro ao invés do genérico Exception
             request.getRequestDispatcher("ExemploErro.jsp").forward(request, response);
             return;
         }
