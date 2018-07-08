@@ -14,7 +14,8 @@ public class UsuarioData {
 
     @NotNull
     public static Usuario get(int usuarioId) {
-        return UsuarioDAO.findAndGet(usuarioId);
+        UsuarioDAO DAO = new UsuarioDAO();
+        return (Usuario) DAO.findAndGet(usuarioId);
     }
 
     @NotNull
@@ -24,11 +25,12 @@ public class UsuarioData {
     }
 
     public static boolean checaExistencia(Usuario usuario) {
-        return UsuarioDAO.find(usuario.getId());
+        UsuarioDAO DAO = new UsuarioDAO();
+        return DAO.find(usuario.getId());
     }
 
-    public static boolean checaPermissao() {
-        return true;
+    public static boolean checaPermissao(int numeroPermissao, Usuario usuario) {
+        return numeroPermissao == usuario.getPermissaoId();
     }
 
     private int getPermissao(Usuario usuario) {

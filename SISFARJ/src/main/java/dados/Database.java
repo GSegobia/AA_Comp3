@@ -1,4 +1,5 @@
 package dados;
+import javax.validation.metadata.ExecutableDescriptor;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -35,7 +36,7 @@ public class Database {
         return conn;
     }
 
-    public static ResultSet doQuery(String query){
+    public static ResultSet doSelect(String query){
         Statement stmt;
         ResultSet rs = null;
         conn = Database.getConnect();
@@ -48,6 +49,20 @@ public class Database {
         }
 
         return rs;
+    }
+    //Usar para update, insert e delete
+    public static int doUpdate(String query){
+        Statement stmt;
+        int updatesDone = 0;
+        conn = Database.getConnect();
 
+        try{
+            stmt = conn.createStatement();
+            updatesDone = stmt.executeUpdate(query);
+        } catch(Exception e) {
+            System.err.println(e.toString());
+        }
+
+        return updatesDone;
     }
 }

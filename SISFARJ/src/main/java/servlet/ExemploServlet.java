@@ -16,7 +16,8 @@ public class ExemploServlet extends HttpServlet {
     }
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         //MAS NAO É O DAO QUE DEVE FAZER ISSO AQUI, É APENAS UM EXEMPLO!!@#!@#
-        Usuario u = UsuarioDAO.findAndGet(1);
+        UsuarioDAO DAO = new UsuarioDAO();
+        Usuario u = (Usuario) DAO.findAndGet(1);
 
         //nome do atributo a ser enviado para o servlet e ser recuperado usando request.getAttribute(nomeDoAtributo);
         request.setAttribute("nome",u.getNome());

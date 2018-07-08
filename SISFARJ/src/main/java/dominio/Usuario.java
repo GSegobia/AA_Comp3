@@ -4,7 +4,7 @@ import dados.UsuarioData;
 /**
  * Created by over on 05/07/18.
  */
-public class Usuario {
+public class Usuario implements Modelo {
     private int id;
     private String nome;
     private String email;
