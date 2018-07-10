@@ -15,7 +15,7 @@ import java.util.ArrayList;
 public class AtletaDAO implements DAO<Atleta> {
 
     public Atleta mapModel(ResultSet rs) throws ClassNotFoundException, SQLException {
-        Atleta u = new Atleta(
+        return new Atleta(
                 rs.getInt("id"),
                 rs.getInt("associacao_id"),
                 rs.getInt("categoria_id"),
@@ -26,7 +26,6 @@ public class AtletaDAO implements DAO<Atleta> {
                 rs.getString("numero_oficio"),
                 rs.getString("data_entrada_associacao")
         );
-        return u;
     }
 
     public boolean exists(int id) throws ClassNotFoundException, SQLException {
