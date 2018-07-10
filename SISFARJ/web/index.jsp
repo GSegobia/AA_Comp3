@@ -338,7 +338,22 @@
     <!-- Custom scripts for this template -->
     <script src="src/js/sweetalert.min.js"></script>
 
-    <!-- Erro de Identificação de Usuário -->
+    <!-- Sucesso: Identificação de Usuário -->
+    <%
+      Boolean sucesso = (Boolean) session.getAttribute("sucessoIdentificacao");
+      if(sucesso != null && sucesso) {
+        session.setAttribute("sucessoIdentificacao", false);
+    %>
+    <script>
+        swal({
+            title: "Sucesso",
+            text: "Você agora está logado no sistema!",
+            icon: "success"
+        }).show()
+    </script>
+    <% } %>
+
+    <!-- Erro: Identificação de Usuário -->
     <%
       Boolean erroIdentificacao = (Boolean) session.getAttribute("erroIdentificacao");
       if(erroIdentificacao != null && erroIdentificacao) {
