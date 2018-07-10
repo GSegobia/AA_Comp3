@@ -9,9 +9,9 @@ values ('Feminino'),
 	   ('Masculino');
 
 insert into permissao (nome)
-values ('Diretor TÃ©cnico'),
-	   ('TÃ©cnico AssociaÃ§Ã£o'),
-	   ('SecretÃ¡rio');
+values ('Diretor Técnico'),
+	   ('Técnico Associação'),
+	   ('Secretário');
 
 insert into classe(nome)
 values ('Mirim'),
@@ -25,7 +25,7 @@ values ('Mirim'),
 	   ('Juvenil II'),
 	   ('Junior I'),
 	   ('Junior II'),
-	   ('SÃªnior'),
+	   ('Sênior'),
 	   ('Master');
 
 INSERT INTO usuario(id, matricula, nome, senha, permissao_id)
