@@ -9,14 +9,40 @@ import java.sql.SQLException;
  */
 public class Usuario {
     private int id;
+    private String matricula;
     private String nome;
     private String senha;
     private int permissao_id;
 
-    public Usuario(int id,String nome, String senha, int permissao_id){
+    public Usuario(int id,String nome, String matricula, String senha, int permissao_id){
         this.id = id;
         this.nome = nome;
+        this.matricula = matricula;
         this.senha = senha;
+        this.permissao_id = permissao_id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getMatricula() {
+        return matricula;
+    }
+
+    public void setMatricula(String matricula) {
+        this.matricula = matricula;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public int getPermissao_id() {
+        return permissao_id;
+    }
+
+    public void setPermissao_id(int permissao_id) {
         this.permissao_id = permissao_id;
     }
 
@@ -40,13 +66,13 @@ public class Usuario {
         return UsuarioData.get(usuarioId);
     }
 
-    public static boolean criarUsuario(int id,String nome, String senha, int permissao_id) throws SQLException, ClassNotFoundException{
-        Usuario novo_usuario = new Usuario(id,nome, senha, permissao_id);
+    public static boolean criarUsuario(int id,String nome, String matricula, String senha, int permissao_id) throws SQLException, ClassNotFoundException{
+        Usuario novo_usuario = new Usuario(id, nome, matricula, senha, permissao_id);
         return UsuarioData.create(novo_usuario);
     }
 
-    public static boolean updateUsuario(int id,String nome, String senha, int permissao_id) throws SQLException, ClassNotFoundException {
-        Usuario usuarioAtualizado = new Usuario(id,nome, senha, permissao_id);
+    public static boolean updateUsuario(int id, String nome, String matricula, String senha, int permissao_id) throws SQLException, ClassNotFoundException {
+        Usuario usuarioAtualizado = new Usuario(id, nome, matricula, senha, permissao_id);
 
         return UsuarioData.update(usuarioAtualizado);
     }

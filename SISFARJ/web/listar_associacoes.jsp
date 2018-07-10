@@ -14,6 +14,7 @@
     <div class="container bg-white p-5">
         <h2 class="text-center text-uppercase text-secondary mb-0">Lista de Associações</h2>
         <hr class="mb-5">
+        <% {%>
         <table class="table">
             <thead>
             <tr>
@@ -32,6 +33,7 @@
             </c:forEach>
             </tbody>
         </table>
+        <% } %>
     </div>
 </section>
 <% } %>

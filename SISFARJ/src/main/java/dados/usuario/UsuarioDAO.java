@@ -18,6 +18,7 @@ public class UsuarioDAO implements DAO<Usuario> {
         Usuario u = new Usuario(
                 rs.getInt("id"),
                 rs.getString("nome"),
+                rs.getString("matricula"),
                 rs.getString("senha"),
                 rs.getInt("permissao_id")
         );
