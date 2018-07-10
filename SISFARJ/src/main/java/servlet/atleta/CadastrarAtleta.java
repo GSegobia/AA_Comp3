@@ -35,10 +35,36 @@ public class CadastrarAtleta extends HttpServlet {
             informarErroPreenchimento(req, resp);
         }
         else {
-            // TODO: Lógica de cadastro
+            // TODO: Conversar c/ Paulo sobre o DAO e subcamadas
+//            try {
+//                Atleta atleta = Atleta.create()
+//                informarSucessoCadastro(req, resp);
+//            }
+//            catch (MatriculaAssociacaoNaoEncontrada e) {
+//                e.printStackTrace();
+//                informarErroMatriculaAssociacao(req, resp);
+//            }
+//            catch (Exception e) {
+//                e.printStackTrace();
+//                informarErroCadastro(req, resp);
+//            }
         }
 
 
+    }
+
+    public void informarSucessoCadastro(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        req.getSession().setAttribute("sucessoCadastro", true);
+        req.getRequestDispatcher("cadastrar_atleta.jsp").forward(req, resp);
+    }
+
+    public void informarErroCadastro(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        req.getSession().setAttribute("erroCadastro", true);
+        req.getRequestDispatcher("cadastrar_atleta.jsp").forward(req, resp);
+    }
+    public void informarErroMatriculaAssociacao(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        req.getSession().setAttribute("erroMatriculaAssociacao", true);
+        req.getRequestDispatcher("cadastrar_atleta.jsp").forward(req, resp);
     }
 
     public void informarErroPreenchimento(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

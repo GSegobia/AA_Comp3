@@ -19,16 +19,13 @@ public class AtletaData {
         return DAO.exists(atleta_id);
     }
 
-
-    public static boolean create(Atleta Atleta) throws SQLException, ClassNotFoundException{
+    public static boolean create(Atleta atleta) throws SQLException, ClassNotFoundException{
         AtletaDAO DAO = new AtletaDAO();
-
-        return DAO.create(Atleta);
+        return DAO.create(atleta);
     }
 
-    public static boolean update(Atleta Atleta) throws SQLException, ClassNotFoundException {
+    public static boolean update(Atleta atleta) throws SQLException, ClassNotFoundException {
         AtletaDAO DAO = new AtletaDAO();
-
-        return DAO.update(Atleta);
+        return DAO.update(atleta);
     }
 }

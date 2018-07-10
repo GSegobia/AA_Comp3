@@ -59,6 +59,52 @@
 </section>
 <% } %>
 
+<!-- Sucesso: Cadastrar Atleta -->
+<%
+    Boolean sucesso = (Boolean) session.getAttribute("sucessoCadastro");
+    if(sucesso != null && sucesso) {
+        session.setAttribute("sucessoCadastro", false);
+%>
+<script>
+    swal({
+        title: "Sucesso",
+        text: "Novo Atleta cadastrado com sucesso!",
+        icon: "success"
+    })
+</script>
+<% } %>
+
+<!-- Erro: Cadastro -->
+<%
+    Boolean erroCadastro = (Boolean) session.getAttribute("erroCadastro");
+    if(erroCadastro != null && erroCadastro) {
+        session.setAttribute("erroCadastro", false);
+%>
+<script>
+    swal({
+        title: "Erro",
+        text: "Não foi possível cadastrar o Atleta.",
+        icon: "error"
+    })
+</script>
+<% } %>
+
+<!-- Erro: Matrícula da Associação -->
+<%
+    Boolean erroMatriculaAssociacao = (Boolean) session.getAttribute("erroMatriculaAssociacao");
+    if(erroMatriculaAssociacao != null && erroMatriculaAssociacao) {
+        session.setAttribute("erroMatriculaAssociacao", false);
+%>
+<script>
+    swal({
+        title: "Erro",
+        text: "Matrícula de associação não encontrada.",
+        icon: "error"
+    })
+</script>
+<% } %>
+
+<!-- Erro: Preenchimento -->
 <%
     Boolean erroPreenchimento = (Boolean) session.getAttribute("erroPreenchimento");
     if(erroPreenchimento != null && erroPreenchimento) {

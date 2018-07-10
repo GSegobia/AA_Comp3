@@ -95,17 +95,17 @@ public class Atleta {
         this.data_entrada_associacao = data_entrada_associacao;
     }
 
-    public Atleta get(int id) throws ClassNotFoundException,SQLException, ModeloNaoExiste {
+    public static Atleta get(int id) throws ClassNotFoundException,SQLException, ModeloNaoExiste {
         Atleta u = AtletaData.get(id);
 
         if(u==null) throw new ModeloNaoExiste("atleta",id);
         return u;
     }
 
-    public boolean create(Atleta atleta) throws ClassNotFoundException,SQLException {
+    public static boolean create(Atleta atleta) throws ClassNotFoundException,SQLException {
         return AtletaData.create(atleta);
     }
-    public boolean update(Atleta atleta) throws ClassNotFoundException,SQLException {
+    public static boolean update(Atleta atleta) throws ClassNotFoundException,SQLException {
         return AtletaData.update(atleta);
     }
 }
