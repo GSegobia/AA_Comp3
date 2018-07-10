@@ -28,4 +28,7 @@ values ('Mirim'),
 	   ('Sênior'),
 	   ('Master');
 
+INSERT INTO usuario(id, matricula, nome, senha, permissao_id)
+	VALUES (1, 'teste', 'Sr. Diretor Técnico', 'teste', 1);
+
 commit;

@@ -30,7 +30,6 @@ public class ExemploServlet extends HttpServlet {
             e.printStackTrace();
             //envia pra página do erro, possivel também um catch para cada tipo de erro ao invés do genérico Exception
             request.getRequestDispatcher("ExemploErro.jsp").forward(request, response);
-            return;
         }
     }
 

@@ -40,7 +40,7 @@ public class IdentificarUsuario extends HttpServlet {
         // TODO: Definir tempo de sessão do usuário DEFAULT 10 min
         req.getSession().setAttribute("nomeUsuario", usuario.getNome());
         req.getSession().setMaxInactiveInterval(600);
-        req.getRequestDispatcher("index.jsp").forward(req, resp);
+        req.getRequestDispatcher("dashboard.jsp").forward(req, resp);
     }
 
     public void informarErroIdentificacao(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
