@@ -1,8 +1,9 @@
 package main.java.dados.atleta;
 
 import main.java.dados.DAO;
-import main.java.dominio.Atleta;
 import main.java.dados.Database;
+import main.java.dominio.Atleta;
+
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -95,7 +96,7 @@ public class AtletaDAO implements DAO<Atleta> {
     }
 
     public ArrayList<Atleta> findAll() throws ClassNotFoundException, SQLException {
-        ArrayList<Atleta> Atletas = new ArrayList<>();
+        ArrayList<Atleta> Atletas = new ArrayList<Atleta>();
         ResultSet rs = Database.doSelect("Select * from Atleta");
 
         if(rs.next()){
