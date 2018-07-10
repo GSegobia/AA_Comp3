@@ -1,11 +1,12 @@
-<%@ page import="dominio.Associacao" %>
-<%@ page import="java.util.ArrayList" %><%--
+<%--
   Created by IntelliJ IDEA.
   User: devfbrp
   Date: 10/07/18
   Time: 12:17
   To change this template use File | Settings | File Templates.
 --%>
+<%@ page import="dominio.Associacao" %>
+<%@ page import="java.util.ArrayList" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@include file="default_header.jsp"%>
 <% ArrayList<Associacao> associacoes = (ArrayList<Associacao>) request.getAttribute("associacoes"); %>

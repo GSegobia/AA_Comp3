@@ -1,4 +1,4 @@
-package servlet;
+package servlet.associacao;
 
 import dominio.Associacao;
 
