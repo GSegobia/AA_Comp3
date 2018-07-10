@@ -5,8 +5,8 @@ package dominio;
  */
 public class DiretorTecnico extends Usuario {
 
-    public DiretorTecnico(int id,String nome, String senha){
-        super(id,nome,senha,1);
+    public DiretorTecnico(int id,String nome, String matricula, String senha){
+        super(id,nome, matricula, senha,1);
     }
 
     public void listarCompeticoes() {}
