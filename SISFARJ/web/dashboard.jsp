@@ -21,7 +21,7 @@
                         <p class="card-text" style="text-align: justify">{TODO: Escrever observação das associações}</p>
                     </div>
                     <ul class="list-group list-group-flush">
-                        <li class="list-group-item"><a href="associacao">Cadastrar Associação</a></li>
+                        <li class="list-group-item"><a href="associacao">Filiar Associação</a></li>
                         <li class="list-group-item"><a href="associacoes">Listar Associações</a></li>
                     </ul>
                 </div>
@@ -33,6 +33,7 @@
                         <p class="card-text" style="text-align: justify">{TODO: Escrever observação das atletas}</p>
                     </div>
                     <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><a href="atleta">Cadastrar Atleta</a></li>
                         <li class="list-group-item"><a href="atletas">Listar Atletas</a></li>
                     </ul>
                 </div>

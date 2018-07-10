@@ -8,7 +8,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@include file="default_header.jsp"%>
 
-<!-- Lista de Associações -->
 <% if (session.getAttribute("nomeUsuario") != null) { %>
 <section class="portfolio" style="padding-top:calc(6rem + 72px);padding-bottom:6rem" id="portfolio">
     <div class="container bg-white p-5 rounded">
