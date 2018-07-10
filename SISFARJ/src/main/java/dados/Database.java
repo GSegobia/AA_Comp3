@@ -1,4 +1,4 @@
-package dados;
+package main.java.dados;
 
 import java.sql.*;
 
@@ -10,9 +10,9 @@ public class Database {
     private static Connection conn;
 
     public static Connection getConnect() throws ClassNotFoundException, SQLException {
-        String url = "jdbc:postgresql://localhost:5432/sisfarj";
+        String url = "jdbc:postgresql://localhost:5432/2131";
         String usuario="postgres";
-        String senha = "123456";
+        String senha = "postgres";
 
         if(conn == null){
             Class.forName("org.postgresql.Driver");

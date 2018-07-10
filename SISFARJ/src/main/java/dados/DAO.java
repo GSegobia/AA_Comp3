@@ -1,4 +1,4 @@
-package dados;
+package main.java.dados;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;

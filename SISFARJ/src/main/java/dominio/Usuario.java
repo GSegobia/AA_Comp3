@@ -1,6 +1,5 @@
-package dominio;
-import dados.usuario.UsuarioData;
-import exceptions.DadosIdentificacaoIncorretos;
+package main.java.dominio;
+import main.java.dados.UsuarioData;
 
 import java.sql.SQLException;
 

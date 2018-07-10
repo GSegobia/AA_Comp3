@@ -23,10 +23,10 @@ create table usuario (
 	permissao_id integer references permissao
 );
 
-insert into usuario (nome,email,senha,permissao_id) values ('Diretor Padr√£o','diretor@sisfarj.com','123456',1);
-insert into usuario (nome,email,senha,permissao_id) values ('Tecnico Associacao RJ','tecnico-rj@sisfarj.com','123456',2);
-insert into usuario (nome,email,senha,permissao_id) values ('Tecnico Associacao SP','tecnico-sp@sisfarj.com','123456',2);
-insert into usuario (nome,email,senha,permissao_id) values ('Secretario Padr√£o','secretario@sisfarj.com','123456',3);
+insert into usuario (nome,matricula,senha,permissao_id) values ('Diretor Padr„o','diretor@sisfarj.com','123456',1);
+insert into usuario (nome,matricula,senha,permissao_id) values ('Tecnico Associacao RJ','tecnico-rj@sisfarj.com','123456',2);
+insert into usuario (nome,matricula,senha,permissao_id) values ('Tecnico Associacao SP','tecnico-sp@sisfarj.com','123456',2);
+insert into usuario (nome,matricula,senha,permissao_id) values ('Secretario Padr„o','secretario@sisfarj.com','123456',3);
 
 create table classe_atleta (
 	id serial primary key,
