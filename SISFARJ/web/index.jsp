@@ -76,11 +76,11 @@
           <div class="modal-body">
             <form class="form" action="identificar" method="post">
               <div class="form-group mx-sm-3 mb-2">
-                <label for="matricula" class="sr-only">Email</label>
+                <label for="matricula" class="sr-only">Matrícula</label>
                 <input type="text" class="form-control" id="matricula" name="matricula" placeholder="Digite a sua matrícula">
               </div>
               <div class="form-group mx-sm-3 mb-2">
-                <label for="senha" class="sr-only">Password</label>
+                <label for="senha" class="sr-only">Senha</label>
                 <input type="password" class="form-control" id="senha" name="senha" placeholder="Digite a sua senha">
               </div>
               <button type="submit" class="btn btn-primary btn-block">Login</button>
@@ -93,7 +93,7 @@
     <!-- Header -->
     <header class="masthead bg-primary text-white text-center">
       <div class="container">
-        <img class="img-fluid mb-5 d-block mx-auto" src="img/swimming.svg" width="250px" height="250px" alt="">
+        <img class="img-fluid mb-5 d-block mx-auto" src="img/swimming-silhouette.svg" width="250px" height="250px" alt="">
         <h1 class="text-uppercase mb-0">SISFARJ</h1>
         <hr class="star-light">
         <h2 class="font-weight-light mb-0">
@@ -117,7 +117,7 @@
                   <i class="fa fa-search-plus fa-3x"></i>
                 </div>
               </div>
-              <img class="img-fluid" src="img/portfolio/cabin.png" alt="">
+              <img class="img-fluid" src="img/swimming-pool.svg" alt="">
             </a>
           </div>
           <div class="col-md-6 col-lg-4">

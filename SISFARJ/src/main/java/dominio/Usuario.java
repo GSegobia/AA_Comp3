@@ -1,5 +1,6 @@
 package dominio;
 import dados.usuario.UsuarioData;
+import exceptions.DadosIdentificacaoIncorretos;
 
 import java.sql.SQLException;
 
@@ -9,14 +10,12 @@ import java.sql.SQLException;
 public class Usuario {
     private int id;
     private String nome;
-    private String email;
     private String senha;
     private int permissao_id;
 
-    public Usuario(int id,String nome,String email, String senha, int permissao_id){
+    public Usuario(int id,String nome, String senha, int permissao_id){
         this.id = id;
         this.nome = nome;
-        this.email = email;
         this.senha = senha;
         this.permissao_id = permissao_id;
     }
@@ -26,9 +25,6 @@ public class Usuario {
     }
     public String getNome() {
         return this.nome;
-    }
-    public String getEmail() {
-        return this.email;
     }
     public String getSenha(){
         return this.senha;
@@ -44,13 +40,13 @@ public class Usuario {
         return UsuarioData.get(usuarioId);
     }
 
-    public static boolean criarUsuario(int id,String nome,String email, String senha, int permissao_id) throws SQLException, ClassNotFoundException{
-        Usuario novo_usuario = new Usuario(id,nome,email, senha, permissao_id);
+    public static boolean criarUsuario(int id,String nome, String senha, int permissao_id) throws SQLException, ClassNotFoundException{
+        Usuario novo_usuario = new Usuario(id,nome, senha, permissao_id);
         return UsuarioData.create(novo_usuario);
     }
 
-    public static boolean updateUsuario(int id,String nome,String email, String senha, int permissao_id) throws SQLException, ClassNotFoundException {
-        Usuario usuarioAtualizado = new Usuario(id,nome,email, senha, permissao_id);
+    public static boolean updateUsuario(int id,String nome, String senha, int permissao_id) throws SQLException, ClassNotFoundException {
+        Usuario usuarioAtualizado = new Usuario(id,nome, senha, permissao_id);
 
         return UsuarioData.update(usuarioAtualizado);
     }
@@ -67,7 +63,7 @@ public class Usuario {
         return UsuarioData.gerarNovaSenha(getUsuario(idUsuario));
     }
 
-    public static boolean verificarExistencia(int idUsuario) throws SQLException, ClassNotFoundException {
-        return UsuarioData.checaExistencia(getUsuario(idUsuario));
+    public static Usuario identificar(String matricula, String senha) throws SQLException, ClassNotFoundException, DadosIdentificacaoIncorretos {
+        return UsuarioData.identificar(matricula, senha);
     }
 }

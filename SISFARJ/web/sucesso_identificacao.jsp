@@ -16,6 +16,6 @@
         title: "Sucesso",
         text: "Você agora está logado no sistema!",
         icon: "success"
-    }).show()
+    })
 </script>
 <% } %>

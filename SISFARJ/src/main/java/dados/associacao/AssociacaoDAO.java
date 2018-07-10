@@ -69,7 +69,9 @@ public class AssociacaoDAO implements DAO<Associacao> {
                 "e.numero,\n" +
                 "e.cidade,\n" +
                 "e.estado,\n" +
-                "e.complemento FROM associacao AS a LEFT JOIN endereco AS e ON e.id = a.endereco_id");
+                "e.complemento FROM associacao AS a LEFT JOIN endereco AS e ON e.id = a.endereco_id\n" +
+                "ORDER BY\n" +
+                "a.nome ASC\n");
 
         while(rs.next()){
             Associacao u = mapModel(rs);

@@ -1,5 +1,7 @@
 package servlet;
 
+import dominio.Usuario;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -19,29 +21,24 @@ public class IdentificarUsuario extends HttpServlet {
         String matricula = req.getParameter("matricula").trim();
         String senha = req.getParameter("senha").trim();
 
-        if(matricula.equals("") || senha.equals("")) {
-            informarErroIdentificacao(req, resp);
-        }
+        if(matricula.equals("") || senha.equals("")) { informarErroIdentificacao(req, resp); }
         else {
-            // TODO: Chamar responsável por Identificar Usuário
-//        try {
-//
-//        }
-//        catch (DadosIdentificacaoIncorretos e) {
-//            e.printStackTrace();
-//            informarErroIdentificacao(req, resp);
-//            return;
-//        }
-            permitirAcesso(req, resp);
+            try {
+                Usuario usuario = Usuario.identificar(matricula, senha);
+                permitirAcesso(usuario, req, resp);
+            }
+            catch (Exception e) {
+                e.printStackTrace();
+                informarErroIdentificacao(req, resp);
+            }
         }
-
     }
 
-    public void permitirAcesso(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    public void permitirAcesso(Usuario usuario, HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.getSession().setAttribute("sucessoIdentificacao", true);
         req.getSession().setAttribute("erroIdentificacao", false);
         // TODO: Definir tempo de sessão do usuário DEFAULT 10 min
-        req.getSession().setAttribute("nomeUsuario", "Unknown");
+        req.getSession().setAttribute("nomeUsuario", usuario.getNome());
         req.getSession().setMaxInactiveInterval(600);
         req.getRequestDispatcher("index.jsp").forward(req, resp);
     }

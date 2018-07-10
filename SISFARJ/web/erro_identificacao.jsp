@@ -16,6 +16,6 @@
         title: "Erro",
         text: "Não foi possível identificar o usuário.",
         icon: "error"
-    }).show()
+    })
 </script>
 <% } %>

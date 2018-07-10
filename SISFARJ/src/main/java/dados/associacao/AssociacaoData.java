@@ -3,7 +3,7 @@ package dados.associacao;
 import dominio.Associacao;
 
 import java.sql.SQLException;
-import java.util.List;
+import java.util.ArrayList;
 
 /**
  * Created by Fellipe Bravo on 10/07/18.
@@ -15,7 +15,7 @@ public class AssociacaoData {
         return DAO.create(associacao);
     }
 
-    public static List<Associacao> getAll() throws SQLException, ClassNotFoundException {
+    public static ArrayList<Associacao> getAll() throws SQLException, ClassNotFoundException {
         AssociacaoDAO DAO = new AssociacaoDAO();
         return DAO.findAll();
     }

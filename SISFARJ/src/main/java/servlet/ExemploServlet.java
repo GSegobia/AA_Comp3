@@ -21,6 +21,10 @@ public class ExemploServlet extends HttpServlet {
         try {
             //Alguns metodos de usuario são estáticos
             u = Usuario.getUsuario(3);
+            //nome do atributo a ser enviado para o servlet e ser recuperado usando request.getAttribute(nomeDoAtributo);
+            request.setAttribute("nome",u.getNome());
+
+            request.getRequestDispatcher("Exemplo.jsp").forward(request, response);
         }
         catch (Exception e) {
             e.printStackTrace();
@@ -28,11 +32,6 @@ public class ExemploServlet extends HttpServlet {
             request.getRequestDispatcher("ExemploErro.jsp").forward(request, response);
             return;
         }
-
-        //nome do atributo a ser enviado para o servlet e ser recuperado usando request.getAttribute(nomeDoAtributo);
-        request.setAttribute("nome",u.getNome());
-
-        request.getRequestDispatcher("Exemplo.jsp").forward(request, response);
     }
 
 }

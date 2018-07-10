@@ -18,7 +18,6 @@ public class UsuarioDAO implements DAO<Usuario> {
         Usuario u = new Usuario(
                 rs.getInt("id"),
                 rs.getString("nome"),
-                rs.getString("email"),
                 rs.getString("senha"),
                 rs.getInt("permissao_id")
         );
@@ -48,13 +47,23 @@ public class UsuarioDAO implements DAO<Usuario> {
         return u;
     }
 
+    public Usuario get(String matricula, String senha) throws ClassNotFoundException, SQLException {
+        Usuario u = null;
+        String query = String.format("SELECT * FROM usuario as u WHERE u.matricula='%s' AND u.senha='%s'", matricula, senha);
+        ResultSet rs = Database.doSelect(query);
+        while(rs.next()){
+            u = mapModel(rs);
+        }
+        return u;
+    }
+
     public boolean create(Usuario modelo) throws ClassNotFoundException, SQLException {
         Usuario u = modelo;
         int linhasAtualizadas = 0;
 
         String query = String.format(
-                "Insert into usuario (nome,email,senha,permissao_id) values(\'%s\',\'%s\',\'%s\',%d);",
-                u.getNome(),u.getEmail(),u.getSenha(),u.getPermissaoId()
+                "Insert into usuario (nome,senha,permissao_id) values(\'%s\',\'%s\',\'%s\',%d);",
+                u.getNome(),u.getSenha(),u.getPermissaoId()
             );
 
         linhasAtualizadas = Database.doUpdate(query);
@@ -68,8 +77,8 @@ public class UsuarioDAO implements DAO<Usuario> {
         int linhasAtualizadas = 0;
 
         String query = String.format(
-                "UPDATE usuario SET nome=\'%s\', email=\'%s\', senha=\'%s\',permissao_id=%d where id=%d;",
-                u.getNome(),u.getEmail(),u.getSenha(),u.getPermissaoId(),u.getId()
+                "UPDATE usuario SET nome=\'%s\', senha=\'%s\',permissao_id=%d where id=%d;",
+                u.getNome(),u.getSenha(),u.getPermissaoId(),u.getId()
         );
 
         linhasAtualizadas = Database.doUpdate(query);

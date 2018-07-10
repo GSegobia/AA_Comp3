@@ -1,6 +1,7 @@
 package dados.usuario;
 
 import dominio.Usuario;
+import exceptions.DadosIdentificacaoIncorretos;
 
 import java.sql.SQLException;
 
@@ -16,6 +17,13 @@ public class UsuarioData {
     public static Usuario get(int usuarioId) throws SQLException, ClassNotFoundException {
         UsuarioDAO DAO = new UsuarioDAO();
         return DAO.get(usuarioId);
+    }
+
+    public static Usuario identificar(String matricula, String senha) throws SQLException, ClassNotFoundException, DadosIdentificacaoIncorretos {
+        UsuarioDAO DAO = new UsuarioDAO();
+        Usuario usuario = DAO.get(matricula, senha);
+        if(usuario == null) throw new DadosIdentificacaoIncorretos();
+        return usuario;
     }
 
     public static boolean checaExistencia(Usuario usuario) throws SQLException, ClassNotFoundException {

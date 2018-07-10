@@ -1,6 +1,10 @@
 package dominio;
 
+import dados.associacao.AssociacaoData;
+
 import java.sql.Date;
+import java.sql.SQLException;
+import java.util.ArrayList;
 
 /**
  * Created by Fellipe Bravo on 10/07/18.
@@ -109,5 +113,9 @@ public class Associacao {
 
     public void setNumComprovantePgto(String numComprovantePgto) {
         this.numComprovantePgto = numComprovantePgto;
+    }
+
+    public static ArrayList<Associacao> getAssociacoes() throws SQLException, ClassNotFoundException {
+        return AssociacaoData.getAll();
     }
 }
