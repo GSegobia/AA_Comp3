@@ -1,8 +1,7 @@
-package main.java.dominio;
+package dominio;
 
-import main.java.dados.associacao.AssociacaoData;
-import main.java.dominio.Associacao;
-import main.java.dominio.Endereco;
+import dados.associacao.AssociacaoData;
+
 import java.sql.Date;
 import java.sql.SQLException;
 import java.util.ArrayList;

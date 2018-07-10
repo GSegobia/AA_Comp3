@@ -1,8 +1,8 @@
-package main.java.dados.usuario;
+package dados.usuario;
 
-import main.java.dados.DAO;
-import main.java.dados.Database;
-import main.java.dominio.Usuario;
+import dados.DAO;
+import dados.Database;
+import dominio.Usuario;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;

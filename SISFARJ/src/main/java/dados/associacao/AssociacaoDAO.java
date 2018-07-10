@@ -1,9 +1,9 @@
-package main.java.dados.associacao;
+package dados.associacao;
 
-import main.java.dados.DAO;
-import main.java.dados.Database;
-import main.java.dominio.Associacao;
-import main.java.dominio.Endereco;
+import dados.DAO;
+import dados.Database;
+import dominio.Associacao;
+import dominio.Endereco;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;

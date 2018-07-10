@@ -1,6 +1,6 @@
-package main.java.dados.associacao;
+package dados.associacao;
 
-import main.java.dominio.Associacao;
+import dominio.Associacao;
 
 import java.sql.SQLException;
 import java.util.ArrayList;

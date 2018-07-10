@@ -1,7 +1,8 @@
-package main.java.dominio;
+package dominio;
 
-import main.java.dados.atleta.AtletaData;
-import main.java.exceptions.ModelNotExists;
+import dados.atleta.AtletaData;
+import exceptions.ModelNotExists;
+
 import java.sql.SQLException;
 
 public class Atleta {

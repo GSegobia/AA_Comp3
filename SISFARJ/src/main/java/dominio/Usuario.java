@@ -1,9 +1,10 @@
-package main.java.dominio;
+package dominio;
+
+import dados.usuario.UsuarioData;
+import exceptions.DadosIdentificacaoIncorretos;
+import exceptions.ModelNotExists;
 
 import java.sql.SQLException;
-import main.java.dados.usuario.UsuarioData;
-import main.java.exceptions.ModelNotExists;
-import main.java.exceptions.DadosIdentificacaoIncorretos;
 
 /**
  * Created by over on 05/07/18.

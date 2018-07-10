@@ -1,4 +1,4 @@
-package main.java.dominio;
+package dominio;
 
 /**
  * Created by over on 05/07/18.
