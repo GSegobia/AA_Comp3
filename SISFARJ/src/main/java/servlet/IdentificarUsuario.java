@@ -16,15 +16,14 @@ public class IdentificarUsuario extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         // Receber dados do Request
-        String matricula = req.getParameter("matricula");
-        String senha = req.getParameter("senha");
+        String matricula = req.getParameter("matricula").trim();
+        String senha = req.getParameter("senha").trim();
 
-        if(matricula == null || senha == null) {
+        if(matricula.equals("") || senha.equals("")) {
             informarErroIdentificacao(req, resp);
-            return;
         }
-
-        // TODO: Chamar responsável por Identificar Usuário
+        else {
+            // TODO: Chamar responsável por Identificar Usuário
 //        try {
 //
 //        }
@@ -33,7 +32,8 @@ public class IdentificarUsuario extends HttpServlet {
 //            informarErroIdentificacao(req, resp);
 //            return;
 //        }
-        permitirAcesso(req, resp);
+            permitirAcesso(req, resp);
+        }
 
     }
 
@@ -45,7 +45,8 @@ public class IdentificarUsuario extends HttpServlet {
     }
 
     public void informarErroIdentificacao(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-//        req.setAttribute("erroIdentificacao", true);
+        req.getSession().setAttribute("erroIdentificacao", true);
+        req.getRequestDispatcher("index.jsp").forward(req, resp);
     }
 
 }

@@ -104,6 +104,7 @@
     </header>
 
     <!-- Menu Section -->
+    <% if (session.getAttribute("nomeUsuario") != null) { %>
     <section class="portfolio" id="portfolio">
       <div class="container">
         <h2 class="text-center text-uppercase text-secondary mb-0">Menu</h2>
@@ -172,6 +173,7 @@
         </div>
       </div>
     </section>
+    <% } %>
 
     <div class="copyright py-4 text-center text-white">
       <div class="container">
@@ -337,15 +339,19 @@
     <script src="src/js/sweetalert.min.js"></script>
 
     <!-- Erro de Identificação de Usuário -->
-    <%--<c:if test="${erroIdentificacao}">--%>
-      <%--<script>--%>
-          <%--swal({--%>
-              <%--title: "Erro",--%>
-              <%--text: "Não foi possível identificar o usuário.",--%>
-              <%--icon: "error"--%>
-          <%--}).show()--%>
-      <%--</script>--%>
-    <%--</c:if>--%>
+    <%
+      Boolean erroIdentificacao = (Boolean) session.getAttribute("erroIdentificacao");
+      if(erroIdentificacao != null && erroIdentificacao) {
+          session.setAttribute("erroIdentificacao", true);
+    %>
+    <script>
+        swal({
+            title: "Erro",
+            text: "Não foi possível identificar o usuário.",
+            icon: "error"
+        }).show()
+    </script>
+    <% } %>
   </body>
 
 </html>
