@@ -96,15 +96,17 @@
             </div>
             <div class="modal-body">
                 <form class="form" action="identificar" method="post">
-                    <div class="form-group mx-sm-3 mb-2">
-                        <label for="matricula" class="sr-only">Matrícula</label>
+                    <div class="form-group">
+                        <label for="matricula">Matrícula</label>
                         <input type="text" class="form-control" id="matricula" name="matricula" placeholder="Digite a sua matrícula">
                     </div>
-                    <div class="form-group mx-sm-3 mb-2">
-                        <label for="senha" class="sr-only">Senha</label>
+                    <div class="form-group">
+                        <label for="senha">Senha</label>
                         <input type="password" class="form-control" id="senha" name="senha" placeholder="Digite a sua senha">
                     </div>
-                    <button type="submit" class="btn btn-primary btn-block">Login</button>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary btn-block">Login</button>
+                    </div>
                 </form>
             </div>
         </div>

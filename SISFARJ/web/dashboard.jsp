@@ -21,6 +21,7 @@
                         <p class="card-text" style="text-align: justify">{TODO: Escrever observação das associações}</p>
                     </div>
                     <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><a href="associacao">Cadastrar Associação</a></li>
                         <li class="list-group-item"><a href="associacoes">Listar Associações</a></li>
                     </ul>
                 </div>
