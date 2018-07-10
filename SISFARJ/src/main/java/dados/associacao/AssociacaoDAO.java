@@ -23,7 +23,8 @@ public class AssociacaoDAO implements DAO<Associacao> {
                 rs.getString("estado"),
                 rs.getString("complemento")
         );
-        Associacao associacao = new Associacao(
+
+        return new Associacao(
                 rs.getInt("id"),
                 rs.getString("numero_oficio"),
                 rs.getDate("data_oficio"),
@@ -34,7 +35,6 @@ public class AssociacaoDAO implements DAO<Associacao> {
                 rs.getString("telefone"),
                 rs.getString("num_comprovante_pgto")
         );
-        return associacao;
     }
 
     public boolean exists(int id) throws ClassNotFoundException, SQLException {

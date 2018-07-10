@@ -29,12 +29,4 @@ public class AtletaData {
 
         return DAO.update(Atleta);
     }
-
-    public static void main(String[] args) throws SQLException,ClassNotFoundException,ModelNotExists {
-        AtletaData a = new AtletaData();
-
-        Atleta atleta = AtletaData.get(1);
-
-        System.out.println(AtletaData.create(atleta));
-    }
 }
