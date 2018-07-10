@@ -29,6 +29,6 @@ values ('Mirim'),
 	   ('Master');
 
 INSERT INTO usuario(id, matricula, nome, senha, permissao_id)
-	VALUES (1, 'teste', 'Sr. Diretor TÃ©cnico', 'teste', 1);
+	VALUES (1, 'teste', 'Sr. Diretor Técnico', 'teste', 1);
 
 commit;

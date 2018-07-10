@@ -7,30 +7,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="64012791-3bb0-465d-8e9c-050377e854ec" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/SISFARJ_javaEEApplication_exploded.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/sisfarj.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/bc79cfc9-d07b-4a7c-bb3a-e994e7f7d295.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_javaee_web_api_7_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_clojure_clojure_1_7_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_clojure_java_jdbc_0_7_7.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__postgresql_postgresql_9_1_901_1_jdbc4.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/lib.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/AA_Comp3.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/AA_Comp3.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Banco/02-InsertTables.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Banco/02-InsertTables.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Banco/sisfarj.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Banco/sisfarj.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SISFARJ/src/main/java/dados/DAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/SISFARJ/src/main/java/dados/DAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SISFARJ/src/main/java/dados/AtletaDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/SISFARJ/src/main/java/dados/atleta/AtletaDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SISFARJ/src/main/java/dados/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/SISFARJ/src/main/java/dados/Database.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SISFARJ/src/main/java/dados/UsuarioDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/SISFARJ/src/main/java/dados/UsuarioDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SISFARJ/src/main/java/dados/UsuarioData.java" beforeDir="false" afterPath="$PROJECT_DIR$/SISFARJ/src/main/java/dados/UsuarioData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SISFARJ/src/main/java/dominio/DiretorTecnico.java" beforeDir="false" afterPath="$PROJECT_DIR$/SISFARJ/src/main/java/dominio/DiretorTecnico.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SISFARJ/src/main/java/dominio/Secretario.java" beforeDir="false" afterPath="$PROJECT_DIR$/SISFARJ/src/main/java/dominio/Secretario.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SISFARJ/src/main/java/dominio/TecnicoAssociacao.java" beforeDir="false" afterPath="$PROJECT_DIR$/SISFARJ/src/main/java/dominio/TecnicoAssociacao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SISFARJ/src/main/java/dados/UsuarioDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SISFARJ/src/main/java/dados/UsuarioData.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SISFARJ/src/main/java/dados/associacao/AssociacaoDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/SISFARJ/src/main/java/dados/associacao/AssociacaoDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SISFARJ/src/main/java/dados/associacao/AssociacaoData.java" beforeDir="false" afterPath="$PROJECT_DIR$/SISFARJ/src/main/java/dados/associacao/AssociacaoData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SISFARJ/src/main/java/dados/usuario/UsuarioDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/SISFARJ/src/main/java/dados/usuario/UsuarioDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SISFARJ/src/main/java/dados/usuario/UsuarioData.java" beforeDir="false" afterPath="$PROJECT_DIR$/SISFARJ/src/main/java/dados/usuario/UsuarioData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SISFARJ/src/main/java/dominio/Associacao.java" beforeDir="false" afterPath="$PROJECT_DIR$/SISFARJ/src/main/java/dominio/Associacao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SISFARJ/src/main/java/dominio/Endereco.java" beforeDir="false" afterPath="$PROJECT_DIR$/SISFARJ/src/main/java/dominio/Endereco.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SISFARJ/src/main/java/dominio/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/SISFARJ/src/main/java/dominio/Usuario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SISFARJ/src/main/java/exceptions/DadosIdentificacaoIncorretos.java" beforeDir="false" afterPath="$PROJECT_DIR$/SISFARJ/src/main/java/exceptions/DadosIdentificacaoIncorretos.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SISFARJ/src/main/java/servlet/CadastrarUsuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/SISFARJ/src/main/java/servlet/CadastrarUsuario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SISFARJ/src/main/java/servlet/Dashboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/SISFARJ/src/main/java/servlet/Dashboard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SISFARJ/src/main/java/servlet/ExemploServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/SISFARJ/src/main/java/servlet/ExemploServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SISFARJ/src/main/java/servlet/IdentificarUsuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/SISFARJ/src/main/java/servlet/IdentificarUsuario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SISFARJ/src/main/java/servlet/InvalidarSessao.java" beforeDir="false" afterPath="$PROJECT_DIR$/SISFARJ/src/main/java/servlet/InvalidarSessao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SISFARJ/src/main/java/servlet/ListarAssociacoes.java" beforeDir="false" afterPath="$PROJECT_DIR$/SISFARJ/src/main/java/servlet/ListarAssociacoes.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -58,17 +56,17 @@
       <file leaf-file-name="Database.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SISFARJ/src/main/java/dados/Database.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="10" selection-start-column="10" selection-end-column="10" />
+            <state relative-caret-position="-141">
+              <caret line="12" column="62" selection-start-line="12" selection-start-column="62" selection-end-line="12" selection-end-column="62" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UsuarioDAO.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SISFARJ/src/main/java/dados/UsuarioDAO.java">
+      <file leaf-file-name="AtletaData.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/SISFARJ/src/main/java/dados/atleta/AtletaData.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="15" column="32" lean-forward="true" selection-start-line="15" selection-start-column="32" selection-end-line="15" selection-end-column="32" />
+            <state relative-caret-position="527">
+              <caret line="37" column="54" lean-forward="true" selection-start-line="37" selection-start-column="54" selection-end-line="37" selection-end-column="54" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -76,20 +74,47 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TecnicoAssociacao.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SISFARJ/src/main/java/dominio/TecnicoAssociacao.java">
+      <file leaf-file-name="AssociacaoDAO.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/SISFARJ/src/main/java/dados/associacao/AssociacaoDAO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+            <state relative-caret-position="-765">
+              <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DiretorTecnico.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SISFARJ/src/main/java/dominio/DiretorTecnico.java">
+      <file leaf-file-name="Associacao.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/SISFARJ/src/main/java/dominio/Associacao.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="18" selection-start-column="18" selection-end-column="18" />
+            <state relative-caret-position="102">
+              <caret line="6" column="29" lean-forward="true" selection-start-line="6" selection-start-column="29" selection-end-line="6" selection-end-column="29" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ListarAssociacoes.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/SISFARJ/src/main/java/servlet/ListarAssociacoes.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Endereco.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/SISFARJ/src/main/java/dominio/Endereco.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="12" column="31" lean-forward="true" selection-start-line="12" selection-start-column="31" selection-end-line="12" selection-end-column="31" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ModelNotExists.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/SISFARJ/src/main/java/exceptions/ModelNotExists.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
             </state>
           </provider>
         </entry>
@@ -97,44 +122,11 @@
       <file leaf-file-name="Usuario.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SISFARJ/src/main/java/dominio/Usuario.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-100">
-              <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+            <state relative-caret-position="1173">
+              <caret line="91" column="5" selection-start-line="91" selection-start-column="5" selection-end-line="91" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AtletaDAO.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/SISFARJ/src/main/java/dados/AtletaDAO.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1141">
-              <caret line="79" column="41" lean-forward="true" selection-start-line="79" selection-start-column="41" selection-end-line="79" selection-end-column="41" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DAO.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SISFARJ/src/main/java/dados/DAO.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="24" lean-forward="true" selection-start-column="24" selection-end-column="24" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SISFARJ/web/index.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="30" selection-start-line="30" selection-end-line="30" />
             </state>
           </provider>
         </entry>
@@ -142,28 +134,17 @@
       <file leaf-file-name="Atleta.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SISFARJ/src/main/java/dominio/Atleta.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="25" lean-forward="true" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="25" />
-              <folding>
-                <element signature="e#799#800#0" expanded="true" />
-                <element signature="e#824#825#0" expanded="true" />
-                <element signature="e#861#862#0" expanded="true" />
-                <element signature="e#897#898#0" expanded="true" />
-                <element signature="e#933#934#0" expanded="true" />
-                <element signature="e#968#969#0" expanded="true" />
-                <element signature="e#1004#1005#0" expanded="true" />
-                <element signature="e#1036#1037#0" expanded="true" />
-                <element signature="e#1067#1068#0" expanded="true" />
-                <element signature="e#1094#1095#0" expanded="true" />
-                <element signature="e#1136#1137#0" expanded="true" />
-                <element signature="e#1174#1175#0" expanded="true" />
-                <element signature="e#1212#1213#0" expanded="true" />
-                <element signature="e#1246#1247#0" expanded="true" />
-                <element signature="e#1286#1287#0" expanded="true" />
-                <element signature="e#1322#1323#0" expanded="true" />
-                <element signature="e#1372#1373#0" expanded="true" />
-                <element signature="e#1418#1419#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="646">
+              <caret line="56" selection-start-line="56" selection-end-line="56" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DiretorTecnico.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/SISFARJ/src/main/java/dominio/DiretorTecnico.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -198,15 +179,34 @@
       <list>
         <option value="$PROJECT_DIR$/Banco/01-CreateTables.sql" />
         <option value="$PROJECT_DIR$/SISFARJ/src/main/java/dados/DAO.java" />
-        <option value="$PROJECT_DIR$/SISFARJ/src/main/java/dominio/Usuario.java" />
         <option value="$PROJECT_DIR$/SISFARJ/src/main/java/dados/UsuarioDAO.java" />
         <option value="$PROJECT_DIR$/SISFARJ/src/main/java/dados/UsuarioData.java" />
         <option value="$PROJECT_DIR$/SISFARJ/src/main/java/dominio/TecnicoAssociacao.java" />
         <option value="$PROJECT_DIR$/SISFARJ/src/main/java/dominio/DiretorTecnico.java" />
         <option value="$PROJECT_DIR$/SISFARJ/src/main/java/dominio/Secretario.java" />
-        <option value="$PROJECT_DIR$/SISFARJ/src/main/java/dados/Database.java" />
         <option value="$PROJECT_DIR$/SISFARJ/src/main/java/dominio/Atleta.java" />
         <option value="$PROJECT_DIR$/SISFARJ/src/main/java/dados/AtletaDAO.java" />
+        <option value="$PROJECT_DIR$/SISFARJ/src/main/java/exceptions/AtletaNotExists.java" />
+        <option value="$PROJECT_DIR$/SISFARJ/src/main/java/exceptions/DadosIdentificacaoIncorretos.java" />
+        <option value="$PROJECT_DIR$/SISFARJ/src/main/java/exceptions/NotExists.java" />
+        <option value="$PROJECT_DIR$/SISFARJ/src/main/java/dados/usuario/UsuarioData.java" />
+        <option value="$PROJECT_DIR$/SISFARJ/src/main/java/dominio/Usuario.java" />
+        <option value="$PROJECT_DIR$/SISFARJ/src/main/java/exceptions/UsuarioNotExists.java" />
+        <option value="$PROJECT_DIR$/SISFARJ/src/main/java/exceptions/ModelNotExists.java" />
+        <option value="$PROJECT_DIR$/SISFARJ/src/main/java/dados/atleta/AtletaDAO.java" />
+        <option value="$PROJECT_DIR$/SISFARJ/src/main/java/dados/usuario/UsuarioDAO.java" />
+        <option value="$PROJECT_DIR$/SISFARJ/src/main/java/servlet/Dashboard.java" />
+        <option value="$PROJECT_DIR$/SISFARJ/src/main/java/servlet/CadastrarUsuario.java" />
+        <option value="$PROJECT_DIR$/SISFARJ/src/main/java/servlet/ExemploServlet.java" />
+        <option value="$PROJECT_DIR$/SISFARJ/src/main/java/servlet/IdentificarUsuario.java" />
+        <option value="$PROJECT_DIR$/SISFARJ/src/main/java/servlet/InvalidarSessao.java" />
+        <option value="$PROJECT_DIR$/SISFARJ/src/main/java/dominio/Endereco.java" />
+        <option value="$PROJECT_DIR$/SISFARJ/src/main/java/dominio/Associacao.java" />
+        <option value="$PROJECT_DIR$/SISFARJ/src/main/java/dados/associacao/AssociacaoData.java" />
+        <option value="$PROJECT_DIR$/SISFARJ/src/main/java/dados/associacao/AssociacaoDAO.java" />
+        <option value="$PROJECT_DIR$/SISFARJ/src/main/java/servlet/ListarAssociacoes.java" />
+        <option value="$PROJECT_DIR$/SISFARJ/src/main/java/dados/Database.java" />
+        <option value="$PROJECT_DIR$/SISFARJ/src/main/java/dados/atleta/AtletaData.java" />
       </list>
     </option>
   </component>
@@ -318,7 +318,50 @@
               <item name="SISFARJ" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="dados" type="462c0819:PsiDirectoryNode" />
+              <item name="associacao" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AA_Comp3" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AA_Comp3" type="462c0819:PsiDirectoryNode" />
+              <item name="SISFARJ" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="dados" type="462c0819:PsiDirectoryNode" />
+              <item name="atleta" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AA_Comp3" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AA_Comp3" type="462c0819:PsiDirectoryNode" />
+              <item name="SISFARJ" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="dados" type="462c0819:PsiDirectoryNode" />
+              <item name="usuario" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AA_Comp3" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AA_Comp3" type="462c0819:PsiDirectoryNode" />
+              <item name="SISFARJ" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="dominio" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AA_Comp3" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AA_Comp3" type="462c0819:PsiDirectoryNode" />
+              <item name="SISFARJ" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="exceptions" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AA_Comp3" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AA_Comp3" type="462c0819:PsiDirectoryNode" />
+              <item name="SISFARJ" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="servlet" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="AA_Comp3" type="b2602c69:ProjectViewProjectNode" />
@@ -385,12 +428,16 @@
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="PostgreSQL" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/lib" />
     <property name="nodejs.protractor.protractor_package" value="" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.34388185" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.tools" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="main.java.exceptions" />
+      <recent name="main.java.dados.atleta" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\git\AA_Comp3\SISFARJ\src\main\java\dados" />
     </key>
@@ -407,7 +454,18 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.AtletaData">
+    <configuration name="AtletaData" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="main.java.dados.atleta.AtletaData" />
+      <module name="AA_Comp3" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="main.java.dados.atleta.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+    </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
     </configuration>
@@ -702,6 +760,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Tomcat Server.tomgato" />
+      <item itemvalue="Application.AtletaData" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.AtletaData" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -717,12 +784,12 @@
       <workItem from="1531153486366" duration="1165000" />
       <workItem from="1531159703111" duration="1884000" />
       <workItem from="1531242472535" duration="60000" />
-      <workItem from="1531242554696" duration="4718000" />
+      <workItem from="1531242554696" duration="8556000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8929000" />
+    <option name="totallyTimeSpent" value="12767000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
@@ -740,23 +807,23 @@
       <window_info id="UI Designer" order="2" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39957938" />
       <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Messages" order="8" weight="0.32912722" />
       <window_info anchor="right" id="Palette&#9;" order="3" />
       <window_info id="Image Layers" order="2" />
       <window_info anchor="bottom" id="Java Enterprise" order="7" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32912722" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32912722" />
       <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22395833" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22395833" />
       <window_info id="Web" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32912722" />
       <window_info id="Learn" order="2" />
       <window_info id="JavaEE:App" order="2" side_tool="true" />
       <window_info anchor="right" id="Theme Preview" order="3" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" order="8" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -806,7 +873,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="3" />
+      <option name="time" value="5" />
     </breakpoint-manager>
   </component>
   <component name="antWorkspaceConfiguration">
@@ -907,17 +974,10 @@
     <entry file="file://$PROJECT_DIR$/Banco/00-DeleteTables.sql">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/SISFARJ/src/main/java/servlet/ExemploServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="23" column="38" selection-start-line="23" selection-start-column="38" selection-end-line="23" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/SISFARJ/web/index.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="30" selection-start-line="30" selection-end-line="30" />
+        <state relative-caret-position="34">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
         </state>
       </provider>
     </entry>
@@ -937,10 +997,166 @@
     <entry file="file://$PROJECT_DIR$/SISFARJ/src/main/java/dados/exception/ModelNotExists">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/SISFARJ/src/main/java/dominio/DiretorTecnico.java">
+    <entry file="file://$PROJECT_DIR$/SISFARJ/src/main/java/dados/UsuarioData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SISFARJ/src/main/java/dados/DAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="24" selection-start-column="24" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SISFARJ/src/main/java/dados/UsuarioDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="32" selection-start-line="15" selection-start-column="32" selection-end-line="15" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SISFARJ/src/main/java/exceptions/ModelNotExists.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="52" lean-forward="true" selection-start-line="2" selection-start-column="52" selection-end-line="2" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DIa0.111/LeitorEmprestimosPendentesException.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SISFARJ/src/main/java/exceptions/UsuarioNotExists.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="49" lean-forward="true" selection-start-line="2" selection-start-column="49" selection-end-line="2" selection-end-column="49" />
+          <folding>
+            <element signature="e#118#119#0" expanded="true" />
+            <element signature="e#191#192#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SISFARJ/src/main/java/dados/usuario/UsuarioData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="325">
+          <caret line="34" column="5" selection-start-line="34" selection-start-column="5" selection-end-line="34" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SISFARJ/src/main/java/exceptions/DadosIdentificacaoIncorretos.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SISFARJ/src/main/java/dados/atleta/AtletaDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1088">
+          <caret line="64" column="42" selection-start-line="64" selection-start-column="42" selection-end-line="64" selection-end-column="42" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SISFARJ/src/main/java/dados/usuario/UsuarioDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="24" column="5" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SISFARJ/src/main/java/servlet/CadastrarUsuario.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="8" lean-forward="true" selection-start-column="8" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SISFARJ/src/main/java/servlet/Dashboard.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SISFARJ/src/main/java/servlet/ExemploServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SISFARJ/src/main/java/servlet/IdentificarUsuario.java">
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret column="18" selection-start-column="18" selection-end-column="18" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SISFARJ/src/main/java/servlet/InvalidarSessao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="18" selection-start-column="18" selection-end-column="18" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SISFARJ/src/main/java/dados/associacao/AssociacaoData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="36" lean-forward="true" selection-start-line="2" selection-start-column="36" selection-end-line="2" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SISFARJ/src/main/java/dominio/Atleta.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="646">
+          <caret line="56" selection-start-line="56" selection-end-line="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SISFARJ/src/main/java/dominio/DiretorTecnico.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SISFARJ/src/main/java/dominio/Usuario.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1173">
+          <caret line="91" column="5" selection-start-line="91" selection-start-column="5" selection-end-line="91" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -958,81 +1174,52 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SISFARJ/src/main/java/dados/Database.java">
+    <entry file="file://$PROJECT_DIR$/SISFARJ/src/main/java/dados/associacao/AssociacaoDAO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="10" selection-start-column="10" selection-end-column="10" />
+        <state relative-caret-position="-765">
+          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SISFARJ/src/main/java/dominio/Atleta.java">
+    <entry file="file://$PROJECT_DIR$/SISFARJ/src/main/java/exceptions/ModelNotExists.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SISFARJ/src/main/java/dominio/Endereco.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
-          <caret line="12" column="25" lean-forward="true" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="25" />
-          <folding>
-            <element signature="e#799#800#0" expanded="true" />
-            <element signature="e#824#825#0" expanded="true" />
-            <element signature="e#861#862#0" expanded="true" />
-            <element signature="e#897#898#0" expanded="true" />
-            <element signature="e#933#934#0" expanded="true" />
-            <element signature="e#968#969#0" expanded="true" />
-            <element signature="e#1004#1005#0" expanded="true" />
-            <element signature="e#1036#1037#0" expanded="true" />
-            <element signature="e#1067#1068#0" expanded="true" />
-            <element signature="e#1094#1095#0" expanded="true" />
-            <element signature="e#1136#1137#0" expanded="true" />
-            <element signature="e#1174#1175#0" expanded="true" />
-            <element signature="e#1212#1213#0" expanded="true" />
-            <element signature="e#1246#1247#0" expanded="true" />
-            <element signature="e#1286#1287#0" expanded="true" />
-            <element signature="e#1322#1323#0" expanded="true" />
-            <element signature="e#1372#1373#0" expanded="true" />
-            <element signature="e#1418#1419#0" expanded="true" />
-          </folding>
+          <caret line="12" column="31" lean-forward="true" selection-start-line="12" selection-start-column="31" selection-end-line="12" selection-end-column="31" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SISFARJ/src/main/java/dominio/Usuario.java">
+    <entry file="file://$PROJECT_DIR$/SISFARJ/src/main/java/dominio/Associacao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-100">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="102">
+          <caret line="6" column="29" lean-forward="true" selection-start-line="6" selection-start-column="29" selection-end-line="6" selection-end-column="29" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SISFARJ/src/main/java/dados/UsuarioData.java">
+    <entry file="file://$PROJECT_DIR$/SISFARJ/src/main/java/servlet/ListarAssociacoes.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SISFARJ/src/main/java/dados/DAO.java">
+    <entry file="file://$PROJECT_DIR$/SISFARJ/src/main/java/dados/Database.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="24" lean-forward="true" selection-start-column="24" selection-end-column="24" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="-141">
+          <caret line="12" column="62" selection-start-line="12" selection-start-column="62" selection-end-line="12" selection-end-column="62" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SISFARJ/src/main/java/dados/UsuarioDAO.java">
+    <entry file="file://$PROJECT_DIR$/SISFARJ/src/main/java/dados/atleta/AtletaData.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="32" lean-forward="true" selection-start-line="15" selection-start-column="32" selection-end-line="15" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SISFARJ/src/main/java/dados/AtletaDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1141">
-          <caret line="79" column="41" lean-forward="true" selection-start-line="79" selection-start-column="41" selection-end-line="79" selection-end-column="41" />
+        <state relative-caret-position="527">
+          <caret line="37" column="54" lean-forward="true" selection-start-line="37" selection-start-column="54" selection-end-line="37" selection-end-column="54" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1118,7 +1305,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
-          <last-edited>Maven: postgresql:postgresql:9.1-901-1.jdbc4</last-edited>
+          <last-edited>lib</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

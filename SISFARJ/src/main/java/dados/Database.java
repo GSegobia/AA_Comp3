@@ -10,7 +10,7 @@ public class Database {
     private static Connection conn;
 
     public static Connection getConnect() throws ClassNotFoundException, SQLException {
-        String url = "jdbc:postgresql://localhost:5432/2131";
+        String url = "jdbc:postgresql://localhost:5432/sisfarj";
         String usuario="postgres";
         String senha = "postgres";
 

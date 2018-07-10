@@ -1,7 +1,9 @@
 package main.java.dominio;
-import main.java.dados.UsuarioData;
 
 import java.sql.SQLException;
+import main.java.dados.usuario.UsuarioData;
+import main.java.exceptions.ModelNotExists;
+import main.java.exceptions.DadosIdentificacaoIncorretos;
 
 /**
  * Created by over on 05/07/18.
@@ -61,12 +63,13 @@ public class Usuario {
         this.senha = novaSenha;
     }
 
-    public static Usuario getUsuario(int usuarioId) throws SQLException, ClassNotFoundException {
+    public static Usuario getUsuario(int usuarioId) throws SQLException, ClassNotFoundException, ModelNotExists {
         return UsuarioData.get(usuarioId);
     }
 
     public static boolean criarUsuario(int id,String nome, String matricula, String senha, int permissao_id) throws SQLException, ClassNotFoundException{
         Usuario novo_usuario = new Usuario(id, nome, matricula, senha, permissao_id);
+
         return UsuarioData.create(novo_usuario);
     }
 
@@ -84,7 +87,7 @@ public class Usuario {
         return UsuarioData.checaPermissao(numeroPermissao,idUsuario);
     }
 
-    public static boolean solicitarNovaSenha(int idUsuario) throws SQLException, ClassNotFoundException {
+    public static boolean solicitarNovaSenha(int idUsuario) throws SQLException, ClassNotFoundException, ModelNotExists {
         return UsuarioData.gerarNovaSenha(getUsuario(idUsuario));
     }
 

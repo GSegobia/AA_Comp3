@@ -1,6 +1,6 @@
-package servlet;
+package main.java.servlet;
 
-import dominio.Associacao;
+import main.java.dominio.Associacao;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

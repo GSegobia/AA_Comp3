@@ -1,7 +1,8 @@
-package dados.usuario;
+package main.java.dados.usuario;
 
-import dominio.Usuario;
-import exceptions.DadosIdentificacaoIncorretos;
+import main.java.dominio.Usuario;
+import main.java.exceptions.DadosIdentificacaoIncorretos;
+import main.java.exceptions.ModelNotExists;
 
 import java.sql.SQLException;
 
@@ -14,8 +15,10 @@ public class UsuarioData {
         return "123456";
     }
 
-    public static Usuario get(int usuarioId) throws SQLException, ClassNotFoundException {
+    public static Usuario get(int usuarioId) throws SQLException, ClassNotFoundException, ModelNotExists {
         UsuarioDAO DAO = new UsuarioDAO();
+        Usuario u = DAO.get(usuarioId);
+        if(u == null) throw new ModelNotExists("usuario",usuarioId);
         return DAO.get(usuarioId);
     }
 

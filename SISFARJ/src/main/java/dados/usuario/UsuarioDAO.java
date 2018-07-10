@@ -1,8 +1,8 @@
-package dados.usuario;
+package main.java.dados.usuario;
 
-import dados.DAO;
-import dados.Database;
-import dominio.Usuario;
+import main.java.dados.DAO;
+import main.java.dados.Database;
+import main.java.dominio.Usuario;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -14,15 +14,14 @@ import java.util.ArrayList;
 
 public class UsuarioDAO implements DAO<Usuario> {
 
-    public Usuario mapModel(ResultSet rs) throws ClassNotFoundException, SQLException {
-        Usuario u = new Usuario(
+    public Usuario mapModel(ResultSet rs) throws SQLException {
+        return new Usuario(
                 rs.getInt("id"),
                 rs.getString("nome"),
                 rs.getString("matricula"),
                 rs.getString("senha"),
                 rs.getInt("permissao_id")
         );
-        return u;
     }
 
     public boolean exists(int id) throws ClassNotFoundException, SQLException {
@@ -45,6 +44,7 @@ public class UsuarioDAO implements DAO<Usuario> {
         while(rs.next()){
             u = mapModel(rs);
         }
+
         return u;
     }
 
@@ -63,7 +63,7 @@ public class UsuarioDAO implements DAO<Usuario> {
         int linhasAtualizadas = 0;
 
         String query = String.format(
-                "Insert into usuario (nome,senha,permissao_id) values(\'%s\',\'%s\',\'%s\',%d);",
+                "Insert into usuario (nome,senha,permissao_id) values(\'%s\',\'%s\',%d);",
                 u.getNome(),u.getSenha(),u.getPermissaoId()
             );
 
@@ -88,12 +88,11 @@ public class UsuarioDAO implements DAO<Usuario> {
     }
 
     public ArrayList<Usuario> findAll() throws ClassNotFoundException, SQLException {
-        ArrayList<Usuario> usuarios = null;
+        ArrayList<Usuario> usuarios = new ArrayList<>();
         ResultSet rs = Database.doSelect("Select * from usuario");
 
         while(rs.next()){
-            Usuario u = mapModel(rs);
-            usuarios.add(u);
+            usuarios.add(mapModel(rs));
         }
 
         return usuarios;
