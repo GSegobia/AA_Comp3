@@ -88,7 +88,7 @@ public class UsuarioDAO implements DAO<Usuario> {
     }
 
     public ArrayList<Usuario> findAll() throws ClassNotFoundException, SQLException {
-        ArrayList<Usuario> usuarios = new ArrayList<>();
+        ArrayList<Usuario> usuarios = new ArrayList<Usuario>();
         ResultSet rs = Database.doSelect("Select * from usuario");
 
         while(rs.next()){
