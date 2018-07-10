@@ -2,7 +2,7 @@ package dominio;
 
 import dados.usuario.UsuarioData;
 import exceptions.DadosIdentificacaoIncorretos;
-import exceptions.ModelNotExists;
+import exceptions.ModeloNaoExiste;
 
 import java.sql.SQLException;
 
@@ -64,7 +64,7 @@ public class Usuario {
         this.senha = novaSenha;
     }
 
-    public static Usuario getUsuario(int usuarioId) throws SQLException, ClassNotFoundException, ModelNotExists {
+    public static Usuario getUsuario(int usuarioId) throws SQLException, ClassNotFoundException, ModeloNaoExiste {
         return UsuarioData.get(usuarioId);
     }
 
@@ -88,7 +88,7 @@ public class Usuario {
         return UsuarioData.checaPermissao(numeroPermissao,idUsuario);
     }
 
-    public static boolean solicitarNovaSenha(int idUsuario) throws SQLException, ClassNotFoundException, ModelNotExists {
+    public static boolean solicitarNovaSenha(int idUsuario) throws SQLException, ClassNotFoundException, ModeloNaoExiste {
         return UsuarioData.gerarNovaSenha(getUsuario(idUsuario));
     }
 

@@ -1,7 +1,7 @@
 package dominio;
 
 import dados.atleta.AtletaData;
-import exceptions.ModelNotExists;
+import exceptions.ModeloNaoExiste;
 
 import java.sql.SQLException;
 
@@ -95,10 +95,10 @@ public class Atleta {
         this.data_entrada_associacao = data_entrada_associacao;
     }
 
-    public Atleta get(int id) throws ClassNotFoundException,SQLException, ModelNotExists{
+    public Atleta get(int id) throws ClassNotFoundException,SQLException, ModeloNaoExiste {
         Atleta u = AtletaData.get(id);
 
-        if(u==null) throw new ModelNotExists("atleta",id);
+        if(u==null) throw new ModeloNaoExiste("atleta",id);
         return u;
     }
 

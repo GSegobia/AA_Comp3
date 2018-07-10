@@ -14,7 +14,7 @@
         <h2 class="text-center text-uppercase text-secondary mb-0">Cadastrar Atleta</h2>
         <hr class="mb-5">
         <div class="container">
-            <form class="form" action="associacao" method="post">
+            <form class="form" action="atleta" method="post">
                 <h4>Dados do Atleta</h4>
                 <div class="form-row">
                     <div class="form-group col-md-6">
@@ -57,6 +57,20 @@
         </div>
     </div>
 </section>
+<% } %>
+
+<%
+    Boolean erroPreenchimento = (Boolean) session.getAttribute("erroPreenchimento");
+    if(erroPreenchimento != null && erroPreenchimento) {
+        session.setAttribute("erroPreenchimento", true);
+%>
+<script>
+    swal({
+        title: "Erro",
+        text: "Existem campos que não foram preenchidos corretamente.",
+        icon: "error"
+    })
+</script>
 <% } %>
 
 </body>

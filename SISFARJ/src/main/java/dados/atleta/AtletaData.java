@@ -1,16 +1,16 @@
 package dados.atleta;
 
 import dominio.Atleta;
-import exceptions.ModelNotExists;
+import exceptions.ModeloNaoExiste;
 
 import java.sql.SQLException;
 
 public class AtletaData {
 
-    public static Atleta get(int AtletaId) throws SQLException, ClassNotFoundException, ModelNotExists {
+    public static Atleta get(int AtletaId) throws SQLException, ClassNotFoundException, ModeloNaoExiste {
         AtletaDAO DAO = new AtletaDAO();
         Atleta u = DAO.get(AtletaId);
-        if(u == null) throw new ModelNotExists("atleta",AtletaId);
+        if(u == null) throw new ModeloNaoExiste("atleta",AtletaId);
         return DAO.get(AtletaId);
     }
 
