@@ -1,5 +1,7 @@
-package dados;
+package dados.usuario;
 
+import dados.DAO;
+import dados.Database;
 import dominio.Usuario;
 
 import java.sql.ResultSet;

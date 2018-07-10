@@ -1,5 +1,5 @@
 package dominio;
-import dados.UsuarioData;
+import dados.usuario.UsuarioData;
 
 import java.sql.SQLException;
 

@@ -32,23 +32,63 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg bg-secondary fixed-top text-uppercase" id="mainNav">
       <div class="container">
-        <a class="navbar-brand js-scroll-trigger" href="#page-top">SISFARJ</a>
+        <a class="navbar-brand js-scroll-trigger" href="#page-top">
+          <% if (session.getAttribute("nomeUsuario") != null) { %>
+          Olá, ${sessionScope.nomeUsuario}!
+          <% } else { %>
+          SISFARJ
+          <% } %>
+        </a>
         <button class="navbar-toggler navbar-toggler-right text-uppercase bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-          Menu
           <i class="fa fa-bars"></i>
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
+            <% if (session.getAttribute("nomeUsuario") == null) { %>
+            <li class="nav-item mx-0 mx-lg-1" >
+              <a class="nav-link py-3 px-0 px-lg-3 rounded" data-toggle="modal" href="#" data-target="#login-modal">Acessar</a >
+            </li >
+            <% } else { %>
             <li class="nav-item mx-0 mx-lg-1">
               <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#portfolio">Menu</a>
             </li>
             <li class="nav-item mx-0 mx-lg-1">
-              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#">Login</a>
+              <form name="submitForm" method="post" action="invalidarsessao">
+                <button class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" type="submit" href="#">Sair</button>
+              </form>
             </li>
+            <% } %>
           </ul>
         </div>
       </div>
     </nav>
+
+    <!-- Login Modal -->
+    <div class="modal fade" tabindex="-1" role="dialog" id="login-modal">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Acessar</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form class="form" action="identificar" method="post">
+              <div class="form-group mx-sm-3 mb-2">
+                <label for="matricula" class="sr-only">Email</label>
+                <input type="text" class="form-control" id="matricula" name="matricula" placeholder="Digite a sua matrícula">
+              </div>
+              <div class="form-group mx-sm-3 mb-2">
+                <label for="senha" class="sr-only">Password</label>
+                <input type="password" class="form-control" id="senha" name="senha" placeholder="Digite a sua senha">
+              </div>
+              <button type="submit" class="btn btn-primary btn-block">Login</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!-- Header -->
     <header class="masthead bg-primary text-white text-center">
@@ -67,7 +107,7 @@
     <section class="portfolio" id="portfolio">
       <div class="container">
         <h2 class="text-center text-uppercase text-secondary mb-0">Menu</h2>
-        <hr class="star-dark mb-5">
+        <hr class="mb-5">
         <div class="row">
           <div class="col-md-6 col-lg-4">
             <a class="portfolio-item d-block mx-auto" href="#portfolio-modal-1">
@@ -290,13 +330,22 @@
     <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
     <script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
 
-    <!-- Contact Form JavaScript -->
-    <script src="js/jqBootstrapValidation.js"></script>
-    <script src="js/contact_me.js"></script>
-
     <!-- Custom scripts for this template -->
     <script src="js/freelancer.min.js"></script>
 
+    <!-- Custom scripts for this template -->
+    <script src="src/js/sweetalert.min.js"></script>
+
+    <!-- Erro de Identificação de Usuário -->
+    <%--<c:if test="${erroIdentificacao}">--%>
+      <%--<script>--%>
+          <%--swal({--%>
+              <%--title: "Erro",--%>
+              <%--text: "Não foi possível identificar o usuário.",--%>
+              <%--icon: "error"--%>
+          <%--}).show()--%>
+      <%--</script>--%>
+    <%--</c:if>--%>
   </body>
 
 </html>

@@ -1,6 +1,5 @@
 package servlet;
 
-import dados.UsuarioDAO;
 import dominio.Usuario;
 
 import javax.servlet.ServletException;
