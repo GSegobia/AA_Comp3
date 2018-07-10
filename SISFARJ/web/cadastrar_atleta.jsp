@@ -62,7 +62,7 @@
 <%
     Boolean erroPreenchimento = (Boolean) session.getAttribute("erroPreenchimento");
     if(erroPreenchimento != null && erroPreenchimento) {
-        session.setAttribute("erroPreenchimento", true);
+        session.setAttribute("erroPreenchimento", false);
 %>
 <script>
     swal({
