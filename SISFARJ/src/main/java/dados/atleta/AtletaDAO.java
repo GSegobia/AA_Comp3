@@ -1,6 +1,8 @@
-package main.java.dados;
+package main.java.dados.atleta;
 
+import main.java.dados.DAO;
 import main.java.dominio.Atleta;
+import main.java.dados.Database;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
