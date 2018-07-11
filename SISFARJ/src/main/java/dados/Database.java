@@ -12,7 +12,7 @@ public class Database {
     public static Connection getConnect() throws ClassNotFoundException, SQLException {
         String url = "jdbc:postgresql://localhost:5432/sisfarj";
         String usuario="postgres";
-        String senha = "postgres";
+        String senha = "123456";
 
         if(conn == null){
             Class.forName("org.postgresql.Driver");

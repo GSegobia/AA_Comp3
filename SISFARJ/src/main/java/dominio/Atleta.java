@@ -4,6 +4,7 @@ import dados.atleta.AtletaData;
 import exceptions.ModeloNaoExiste;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 public class Atleta {
 
@@ -107,5 +108,9 @@ public class Atleta {
     }
     public static boolean update(Atleta atleta) throws ClassNotFoundException,SQLException {
         return AtletaData.update(atleta);
+    }
+
+    public static ArrayList<Atleta> getAtletas() throws ClassNotFoundException,SQLException {
+        return AtletaData.findAll();
     }
 }

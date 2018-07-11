@@ -52,7 +52,7 @@ public class AtletaDAO implements DAO<Atleta> {
     }
 
     public boolean create(Atleta modelo) throws ClassNotFoundException, SQLException {
-        int linhasAtualizadas = 0;
+        int linhasAtualizadas;
 
         String query = String.format(
                 "Insert into Atleta (associacao_id,categoria_id,matricula,nome,data_nascimento,data_oficio,numero_oficio,data_entrada_associacao) " +

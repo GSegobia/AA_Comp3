@@ -6,7 +6,7 @@
 
     <module id="SISFARJ-Web">
         <web>
-            <web-uri>sisfarj.war</web-uri>
+            <web-uri></web-uri>
             <context-root>SISFARJWeb</context-root>
         </web>
     </module>

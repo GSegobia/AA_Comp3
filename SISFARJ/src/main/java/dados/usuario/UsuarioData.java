@@ -6,9 +6,6 @@ import exceptions.ModeloNaoExiste;
 
 import java.sql.SQLException;
 
-/**
- * Created by over on 05/07/18.
- */
 public class UsuarioData {
 
     private static String gerarSenha(){
@@ -19,7 +16,7 @@ public class UsuarioData {
         UsuarioDAO DAO = new UsuarioDAO();
         Usuario u = DAO.get(usuarioId);
         if(u == null) throw new ModeloNaoExiste("usuario",usuarioId);
-        return DAO.get(usuarioId);
+        return u;
     }
 
     public static Usuario identificar(String matricula, String senha) throws SQLException, ClassNotFoundException, DadosIdentificacaoIncorretos {

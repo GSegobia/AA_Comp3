@@ -4,12 +4,16 @@
     <root id="archive" name="sisfarj.war">
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
-          <element id="module-output" name="AA_Comp3" />
+          <element id="module-output" name="SISFARJ" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="file-copy" path="$PROJECT_DIR$/SISFARJ/lib/annotations-java8.jar" />
         </element>
       </element>
-      <element id="javaee-facet-resources" facet="AA_Comp3/javaeeApplication/javaEEApplication" />
-      <element id="javaee-facet-resources" facet="AA_Comp3/web/Web" />
-      <element id="javaee-facet-resources" facet="AA_Comp3/web/Web2" />
+      <element id="javaee-facet-resources" facet="SISFARJ/javaeeApplication/javaEEApplication" />
+      <element id="javaee-facet-resources" facet="SISFARJ/javaeeApplication/javaEEApplication" />
+      <element id="javaee-facet-resources" facet="SISFARJ/web/Web" />
+      <element id="javaee-facet-resources" facet="SISFARJ/web/Web2" />
     </root>
   </artifact>
 </component>

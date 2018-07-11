@@ -3,27 +3,13 @@ package dados.associacao;
 import dados.DAO;
 import dados.Database;
 import dominio.Associacao;
-import dominio.Endereco;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-/**
- * Created by Fellipe Bravo on 10/07/18.
- */
 public class AssociacaoDAO implements DAO<Associacao> {
     public Associacao mapModel(ResultSet rs) throws ClassNotFoundException, SQLException {
-        Endereco endereco = new Endereco(
-                rs.getInt("endereco_id"),
-                rs.getString("cep"),
-                rs.getString("rua"),
-                rs.getInt("numero"),
-                rs.getString("cidade"),
-                rs.getString("estado"),
-                rs.getString("complemento")
-        );
-
         return new Associacao(
                 rs.getInt("id"),
                 rs.getString("numero_oficio"),
@@ -31,7 +17,7 @@ public class AssociacaoDAO implements DAO<Associacao> {
                 rs.getString("nome"),
                 rs.getString("sigla"),
                 rs.getString("matricula"),
-                endereco,
+                rs.getInt("endereco_id"),
                 rs.getString("telefone"),
                 rs.getString("num_comprovante_pgto")
         );
@@ -42,15 +28,60 @@ public class AssociacaoDAO implements DAO<Associacao> {
     }
 
     public Associacao get(int id) throws ClassNotFoundException, SQLException {
-        return null;
+        Associacao a = null;
+
+        String query = String.format("Select * from Associacao where id=%d",id);
+
+        ResultSet rs = Database.doSelect(query);
+
+        while(rs.next()){
+            a = mapModel(rs);
+        }
+
+        return a;
     }
 
     public boolean create(Associacao modelo) throws ClassNotFoundException, SQLException {
-        return false;
+        int linhasAtualizadas;
+
+        String query = String.format(
+                "Insert into Endereco (numero_oficio,data_oficio,nome,sigla,matricula,endereco_id,telefone,num_comprovante_pgto) " +
+                        "values(\'%s\',\'%s\',\'%s\',\'%s\',\'%s\',%d,\'%s\',\'%s\');",
+                modelo.getNumeroOficio(),
+                modelo.getDataOficio(),
+                modelo.getNome(),
+                modelo.getSigla(),
+                modelo.getMatricula(),
+                modelo.getEndereco_id(),
+                modelo.getTelefone(),
+                modelo.getNumComprovantePgto()
+        );
+
+        linhasAtualizadas = Database.doUpdate(query);
+
+        return linhasAtualizadas > 0;
     }
 
     public boolean update(Associacao modelo) throws ClassNotFoundException, SQLException {
-        return false;
+        int linhasAtualizadas;
+
+        String query = String.format(
+                "UPDATE Associacao SET numero_oficio=\'%s\',data_oficio=\'%s\',nome=\'%s\',sigla=\'%s\'," +
+                        "matricula=\'%s\',endereco_id=%d,telefone=\'%s\',num_comprovante_pgto=\'%s\' where id=%d;",
+                modelo.getNumeroOficio(),
+                modelo.getDataOficio(),
+                modelo.getNome(),
+                modelo.getSigla(),
+                modelo.getMatricula(),
+                modelo.getEndereco_id(),
+                modelo.getTelefone(),
+                modelo.getNumComprovantePgto(),
+                modelo.getId()
+        );
+
+        linhasAtualizadas = Database.doUpdate(query);
+
+        return linhasAtualizadas > 0;
     }
 
     public ArrayList<Associacao> findAll() throws ClassNotFoundException, SQLException {
