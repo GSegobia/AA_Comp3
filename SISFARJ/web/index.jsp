@@ -2,7 +2,7 @@
 <%@include file="default_header.jsp"%>
 
     <!-- Header -->
-    <% if (session.getAttribute("nomeUsuario") == null) { %>
+    <% if (session.getAttribute("usuario") == null) { %>
     <header class="masthead bg-primary text-white text-center">
       <div class="container">
         <img class="img-fluid mb-5 d-block mx-auto" src="img/swimming-silhouette.svg" width="250px" height="250px" alt="">
@@ -16,7 +16,7 @@
     </header>
     <% } %>
 
-    <% if (session.getAttribute("nomeUsuario") == null) { %>
+    <% if (session.getAttribute("usuario") == null) { %>
     <div class="copyright py-4 text-center text-white">
       <div class="container">
         <small>Trabalho realizado na disciplina de Computação III</small></br>

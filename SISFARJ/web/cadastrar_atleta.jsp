@@ -8,7 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@include file="default_header.jsp"%>
 
-<% if (session.getAttribute("nomeUsuario") != null) { %>
+<% if (session.getAttribute("usuario") != null) { %>
 <section class="portfolio" style="padding-top:calc(6rem + 72px);padding-bottom:6rem" id="portfolio">
     <div class="container bg-white p-5 rounded">
         <h2 class="text-center text-uppercase text-secondary mb-0">Cadastrar Atleta</h2>

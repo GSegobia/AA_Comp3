@@ -12,7 +12,7 @@
 <% ArrayList<Associacao> associacoes = (ArrayList<Associacao>) request.getAttribute("associacoes"); %>
 
 <!-- Lista de Associações -->
-<% if (session.getAttribute("nomeUsuario") != null) { %>
+<% if (session.getAttribute("usuario") != null) { %>
 <section class="portfolio" style="padding-top:calc(6rem + 72px);padding-bottom:6rem" id="portfolio">
     <div class="container bg-white p-5 rounded">
         <h2 class="text-center text-uppercase text-secondary mb-0">Lista de Associações</h2>

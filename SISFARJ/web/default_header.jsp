@@ -54,8 +54,8 @@
 <nav class="navbar navbar-expand-lg bg-secondary fixed-top text-uppercase" id="mainNav">
     <div class="container">
         <a class="navbar-brand js-scroll-trigger" href="#page-top">
-            <% if (session.getAttribute("nomeUsuario") != null) { %>
-            Olá, ${sessionScope.nomeUsuario}!
+            <% if (session.getAttribute("usuario") != null) { %>
+            Olá, ${sessionScope.usuario.getNome()}!
             <% } else { %>
             SISFARJ
             <% } %>
@@ -65,7 +65,7 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
-                <% if (session.getAttribute("nomeUsuario") == null) { %>
+                <% if (session.getAttribute("usuario") == null) { %>
                 <li class="nav-item mx-0 mx-lg-1" >
                     <a class="nav-link py-3 px-0 px-lg-3 rounded" data-toggle="modal" href="#" data-target="#login-modal">Acessar</a >
                 </li >
