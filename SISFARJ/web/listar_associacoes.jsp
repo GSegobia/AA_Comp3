@@ -8,11 +8,9 @@
 <%@ page import="dominio.Associacao" %>
 <%@ page import="java.util.ArrayList" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@include file="default_header.jsp"%>
 <% ArrayList<Associacao> associacoes = (ArrayList<Associacao>) request.getAttribute("associacoes"); %>
 
-<!-- Lista de Associações -->
-<% if (session.getAttribute("usuario") != null) { %>
+<%@include file="default_header.jsp"%>
 <section class="portfolio" style="padding-top:calc(6rem + 72px);padding-bottom:6rem" id="portfolio">
     <div class="container bg-white p-5 rounded">
         <h2 class="text-center text-uppercase text-secondary mb-0">Lista de Associações</h2>
@@ -39,8 +37,5 @@
         <% } %>
     </div>
 </section>
-<% } %>
+<%@include file="default_footer.jsp"%>
 
-</body>
-
-</html>

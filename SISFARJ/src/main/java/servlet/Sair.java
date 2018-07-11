@@ -10,13 +10,13 @@ import java.io.IOException;
 /**
  * Created by Fellipe Bravo on 09/07/18.
  */
-@WebServlet("/invalidarsessao")
-public class InvalidarSessao extends HttpServlet {
+@WebServlet("/sair")
+public class Sair extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.getSession().invalidate();
-        req.getRequestDispatcher("index.jsp").forward(req, resp);
+        getServletContext().getRequestDispatcher("/index.jsp").forward(req,resp);
     }
 
 }

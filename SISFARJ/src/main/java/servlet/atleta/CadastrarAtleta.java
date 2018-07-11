@@ -54,21 +54,21 @@ public class CadastrarAtleta extends HttpServlet {
     }
 
     public void informarSucessoCadastro(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.getSession().setAttribute("sucessoCadastro", true);
+        req.setAttribute("sucessoCadastro", true);
         req.getRequestDispatcher("cadastrar_atleta.jsp").forward(req, resp);
     }
 
     public void informarErroCadastro(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.getSession().setAttribute("erroCadastro", true);
+        req.setAttribute("erroCadastro", true);
         req.getRequestDispatcher("cadastrar_atleta.jsp").forward(req, resp);
     }
     public void informarErroMatriculaAssociacao(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.getSession().setAttribute("erroMatriculaAssociacao", true);
+        req.setAttribute("erroMatriculaAssociacao", true);
         req.getRequestDispatcher("cadastrar_atleta.jsp").forward(req, resp);
     }
 
     public void informarErroPreenchimento(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.getSession().setAttribute("erroPreenchimento", true);
+        req.setAttribute("erroPreenchimento", true);
         req.getRequestDispatcher("cadastrar_atleta.jsp").forward(req, resp);
     }
 

@@ -21,7 +21,7 @@ public class ListarAtletas extends HttpServlet {
         try {
             ArrayList<Atleta> atletas= Atleta.getAtletas();
             req.setAttribute("atletas", atletas);
-            req.getRequestDispatcher("listar_atletas.jsp").forward(req, resp);
+            getServletContext().getRequestDispatcher("/listar_atletas.jsp").forward(req,resp);
         } catch (Exception e) {
             e.printStackTrace();
             req.setAttribute("atletas", null);

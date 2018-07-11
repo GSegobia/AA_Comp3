@@ -6,9 +6,8 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@include file="default_header.jsp"%>
 
-<% if (session.getAttribute("usuario") != null) { %>
+<%@include file="default_header.jsp"%>
 <section class="portfolio" style="padding-top:calc(6rem + 72px);padding-bottom:6rem" id="portfolio">
     <div class="container bg-white p-5 rounded">
         <h2 class="text-center text-uppercase text-secondary mb-0">Cadastrar Atleta</h2>
@@ -57,68 +56,4 @@
         </div>
     </div>
 </section>
-<% } %>
-
-<!-- Sucesso: Cadastrar Atleta -->
-<%
-    Boolean sucesso = (Boolean) session.getAttribute("sucessoCadastro");
-    if(sucesso != null && sucesso) {
-        session.setAttribute("sucessoCadastro", false);
-%>
-<script>
-    swal({
-        title: "Sucesso",
-        text: "Novo Atleta cadastrado com sucesso!",
-        icon: "success"
-    })
-</script>
-<% } %>
-
-<!-- Erro: Cadastro -->
-<%
-    Boolean erroCadastro = (Boolean) session.getAttribute("erroCadastro");
-    if(erroCadastro != null && erroCadastro) {
-        session.setAttribute("erroCadastro", false);
-%>
-<script>
-    swal({
-        title: "Erro",
-        text: "Não foi possível cadastrar o Atleta.",
-        icon: "error"
-    })
-</script>
-<% } %>
-
-<!-- Erro: Matrícula da Associação -->
-<%
-    Boolean erroMatriculaAssociacao = (Boolean) session.getAttribute("erroMatriculaAssociacao");
-    if(erroMatriculaAssociacao != null && erroMatriculaAssociacao) {
-        session.setAttribute("erroMatriculaAssociacao", false);
-%>
-<script>
-    swal({
-        title: "Erro",
-        text: "Matrícula de associação não encontrada.",
-        icon: "error"
-    })
-</script>
-<% } %>
-
-<!-- Erro: Preenchimento -->
-<%
-    Boolean erroPreenchimento = (Boolean) session.getAttribute("erroPreenchimento");
-    if(erroPreenchimento != null && erroPreenchimento) {
-        session.setAttribute("erroPreenchimento", false);
-%>
-<script>
-    swal({
-        title: "Erro",
-        text: "Existem campos que não foram preenchidos corretamente.",
-        icon: "error"
-    })
-</script>
-<% } %>
-
-</body>
-
-</html>
+<%@include file="default_footer.jsp"%>

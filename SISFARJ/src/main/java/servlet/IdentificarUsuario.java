@@ -35,18 +35,16 @@ public class IdentificarUsuario extends HttpServlet {
     }
 
     public void permitirAcesso(Usuario usuario, HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.getSession().setAttribute("sucessoIdentificacao", true);
-        req.getSession().setAttribute("erroIdentificacao", false);
         // TODO: Definir tempo de sessão do usuário DEFAULT 10 min
         req.getSession().setAttribute("usuario", usuario);
         req.getSession().setMaxInactiveInterval(600);
-        req.getRequestDispatcher("dashboard.jsp").forward(req, resp);
+        req.setAttribute("sucessoIdentificacao", true);
+        getServletContext().getRequestDispatcher("/index.jsp").forward(req,resp);
     }
 
     public void informarErroIdentificacao(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.getSession().setAttribute("sucessoIdentificacao", false);
-        req.getSession().setAttribute("erroIdentificacao", true);
-        req.getRequestDispatcher("index.jsp").forward(req, resp);
+        req.setAttribute("erroIdentificacao", true);
+        getServletContext().getRequestDispatcher("/index.jsp").forward(req,resp);
     }
 
 }

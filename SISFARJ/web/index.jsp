@@ -1,47 +1,57 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
 <%@include file="default_header.jsp"%>
-
-    <!-- Header -->
-    <% if (session.getAttribute("usuario") == null) { %>
-    <header class="masthead bg-primary text-white text-center">
-      <div class="container">
-        <img class="img-fluid mb-5 d-block mx-auto" src="img/swimming-silhouette.svg" width="250px" height="250px" alt="">
-        <h1 class="text-uppercase mb-0">SISFARJ</h1>
-        <hr class="star-light">
-        <h2 class="font-weight-light mb-0">
-          O Sistema SISFARJ tem a finalidade gerenciar competições de natação no território do Rio de Janeiro entre
-          Associações Filiadas, controlando as participações dos atletas nas competições, gerando relatórios das competições
-          e dos resultados com os tempos dos atletas e a pontuação final das Associações.</h2>
-      </div>
-    </header>
-    <% } %>
-
-    <% if (session.getAttribute("usuario") == null) { %>
-    <div class="copyright py-4 text-center text-white">
-      <div class="container">
-        <small>Trabalho realizado na disciplina de Computação III</small></br>
-        <small>Fellipe Bravo, Gabriel Segobia, João Victor Araújo, Paulo Xavier e Vinícius Rigoni</small></br>
-        <small>UFRRJ 2018.1</small>
-      </div>
+<header class="masthead bg-primary text-white text-center">
+    <div class="container">
+        <img class="img-fluid mb-3 d-block mx-auto" src="img/swimming-silhouette.svg" width="150px" height="150px" alt="">
+        <h4 class="text-uppercase mb-0">SISFARJ</h4>
     </div>
-    <% } %>
-
-    <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
-    <div class="scroll-to-top d-lg-none position-fixed ">
-      <a class="js-scroll-trigger d-block text-center text-white rounded" href="#page-top">
-        <i class="fa fa-chevron-up"></i>
-      </a>
+</header>
+<div class="container">
+    <div class="row align-content-center">
+        <div class="card-group">
+            <!-- Associações -->
+            <div class="card p-3">
+                <img class="card-img-top p-3" src="img/swimming-pool.svg" width="150px" height="150px" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title" style="text-align: center">Associações</h5>
+                    <p class="card-text" style="text-align: justify">{TODO: Escrever observação das associações}</p>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><a href="associacao">Filiar Associação</a></li>
+                    <li class="list-group-item"><a href="associacoes">Listar Associações</a></li>
+                </ul>
+            </div>
+            <!-- Atletas -->
+            <div class="card p-3">
+                <img class="card-img-top p-3" src="img/swimmer.svg" width="150px" height="150px" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title" style="text-align: center">Atletas</h5>
+                    <p class="card-text" style="text-align: justify">{TODO: Escrever observação das atletas}</p>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><a href="atleta">Cadastrar Atleta</a></li>
+                    <li class="list-group-item"><a href="atletas">Listar Atletas</a></li>
+                </ul>
+            </div>
+            <!-- Competições -->
+            <div class="card p-3">
+                <img class="card-img-top p-3" src="img/ranking.svg" width="150px" height="150px" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title" style="text-align: center">Competições</h5>
+                    <p class="card-text" style="text-align: justify">{TODO: Escrever observação das competições}</p>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><a href="competicoes">Listar Competições</a></li>
+                </ul>
+            </div>
+        </div>
     </div>
+</div>
 
-    <!-- Sucesso: Identificação de Usuário -->
-    <%@include file="sucesso_identificacao.jsp"%>
-
-    <!-- Erro: Identificação de Usuário -->
-    <%@include file="erro_identificacao.jsp"%>
-
-    <!-- Erro: Sessão Expirada -->
-    <%@include file="erro_sessao_expirada.jsp"%>
-
-  </body>
-
-</html>
+<div class="container text-left text-white-50 p-5">
+    <small>Trabalho realizado na disciplina de Computação III</small></br>
+    <small>Fellipe Bravo, Gabriel Segobia, João Victor Araújo, Paulo Xavier e Vinícius Rigoni</small></br>
+    <small>UFRRJ 2018.1</small>
+</div>
+<%@include file="default_footer.jsp"%>

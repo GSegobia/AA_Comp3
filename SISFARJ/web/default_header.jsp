@@ -56,8 +56,6 @@
         <a class="navbar-brand js-scroll-trigger" href="#page-top">
             <% if (session.getAttribute("usuario") != null) { %>
             Olá, ${sessionScope.usuario.getNome()}!
-            <% } else { %>
-            SISFARJ
             <% } %>
         </a>
         <button class="navbar-toggler navbar-toggler-right text-uppercase bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -65,16 +63,16 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
+                <li class="nav-item mx-0 mx-lg-1">
+                    <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="<%=request.getContextPath()+"/"%>">Dashboard</a>
+                </li>
                 <% if (session.getAttribute("usuario") == null) { %>
                 <li class="nav-item mx-0 mx-lg-1" >
                     <a class="nav-link py-3 px-0 px-lg-3 rounded" data-toggle="modal" href="#" data-target="#login-modal">Acessar</a >
                 </li >
                 <% } else { %>
                 <li class="nav-item mx-0 mx-lg-1">
-                    <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="dashboard">Dashboard</a>
-                </li>
-                <li class="nav-item mx-0 mx-lg-1">
-                    <form name="submitForm" method="post" action="invalidarsessao">
+                    <form name="submitForm" method="post" action="sair">
                         <button class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" type="submit" href="#">Sair</button>
                     </form>
                 </li>
