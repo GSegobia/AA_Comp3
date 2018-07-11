@@ -1,6 +1,6 @@
-package servlet.associacao;
+package servlet.secretario;
 
-import dominio.Associacao;
+import dominio.Atleta;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -13,18 +13,18 @@ import java.util.ArrayList;
 /**
  * Created by Fellipe Bravo on 10/07/18.
  */
-@WebServlet("/associacoes")
-public class ListarAssociacoes extends HttpServlet {
+@WebServlet("/listarAtletas")
+public class ListarAtletas extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         try {
-            ArrayList<Associacao> associacoes = Associacao.getAssociacoes();
-            req.setAttribute("associacoes", associacoes);
-            req.getRequestDispatcher("listar_associacoes.jsp").forward(req, resp);
+            ArrayList<Atleta> atletas= Atleta.findAll();
+            req.setAttribute("atletas", atletas);
+            getServletContext().getRequestDispatcher("/listar_atletas.jsp").forward(req,resp);
         } catch (Exception e) {
             e.printStackTrace();
-            req.setAttribute("associacoes", null);
+            req.setAttribute("atletas", null);
         }
     }
 }

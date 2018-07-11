@@ -1,4 +1,4 @@
-package servlet.associacao;
+package servlet.tecnicoassociacao;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -8,14 +8,14 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 /**
- * Created by Fellipe Bravo on 10/07/18.
+ * Created by Fellipe Bravo on 11/07/18.
  */
-@WebServlet("/associacao")
-public class FiliarAssociacao extends HttpServlet {
+@WebServlet("/inscreverAtletaCompeticao")
+public class InscreverAtletaCompeticao extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        getServletContext().getRequestDispatcher("/filiar_associacao.jsp").forward(req,resp);
+
     }
 
     @Override

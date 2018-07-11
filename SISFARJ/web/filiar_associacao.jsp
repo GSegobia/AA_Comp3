@@ -13,7 +13,7 @@
         <h2 class="text-center text-uppercase text-secondary mb-0">Filiar Associação</h2>
         <hr class="mb-5">
         <div class="container">
-            <form class="form" action="associacao" method="post">
+            <form class="form" action="filiarAssociacao" method="post">
                 <h4>Dados da Associação</h4>
                 <div class="form-row">
                     <div class="form-group col-md-9">

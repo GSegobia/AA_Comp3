@@ -1,4 +1,4 @@
-package servlet.atleta;
+package servlet.secretario;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -10,7 +10,7 @@ import java.io.IOException;
 /**
  * Created by Fellipe Bravo on 10/07/18.
  */
-@WebServlet("/atleta")
+@WebServlet("/cadastrarAtleta")
 public class CadastrarAtleta extends HttpServlet {
 
     @Override

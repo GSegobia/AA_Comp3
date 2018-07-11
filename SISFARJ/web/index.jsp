@@ -8,43 +8,58 @@
     </div>
 </header>
 <div class="container">
-    <div class="row align-content-center">
-        <div class="card-group">
-            <!-- Associações -->
-            <div class="card p-3">
-                <img class="card-img-top p-3" src="img/swimming-pool.svg" width="150px" height="150px" alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="card-title" style="text-align: center">Associações</h5>
-                    <p class="card-text" style="text-align: justify">{TODO: Escrever observação das associações}</p>
-                </div>
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item"><a href="associacao">Filiar Associação</a></li>
-                    <li class="list-group-item"><a href="associacoes">Listar Associações</a></li>
-                </ul>
+    <div class="card-group mb-3">
+        <!-- Associações -->
+        <div class="card p-3 col-md-4 text-center">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item"><a href="listarBalizamentoCompeticao">Listar balizamento competição</a></li>
+            </ul>
+        </div>
+        <!-- Atletas -->
+        <div class="card p-3 col-md-4 text-center">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item"><a href="listarPontuacaoCompeticao">Listar pontuação competição</a></li>
+            </ul>
+        </div>
+        <!-- Competições -->
+        <div class="card p-3 col-md-4 text-center">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item"><a href="listarPontuacaoFinal">Listar pontuação final</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="card-group">
+        <!-- Associações -->
+        <div class="card p-3 col-md-4">
+            <img class="card-img-top p-3" src="img/swimming-pool.svg" width="150px" height="150px" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title" style="text-align: center">Associações</h5>
             </div>
-            <!-- Atletas -->
-            <div class="card p-3">
-                <img class="card-img-top p-3" src="img/swimmer.svg" width="150px" height="150px" alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="card-title" style="text-align: center">Atletas</h5>
-                    <p class="card-text" style="text-align: justify">{TODO: Escrever observação das atletas}</p>
-                </div>
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item"><a href="atleta">Cadastrar Atleta</a></li>
-                    <li class="list-group-item"><a href="atletas">Listar Atletas</a></li>
-                </ul>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item"><a href="filiarAssociacao">Filiar Associação</a></li>
+                <li class="list-group-item"><a href="listarAssociacoes">Listar Associações</a></li>
+            </ul>
+        </div>
+        <!-- Atletas -->
+        <div class="card p-3 col-md-4">
+            <img class="card-img-top p-3" src="img/swimmer.svg" width="150px" height="150px" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title" style="text-align: center">Atletas</h5>
             </div>
-            <!-- Competições -->
-            <div class="card p-3">
-                <img class="card-img-top p-3" src="img/ranking.svg" width="150px" height="150px" alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="card-title" style="text-align: center">Competições</h5>
-                    <p class="card-text" style="text-align: justify">{TODO: Escrever observação das competições}</p>
-                </div>
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item"><a href="competicoes">Listar Competições</a></li>
-                </ul>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item"><a href="cadastrarAtleta">Cadastrar Atleta</a></li>
+                <li class="list-group-item"><a href="listarAtletas">Listar Atletas</a></li>
+            </ul>
+        </div>
+        <!-- Competições -->
+        <div class="card p-3 col-md-4">
+            <img class="card-img-top p-3" src="img/ranking.svg" width="150px" height="150px" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title" style="text-align: center">Competições</h5>
             </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item"><a href="competicoes">Listar Competições</a></li>
+            </ul>
         </div>
     </div>
 </div>
