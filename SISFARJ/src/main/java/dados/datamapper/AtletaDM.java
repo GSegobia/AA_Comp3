@@ -1,19 +1,16 @@
-package dados.atleta;
+package dados.datamapper;
 
 import dados.Database;
 import dominio.Atleta;
+import exceptions.ModeloNaoExiste;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-/**
- * Created by over on 06/07/18.
- */
+public class AtletaDM {
 
-public class AtletaDataMapper implements DataMapper<Atleta> {
-
-    public Atleta mapModel(ResultSet rs) throws ClassNotFoundException, SQLException {
+    private static Atleta mapModel(ResultSet rs) throws ClassNotFoundException, SQLException {
         return new Atleta(
                 rs.getInt("id"),
                 rs.getInt("associacao_id"),
@@ -27,7 +24,7 @@ public class AtletaDataMapper implements DataMapper<Atleta> {
         );
     }
 
-    public boolean exists(int id) throws ClassNotFoundException, SQLException {
+    public static boolean exists(int id) throws ClassNotFoundException, SQLException {
         ResultSet rs = Database.doSelect("Select count(id) from Atleta where id=" +id);
         int numeroOcorrencias = 0;
 
@@ -38,19 +35,21 @@ public class AtletaDataMapper implements DataMapper<Atleta> {
         return numeroOcorrencias > 0;
     }
 
-    public Atleta get(int id) throws ClassNotFoundException, SQLException {
-        Atleta u = null;
+    public static Atleta get(int id) throws ClassNotFoundException, SQLException, ModeloNaoExiste {
+        Atleta a = null;
         String query = String.format("Select * from Atleta where id=%d",id);
 
         ResultSet rs = Database.doSelect(query);
 
         while(rs.next()){
-            u = mapModel(rs);
+            a = mapModel(rs);
         }
-        return u;
+        if(a == null) throw new ModeloNaoExiste("atleta",id);
+
+        return a;
     }
 
-    public boolean create(Atleta modelo) throws ClassNotFoundException, SQLException {
+    public static boolean create(Atleta modelo) throws ClassNotFoundException, SQLException {
         int linhasAtualizadas;
 
         String query = String.format(
@@ -71,7 +70,7 @@ public class AtletaDataMapper implements DataMapper<Atleta> {
         return linhasAtualizadas > 0;
     }
 
-    public boolean update(Atleta modelo) throws ClassNotFoundException, SQLException {
+    public static boolean update(Atleta modelo) throws ClassNotFoundException, SQLException {
         int linhasAtualizadas;
 
         String query = String.format(
@@ -93,7 +92,7 @@ public class AtletaDataMapper implements DataMapper<Atleta> {
         return linhasAtualizadas > 0;
     }
 
-    public ArrayList<Atleta> findAll() throws ClassNotFoundException, SQLException {
+    public static ArrayList<Atleta> findAll() throws ClassNotFoundException, SQLException {
         ArrayList<Atleta> Atletas = new ArrayList<Atleta>();
         ResultSet rs = Database.doSelect("Select * from Atleta");
 

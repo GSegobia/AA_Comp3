@@ -20,7 +20,7 @@ public class ExemploServlet extends HttpServlet {
 
         try {
             //Alguns metodos de usuario são estáticos
-            u = Usuario.getUsuario(3);
+            u = Usuario.get(3);
             //nome do atributo a ser enviado para o servlet e ser recuperado usando request.getAttribute(nomeDoAtributo);
             request.setAttribute("nome",u.getNome());
 

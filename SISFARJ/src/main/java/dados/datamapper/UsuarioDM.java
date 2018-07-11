@@ -1,4 +1,4 @@
-package dados.usuario;
+package dados.datamapper;
 
 import dados.Database;
 import dominio.Usuario;
@@ -60,7 +60,6 @@ public class UsuarioDM {
 
         return u;
     }
-
     public static boolean create(Usuario modelo) throws ClassNotFoundException, SQLException {
         int linhasAtualizadas = 0;
 
@@ -73,7 +72,6 @@ public class UsuarioDM {
 
         return linhasAtualizadas > 0;
     }
-
     public static boolean update(Usuario modelo) throws ClassNotFoundException, SQLException {
         int linhasAtualizadas = 0;
 
@@ -86,7 +84,6 @@ public class UsuarioDM {
 
         return linhasAtualizadas > 0;
     }
-
     public static ArrayList<Usuario> findAll() throws ClassNotFoundException, SQLException {
         ArrayList<Usuario> usuarios = new ArrayList<Usuario>();
         ResultSet rs = Database.doSelect("Select * from usuario");

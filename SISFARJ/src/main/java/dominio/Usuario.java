@@ -1,6 +1,6 @@
 package dominio;
 
-import dados.usuario.UsuarioDM;
+import dados.datamapper.UsuarioDM;
 import exceptions.DadosIdentificacaoIncorretos;
 import exceptions.ModeloNaoExiste;
 
@@ -57,23 +57,23 @@ public class Usuario {
         this.senha = novaSenha;
     }
 
-    public static Usuario getUsuario(int usuarioId) throws SQLException, ClassNotFoundException, ModeloNaoExiste {
+    public static Usuario get(int usuarioId) throws SQLException, ClassNotFoundException, ModeloNaoExiste {
         return UsuarioDM.get(usuarioId);
     }
 
-    public static boolean criarUsuario(int id,String nome, String matricula, String senha, int permissao_id) throws SQLException, ClassNotFoundException{
+    public static boolean create(int id, String nome, String matricula, String senha, int permissao_id) throws SQLException, ClassNotFoundException{
         Usuario novo_usuario = new Usuario(id, nome, matricula, senha, permissao_id);
 
         return UsuarioDM.create(novo_usuario);
     }
 
-    public static boolean updateUsuario(int id, String nome, String matricula, String senha, int permissao_id) throws SQLException, ClassNotFoundException {
+    public static boolean update(int id, String nome, String matricula, String senha, int permissao_id) throws SQLException, ClassNotFoundException {
         Usuario usuarioAtualizado = new Usuario(id, nome, matricula, senha, permissao_id);
 
         return UsuarioDM.update(usuarioAtualizado);
     }
 
-    public static boolean updateUsuario(Usuario usuarioAtualizado) throws SQLException, ClassNotFoundException {
+    public static boolean update(Usuario usuarioAtualizado) throws SQLException, ClassNotFoundException {
         return UsuarioDM.update(usuarioAtualizado);
     }
 

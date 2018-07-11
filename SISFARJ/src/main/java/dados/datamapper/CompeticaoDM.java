@@ -1,4 +1,4 @@
-package dados.competicao;
+package dados.datamapper;
 
 import dominio.Competicao;
 

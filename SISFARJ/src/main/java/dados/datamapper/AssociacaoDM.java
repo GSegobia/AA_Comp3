@@ -1,4 +1,4 @@
-package dados.associacao;
+package dados.datamapper;
 
 import dados.Database;
 import dominio.Associacao;
@@ -7,8 +7,9 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-public class AssociacaoDataMapper implements DataMapper<Associacao> {
-    public Associacao mapModel(ResultSet rs) throws ClassNotFoundException, SQLException {
+public class AssociacaoDM {
+
+    private static Associacao mapModel(ResultSet rs) throws ClassNotFoundException, SQLException {
         return new Associacao(
                 rs.getInt("id"),
                 rs.getString("numero_oficio"),
@@ -22,11 +23,7 @@ public class AssociacaoDataMapper implements DataMapper<Associacao> {
         );
     }
 
-    public boolean exists(int id) throws ClassNotFoundException, SQLException {
-        return false;
-    }
-
-    public Associacao get(int id) throws ClassNotFoundException, SQLException {
+    public static Associacao get(int id) throws ClassNotFoundException, SQLException {
         Associacao a = null;
 
         String query = String.format("Select * from Associacao where id=%d",id);
@@ -40,7 +37,7 @@ public class AssociacaoDataMapper implements DataMapper<Associacao> {
         return a;
     }
 
-    public boolean create(Associacao modelo) throws ClassNotFoundException, SQLException {
+    public static boolean create(Associacao modelo) throws ClassNotFoundException, SQLException {
         int linhasAtualizadas;
 
         String query = String.format(
@@ -61,7 +58,7 @@ public class AssociacaoDataMapper implements DataMapper<Associacao> {
         return linhasAtualizadas > 0;
     }
 
-    public boolean update(Associacao modelo) throws ClassNotFoundException, SQLException {
+    public static boolean update(Associacao modelo) throws ClassNotFoundException, SQLException {
         int linhasAtualizadas;
 
         String query = String.format(
@@ -83,7 +80,7 @@ public class AssociacaoDataMapper implements DataMapper<Associacao> {
         return linhasAtualizadas > 0;
     }
 
-    public ArrayList<Associacao> findAll() throws ClassNotFoundException, SQLException {
+    public static ArrayList<Associacao> findAll() throws ClassNotFoundException, SQLException {
         ArrayList<Associacao> associacoes = new ArrayList<Associacao>();
         ResultSet rs = Database.doSelect("SELECT a.id,\n" +
                 "a.numero_oficio,\n" +
