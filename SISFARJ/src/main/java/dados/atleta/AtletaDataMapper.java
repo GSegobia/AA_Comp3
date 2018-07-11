@@ -1,6 +1,5 @@
 package dados.atleta;
 
-import dados.DataMapper;
 import dados.Database;
 import dominio.Atleta;
 

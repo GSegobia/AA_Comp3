@@ -1,6 +1,5 @@
 package dados.associacao;
 
-import dados.DataMapper;
 import dados.Database;
 import dominio.Associacao;
 

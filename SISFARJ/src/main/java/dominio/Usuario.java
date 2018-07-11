@@ -1,6 +1,6 @@
 package dominio;
 
-import dados.usuario.UsuarioData;
+import dados.usuario.UsuarioDM;
 import exceptions.DadosIdentificacaoIncorretos;
 import exceptions.ModeloNaoExiste;
 
@@ -23,31 +23,24 @@ public class Usuario {
         this.senha = senha;
         this.permissao_id = permissao_id;
     }
-
     public void setId(int id) {
         this.id = id;
     }
-
     public String getMatricula() {
         return matricula;
     }
-
     public void setMatricula(String matricula) {
         this.matricula = matricula;
     }
-
     public void setNome(String nome) {
         this.nome = nome;
     }
-
     public int getPermissao_id() {
         return permissao_id;
     }
-
     public void setPermissao_id(int permissao_id) {
         this.permissao_id = permissao_id;
     }
-
     public int getId() {
         return this.id;
     }
@@ -65,34 +58,34 @@ public class Usuario {
     }
 
     public static Usuario getUsuario(int usuarioId) throws SQLException, ClassNotFoundException, ModeloNaoExiste {
-        return UsuarioData.get(usuarioId);
+        return UsuarioDM.get(usuarioId);
     }
 
     public static boolean criarUsuario(int id,String nome, String matricula, String senha, int permissao_id) throws SQLException, ClassNotFoundException{
         Usuario novo_usuario = new Usuario(id, nome, matricula, senha, permissao_id);
 
-        return UsuarioData.create(novo_usuario);
+        return UsuarioDM.create(novo_usuario);
     }
 
     public static boolean updateUsuario(int id, String nome, String matricula, String senha, int permissao_id) throws SQLException, ClassNotFoundException {
         Usuario usuarioAtualizado = new Usuario(id, nome, matricula, senha, permissao_id);
 
-        return UsuarioData.update(usuarioAtualizado);
+        return UsuarioDM.update(usuarioAtualizado);
     }
 
     public static boolean updateUsuario(Usuario usuarioAtualizado) throws SQLException, ClassNotFoundException {
-        return UsuarioData.update(usuarioAtualizado);
+        return UsuarioDM.update(usuarioAtualizado);
     }
 
-    public static boolean checaPermissao(int numeroPermissao, int idUsuario) throws SQLException, ClassNotFoundException {
-        return UsuarioData.checaPermissao(numeroPermissao,idUsuario);
+    public static boolean checaPermissao(int numeroPermissao, int idUsuario) throws SQLException, ClassNotFoundException, ModeloNaoExiste {
+        return numeroPermissao == UsuarioDM.get(idUsuario).getPermissaoId();
     }
 
-    public static boolean solicitarNovaSenha(int idUsuario) throws SQLException, ClassNotFoundException, ModeloNaoExiste {
-        return UsuarioData.gerarNovaSenha(getUsuario(idUsuario));
+    private static String gerarSenha(){
+        return "123456";
     }
 
     public static Usuario identificar(String matricula, String senha) throws SQLException, ClassNotFoundException, DadosIdentificacaoIncorretos {
-        return UsuarioData.identificar(matricula, senha);
+        return UsuarioDM.get(matricula, senha);
     }
 }

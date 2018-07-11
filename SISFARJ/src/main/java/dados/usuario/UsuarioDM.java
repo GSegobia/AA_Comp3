@@ -1,20 +1,18 @@
 package dados.usuario;
 
-import dados.DataMapper;
 import dados.Database;
 import dominio.Usuario;
+import exceptions.DadosIdentificacaoIncorretos;
+import exceptions.ModeloNaoExiste;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-/**
- * Created by over on 06/07/18.
- */
 
-public class UsuarioDataMapper implements DataMapper<Usuario> {
+public class UsuarioDM {
 
-    public Usuario mapModel(ResultSet rs) throws SQLException {
+    private static Usuario mapModel(ResultSet rs) throws SQLException {
         return new Usuario(
                 rs.getInt("id"),
                 rs.getString("nome"),
@@ -24,7 +22,7 @@ public class UsuarioDataMapper implements DataMapper<Usuario> {
         );
     }
 
-    public boolean exists(int id) throws ClassNotFoundException, SQLException {
+    public static boolean exists(int id) throws ClassNotFoundException, SQLException {
         ResultSet rs = Database.doSelect("Select count(id) from usuario where id=" +id);
         int numeroOcorrencias = 0;
 
@@ -34,8 +32,7 @@ public class UsuarioDataMapper implements DataMapper<Usuario> {
 
         return numeroOcorrencias > 0;
     }
-
-    public Usuario get(int id) throws ClassNotFoundException, SQLException {
+    public static Usuario get(int id) throws ClassNotFoundException, SQLException, ModeloNaoExiste {
         Usuario u = null;
         String query = String.format("Select * from usuario where id=%d",id);
 
@@ -45,26 +42,31 @@ public class UsuarioDataMapper implements DataMapper<Usuario> {
             u = mapModel(rs);
         }
 
+        if(u == null) throw new ModeloNaoExiste("usuario",id);
+
         return u;
     }
-
-    public Usuario get(String matricula, String senha) throws ClassNotFoundException, SQLException {
+    public static Usuario get(String matricula, String senha) throws ClassNotFoundException, SQLException, DadosIdentificacaoIncorretos {
         Usuario u = null;
+
         String query = String.format("SELECT * FROM usuario as u WHERE u.matricula='%s' AND u.senha='%s'", matricula, senha);
         ResultSet rs = Database.doSelect(query);
+
         while(rs.next()){
             u = mapModel(rs);
         }
+
+        if(u == null) throw new DadosIdentificacaoIncorretos();
+
         return u;
     }
 
-    public boolean create(Usuario modelo) throws ClassNotFoundException, SQLException {
-        Usuario u = modelo;
+    public static boolean create(Usuario modelo) throws ClassNotFoundException, SQLException {
         int linhasAtualizadas = 0;
 
         String query = String.format(
                 "Insert into usuario (nome,senha,permissao_id) values(\'%s\',\'%s\',%d);",
-                u.getNome(),u.getSenha(),u.getPermissaoId()
+                modelo.getNome(),modelo.getSenha(),modelo.getPermissaoId()
             );
 
         linhasAtualizadas = Database.doUpdate(query);
@@ -72,14 +74,12 @@ public class UsuarioDataMapper implements DataMapper<Usuario> {
         return linhasAtualizadas > 0;
     }
 
-    public boolean update(Usuario modelo) throws ClassNotFoundException, SQLException {
-        Usuario u = modelo;
-
+    public static boolean update(Usuario modelo) throws ClassNotFoundException, SQLException {
         int linhasAtualizadas = 0;
 
         String query = String.format(
                 "UPDATE usuario SET nome=\'%s\', senha=\'%s\',permissao_id=%d where id=%d;",
-                u.getNome(),u.getSenha(),u.getPermissaoId(),u.getId()
+                modelo.getNome(),modelo.getSenha(),modelo.getPermissaoId(),modelo.getId()
         );
 
         linhasAtualizadas = Database.doUpdate(query);
@@ -87,7 +87,7 @@ public class UsuarioDataMapper implements DataMapper<Usuario> {
         return linhasAtualizadas > 0;
     }
 
-    public ArrayList<Usuario> findAll() throws ClassNotFoundException, SQLException {
+    public static ArrayList<Usuario> findAll() throws ClassNotFoundException, SQLException {
         ArrayList<Usuario> usuarios = new ArrayList<Usuario>();
         ResultSet rs = Database.doSelect("Select * from usuario");
 
