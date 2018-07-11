@@ -1,6 +1,6 @@
 package dados.atleta;
 
-import dados.DAO;
+import dados.DataMapper;
 import dados.Database;
 import dominio.Atleta;
 
@@ -12,7 +12,7 @@ import java.util.ArrayList;
  * Created by over on 06/07/18.
  */
 
-public class AtletaDAO implements DAO<Atleta> {
+public class AtletaDataMapper implements DataMapper<Atleta> {
 
     public Atleta mapModel(ResultSet rs) throws ClassNotFoundException, SQLException {
         return new Atleta(

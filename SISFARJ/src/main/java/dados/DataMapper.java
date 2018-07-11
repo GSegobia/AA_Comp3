@@ -7,7 +7,7 @@ import java.util.ArrayList;
 /**
  * Created by over on 06/07/18.
  */
-public interface DAO<Model> {
+public interface DataMapper<Model> {
     Model mapModel(ResultSet rs) throws ClassNotFoundException, SQLException;
     boolean exists(int id) throws ClassNotFoundException, SQLException;
     Model get(int id) throws ClassNotFoundException, SQLException;

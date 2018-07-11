@@ -1,6 +1,6 @@
 package dados.usuario;
 
-import dados.DAO;
+import dados.DataMapper;
 import dados.Database;
 import dominio.Usuario;
 
@@ -12,7 +12,7 @@ import java.util.ArrayList;
  * Created by over on 06/07/18.
  */
 
-public class UsuarioDAO implements DAO<Usuario> {
+public class UsuarioDataMapper implements DataMapper<Usuario> {
 
     public Usuario mapModel(ResultSet rs) throws SQLException {
         return new Usuario(

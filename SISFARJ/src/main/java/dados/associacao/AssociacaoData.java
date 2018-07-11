@@ -11,17 +11,17 @@ import java.util.ArrayList;
 public class AssociacaoData {
 
     public static boolean create(Associacao associacao) throws SQLException, ClassNotFoundException{
-        AssociacaoDAO DAO = new AssociacaoDAO();
+        AssociacaoDataMapper DAO = new AssociacaoDataMapper();
         return DAO.create(associacao);
     }
 
     public static ArrayList<Associacao> getAll() throws SQLException, ClassNotFoundException {
-        AssociacaoDAO DAO = new AssociacaoDAO();
+        AssociacaoDataMapper DAO = new AssociacaoDataMapper();
         return DAO.findAll();
     }
 
     public static boolean update(Associacao associacao) throws SQLException, ClassNotFoundException {
-        AssociacaoDAO DAO = new AssociacaoDAO();
+        AssociacaoDataMapper DAO = new AssociacaoDataMapper();
         return DAO.update(associacao);
     }
 

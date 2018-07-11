@@ -1,6 +1,6 @@
 package dados.associacao;
 
-import dados.DAO;
+import dados.DataMapper;
 import dados.Database;
 import dominio.Associacao;
 
@@ -8,7 +8,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-public class AssociacaoDAO implements DAO<Associacao> {
+public class AssociacaoDataMapper implements DataMapper<Associacao> {
     public Associacao mapModel(ResultSet rs) throws ClassNotFoundException, SQLException {
         return new Associacao(
                 rs.getInt("id"),

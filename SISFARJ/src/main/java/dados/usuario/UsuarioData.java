@@ -13,21 +13,21 @@ public class UsuarioData {
     }
 
     public static Usuario get(int usuarioId) throws SQLException, ClassNotFoundException, ModeloNaoExiste {
-        UsuarioDAO DAO = new UsuarioDAO();
+        UsuarioDataMapper DAO = new UsuarioDataMapper();
         Usuario u = DAO.get(usuarioId);
         if(u == null) throw new ModeloNaoExiste("usuario",usuarioId);
         return u;
     }
 
     public static Usuario identificar(String matricula, String senha) throws SQLException, ClassNotFoundException, DadosIdentificacaoIncorretos {
-        UsuarioDAO DAO = new UsuarioDAO();
+        UsuarioDataMapper DAO = new UsuarioDataMapper();
         Usuario usuario = DAO.get(matricula, senha);
         if(usuario == null) throw new DadosIdentificacaoIncorretos();
         return usuario;
     }
 
     public static boolean checaExistencia(Usuario usuario) throws SQLException, ClassNotFoundException {
-        UsuarioDAO DAO = new UsuarioDAO();
+        UsuarioDataMapper DAO = new UsuarioDataMapper();
         return DAO.exists(usuario.getId());
     }
 
@@ -36,7 +36,7 @@ public class UsuarioData {
     }
 
     private static int getPermissao(int idUsuario) throws SQLException, ClassNotFoundException {
-        UsuarioDAO DAO = new UsuarioDAO();
+        UsuarioDataMapper DAO = new UsuarioDataMapper();
 
         Usuario u = DAO.get(idUsuario);
 
@@ -44,13 +44,13 @@ public class UsuarioData {
     }
 
     public static boolean create(Usuario usuario) throws SQLException, ClassNotFoundException{
-        UsuarioDAO DAO = new UsuarioDAO();
+        UsuarioDataMapper DAO = new UsuarioDataMapper();
 
         return DAO.create(usuario);
     }
 
     public static boolean update(Usuario usuario) throws SQLException, ClassNotFoundException {
-        UsuarioDAO DAO = new UsuarioDAO();
+        UsuarioDataMapper DAO = new UsuarioDataMapper();
 
         return DAO.update(usuario);
     }

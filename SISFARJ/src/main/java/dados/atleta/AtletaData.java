@@ -9,7 +9,7 @@ import java.util.ArrayList;
 public class AtletaData {
 
     public static Atleta get(int AtletaId) throws SQLException, ClassNotFoundException, ModeloNaoExiste {
-        AtletaDAO DAO = new AtletaDAO();
+        AtletaDataMapper DAO = new AtletaDataMapper();
         Atleta a = DAO.get(AtletaId);
 
         if(a == null) throw new ModeloNaoExiste("atleta",AtletaId);
@@ -18,22 +18,22 @@ public class AtletaData {
     }
 
     public static boolean checaExistencia(int atleta_id) throws SQLException, ClassNotFoundException {
-        AtletaDAO DAO = new AtletaDAO();
+        AtletaDataMapper DAO = new AtletaDataMapper();
         return DAO.exists(atleta_id);
     }
 
     public static boolean create(Atleta atleta) throws SQLException, ClassNotFoundException{
-        AtletaDAO DAO = new AtletaDAO();
+        AtletaDataMapper DAO = new AtletaDataMapper();
         return DAO.create(atleta);
     }
 
     public static boolean update(Atleta atleta) throws SQLException, ClassNotFoundException {
-        AtletaDAO DAO = new AtletaDAO();
+        AtletaDataMapper DAO = new AtletaDataMapper();
         return DAO.update(atleta);
     }
 
     public static ArrayList<Atleta> findAll() throws ClassNotFoundException, SQLException {
-        AtletaDAO DAO = new AtletaDAO();
+        AtletaDataMapper DAO = new AtletaDataMapper();
         return DAO.findAll();
     }
 }
