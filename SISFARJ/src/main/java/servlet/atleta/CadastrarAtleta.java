@@ -35,7 +35,7 @@ public class CadastrarAtleta extends HttpServlet {
             informarErroPreenchimento(req, resp);
         }
         else {
-            // TODO: Conversar c/ Paulo sobre o DAO e subcamadas
+            // TODO: Conversar c/ Paulo sobre o DataMapper e subcamadas
 //            try {
 //                Atleta atleta = Atleta.create()
 //                informarSucessoCadastro(req, resp);

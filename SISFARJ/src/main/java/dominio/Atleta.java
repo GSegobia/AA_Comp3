@@ -1,6 +1,6 @@
 package dominio;
 
-import dados.atleta.AtletaData;
+import dados.datamapper.AtletaDM;
 import exceptions.ModeloNaoExiste;
 
 import java.sql.SQLException;
@@ -97,20 +97,20 @@ public class Atleta {
     }
 
     public static Atleta get(int id) throws ClassNotFoundException,SQLException, ModeloNaoExiste {
-        Atleta u = AtletaData.get(id);
+        Atleta u = AtletaDM.get(id);
 
         if(u==null) throw new ModeloNaoExiste("atleta",id);
         return u;
     }
 
     public static boolean create(Atleta atleta) throws ClassNotFoundException,SQLException {
-        return AtletaData.create(atleta);
+        return AtletaDM.create(atleta);
     }
     public static boolean update(Atleta atleta) throws ClassNotFoundException,SQLException {
-        return AtletaData.update(atleta);
+        return AtletaDM.update(atleta);
     }
 
     public static ArrayList<Atleta> getAtletas() throws ClassNotFoundException,SQLException {
-        return AtletaData.findAll();
+        return AtletaDM.findAll();
     }
 }

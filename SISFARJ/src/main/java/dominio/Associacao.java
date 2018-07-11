@@ -1,6 +1,7 @@
 package dominio;
 
-import dados.associacao.AssociacaoData;
+import dados.datamapper.AssociacaoDM;
+import exceptions.ModeloNaoExiste;
 
 import java.sql.Date;
 import java.sql.SQLException;
@@ -115,7 +116,19 @@ public class Associacao {
         this.numComprovantePgto = numComprovantePgto;
     }
 
+    public static Associacao get(int id) throws SQLException, ClassNotFoundException, ModeloNaoExiste {
+        return AssociacaoDM.get(id);
+    }
+
+    public static boolean create(Associacao a) throws SQLException, ClassNotFoundException, ModeloNaoExiste {
+        return AssociacaoDM.create(a);
+    }
+
+    public static boolean update(Associacao a) throws SQLException, ClassNotFoundException{
+        return AssociacaoDM.update(a);
+    }
+
     public static ArrayList<Associacao> getAssociacoes() throws SQLException, ClassNotFoundException {
-        return AssociacaoData.getAll();
+        return AssociacaoDM.findAll();
     }
 }
