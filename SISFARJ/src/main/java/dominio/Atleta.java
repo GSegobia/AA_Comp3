@@ -24,6 +24,18 @@ public class Atleta {
 
     }
 
+    public Atleta(int associacao_id, int categoria_id, String matricula, String nome, String data_nascimento, String data_oficio, String numero_oficio, String data_entrada_associacao) {
+        this.associacao_id = associacao_id;
+        this.categoria_id = categoria_id;
+        this.matricula = matricula;
+        this.nome = nome;
+        this.data_nascimento = data_nascimento;
+        this.data_oficio = data_oficio;
+        this.numero_oficio = numero_oficio;
+        this.data_entrada_associacao = data_entrada_associacao;
+
+    }
+
     public int getId() {
         return id;
     }
@@ -110,7 +122,7 @@ public class Atleta {
         return AtletaDM.update(atleta);
     }
 
-    public static ArrayList<Atleta> getAtletas() throws ClassNotFoundException,SQLException {
+    public static ArrayList<Atleta> findAll() throws ClassNotFoundException,SQLException {
         return AtletaDM.findAll();
     }
 }

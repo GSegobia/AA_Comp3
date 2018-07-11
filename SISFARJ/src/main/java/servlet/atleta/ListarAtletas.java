@@ -19,7 +19,7 @@ public class ListarAtletas extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         try {
-            ArrayList<Atleta> atletas= Atleta.getAtletas();
+            ArrayList<Atleta> atletas= Atleta.findAll();
             req.setAttribute("atletas", atletas);
             getServletContext().getRequestDispatcher("/listar_atletas.jsp").forward(req,resp);
         } catch (Exception e) {

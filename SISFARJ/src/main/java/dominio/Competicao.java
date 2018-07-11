@@ -1,5 +1,6 @@
 package dominio;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 public class Competicao {
@@ -63,5 +64,19 @@ public class Competicao {
 
     public void setPiscinaId(int piscinaId) {
         this.piscinaId = piscinaId;
+    }
+
+    public static ArrayList<Competicao> findAll(){
+
+        ArrayList<Competicao> lista = new ArrayList<Competicao>();
+
+        return lista;
+    }
+
+    public static Competicao get(int competicaoId){
+
+        Competicao competicao = null;
+
+        return competicao;
     }
 }
