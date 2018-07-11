@@ -1,6 +1,11 @@
+.DS_Store
 /Trabalho
 /SISFARJ/.idea/workspace.xml
 /SISFARJ/.idea/artifacts/*
 /SISFARJ/.idea/tasks.xml
+/SISFARJ/.idea/compiler.xml
+/SISFARJ/.idea/vcs.xml
+/SISFARJ/.idea/libraries/*
 /SISFARJ/out
 /SISFARJ/SISFARJ.iml
+/SISFARJ/target
