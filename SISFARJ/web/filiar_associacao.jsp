@@ -45,37 +45,6 @@
                     <input type="text" class="form-control" id="numComprovantePgto" name="numComprovantePgto" placeholder="Digite o Número do Comprovante de Pagamento">
                 </div>
                 <hr>
-                <h4>Endereço da Associação</h4>
-                <div class="form-row">
-                    <div class="form-group col-md-2">
-                        <label for="cep">CEP</label>
-                        <input type="text" class="form-control" id="cep" name="cep" placeholder="Digite o CEP">
-                    </div>
-                    <div class="form-group col-md-6">
-                        <label for="rua">Rua</label>
-                        <input type="text" class="form-control" id="rua" name="rua" placeholder="Digite a Rua">
-                    </div>
-                    <div class="form-group col-md-4">
-                        <label for="numero">Número</label>
-                        <input type="number" class="form-control" id="numero" name="numero" placeholder="Digite o Número">
-                    </div>
-                </div>
-                <div class="form-row">
-                    <div class="form-group col-md-12">
-                        <label for="complemento">Complemento</label>
-                        <input type="text" class="form-control" id="complemento" name="complemento" placeholder="Digite o Complemento">
-                    </div>
-                </div>
-                <div class="form-row">
-                    <div class="form-group col-md-6">
-                        <label for="rua">Cidade</label>
-                        <input type="text" class="form-control" id="cidade" name="cidade" placeholder="Digite a Cidade">
-                    </div>
-                    <div class="form-group col-md-6">
-                        <label for="estado">Estado</label>
-                        <input type="text" readonly class="form-control" id="estado" name="estado" value="Rio de Janeiro" placeholder="Digite o Estado">
-                    </div>
-                </div>
                 <div class="form-group">
                     <button type="submit" class="btn btn-primary btn-block">Filiar</button>
                 </div>

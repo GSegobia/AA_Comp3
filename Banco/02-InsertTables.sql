@@ -9,9 +9,9 @@ values ('Feminino'),
 	   ('Masculino');
 
 insert into permissao (nome)
-values ('Diretor Técnico'),
-	   ('Técnico Associação'),
-	   ('Secretário');
+values ('Diretor Tï¿½cnico'),
+	   ('Tï¿½cnico Associaï¿½ï¿½o'),
+	   ('Secretï¿½rio');
 
 insert into classe(nome)
 values ('Mirim'),
@@ -25,21 +25,17 @@ values ('Mirim'),
 	   ('Juvenil II'),
 	   ('Junior I'),
 	   ('Junior II'),
-	   ('Sênior'),
+	   ('Sï¿½nior'),
 	   ('Master');
 
-INSERT INTO usuario(id, matricula, nome, senha, permissao_id)
-	VALUES (1, 'teste', 'Sr. Diretor Técnico', 'teste', 1);
-
-INSERT INTO public.endereco(
-	cep, rua, numero, cidade, estado, complemento)
-	VALUES ('teste', 'Rua teste', 2392, 'Cidade Teste', 'AC', 'Complemento teste');
+INSERT INTO usuario(matricula, nome, senha, permissao_id)
+	VALUES ('teste', 'Sr. Diretor TÃ©cnico', 'teste', 1);
 
 INSERT INTO public.associacao(
-	id, numero_oficio, data_oficio, nome, sigla, matricula, endereco_id, telefone, num_comprovante_pgto)
-	VALUES (1, 'n_oficio_teste', now(), 'nome teste', 'sigla', '12838128', 1, '99999-9999', '546455646');
+	numero_oficio, data_oficio, nome, sigla, matricula, endereco, telefone, num_comprovante_pgto)
+	VALUES ('n_oficio_teste', now(), 'nome teste', 'sigla', '12838128', 'Rua Da Puta Que Te Pariu', '99999-9999', '546455646');
 
 insert into public.atleta(
 	matricula,nome,associacao_id,data_nascimento,data_entrada_associacao,data_oficio,categoria_id,numero_oficio)
-	values (1,'Atleta da Silva',1,'01-01-1955',now(),'06-06-2012',2,'123456789012345');
+	values ('matricula','Atleta da Silva',1,'01-01-1955',now(),'06-06-2012',2,'123456789012345');
 commit;

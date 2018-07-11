@@ -17,7 +17,7 @@ public class AssociacaoDAO implements DAO<Associacao> {
                 rs.getString("nome"),
                 rs.getString("sigla"),
                 rs.getString("matricula"),
-                rs.getInt("endereco_id"),
+                rs.getString("endereco"),
                 rs.getString("telefone"),
                 rs.getString("num_comprovante_pgto")
         );
@@ -45,14 +45,14 @@ public class AssociacaoDAO implements DAO<Associacao> {
         int linhasAtualizadas;
 
         String query = String.format(
-                "Insert into Endereco (numero_oficio,data_oficio,nome,sigla,matricula,endereco_id,telefone,num_comprovante_pgto) " +
-                        "values(\'%s\',\'%s\',\'%s\',\'%s\',\'%s\',%d,\'%s\',\'%s\');",
+                "Insert into Associacao (numero_oficio,data_oficio,nome,sigla,matricula,endereco,telefone,num_comprovante_pgto) " +
+                        "values(\'%s\',\'%s\',\'%s\',\'%s\',\'%s\',%s,\'%s\',\'%s\');",
                 modelo.getNumeroOficio(),
                 modelo.getDataOficio(),
                 modelo.getNome(),
                 modelo.getSigla(),
                 modelo.getMatricula(),
-                modelo.getEndereco_id(),
+                modelo.getEndereco(),
                 modelo.getTelefone(),
                 modelo.getNumComprovantePgto()
         );
@@ -67,13 +67,13 @@ public class AssociacaoDAO implements DAO<Associacao> {
 
         String query = String.format(
                 "UPDATE Associacao SET numero_oficio=\'%s\',data_oficio=\'%s\',nome=\'%s\',sigla=\'%s\'," +
-                        "matricula=\'%s\',endereco_id=%d,telefone=\'%s\',num_comprovante_pgto=\'%s\' where id=%d;",
+                        "matricula=\'%s\',endereco=%s,telefone=\'%s\',num_comprovante_pgto=\'%s\' where id=%d;",
                 modelo.getNumeroOficio(),
                 modelo.getDataOficio(),
                 modelo.getNome(),
                 modelo.getSigla(),
                 modelo.getMatricula(),
-                modelo.getEndereco_id(),
+                modelo.getEndereco(),
                 modelo.getTelefone(),
                 modelo.getNumComprovantePgto(),
                 modelo.getId()
@@ -94,13 +94,8 @@ public class AssociacaoDAO implements DAO<Associacao> {
                 "a.matricula,\n" +
                 "a.telefone,\n" +
                 "a.num_comprovante_pgto,\n" +
-                "a.endereco_id,\n" +
-                "e.cep,\n" +
-                "e.rua,\n" +
-                "e.numero,\n" +
-                "e.cidade,\n" +
-                "e.estado,\n" +
-                "e.complemento FROM associacao AS a LEFT JOIN endereco AS e ON e.id = a.endereco_id\n" +
+                "a.endereco\n" +
+                " FROM associacao AS a\n" +
                 "ORDER BY\n" +
                 "a.nome ASC\n");
 

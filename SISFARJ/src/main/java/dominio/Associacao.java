@@ -16,29 +16,29 @@ public class Associacao {
     private String nome;
     private String sigla;
     private String matricula;
-    private int endereco_id;
+    private String endereco;
     private String telefone;
     private String numComprovantePgto;
 
-    public Associacao(Integer id, String numeroOficio, Date dataOficio, String nome, String sigla, String matricula, int endereco_id, String telefone, String numComprovantePgto) {
+    public Associacao(Integer id, String numeroOficio, Date dataOficio, String nome, String sigla, String matricula, String endereco, String telefone, String numComprovantePgto) {
         this.id = id;
         this.numeroOficio = numeroOficio;
         this.dataOficio = dataOficio;
         this.nome = nome;
         this.sigla = sigla;
         this.matricula = matricula;
-        this.endereco_id = endereco_id;
+        this.endereco = endereco;
         this.telefone = telefone;
         this.numComprovantePgto = numComprovantePgto;
     }
 
-    public Associacao(String numeroOficio, Date dataOficio, String nome, String sigla, String matricula, int endereco_id, String telefone, String numComprovantePgto) {
+    public Associacao(String numeroOficio, Date dataOficio, String nome, String sigla, String matricula, String endereco, String telefone, String numComprovantePgto) {
         this.numeroOficio = numeroOficio;
         this.dataOficio = dataOficio;
         this.nome = nome;
         this.sigla = sigla;
         this.matricula = matricula;
-        this.endereco_id = endereco_id;
+        this.endereco = endereco;
         this.telefone = telefone;
         this.numComprovantePgto = numComprovantePgto;
     }
@@ -91,12 +91,12 @@ public class Associacao {
         this.matricula = matricula;
     }
 
-    public int getEndereco_id() {
-        return endereco_id;
+    public String getEndereco() {
+        return endereco;
     }
 
-    public void setEndereco(int endereco) {
-        this.endereco_id = endereco;
+    public void setEndereco(String endereco) {
+        this.endereco = endereco;
     }
 
     public String getTelefone() {
