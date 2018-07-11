@@ -9,3 +9,5 @@
 /SISFARJ/out/*
 /SISFARJ/SISFARJ.iml
 /SISFARJ/target
+
+*.class
