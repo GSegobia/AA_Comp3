@@ -109,10 +109,13 @@ public class Atleta {
     }
 
     public static Atleta get(int id) throws ClassNotFoundException,SQLException, ModeloNaoExiste {
-        Atleta u = AtletaDM.get(id);
+        Atleta a = AtletaDM.get(id);
 
-        if(u==null) throw new ModeloNaoExiste("atleta",id);
-        return u;
+        if(a==null){
+            throw new ModeloNaoExiste("atleta",id);
+        }
+
+        return a;
     }
 
     public static boolean create(Atleta atleta) throws ClassNotFoundException,SQLException {

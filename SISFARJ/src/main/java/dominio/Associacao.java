@@ -117,6 +117,12 @@ public class Associacao {
     }
 
     public static Associacao get(int id) throws SQLException, ClassNotFoundException, ModeloNaoExiste {
+        Associacao a = AssociacaoDM.get(id);
+
+        if(a == null){
+            throw new ModeloNaoExiste("associacao",id);
+        }
+
         return AssociacaoDM.get(id);
     }
 
