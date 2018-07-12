@@ -3,7 +3,6 @@ package servlet.secretario;
 import clojure.lang.Obj;
 import dominio.*;
 import exceptions.MatriculaAssociacaoNaoEncontrada;
-import org.omg.CORBA.INTERNAL;
 import util.MiddlewareSessao;
 
 import javax.servlet.ServletException;
@@ -13,7 +12,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 
 /**
  * Created by Fellipe Bravo on 11/07/18.
