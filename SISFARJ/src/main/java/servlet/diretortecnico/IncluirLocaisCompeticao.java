@@ -1,5 +1,7 @@
 package servlet.diretortecnico;
 
+import util.MiddlewareSessao;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -15,12 +17,18 @@ public class IncluirLocaisCompeticao extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        MiddlewareSessao.validar(req,resp);
+        if(!resp.isCommitted()) {
 
+        }
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        MiddlewareSessao.validar(req,resp);
+        if(!resp.isCommitted()) {
 
+        }
     }
 
 }
