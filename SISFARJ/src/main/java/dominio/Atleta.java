@@ -4,17 +4,19 @@ import dados.datamapper.AtletaDM;
 import exceptions.ModeloNaoExiste;
 
 import java.sql.SQLException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 
 public class Atleta {
 
     private int id,associacao_id,categoria_id;
-    private String matricula,nome,numero_oficio;
+    private String matricula,nome,numero_oficio,num_comprovante_pgto;
     private Date data_nascimento, data_entrada_associacao, data_oficio;
 
     public Atleta(int id, int associacao_id, int categoria_id, String matricula, String nome, Date data_nascimento,
-                  Date data_oficio, String numero_oficio, Date data_entrada_associacao) {
+                  Date data_oficio, String numero_oficio, Date data_entrada_associacao, String num_comprovante_pgto) {
         this.id = id;
         this.associacao_id = associacao_id;
         this.categoria_id = categoria_id;
@@ -24,11 +26,12 @@ public class Atleta {
         this.data_oficio = data_oficio;
         this.numero_oficio = numero_oficio;
         this.data_entrada_associacao = data_entrada_associacao;
+        this.num_comprovante_pgto = num_comprovante_pgto;
 
     }
 
     public Atleta(int associacao_id, int categoria_id, String matricula, String nome, Date data_nascimento,
-                  Date data_oficio, String numero_oficio, Date data_entrada_associacao) {
+                  Date data_oficio, String numero_oficio, Date data_entrada_associacao, String num_comprovante_pgto) {
         this.associacao_id = associacao_id;
         this.categoria_id = categoria_id;
         this.matricula = matricula;
@@ -37,6 +40,7 @@ public class Atleta {
         this.data_oficio = data_oficio;
         this.numero_oficio = numero_oficio;
         this.data_entrada_associacao = data_entrada_associacao;
+        this.num_comprovante_pgto = num_comprovante_pgto;
 
     }
 
@@ -120,6 +124,12 @@ public class Atleta {
         }
 
         return a;
+    }
+
+    public static String gerarMatricula() {
+        String timeStamp = new SimpleDateFormat("yyyyMMddHHmmss").format(Calendar.getInstance().getTime());
+
+        return "002018" + timeStamp;
     }
 
     public static boolean create(Atleta atleta) throws ClassNotFoundException,SQLException {

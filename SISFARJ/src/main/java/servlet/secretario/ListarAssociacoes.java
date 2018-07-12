@@ -28,7 +28,7 @@ public class ListarAssociacoes extends HttpServlet {
                 Boolean possuiPermissao = Usuario.checaPermissao(PermissaoUsuario.SECRETARIO.id, u.getId());
                 if(!possuiPermissao) { informarErroPermissao(req, resp); }
                 else {
-                    ArrayList<Associacao> associacoes = Associacao.getAssociacoes();
+                    ArrayList<Associacao> associacoes = Associacao.findAll();
                     req.setAttribute("associacoes", associacoes);
                     req.getRequestDispatcher("listar_associacoes.jsp").forward(req, resp);
                 }

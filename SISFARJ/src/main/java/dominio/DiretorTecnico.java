@@ -1,5 +1,8 @@
 package dominio;
 
+import exceptions.ModeloNaoExiste;
+
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 /**
@@ -11,18 +14,16 @@ public class DiretorTecnico extends Secretario {
         super(id,nome, matricula, senha, permissao);
     }
 
-    public ArrayList<Competicao> listarCompeticoes() {
+    public ArrayList<Competicao> listarCompeticoes() throws SQLException, ModeloNaoExiste, ClassNotFoundException {
 
         ArrayList<Competicao> competicoes = Competicao.findAll();
 
         return competicoes;
     }
 
-    public Competicao selecionarCompeticao(int idCompeticao) {
+    public Competicao selecionarCompeticao(int idCompeticao) throws SQLException, ModeloNaoExiste, ClassNotFoundException {
 
-        Competicao competicao = Competicao.get(idCompeticao);
-
-        return competicao;
+        return Competicao.get(idCompeticao);
     }
 
     public void selecionarProva() {}
