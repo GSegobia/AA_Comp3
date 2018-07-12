@@ -9,21 +9,21 @@ public class Competicao {
     private String nome;
     private int centroAquaticoId;
     private Date dataCompeticao;
-    private int piscinaId;
+    private int tamanhoPiscina;
 
-    public Competicao(int id, String nome, int centroAquaticoId, Date dataCompeticao, int piscinaId){
+    public Competicao(int id, String nome, int centroAquaticoId, Date dataCompeticao, int tamanhoPiscina){
         this.id = id;
         this.nome = nome;
         this.centroAquaticoId = centroAquaticoId;
         this.dataCompeticao = dataCompeticao;
-        this.piscinaId = piscinaId;
+        this.tamanhoPiscina = tamanhoPiscina;
     }
 
-    public Competicao(String nome, int centroAquaticoId, Date dataCompeticao, int piscinaId){
+    public Competicao(String nome, int centroAquaticoId, Date dataCompeticao, int tamanhoPiscina){
         this.nome = nome;
         this.centroAquaticoId = centroAquaticoId;
         this.dataCompeticao = dataCompeticao;
-        this.piscinaId = piscinaId;
+        this.tamanhoPiscina = tamanhoPiscina;
     }
 
     public int getId() {
@@ -58,12 +58,12 @@ public class Competicao {
         this.dataCompeticao = dataCompeticao;
     }
 
-    public int getPiscinaId() {
-        return piscinaId;
+    public int getTamanhoPiscina() {
+        return tamanhoPiscina;
     }
 
-    public void setPiscinaId(int piscinaId) {
-        this.piscinaId = piscinaId;
+    public void setTamanhoPiscina(int tamanhoPiscina) {
+        this.tamanhoPiscina = tamanhoPiscina;
     }
 
     public static ArrayList<Competicao> findAll(){
