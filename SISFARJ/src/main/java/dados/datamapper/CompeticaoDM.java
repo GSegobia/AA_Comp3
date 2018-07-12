@@ -41,6 +41,9 @@ public class CompeticaoDM {
                 c = mapModel(rs);
         }
 
+        if(c == null){
+            throw new ModeloNaoExiste("competicao",id);
+        }
         return c;
     }
 

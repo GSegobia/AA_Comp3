@@ -38,6 +38,10 @@ public class CentroAquaticoDM {
             c = mapModel(rs);
         }
 
+        if(c == null){
+            throw new ModeloNaoExiste("Centro Aquatico",id);
+        }
+
         return c;
     }
 

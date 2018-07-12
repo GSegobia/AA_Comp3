@@ -64,13 +64,7 @@ public class CentroAquatico {
 
     public static CentroAquatico get(int id) throws SQLException, ClassNotFoundException, ModeloNaoExiste {
 
-        CentroAquatico centro = CentroAquaticoDM.get(id);
-
-        if( centro == null ) {
-            throw new ModeloNaoExiste("centro aquatico",id);
-        }
-
-        return centro;
+        return CentroAquaticoDM.get(id);
     }
 
     public void create(CentroAquatico c) throws SQLException,ClassNotFoundException {
