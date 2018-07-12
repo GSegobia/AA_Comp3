@@ -32,7 +32,7 @@ public class ProvaAtletaDM {
 
         if(a == null) {
             throw new ModeloNaoExiste("prova_atleta",id);
-        }
+        };
 
         return a;
     }

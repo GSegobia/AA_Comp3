@@ -8,28 +8,12 @@ import java.sql.SQLException;
 
 public class CompeticaoProva {
 
-    private int id;
     private int competicao_id;
     private int prova_id;
 
     public CompeticaoProva(int competicao_id, int prova_id) {
         this.competicao_id = competicao_id;
         this.prova_id = prova_id;
-    }
-
-    public CompeticaoProva(int id, int competicao_id, int prova_id) {
-
-        this.id = id;
-        this.competicao_id = competicao_id;
-        this.prova_id = prova_id;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public int getCompeticao_id() {
