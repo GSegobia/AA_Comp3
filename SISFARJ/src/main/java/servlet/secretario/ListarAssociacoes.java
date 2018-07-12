@@ -25,14 +25,16 @@ public class ListarAssociacoes extends HttpServlet {
         if(!resp.isCommitted()) {
             try {
                 Usuario u = (Usuario) req.getSession().getAttribute("usuario");
-                Usuario.checaPermissao(PermissaoUsuario.SECRETARIO.id, u.getId());
+                Boolean possuiPermissao = Usuario.checaPermissao(PermissaoUsuario.SECRETARIO.id, u.getId());
+                if(!possuiPermissao) { informarErroPermissao(req, resp); }
+                else {
+                    ArrayList<Associacao> associacoes = Associacao.getAssociacoes();
+                    req.setAttribute("associacoes", associacoes);
+                    req.getRequestDispatcher("listar_associacoes.jsp").forward(req, resp);
+                }
 
-                ArrayList<Associacao> associacoes = Associacao.getAssociacoes();
-                req.setAttribute("associacoes", associacoes);
-                req.getRequestDispatcher("listar_associacoes.jsp").forward(req, resp);
             } catch (Exception e) {
                 e.printStackTrace();
-                informarErroPermissao(req, resp);
             }
         }
     }

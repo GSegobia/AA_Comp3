@@ -23,12 +23,11 @@ public class FiliarAssociacao extends HttpServlet {
         if(!resp.isCommitted()) {
             try {
                 Usuario u = (Usuario) req.getSession().getAttribute("usuario");
-                Usuario.checaPermissao(PermissaoUsuario.SECRETARIO.id, u.getId());
-
-                getServletContext().getRequestDispatcher("/filiar_associacao.jsp").forward(req, resp);
+                Boolean possuiPermissao = Usuario.checaPermissao(PermissaoUsuario.SECRETARIO.id, u.getId());
+                if(!possuiPermissao) { informarErroPermissao(req, resp); }
+                else { getServletContext().getRequestDispatcher("/filiar_associacao.jsp").forward(req, resp); }
             } catch (Exception e) {
                 e.printStackTrace();
-                informarErroPermissao(req, resp);
             }
         }
     }
@@ -39,10 +38,13 @@ public class FiliarAssociacao extends HttpServlet {
         if(!resp.isCommitted()) {
             try {
                 Usuario u = (Usuario) req.getSession().getAttribute("usuario");
-                Usuario.checaPermissao(PermissaoUsuario.SECRETARIO.id, u.getId());
+                Boolean possuiPermissao = Usuario.checaPermissao(PermissaoUsuario.SECRETARIO.id, u.getId());
+                if(!possuiPermissao) { informarErroPermissao(req, resp); }
+                else {
+
+                }
             } catch (Exception e) {
                 e.printStackTrace();
-                informarErroPermissao(req, resp);
             }
         }
     }

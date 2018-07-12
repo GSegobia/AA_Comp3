@@ -25,11 +25,14 @@ public class ListarAtletas extends HttpServlet {
         if(!resp.isCommitted()) {
             try {
                 Usuario u = (Usuario) req.getSession().getAttribute("usuario");
-                Usuario.checaPermissao(PermissaoUsuario.SECRETARIO.id, u.getId());
+                Boolean possuiPermissao = Usuario.checaPermissao(PermissaoUsuario.SECRETARIO.id, u.getId());
+                if(!possuiPermissao) { informarErroPermissao(req, resp); }
+                else {
+                    ArrayList<Atleta> atletas = Atleta.findAll();
+                    req.setAttribute("atletas", atletas);
+                    getServletContext().getRequestDispatcher("/listar_atletas.jsp").forward(req, resp);
+                }
 
-                ArrayList<Atleta> atletas = Atleta.findAll();
-                req.setAttribute("atletas", atletas);
-                getServletContext().getRequestDispatcher("/listar_atletas.jsp").forward(req, resp);
             } catch (Exception e) {
                 e.printStackTrace();
                 informarErroPermissao(req, resp);

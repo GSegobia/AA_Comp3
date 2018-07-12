@@ -23,12 +23,11 @@ public class CadastrarAtleta extends HttpServlet {
         if(!resp.isCommitted()) {
             try {
                 Usuario u = (Usuario) req.getSession().getAttribute("usuario");
-                Usuario.checaPermissao(PermissaoUsuario.SECRETARIO.id, u.getId());
-
-                req.getRequestDispatcher("cadastrar_atleta.jsp").forward(req, resp);
+                Boolean possuiPermissao = Usuario.checaPermissao(PermissaoUsuario.SECRETARIO.id, u.getId());
+                if(!possuiPermissao) { informarErroPermissao(req, resp); }
+                else { req.getRequestDispatcher("cadastrar_atleta.jsp").forward(req, resp); }
             } catch (Exception e) {
                 e.printStackTrace();
-                informarErroPermissao(req, resp);
             }
         }
     }
@@ -39,27 +38,28 @@ public class CadastrarAtleta extends HttpServlet {
         if(!resp.isCommitted()) {
             try {
                 Usuario u = (Usuario) req.getSession().getAttribute("usuario");
-                Usuario.checaPermissao(PermissaoUsuario.SECRETARIO.id, u.getId());
+                Boolean possuiPermissao = Usuario.checaPermissao(PermissaoUsuario.SECRETARIO.id, u.getId());
+                if(!possuiPermissao) { informarErroPermissao(req, resp); }
+                else {
+                    // Receber dados do Request
+                    String nome = req.getParameter("nome").trim();
+                    String dataNascimento = req.getParameter("dataNascimento").trim();
+                    String numeroOficio = req.getParameter("numeroOficio").trim();
+                    String dataOficio = req.getParameter("dataOficio").trim();
+                    String dataEntrada = req.getParameter("dataEntrada").trim();
+                    String matriculaAssociacao = req.getParameter("matriculaAssociacao").trim();
+                    String numComprovantePgto = req.getParameter("numComprovantePgto").trim();
 
-                // Receber dados do Request
-                String nome = req.getParameter("nome").trim();
-                String dataNascimento = req.getParameter("dataNascimento").trim();
-                String numeroOficio = req.getParameter("numeroOficio").trim();
-                String dataOficio = req.getParameter("dataOficio").trim();
-                String dataEntrada = req.getParameter("dataEntrada").trim();
-                String matriculaAssociacao = req.getParameter("matriculaAssociacao").trim();
-                String numComprovantePgto = req.getParameter("numComprovantePgto").trim();
-
-                if (nome.equals("") || dataNascimento.equals("") || numeroOficio.equals("") ||
-                        dataOficio.equals("") || dataEntrada.equals("") || matriculaAssociacao.equals("") ||
-                        numComprovantePgto.equals("")) {
-                    informarErroPreenchimento(req, resp);
-                } else {
-                    // TODO: Cadastrar atleta
+                    if (nome.equals("") || dataNascimento.equals("") || numeroOficio.equals("") ||
+                            dataOficio.equals("") || dataEntrada.equals("") || matriculaAssociacao.equals("") ||
+                            numComprovantePgto.equals("")) {
+                        informarErroPreenchimento(req, resp);
+                    } else {
+                        // TODO: Cadastrar atleta
+                    }
                 }
             } catch (Exception e) {
                 e.printStackTrace();
-                informarErroPermissao(req, resp);
             }
         }
     }

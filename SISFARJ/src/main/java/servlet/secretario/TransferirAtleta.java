@@ -23,10 +23,13 @@ public class TransferirAtleta extends HttpServlet {
         if(!resp.isCommitted()) {
             try {
                 Usuario u = (Usuario) req.getSession().getAttribute("usuario");
-                Usuario.checaPermissao(PermissaoUsuario.SECRETARIO.id, u.getId());
+                Boolean possuiPermissao = Usuario.checaPermissao(PermissaoUsuario.SECRETARIO.id, u.getId());
+                if(!possuiPermissao) { informarErroPermissao(req, resp); }
+                else {
+
+                }
             } catch (Exception e) {
                 e.printStackTrace();
-                informarErroPermissao(req, resp);
             }
         }
     }
@@ -37,10 +40,13 @@ public class TransferirAtleta extends HttpServlet {
         if(!resp.isCommitted()) {
             try {
                 Usuario u = (Usuario) req.getSession().getAttribute("usuario");
-                Usuario.checaPermissao(PermissaoUsuario.SECRETARIO.id, u.getId());
+                Boolean possuiPermissao = Usuario.checaPermissao(PermissaoUsuario.SECRETARIO.id, u.getId());
+                if(!possuiPermissao) { informarErroPermissao(req, resp); }
+                else {
+
+                }
             } catch (Exception e) {
                 e.printStackTrace();
-                informarErroPermissao(req, resp);
             }
         }
     }
