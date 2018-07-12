@@ -7,16 +7,51 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3ba347f4-53e5-49f7-8ec6-16713cf87231" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_lang3_3_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SISFARJ/src/main/java/dados/datamapper/ProvaAtletaDM.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SISFARJ/src/main/java/dados/datamapper/ProvaDM.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SISFARJ/src/main/java/dominio/ProvaAtleta.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__cglib_cglib_nodep_2_1_3.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_guava_guava_14_0_rc1.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_codec_commons_codec_1_7.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_collections_commons_collections_3_2_1.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_io_commons_io_2_2.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_logging_commons_logging_1_1_1.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_3_5_2_Final.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_12.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_java_dev_jna_jna_3_4_0.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_java_dev_jna_platform_3_4_0.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_sourceforge_cssparser_cssparser_0_9_8.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_sourceforge_htmlunit_htmlunit_2_11.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_sourceforge_htmlunit_htmlunit_core_js_2_11.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_sourceforge_nekohtml_nekohtml_1_9_17.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_exec_1_1.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_httpcomponents_httpclient_4_2_1.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_httpcomponents_httpcore_4_2_1.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_httpcomponents_httpmime_4_2_2.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_eclipse_jetty_jetty_http_8_1_7_v20120910.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_eclipse_jetty_jetty_io_8_1_7_v20120910.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_eclipse_jetty_jetty_util_8_1_7_v20120910.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_eclipse_jetty_jetty_websocket_8_1_7_v20120910.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_3.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_json_json_20080701.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_seleniumhq_selenium_selenium_android_driver_2_30_0.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_seleniumhq_selenium_selenium_api_2_30_0.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_seleniumhq_selenium_selenium_chrome_driver_2_30_0.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_seleniumhq_selenium_selenium_firefox_driver_2_30_0.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_seleniumhq_selenium_selenium_htmlunit_driver_2_30_0.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_seleniumhq_selenium_selenium_ie_driver_2_30_0.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_seleniumhq_selenium_selenium_iphone_driver_2_30_0.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_seleniumhq_selenium_selenium_java_2_30_0.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_seleniumhq_selenium_selenium_remote_driver_2_30_0.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_seleniumhq_selenium_selenium_safari_driver_2_30_0.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_seleniumhq_selenium_selenium_support_2_30_0.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_w3c_css_sac_1_3.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_webbitserver_webbit_0_4_14.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__xalan_serializer_2_7_1.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__xalan_xalan_2_7_1.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__xerces_xercesImpl_2_10_0.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__xml_apis_xml_apis_1_4_01.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SISFARJ/src/main/java/dados/datamapper/CompeticaoProvaDM.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SISFARJ/src/main/java/dominio/CompeticaoProva.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SISFARJ/SISFARJ.iml" afterPath="$PROJECT_DIR$/SISFARJ/SISFARJ.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SISFARJ/pom.xml" afterPath="$PROJECT_DIR$/SISFARJ/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SISFARJ/src/main/java/dados/Database.java" afterPath="$PROJECT_DIR$/SISFARJ/src/main/java/dados/Database.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SISFARJ/src/main/java/dominio/Prova.java" afterPath="$PROJECT_DIR$/SISFARJ/src/main/java/dominio/Prova.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SISFARJ/web/index.jsp" afterPath="$PROJECT_DIR$/SISFARJ/web/index.jsp" />
     </list>
     <ignored path="$PROJECT_DIR$/SISFARJ/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -130,38 +165,24 @@
       <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SISFARJ/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="640">
-              <caret line="32" column="50" lean-forward="true" selection-start-line="32" selection-start-column="50" selection-end-line="32" selection-end-column="50" />
+            <state relative-caret-position="262">
+              <caret line="22" column="21" lean-forward="true" selection-start-line="22" selection-start-column="21" selection-end-line="22" selection-end-column="21" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ProvaAtleta.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SISFARJ/src/main/java/dominio/ProvaAtleta.java">
+      <file leaf-file-name="CompeticaoProva.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/SISFARJ/src/main/java/dominio/CompeticaoProva.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="742">
-              <caret line="57" column="0" lean-forward="true" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#602#603#0" expanded="true" />
-                <element signature="e#627#628#0" expanded="true" />
-                <element signature="e#660#661#0" expanded="true" />
-                <element signature="e#688#689#0" expanded="true" />
-                <element signature="e#720#721#0" expanded="true" />
-                <element signature="e#751#752#0" expanded="true" />
-                <element signature="e#796#797#0" expanded="true" />
-                <element signature="e#836#837#0" expanded="true" />
-                <element signature="e#869#870#0" expanded="true" />
-                <element signature="e#901#902#0" expanded="true" />
-                <element signature="e#948#949#0" expanded="true" />
-                <element signature="e#990#991#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="622">
+              <caret line="54" column="55" lean-forward="true" selection-start-line="54" selection-start-column="55" selection-end-line="54" selection-end-column="55" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Prova.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Prova.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SISFARJ/src/main/java/dominio/Prova.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-698">
@@ -271,6 +292,7 @@
       <find>Usuario</find>
       <find>Atleta</find>
       <find>Prova</find>
+      <find>ProvaAtleta</find>
     </findStrings>
     <replaceStrings>
       <replace>Atleta</replace>
@@ -283,6 +305,7 @@
       <replace>Classe</replace>
       <replace>Prova</replace>
       <replace>ProvaAtleta</replace>
+      <replace>CompeticaoProva</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -296,8 +319,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/SISFARJ/src/main/java/dominio/Endereco.java" />
-        <option value="$PROJECT_DIR$/SISFARJ/src/main/java/dados/associacao/AssociacaoData.java" />
         <option value="$PROJECT_DIR$/SISFARJ/src/main/java/servlet/ListarAssociacoes.java" />
         <option value="$PROJECT_DIR$/SISFARJ/src/main/java/servlet/associacao/ListarAssociacoes.java" />
         <option value="$PROJECT_DIR$/SISFARJ/src/main/java/dados/atleta/AtletaDAO.java" />
@@ -347,6 +368,8 @@
         <option value="$PROJECT_DIR$/SISFARJ/src/main/java/dominio/ProvaAtleta.java" />
         <option value="$PROJECT_DIR$/SISFARJ/pom.xml" />
         <option value="$PROJECT_DIR$/SISFARJ/src/main/java/dados/datamapper/ProvaAtletaDM.java" />
+        <option value="$PROJECT_DIR$/SISFARJ/src/main/java/dominio/CompeticaoProva.java" />
+        <option value="$PROJECT_DIR$/SISFARJ/src/main/java/dados/datamapper/CompeticaoProvaDM.java" />
       </list>
     </option>
   </component>
@@ -1671,12 +1694,12 @@
       <workItem from="1531242472535" duration="60000" />
       <workItem from="1531242554696" duration="9473000" />
       <workItem from="1531357927995" duration="10369000" />
-      <workItem from="1531401345485" duration="14472000" />
+      <workItem from="1531401345485" duration="15002000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="37851000" />
+    <option name="totallyTimeSpent" value="38381000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1920" y="-3" width="1920" height="1083" extended-state="6" />
@@ -1738,8 +1761,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/SISFARJ/src/main/java/dados/usuario/UsuarioData.java" />
-    <entry file="file://$PROJECT_DIR$/SISFARJ/src/main/java/dados/DataMapper.java" />
     <entry file="file://$PROJECT_DIR$/SISFARJ/src/main/java/dados/atleta/AtletaData.java" />
     <entry file="file://$PROJECT_DIR$/SISFARJ/src/main/java/dados/associacao/AssociacaoData.java" />
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/ff83190b-5376-429d-95ff-50ea5cd16fd9/console_1.sql">
@@ -2188,24 +2209,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SISFARJ/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="640">
-          <caret line="32" column="50" lean-forward="true" selection-start-line="32" selection-start-column="50" selection-end-line="32" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SISFARJ/src/main/java/dados/datamapper/ProvaAtletaDM.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="742">
-          <caret line="66" column="28" lean-forward="true" selection-start-line="66" selection-start-column="28" selection-end-line="66" selection-end-column="28" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/SISFARJ/src/main/java/dados/datamapper/ProvaDM.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="522">
@@ -2223,28 +2226,6 @@
           <folding>
             <element signature="e#3576#3584#0" expanded="true" />
             <marker date="1531365253663" expanded="true" signature="2864:3433" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SISFARJ/src/main/java/dominio/ProvaAtleta.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="742">
-          <caret line="57" column="0" lean-forward="true" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#602#603#0" expanded="true" />
-            <element signature="e#627#628#0" expanded="true" />
-            <element signature="e#660#661#0" expanded="true" />
-            <element signature="e#688#689#0" expanded="true" />
-            <element signature="e#720#721#0" expanded="true" />
-            <element signature="e#751#752#0" expanded="true" />
-            <element signature="e#796#797#0" expanded="true" />
-            <element signature="e#836#837#0" expanded="true" />
-            <element signature="e#869#870#0" expanded="true" />
-            <element signature="e#901#902#0" expanded="true" />
-            <element signature="e#948#949#0" expanded="true" />
-            <element signature="e#990#991#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2280,6 +2261,64 @@
             <element signature="e#1861#1862#0" expanded="true" />
             <element signature="e#1915#1916#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SISFARJ/src/main/java/dados/datamapper/CompeticaoProvaDM.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="820">
+          <caret line="41" column="74" lean-forward="true" selection-start-line="41" selection-start-column="74" selection-end-line="41" selection-end-column="74" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SISFARJ/src/main/java/dominio/ProvaAtleta.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="702">
+          <caret line="58" column="44" lean-forward="false" selection-start-line="58" selection-start-column="24" selection-end-line="58" selection-end-column="44" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#602#603#0" expanded="true" />
+            <element signature="e#627#628#0" expanded="true" />
+            <element signature="e#660#661#0" expanded="true" />
+            <element signature="e#688#689#0" expanded="true" />
+            <element signature="e#720#721#0" expanded="true" />
+            <element signature="e#751#752#0" expanded="true" />
+            <element signature="e#796#797#0" expanded="true" />
+            <element signature="e#836#837#0" expanded="true" />
+            <element signature="e#869#870#0" expanded="true" />
+            <element signature="e#901#902#0" expanded="true" />
+            <element signature="e#948#949#0" expanded="true" />
+            <element signature="e#990#991#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SISFARJ/src/main/java/dados/datamapper/ProvaAtletaDM.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="562">
+          <caret line="57" column="72" lean-forward="false" selection-start-line="57" selection-start-column="60" selection-end-line="57" selection-end-column="72" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SISFARJ/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="262">
+          <caret line="22" column="21" lean-forward="true" selection-start-line="22" selection-start-column="21" selection-end-line="22" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SISFARJ/src/main/java/dominio/CompeticaoProva.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="622">
+          <caret line="54" column="55" lean-forward="true" selection-start-line="54" selection-start-column="55" selection-end-line="54" selection-end-column="55" />
+          <folding />
         </state>
       </provider>
     </entry>
