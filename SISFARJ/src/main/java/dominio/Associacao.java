@@ -4,9 +4,9 @@ import dados.datamapper.AssociacaoDM;
 import exceptions.MatriculaAssociacaoNaoEncontrada;
 import exceptions.ModeloNaoExiste;
 
-import java.util.Date;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Date;
 
 /**
  * Created by Fellipe Bravo on 10/07/18.
@@ -47,10 +47,6 @@ public class Associacao {
 
     public Integer getId() {
         return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
     }
 
     public String getNumeroOficio() {
@@ -118,12 +114,6 @@ public class Associacao {
     }
 
     public static Associacao get(int id) throws SQLException, ClassNotFoundException, ModeloNaoExiste {
-        Associacao a = AssociacaoDM.get(id);
-
-        if(a == null){
-            throw new ModeloNaoExiste("associacao",id);
-        }
-
         return AssociacaoDM.get(id);
     }
 

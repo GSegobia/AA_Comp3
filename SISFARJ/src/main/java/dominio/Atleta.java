@@ -88,10 +88,6 @@ public class Atleta {
         return data_entrada_associacao;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
     public void setAssociacao_id(int associacao_id) {
         this.associacao_id = associacao_id;
     }
@@ -125,18 +121,11 @@ public class Atleta {
     }
 
     public static Atleta get(int id) throws ClassNotFoundException,SQLException, ModeloNaoExiste {
-        Atleta a = AtletaDM.get(id);
-
-        if(a==null){
-            throw new ModeloNaoExiste("atleta",id);
-        }
-
-        return a;
+        return AtletaDM.get(id);
     }
 
     public static String gerarMatricula() {
         String timeStamp = new SimpleDateFormat("yyyyMMddHHmmss").format(Calendar.getInstance().getTime());
-
         return "002018" + timeStamp;
     }
 

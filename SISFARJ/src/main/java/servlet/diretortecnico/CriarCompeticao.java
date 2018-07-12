@@ -1,7 +1,6 @@
 package servlet.diretortecnico;
 
 import dominio.CentroAquatico;
-import dominio.Competicao;
 import dominio.PermissaoUsuario;
 import dominio.Usuario;
 import util.MiddlewareSessao;

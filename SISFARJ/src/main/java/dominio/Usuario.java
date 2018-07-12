@@ -32,9 +32,6 @@ public class Usuario {
         this.permissao_id = permissao_id;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
     public String getMatricula() {
         return matricula;
     }
@@ -67,23 +64,15 @@ public class Usuario {
     }
 
     public static Usuario get(int id) throws SQLException, ClassNotFoundException, ModeloNaoExiste {
-        Usuario u = UsuarioDM.get(id);
-
-        if(u==null){
-            throw new ModeloNaoExiste("usuario",id);
-        }
-
         return UsuarioDM.get(id);
     }
 
-    public static void create(Usuario usuario) throws SQLException, ClassNotFoundException{
-
-        UsuarioDM.create(usuario);
+    public static boolean create(Usuario usuario) throws SQLException, ClassNotFoundException{
+        return UsuarioDM.create(usuario);
     }
 
-    public static void update(Usuario usuario) throws SQLException, ClassNotFoundException {
-
-        UsuarioDM.update(usuario);
+    public static boolean update(Usuario usuario) throws SQLException, ClassNotFoundException {
+        return UsuarioDM.update(usuario);
     }
 
     public static boolean checaPermissao(int numeroPermissao, int idUsuario) throws SQLException, ClassNotFoundException, ModeloNaoExiste {

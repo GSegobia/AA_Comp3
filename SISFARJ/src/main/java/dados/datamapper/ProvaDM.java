@@ -4,11 +4,9 @@ import dados.Database;
 import dominio.Prova;
 import exceptions.ModeloNaoExiste;
 
-import java.sql.Array;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class ProvaDM {
 
@@ -29,7 +27,7 @@ public class ProvaDM {
 
         ResultSet rs = Database.doSelect(query);
 
-        while(rs.next()){
+        if(rs.next()){
             a = mapModel(rs);
         }
         if(a == null) throw new ModeloNaoExiste("Prova",id);

@@ -37,10 +37,6 @@ public class Prova {
         return id;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
     public String getNome() {
         return nome;
     }
@@ -81,12 +77,12 @@ public class Prova {
         this.prova_atleta_id = prova_atleta_id;
     }
 
-    public static void get(int id) throws SQLException, ClassNotFoundException, ModeloNaoExiste {
-        ProvaDM.get(id);
+    public static Prova get(int id) throws SQLException, ClassNotFoundException, ModeloNaoExiste {
+        return ProvaDM.get(id);
     }
 
-    public static void create(Prova prova) throws SQLException, ClassNotFoundException {
-        ProvaDM.create(prova);
+    public static boolean create(Prova prova) throws SQLException, ClassNotFoundException {
+        return ProvaDM.create(prova);
     }
 
     public static ArrayList<Prova> findAll() throws SQLException, ClassNotFoundException {

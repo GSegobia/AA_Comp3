@@ -25,10 +25,10 @@ public class CategoriaDM {
 
         ResultSet rs = Database.doSelect(query);
 
-        while(rs.next()){
+        if(rs.next()){
             a = mapModel(rs);
         }
-        if(a == null) throw new ModeloNaoExiste("categoria",id);
+        if(a == null) throw new ModeloNaoExiste("Categoria",id);
 
         return a;
     }

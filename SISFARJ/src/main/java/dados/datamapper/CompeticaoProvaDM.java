@@ -24,12 +24,12 @@ public class CompeticaoProvaDM {
 
         ResultSet rs = Database.doSelect(query);
 
-        while(rs.next()){
+        if(rs.next()){
             a = mapModel(rs);
         }
 
         if(a == null) {
-            throw new ModeloNaoExiste("competicao_prova",id);
+            throw new ModeloNaoExiste("Competicao Prova",id);
         }
 
         return a;

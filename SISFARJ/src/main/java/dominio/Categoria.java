@@ -23,10 +23,6 @@ public class Categoria {
         return id;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
     public String getNome() {
         return nome;
     }
@@ -36,13 +32,7 @@ public class Categoria {
     }
 
     public Categoria get(int id) throws ClassNotFoundException,SQLException, ModeloNaoExiste {
-        Categoria c = CategoriaDM.get(id);
-
-        if(c==null) {
-           throw new ModeloNaoExiste("categoria",id);
-        }
-
-        return c;
+        return CategoriaDM.get(id);
     }
 
     public ArrayList<Categoria> findAll() throws ClassNotFoundException, SQLException {

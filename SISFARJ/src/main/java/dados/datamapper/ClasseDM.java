@@ -25,11 +25,11 @@ public class ClasseDM {
 
         ResultSet rs = Database.doSelect(query);
 
-        while(rs.next()){
+        if(rs.next()){
             a = mapModel(rs);
         }
 
-        if(a == null) throw new ModeloNaoExiste("classe",id);
+        if(a == null) throw new ModeloNaoExiste("Classe",id);
 
         return a;
     }

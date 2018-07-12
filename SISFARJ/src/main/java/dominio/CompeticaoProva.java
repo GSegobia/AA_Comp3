@@ -1,7 +1,6 @@
 package dominio;
 
 import dados.datamapper.CompeticaoProvaDM;
-import dados.datamapper.ProvaAtletaDM;
 import exceptions.ModeloNaoExiste;
 
 import java.sql.SQLException;
@@ -28,10 +27,6 @@ public class CompeticaoProva {
         return id;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
     public int getCompeticao_id() {
         return competicao_id;
     }
@@ -48,12 +43,12 @@ public class CompeticaoProva {
         this.prova_id = prova_id;
     }
 
-    public static void get(int id) throws SQLException, ClassNotFoundException, ModeloNaoExiste {
-        CompeticaoProvaDM.get(id);
+    public static CompeticaoProva get(int id) throws SQLException, ClassNotFoundException, ModeloNaoExiste {
+        return CompeticaoProvaDM.get(id);
     }
 
-    public static void create(CompeticaoProva prova) throws SQLException, ClassNotFoundException {
-        CompeticaoProvaDM.create(prova);
+    public static boolean create(CompeticaoProva prova) throws SQLException, ClassNotFoundException {
+        return CompeticaoProvaDM.create(prova);
     }
 
     public static int[] findAllProvaInCompeticao(int competicao_id) throws SQLException, ClassNotFoundException {

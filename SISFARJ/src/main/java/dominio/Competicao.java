@@ -34,10 +34,6 @@ public class Competicao {
         return id;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
     public String getNome() {
         return nome;
     }
@@ -76,21 +72,14 @@ public class Competicao {
     }
 
     public static Competicao get(int competicaoId) throws SQLException, ClassNotFoundException, ModeloNaoExiste {
-
-        Competicao competicao = CompeticaoDM.get(competicaoId);
-
-        if( competicao == null ) {
-            throw new ModeloNaoExiste("competicao",competicaoId);
-        }
-
-        return competicao;
+        return CompeticaoDM.get(competicaoId);
     }
 
-    public static void create(Competicao c) throws SQLException,ClassNotFoundException {
-        CompeticaoDM.create(c);
+    public static boolean create(Competicao c) throws SQLException,ClassNotFoundException {
+        return CompeticaoDM.create(c);
     }
 
-    public static void update(Competicao c) throws SQLException, ClassNotFoundException {
-        CompeticaoDM.update(c);
+    public static boolean update(Competicao c) throws SQLException, ClassNotFoundException {
+        return CompeticaoDM.update(c);
     }
 }

@@ -1,11 +1,9 @@
 package dominio;
 
 import dados.datamapper.ProvaAtletaDM;
-import dados.datamapper.ProvaDM;
 import exceptions.ModeloNaoExiste;
 
 import java.sql.SQLException;
-import java.util.ArrayList;
 
 public class ProvaAtleta {
 
@@ -24,14 +22,6 @@ public class ProvaAtleta {
         this.atleta_id = atleta_id;
     }
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
     public int getProva_id() {
         return prova_id;
     }
@@ -48,12 +38,12 @@ public class ProvaAtleta {
         this.atleta_id = atleta_id;
     }
 
-    public static void get(int id) throws SQLException, ClassNotFoundException, ModeloNaoExiste {
-        ProvaAtletaDM.get(id);
+    public static ProvaAtleta get(int id) throws SQLException, ClassNotFoundException, ModeloNaoExiste {
+        return ProvaAtletaDM.get(id);
     }
 
-    public static void create(ProvaAtleta prova) throws SQLException, ClassNotFoundException {
-        ProvaAtletaDM.create(prova);
+    public static boolean create(ProvaAtleta prova) throws SQLException, ClassNotFoundException {
+        return ProvaAtletaDM.create(prova);
     }
 
     public static int[] findAllAtletaInProva(int provaId) throws SQLException, ClassNotFoundException {
