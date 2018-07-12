@@ -1,6 +1,5 @@
 package servlet.secretario;
 
-import clojure.lang.Obj;
 import dominio.*;
 import exceptions.MatriculaAssociacaoNaoEncontrada;
 import util.MiddlewareSessao;

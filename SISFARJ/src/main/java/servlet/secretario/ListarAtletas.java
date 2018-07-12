@@ -2,6 +2,7 @@ package servlet.secretario;
 
 import dominio.Atleta;
 import dominio.PermissaoUsuario;
+import dominio.Secretario;
 import dominio.Usuario;
 import util.MiddlewareSessao;
 
@@ -15,6 +16,7 @@ import java.util.ArrayList;
 
 /**
  * Created by Fellipe Bravo on 10/07/18.
+ * Edited by João V. Araújo on 12/07/18.
  */
 @WebServlet("/listarAtletas")
 public class ListarAtletas extends HttpServlet {
@@ -28,7 +30,8 @@ public class ListarAtletas extends HttpServlet {
                 Boolean possuiPermissao = Usuario.checaPermissao(PermissaoUsuario.SECRETARIO.id, u.getId());
                 if(!possuiPermissao) { informarErroPermissao(req, resp); }
                 else {
-                    ArrayList<Atleta> atletas = Atleta.findAll();
+                    Secretario secretario = new Secretario(u.getId(), u.getNome(), u.getMatricula(), u.getSenha(), u.getPermissaoId());
+                    ArrayList<Atleta> atletas = secretario.listarAtletas();
                     req.setAttribute("atletas", atletas);
                     getServletContext().getRequestDispatcher("/listar_atletas.jsp").forward(req, resp);
                 }

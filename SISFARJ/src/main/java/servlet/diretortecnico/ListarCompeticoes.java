@@ -1,6 +1,7 @@
 package servlet.diretortecnico;
 
 import dominio.Competicao;
+import dominio.DiretorTecnico;
 import dominio.PermissaoUsuario;
 import dominio.Usuario;
 import util.MiddlewareSessao;
@@ -29,7 +30,8 @@ public class ListarCompeticoes extends HttpServlet {
                 Boolean possuiPermissao = Usuario.checaPermissao(PermissaoUsuario.DIRETOR_TECNICO.id, u.getId()) || Usuario.checaPermissao(PermissaoUsuario.TECNICO_ASSOCIACAO.id, u.getId());
                 if(!possuiPermissao) { informarErroPermissao(req, resp); }
                 else {
-                    ArrayList<Competicao> competicoes = Competicao.findAll();
+                    DiretorTecnico diretor = new DiretorTecnico(u.getId(), u.getNome(), u.getMatricula(), u.getSenha(), u.getPermissaoId());
+                    ArrayList<Competicao> competicoes = diretor.listarCompeticoes();
                     req.setAttribute("competicoes", competicoes);
                     getServletContext().getRequestDispatcher("/listar_competicoes.jsp").forward(req, resp);
                 }
