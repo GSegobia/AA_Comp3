@@ -5,3 +5,5 @@ drop table piscina;
 
 alter table competicao add column tamanho_piscina int not null;
 alter table centro_aquatico add column tamanho_piscina int not null;
+
+alter table atleta add column num_comprovante_pgto varchar(20);

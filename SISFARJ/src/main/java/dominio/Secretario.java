@@ -28,6 +28,12 @@ public class Secretario extends Usuario {
         Associacao.update(associacao);
     }
 
+    public Associacao selecionarAssociacao(int idAssociacao) throws ClassNotFoundException, SQLException,
+                                                            ModeloNaoExiste{
+
+        return Associacao.get(idAssociacao);
+    }
+
     public ArrayList<Associacao> listarAssociacao() throws ClassNotFoundException, SQLException {
 
         return Associacao.findAll();
