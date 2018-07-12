@@ -67,11 +67,11 @@ public class CentroAquatico {
         return CentroAquaticoDM.get(id);
     }
 
-    public void create(CentroAquatico c) throws SQLException,ClassNotFoundException {
+    public static void create(CentroAquatico c) throws SQLException,ClassNotFoundException {
         CentroAquaticoDM.create(c);
     }
 
-    public void update(CentroAquatico c) throws SQLException, ClassNotFoundException {
+    public static void update(CentroAquatico c) throws SQLException, ClassNotFoundException {
         CentroAquaticoDM.update(c);
     }
 

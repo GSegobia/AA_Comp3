@@ -14,6 +14,31 @@ public class DiretorTecnico extends Secretario {
         super(id,nome, matricula, senha, permissao);
     }
 
+    public void incluirLocalCompeticao(CentroAquatico centro) throws SQLException, ClassNotFoundException{
+
+        CentroAquatico.create(centro);
+    }
+
+    public ArrayList<CentroAquatico> listarLocaisCompeticao() throws SQLException, ClassNotFoundException{
+
+        return CentroAquatico.findAll();
+    }
+
+    public void alterarLocalCompeticao(CentroAquatico centro) throws SQLException, ClassNotFoundException{
+
+        CentroAquatico.update(centro);
+    }
+
+    public void criarCompeticao(Competicao competicao) throws SQLException, ClassNotFoundException{
+
+        Competicao.create(competicao);
+    }
+
+    public void alterarCompeticao(Competicao competicao) throws SQLException, ClassNotFoundException{
+
+        Competicao.update(competicao);
+    }
+
     public ArrayList<Competicao> listarCompeticoes() throws SQLException, ModeloNaoExiste, ClassNotFoundException {
 
         ArrayList<Competicao> competicoes = Competicao.findAll();

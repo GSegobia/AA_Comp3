@@ -86,11 +86,11 @@ public class Competicao {
         return competicao;
     }
 
-    public void create(Competicao c) throws SQLException,ClassNotFoundException {
+    public static void create(Competicao c) throws SQLException,ClassNotFoundException {
         CompeticaoDM.create(c);
     }
 
-    public void update(Competicao c) throws SQLException, ClassNotFoundException {
+    public static void update(Competicao c) throws SQLException, ClassNotFoundException {
         CompeticaoDM.update(c);
     }
 }
