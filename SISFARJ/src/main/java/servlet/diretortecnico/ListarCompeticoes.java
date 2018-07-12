@@ -1,5 +1,6 @@
 package servlet.diretortecnico;
 
+import dominio.Competicao;
 import dominio.PermissaoUsuario;
 import dominio.Usuario;
 import util.MiddlewareSessao;
@@ -10,9 +11,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.ArrayList;
 
 /**
  * Created by Fellipe Bravo on 11/07/18.
+ * Edited by João V. Araújo on 12/07/18.
  */
 @WebServlet("/listarCompeticoes")
 public class ListarCompeticoes extends HttpServlet {
@@ -26,7 +29,9 @@ public class ListarCompeticoes extends HttpServlet {
                 Boolean possuiPermissao = Usuario.checaPermissao(PermissaoUsuario.DIRETOR_TECNICO.id, u.getId()) || Usuario.checaPermissao(PermissaoUsuario.TECNICO_ASSOCIACAO.id, u.getId());
                 if(!possuiPermissao) { informarErroPermissao(req, resp); }
                 else {
-
+                    ArrayList<Competicao> competicoes = Competicao.findAll();
+                    req.setAttribute("competicoes", competicoes);
+                    getServletContext().getRequestDispatcher("/listar_competicoes.jsp").forward(req, resp);
                 }
             } catch (Exception e) {
                 e.printStackTrace();
