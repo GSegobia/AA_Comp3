@@ -44,8 +44,8 @@
                     <td><%=a.getNumero_oficio() %></td>
                     <td>
                         <div class="btn-group btn-group-sm" role="toolbar">
-                            <button type="button" class="btn btn-info btn-sm" onclick="window.location = 'alterarCadastroAtleta?id=<%=a.getId() %>';"> <i class="fa fa-edit"></i></button>
-                            <button type="button" class="btn btn-success btn-sm"> <i class="fa fa-exchange"></i></button>
+                            <a class="btn btn-info btn-sm" href="alterarCadastroAtleta?id=<%=a.getId()%>"> <i class="fa fa-edit"></i></a>
+                            <a class="btn btn-success btn-sm" href="transferirAtleta?id=<%=a.getId()%>"> <i class="fa fa-exchange"></i></a>
                         </div>
                     </td>
                 </tr>
