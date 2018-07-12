@@ -7,9 +7,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3ba347f4-53e5-49f7-8ec6-16713cf87231" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SISFARJ/src/main/java/dados/datamapper/AssociacaoDM.java" afterPath="$PROJECT_DIR$/SISFARJ/src/main/java/dados/datamapper/AssociacaoDM.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SISFARJ/src/main/java/dominio/Associacao.java" afterPath="$PROJECT_DIR$/SISFARJ/src/main/java/dominio/Associacao.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SISFARJ/src/main/java/dados/datamapper/AtletaDM.java" afterPath="$PROJECT_DIR$/SISFARJ/src/main/java/dados/datamapper/AtletaDM.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SISFARJ/src/main/java/dados/datamapper/CategoriaDM.java" afterPath="$PROJECT_DIR$/SISFARJ/src/main/java/dados/datamapper/CategoriaDM.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SISFARJ/src/main/java/dados/datamapper/CompeticaoDM.java" afterPath="$PROJECT_DIR$/SISFARJ/src/main/java/dados/datamapper/CompeticaoDM.java" />
     </list>
     <ignored path="$PROJECT_DIR$/SISFARJ/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -130,11 +130,63 @@
       <file leaf-file-name="CompeticaoDM.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SISFARJ/src/main/java/dados/datamapper/CompeticaoDM.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="922">
-              <caret line="80" column="37" lean-forward="true" selection-start-line="80" selection-start-column="37" selection-end-line="80" selection-end-column="37" />
+            <state relative-caret-position="80">
+              <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#728#740#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AtletaDM.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/SISFARJ/src/main/java/dados/datamapper/AtletaDM.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="80">
+              <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+              <folding>
+                <element signature="method#exists#0;class#AtletaDM#0" expanded="false" />
+                <element signature="method#create#0;class#AtletaDM#0" expanded="false" />
+                <element signature="e#3380#3388#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CategoriaDM.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/SISFARJ/src/main/java/dados/datamapper/CategoriaDM.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="237">
+              <caret line="13" column="13" lean-forward="false" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1054#1065#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CentroAquaticoDM.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/SISFARJ/src/main/java/dados/datamapper/CentroAquaticoDM.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="20">
+              <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#704#720#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ClasseDM.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/SISFARJ/src/main/java/dados/datamapper/ClasseDM.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="140">
+              <caret line="13" column="13" lean-forward="false" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+              <folding>
+                <element signature="e#1025#1033#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -172,11 +224,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UsuarioDM.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="UsuarioDM.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/SISFARJ/src/main/java/dados/datamapper/UsuarioDM.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+            <state relative-caret-position="382">
+              <caret line="22" column="5" lean-forward="true" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#exists#0;class#UsuarioDM#0" expanded="false" />
@@ -193,11 +245,10 @@
       <file leaf-file-name="AssociacaoDM.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SISFARJ/src/main/java/dados/datamapper/AssociacaoDM.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="142">
-              <caret line="43" column="62" lean-forward="true" selection-start-line="43" selection-start-column="62" selection-end-line="43" selection-end-column="62" />
+            <state relative-caret-position="280">
+              <caret line="14" column="21" lean-forward="true" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#mapModel#0;class#AssociacaoDM#0" expanded="false" />
                 <element signature="method#create#0;class#AssociacaoDM#0" expanded="false" />
                 <element signature="method#update#0;class#AssociacaoDM#0" expanded="false" />
                 <element signature="method#findAll#0;class#AssociacaoDM#0" expanded="false" />
@@ -206,11 +257,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Associacao.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Associacao.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SISFARJ/src/main/java/dominio/Associacao.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="128" column="0" lean-forward="true" selection-start-line="128" selection-start-column="0" selection-end-line="128" selection-end-column="0" />
+            <state relative-caret-position="508">
+              <caret line="131" column="5" lean-forward="true" selection-start-line="131" selection-start-column="5" selection-end-line="131" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -302,21 +353,21 @@
         <option value="$PROJECT_DIR$/SISFARJ/src/main/java/dados/atleta/AtletaDM.java" />
         <option value="$PROJECT_DIR$/SISFARJ/src/main/java/dados/associacao/AssociacaoDM.java" />
         <option value="$PROJECT_DIR$/SISFARJ/src/main/java/dados/datamapper/UsuarioDM.java" />
-        <option value="$PROJECT_DIR$/SISFARJ/src/main/java/dados/datamapper/AtletaDM.java" />
         <option value="$PROJECT_DIR$/SISFARJ/src/main/java/dominio/Atleta.java" />
         <option value="$PROJECT_DIR$/SISFARJ/src/main/java/dominio/Usuario.java" />
         <option value="$PROJECT_DIR$/SISFARJ/src/main/java/dominio/Competicao.java" />
         <option value="$PROJECT_DIR$/SISFARJ/src/main/java/dominio/Prova.java" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/ff83190b-5376-429d-95ff-50ea5cd16fd9/console.sql" />
-        <option value="$PROJECT_DIR$/SISFARJ/src/main/java/dados/datamapper/CategoriaDM.java" />
         <option value="$PROJECT_DIR$/SISFARJ/src/main/java/dominio/Categoria.java" />
         <option value="$PROJECT_DIR$/SISFARJ/src/main/java/dados/datamapper/ClasseDM.java" />
         <option value="$PROJECT_DIR$/SISFARJ/src/main/java/dados/datamapper/CentroAquaticoDM.java" />
-        <option value="$PROJECT_DIR$/SISFARJ/src/main/java/dados/datamapper/CompeticaoDM.java" />
         <option value="$PROJECT_DIR$/SISFARJ/src/main/java/dominio/CentroAquatico.java" />
         <option value="$PROJECT_DIR$/SISFARJ/src/main/java/dominio/Classe.java" />
         <option value="$PROJECT_DIR$/SISFARJ/src/main/java/dominio/Associacao.java" />
         <option value="$PROJECT_DIR$/SISFARJ/src/main/java/dados/datamapper/AssociacaoDM.java" />
+        <option value="$PROJECT_DIR$/SISFARJ/src/main/java/dados/datamapper/CompeticaoDM.java" />
+        <option value="$PROJECT_DIR$/SISFARJ/src/main/java/dados/datamapper/CategoriaDM.java" />
+        <option value="$PROJECT_DIR$/SISFARJ/src/main/java/dados/datamapper/AtletaDM.java" />
       </list>
     </option>
   </component>
@@ -1546,12 +1597,12 @@
       <workItem from="1531159703111" duration="1884000" />
       <workItem from="1531242472535" duration="60000" />
       <workItem from="1531242554696" duration="9473000" />
-      <workItem from="1531357927995" duration="4280000" />
+      <workItem from="1531357927995" duration="4555000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="17290000" />
+    <option name="totallyTimeSpent" value="17565000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1920" y="-3" width="1920" height="1083" extended-state="6" />
@@ -1604,7 +1655,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="10" />
+      <option name="time" value="13" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1770,22 +1821,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SISFARJ/src/main/java/dados/datamapper/UsuarioDM.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#exists#0;class#UsuarioDM#0" expanded="false" />
-            <element signature="method#get#0;class#UsuarioDM#0" expanded="false" />
-            <element signature="method#get#1;class#UsuarioDM#0" expanded="false" />
-            <element signature="method#create#0;class#UsuarioDM#0" expanded="false" />
-            <element signature="method#update#0;class#UsuarioDM#0" expanded="false" />
-            <element signature="method#findAll#0;class#UsuarioDM#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/ff83190b-5376-429d-95ff-50ea5cd16fd9/console.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1814,17 +1849,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SISFARJ/src/main/java/dados/datamapper/CategoriaDM.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="37" column="68" lean-forward="true" selection-start-line="37" selection-start-column="68" selection-end-line="37" selection-end-column="68" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1051#1062#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/SISFARJ/src/main/java/dominio/Usuario.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-378">
@@ -1840,39 +1864,6 @@
         <state relative-caret-position="100">
           <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="6" selection-end-column="30" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SISFARJ/src/main/java/dados/datamapper/CentroAquaticoDM.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-58">
-          <caret line="41" column="60" lean-forward="false" selection-start-line="41" selection-start-column="60" selection-end-line="41" selection-end-column="60" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#704#720#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SISFARJ/src/main/java/dados/datamapper/AtletaDM.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1039">
-          <caret line="92" column="5" lean-forward="true" selection-start-line="92" selection-start-column="5" selection-end-line="92" selection-end-column="5" />
-          <folding>
-            <element signature="method#exists#0;class#AtletaDM#0" expanded="false" />
-            <element signature="method#create#0;class#AtletaDM#0" expanded="false" />
-            <element signature="e#3386#3394#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SISFARJ/src/main/java/dados/datamapper/ClasseDM.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="36" column="79" lean-forward="true" selection-start-line="36" selection-start-column="79" selection-end-line="36" selection-end-column="79" />
-          <folding>
-            <element signature="e#1025#1033#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1922,17 +1913,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SISFARJ/src/main/java/dados/datamapper/CompeticaoDM.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="922">
-          <caret line="80" column="37" lean-forward="true" selection-start-line="80" selection-start-column="37" selection-end-line="80" selection-end-column="37" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#728#740#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/SISFARJ/src/main/java/exceptions/MatriculaAssociacaoNaoEncontrada.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="100">
@@ -1941,13 +1921,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/SISFARJ/src/main/java/dominio/Associacao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="508">
+          <caret line="131" column="5" lean-forward="true" selection-start-line="131" selection-start-column="5" selection-end-line="131" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/SISFARJ/src/main/java/dados/datamapper/AssociacaoDM.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="142">
-          <caret line="43" column="62" lean-forward="true" selection-start-line="43" selection-start-column="62" selection-end-line="43" selection-end-column="62" />
+        <state relative-caret-position="280">
+          <caret line="14" column="21" lean-forward="true" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#mapModel#0;class#AssociacaoDM#0" expanded="false" />
             <element signature="method#create#0;class#AssociacaoDM#0" expanded="false" />
             <element signature="method#update#0;class#AssociacaoDM#0" expanded="false" />
             <element signature="method#findAll#0;class#AssociacaoDM#0" expanded="false" />
@@ -1955,11 +1942,74 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SISFARJ/src/main/java/dominio/Associacao.java">
+    <entry file="file://$PROJECT_DIR$/SISFARJ/src/main/java/dados/datamapper/AtletaDM.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="128" column="0" lean-forward="true" selection-start-line="128" selection-start-column="0" selection-end-line="128" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="80">
+          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+          <folding>
+            <element signature="method#exists#0;class#AtletaDM#0" expanded="false" />
+            <element signature="method#create#0;class#AtletaDM#0" expanded="false" />
+            <element signature="e#3380#3388#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SISFARJ/src/main/java/dados/datamapper/CategoriaDM.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="237">
+          <caret line="13" column="13" lean-forward="false" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1054#1065#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SISFARJ/src/main/java/dados/datamapper/CentroAquaticoDM.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="20">
+          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#704#720#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SISFARJ/src/main/java/dados/datamapper/ClasseDM.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="13" column="13" lean-forward="false" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+          <folding>
+            <element signature="e#1025#1033#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SISFARJ/src/main/java/dados/datamapper/CompeticaoDM.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#728#740#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SISFARJ/src/main/java/dados/datamapper/UsuarioDM.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="382">
+          <caret line="22" column="5" lean-forward="true" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#exists#0;class#UsuarioDM#0" expanded="false" />
+            <element signature="method#get#0;class#UsuarioDM#0" expanded="false" />
+            <element signature="method#get#1;class#UsuarioDM#0" expanded="false" />
+            <element signature="method#create#0;class#UsuarioDM#0" expanded="false" />
+            <element signature="method#update#0;class#UsuarioDM#0" expanded="false" />
+            <element signature="method#findAll#0;class#UsuarioDM#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

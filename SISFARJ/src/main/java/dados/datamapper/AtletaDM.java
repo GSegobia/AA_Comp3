@@ -17,10 +17,10 @@ public class AtletaDM {
                 rs.getInt("categoria_id"),
                 rs.getString("matricula"),
                 rs.getString("nome"),
-                rs.getString("data_nascimento"),
-                rs.getString("data_oficio"),
+                rs.getDate("data_nascimento"),
+                rs.getDate("data_oficio"),
                 rs.getString("numero_oficio"),
-                rs.getString("data_entrada_associacao")
+                rs.getDate("data_entrada_associacao")
         );
     }
 

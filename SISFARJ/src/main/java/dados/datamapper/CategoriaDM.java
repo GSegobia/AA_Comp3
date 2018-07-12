@@ -28,7 +28,7 @@ public class CategoriaDM {
         while(rs.next()){
             a = mapModel(rs);
         }
-        if(a == null) throw new ModeloNaoExiste("atleta",id);
+        if(a == null) throw new ModeloNaoExiste("categoria",id);
 
         return a;
     }

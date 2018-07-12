@@ -51,7 +51,7 @@ public class CompeticaoDM {
         int linhasAtualizadas;
 
         String query = String.format(
-                "Insert into Atleta (nome,centro_aquatico_id,data_competicao,tamanho_piscina)" +
+                "Insert into competicao (nome,centro_aquatico_id,data_competicao,tamanho_piscina)" +
                         "values('%s',%d,'%s',%d);",
                 modelo.getNome(),
                 modelo.getCentroAquaticoId(),
@@ -68,7 +68,7 @@ public class CompeticaoDM {
         int linhasAtualizadas;
 
         String query = String.format(
-                "UPDATE Atleta SET nome='%s',centro_aquatico_id=%d,data_competicao='%s',tamanho_piscina=%d where id=%d;",
+                "UPDATE competicao SET nome='%s',centro_aquatico_id=%d,data_competicao='%s',tamanho_piscina=%d where id=%d;",
                 modelo.getNome(),
                 modelo.getCentroAquaticoId(),
                 modelo.getDataCompeticao(),
