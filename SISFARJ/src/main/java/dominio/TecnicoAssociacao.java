@@ -10,7 +10,7 @@ public class TecnicoAssociacao extends Usuario {
     }
 
     public TecnicoAssociacao(String nome, String matricula, String senha, int permissao){
-        super(nome, matricula, senha, permissao);
+        super(matricula, nome, senha, permissao);
     }
 
     public void listarCompeticoesParaInscreverAtleta() {}

@@ -16,7 +16,7 @@ public class Secretario extends Usuario {
 
     public void filiarAssociacao(Associacao associacao) throws ClassNotFoundException, SQLException, ModeloNaoExiste{
 
-        Usuario tecnico = new TecnicoAssociacao("Técnico " + associacao.getSigla(), associacao.getMatricula(),
+        Usuario tecnico = new TecnicoAssociacao("Tecnico " + associacao.getSigla(), associacao.getMatricula(),
                                             "123456", 2);
 
         Associacao.create(associacao);

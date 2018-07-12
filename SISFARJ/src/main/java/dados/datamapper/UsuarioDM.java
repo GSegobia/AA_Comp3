@@ -15,8 +15,8 @@ public class UsuarioDM {
     private static Usuario mapModel(ResultSet rs) throws SQLException {
         return new Usuario(
                 rs.getInt("id"),
-                rs.getString("nome"),
                 rs.getString("matricula"),
+                rs.getString("nome"),
                 rs.getString("senha"),
                 rs.getInt("permissao_id")
         );
@@ -64,8 +64,8 @@ public class UsuarioDM {
         int linhasAtualizadas = 0;
 
         String query = String.format(
-                "Insert into usuario (nome,matricula, senha,permissao_id) values(\'%s\',\'%s\',\'%s\',%d);",
-                modelo.getNome(), modelo.getMatricula(),modelo.getSenha(),modelo.getPermissaoId()
+                "Insert into usuario (matricula, nome, senha,permissao_id) values(\'%s\',\'%s\',\'%s\',%d);",
+                modelo.getMatricula(), modelo.getNome(), modelo.getSenha(),modelo.getPermissaoId()
             );
 
         linhasAtualizadas = Database.doUpdate(query);
