@@ -28,6 +28,7 @@
                 <th scope="col">Data Entrada Associacao</th>
                 <th scope="col">Data Ofício</th>
                 <th scope="col">Categoria</th>
+                <th scope="col">Ações</th>
             </tr>
             </thead>
             <tbody>
@@ -41,6 +42,12 @@
                     <td><%=a.getData_entrada_associacao() %></td>
                     <td><%=a.getData_oficio() %></td>
                     <td><%=a.getNumero_oficio() %></td>
+                    <td>
+                        <div class="btn-group btn-group-sm" role="toolbar">
+                            <button type="button" class="btn btn-info btn-sm"> <i class="fa fa-edit"></i></button>
+                            <button type="button" class="btn btn-success btn-sm"> <i class="fa fa-exchange"></i></button>
+                        </div>
+                    </td>
                 </tr>
             <% } %>
             </tbody>
