@@ -14,6 +14,14 @@ public class Secretario extends Usuario {
         super(id,nome, matricula, senha,permissao);
     }
 
+    public Secretario(String matricula, String nome, String senha, int permissao) {
+        super(matricula, nome, senha, permissao);
+    }
+
+    public Secretario(String matricula, String nome, String senha) {
+        super(matricula, nome, senha, PermissaoUsuario.SECRETARIO.id);
+    }
+
     public boolean filiarAssociacao(Associacao associacao) throws ClassNotFoundException, SQLException, ModeloNaoExiste {
         Usuario tecnico = new TecnicoAssociacao("Tecnico " + associacao.getSigla(), associacao.getMatricula(),
                                             "123456", 2);

@@ -67,7 +67,6 @@ public class Competicao {
     }
 
     public static ArrayList<Competicao> findAll() throws SQLException, ClassNotFoundException {
-
         return CompeticaoDM.findAll();
     }
 

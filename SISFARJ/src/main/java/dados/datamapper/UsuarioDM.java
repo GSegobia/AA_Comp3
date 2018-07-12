@@ -82,7 +82,7 @@ public class UsuarioDM {
         ArrayList<Usuario> usuarios = new ArrayList<Usuario>();
         ResultSet rs = Database.doSelect("Select * from usuario");
 
-        if(rs.next()){
+        while(rs.next()){
             usuarios.add(mapModel(rs));
         }
 

@@ -14,6 +14,10 @@ public class DiretorTecnico extends Secretario {
         super(id,nome, matricula, senha, permissao);
     }
 
+    public DiretorTecnico(String nome, String matricula, String senha){
+        super(nome, matricula, senha, PermissaoUsuario.DIRETOR_TECNICO.id);
+    }
+
     public void incluirLocalCompeticao(CentroAquatico centro) throws SQLException, ClassNotFoundException{
         CentroAquatico.create(centro);
     }
