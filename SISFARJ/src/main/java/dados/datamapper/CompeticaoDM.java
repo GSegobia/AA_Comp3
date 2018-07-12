@@ -17,7 +17,7 @@ public class CompeticaoDM {
                 rs.getString("nome"),
                 rs.getInt("centro_aquatico_id"),
                 rs.getDate("data_competicao"),
-                rs.getInt("tamanhoPiscina"));
+                rs.getInt("tamanho_piscina"));
     }
 
     public static ArrayList<Competicao> findAll() throws SQLException, ClassNotFoundException{
