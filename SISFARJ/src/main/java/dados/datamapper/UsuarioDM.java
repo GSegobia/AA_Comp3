@@ -64,8 +64,8 @@ public class UsuarioDM {
         int linhasAtualizadas = 0;
 
         String query = String.format(
-                "Insert into usuario (nome,senha,permissao_id) values(\'%s\',\'%s\',%d);",
-                modelo.getNome(),modelo.getSenha(),modelo.getPermissaoId()
+                "Insert into usuario (nome,matricula, senha,permissao_id) values(\'%s\',\'%s\',\'%s\',%d);",
+                modelo.getNome(), modelo.getMatricula(),modelo.getSenha(),modelo.getPermissaoId()
             );
 
         linhasAtualizadas = Database.doUpdate(query);

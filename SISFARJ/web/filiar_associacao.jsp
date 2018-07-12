@@ -43,6 +43,10 @@
                     <label for="numComprovantePgto">Número do Comprovante de Pagamento</label>
                     <input type="text" class="form-control" id="numComprovantePgto" name="numComprovantePgto" placeholder="Digite o Número do Comprovante de Pagamento">
                 </div>
+                <div class="form-group">
+                    <label for="endereco">Endereço</label>
+                    <input type="text" class="form-control" id="endereco" name="endereco" placeholder="Digite o Endereço da Filiação">
+                </div>
                 <hr>
                 <div class="form-group">
                     <button type="submit" class="btn btn-primary btn-block">Filiar</button>

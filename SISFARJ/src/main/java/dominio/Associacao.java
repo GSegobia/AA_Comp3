@@ -4,7 +4,7 @@ import dados.datamapper.AssociacaoDM;
 import exceptions.MatriculaAssociacaoNaoEncontrada;
 import exceptions.ModeloNaoExiste;
 
-import java.sql.Date;
+import java.util.Date;
 import java.sql.SQLException;
 import java.util.ArrayList;
 

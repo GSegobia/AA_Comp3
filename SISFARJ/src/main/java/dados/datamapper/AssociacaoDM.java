@@ -61,7 +61,7 @@ public class AssociacaoDM {
 
         String query = String.format(
                 "Insert into Associacao (numero_oficio,data_oficio,nome,sigla,matricula,endereco,telefone,num_comprovante_pgto) " +
-                        "values(\'%s\',\'%s\',\'%s\',\'%s\',\'%s\',%s,\'%s\',\'%s\');",
+                        "values(\'%s\',\'%s\',\'%s\',\'%s\',\'%s\',\'%s\',\'%s\',\'%s\');",
                 modelo.getNumeroOficio(),
                 modelo.getDataOficio(),
                 modelo.getNome(),
@@ -82,7 +82,7 @@ public class AssociacaoDM {
 
         String query = String.format(
                 "UPDATE Associacao SET numero_oficio=\'%s\',data_oficio=\'%s\',nome=\'%s\',sigla=\'%s\'," +
-                        "matricula=\'%s\',endereco=%s,telefone=\'%s\',num_comprovante_pgto=\'%s\' where id=%d;",
+                        "matricula=\'%s\',endereco=\'%s\',telefone=\'%s\',num_comprovante_pgto=\'%s\' where id=%d;",
                 modelo.getNumeroOficio(),
                 modelo.getDataOficio(),
                 modelo.getNome(),
