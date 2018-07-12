@@ -2,6 +2,7 @@ package dados.datamapper;
 
 import dados.Database;
 import dominio.Associacao;
+import exceptions.MatriculaAssociacaoNaoEncontrada;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -32,6 +33,24 @@ public class AssociacaoDM {
 
         while(rs.next()){
             a = mapModel(rs);
+        }
+
+        return a;
+    }
+
+    public static Associacao get(String matricula) throws ClassNotFoundException, SQLException, MatriculaAssociacaoNaoEncontrada {
+        Associacao a = null;
+
+        String query = String.format("Select * from Associacao where matricula='%s'",matricula);
+
+        ResultSet rs = Database.doSelect(query);
+
+        while(rs.next()){
+            a = mapModel(rs);
+        }
+
+        if( a == null ){
+            throw new MatriculaAssociacaoNaoEncontrada(matricula);
         }
 
         return a;

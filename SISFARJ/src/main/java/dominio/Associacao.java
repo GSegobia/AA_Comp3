@@ -1,6 +1,7 @@
 package dominio;
 
 import dados.datamapper.AssociacaoDM;
+import exceptions.MatriculaAssociacaoNaoEncontrada;
 import exceptions.ModeloNaoExiste;
 
 import java.sql.Date;
@@ -124,6 +125,10 @@ public class Associacao {
         }
 
         return AssociacaoDM.get(id);
+    }
+
+    public static Associacao get(String matricula) throws SQLException, ClassNotFoundException, MatriculaAssociacaoNaoEncontrada {
+        return AssociacaoDM.get(matricula);
     }
 
     public static boolean create(Associacao a) throws SQLException, ClassNotFoundException, ModeloNaoExiste {
