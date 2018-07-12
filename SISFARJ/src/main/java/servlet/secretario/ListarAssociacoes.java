@@ -13,9 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.ArrayList;
 
-/**
- * Created by Fellipe Bravo on 10/07/18.
- */
+
 @WebServlet("/listarAssociacoes")
 public class ListarAssociacoes extends HttpServlet {
 

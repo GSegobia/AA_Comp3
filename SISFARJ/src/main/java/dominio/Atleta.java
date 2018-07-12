@@ -60,6 +60,14 @@ public class Atleta {
         return matricula;
     }
 
+    public String getNum_comprovante_pgto() {
+        return num_comprovante_pgto;
+    }
+
+    public void setNum_comprovante_pgto(String num_comprovante_pgto) {
+        this.num_comprovante_pgto = num_comprovante_pgto;
+    }
+
     public String getNome() {
         return nome;
     }
