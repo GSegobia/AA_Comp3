@@ -7,16 +7,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3ba347f4-53e5-49f7-8ec6-16713cf87231" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SISFARJ/web/transferir_atleta.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/ff83190b-5376-429d-95ff-50ea5cd16fd9/_metadata_/metadata" afterPath="$PROJECT_DIR$/.idea/dataSources/ff83190b-5376-429d-95ff-50ea5cd16fd9/_metadata_/metadata" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/ff83190b-5376-429d-95ff-50ea5cd16fd9/_metadata_/metadata.keystream" afterPath="$PROJECT_DIR$/.idea/dataSources/ff83190b-5376-429d-95ff-50ea5cd16fd9/_metadata_/metadata.keystream" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/ff83190b-5376-429d-95ff-50ea5cd16fd9/_metadata_/metadata.keystream.len" afterPath="$PROJECT_DIR$/.idea/dataSources/ff83190b-5376-429d-95ff-50ea5cd16fd9/_metadata_/metadata.keystream.len" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/ff83190b-5376-429d-95ff-50ea5cd16fd9/_metadata_/metadata.len" afterPath="$PROJECT_DIR$/.idea/dataSources/ff83190b-5376-429d-95ff-50ea5cd16fd9/_metadata_/metadata.len" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/ff83190b-5376-429d-95ff-50ea5cd16fd9/_metadata_/metadata_i" afterPath="$PROJECT_DIR$/.idea/dataSources/ff83190b-5376-429d-95ff-50ea5cd16fd9/_metadata_/metadata_i" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/ff83190b-5376-429d-95ff-50ea5cd16fd9/_metadata_/metadata_i.len" afterPath="$PROJECT_DIR$/.idea/dataSources/ff83190b-5376-429d-95ff-50ea5cd16fd9/_metadata_/metadata_i.len" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SISFARJ/src/main/java/dados/Database.java" afterPath="$PROJECT_DIR$/SISFARJ/src/main/java/dados/Database.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SISFARJ/src/main/java/servlet/secretario/TransferirAtleta.java" afterPath="$PROJECT_DIR$/SISFARJ/src/main/java/servlet/secretario/TransferirAtleta.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SISFARJ/web/listar_atletas.jsp" afterPath="$PROJECT_DIR$/SISFARJ/web/listar_atletas.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SISFARJ/web/transferir_atleta.jsp" afterPath="$PROJECT_DIR$/SISFARJ/web/transferir_atleta.jsp" />
     </list>
     <ignored path="$PROJECT_DIR$/SISFARJ/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -117,18 +111,98 @@
       <file leaf-file-name="TransferirAtleta.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SISFARJ/src/main/java/servlet/secretario/TransferirAtleta.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="373">
-              <caret line="34" column="0" lean-forward="true" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+            <state relative-caret-position="395">
+              <caret line="115" column="41" lean-forward="false" selection-start-line="115" selection-start-column="26" selection-end-line="115" selection-end-column="41" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="transferir_atleta.jsp" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MiddlewareSessao.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/SISFARJ/src/main/java/util/MiddlewareSessao.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="140">
+              <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="alertas.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/SISFARJ/web/alertas.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-2451">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="sisfarj.public.associacao" pinned="false" current-in-tab="true">
+        <entry file="dbDummy://dbtable:/e4b1c2bc/ff83190b-5376-429d-95ff-50ea5cd16fd9/sisfarj.public.associacao">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state>
+              <filtering enabled="true" />
+            </state>
+          </provider>
+          <provider editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="sisfarj.public.atleta" pinned="false" current-in-tab="false">
+        <entry file="dbDummy://dbtable:/e4b1c2bc/ff83190b-5376-429d-95ff-50ea5cd16fd9/sisfarj.public.atleta">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state>
+              <filtering enabled="true" />
+            </state>
+          </provider>
+          <provider editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="transferir_atleta.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SISFARJ/web/transferir_atleta.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="320">
-              <caret line="22" column="79" lean-forward="false" selection-start-line="22" selection-start-column="79" selection-end-line="22" selection-end-column="79" />
+            <state relative-caret-position="449">
+              <caret line="43" column="26" lean-forward="true" selection-start-line="43" selection-start-column="26" selection-end-line="43" selection-end-column="26" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AlterarCadastroAtleta.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/SISFARJ/src/main/java/servlet/secretario/AlterarCadastroAtleta.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="248">
+              <caret line="68" column="25" lean-forward="false" selection-start-line="68" selection-start-column="25" selection-end-line="68" selection-end-column="25" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CentroAquaticoDM.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/SISFARJ/src/main/java/dados/datamapper/CentroAquaticoDM.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-680">
+              <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CompeticaoDM.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/SISFARJ/src/main/java/dados/datamapper/CompeticaoDM.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="262">
+              <caret line="23" column="70" lean-forward="true" selection-start-line="23" selection-start-column="70" selection-end-line="23" selection-end-column="70" />
               <folding />
             </state>
           </provider>
@@ -138,58 +212,45 @@
         <entry file="file://$PROJECT_DIR$/SISFARJ/src/main/java/dominio/Associacao.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="223">
-              <caret line="130" column="29" lean-forward="true" selection-start-line="130" selection-start-column="29" selection-end-line="130" selection-end-column="29" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AlterarCadastroAtleta.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SISFARJ/src/main/java/servlet/secretario/AlterarCadastroAtleta.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="160">
-              <caret line="17" column="13" lean-forward="false" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FiliarAssociacao.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SISFARJ/src/main/java/servlet/secretario/FiliarAssociacao.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="160">
-              <caret line="17" column="13" lean-forward="false" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AlterarFiliacaoAssociacao.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SISFARJ/src/main/java/servlet/secretario/AlterarFiliacaoAssociacao.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="40">
-              <caret line="17" column="13" lean-forward="false" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CadastrarAtleta.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SISFARJ/src/main/java/servlet/secretario/CadastrarAtleta.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="260">
-              <caret line="102" column="0" lean-forward="false" selection-start-line="102" selection-start-column="0" selection-end-line="105" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="listar_associacoes.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SISFARJ/web/listar_associacoes.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="10" column="6" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-              <folding />
+              <caret line="130" column="29" lean-forward="false" selection-start-line="130" selection-start-column="29" selection-end-line="130" selection-end-column="29" />
+              <folding>
+                <marker date="1531407715280" expanded="false" signature="1560:1571" ph=" { " />
+                <marker date="1531407715280" expanded="false" signature="1581:1587" ph=" }" />
+                <marker date="1531407715280" expanded="false" signature="1622:1633" ph=" { " />
+                <marker date="1531407715280" expanded="false" signature="1646:1652" ph=" }" />
+                <marker date="1531407715280" expanded="false" signature="1689:1700" ph=" { " />
+                <marker date="1531407715280" expanded="false" signature="1720:1726" ph=" }" />
+                <marker date="1531407715280" expanded="false" signature="1780:1791" ph=" { " />
+                <marker date="1531407715280" expanded="false" signature="1824:1830" ph=" }" />
+                <marker date="1531407715280" expanded="false" signature="1863:1874" ph=" { " />
+                <marker date="1531407715280" expanded="false" signature="1892:1898" ph=" }" />
+                <marker date="1531407715280" expanded="false" signature="1946:1957" ph=" { " />
+                <marker date="1531407715280" expanded="false" signature="1986:1992" ph=" }" />
+                <marker date="1531407715280" expanded="false" signature="2021:2032" ph=" { " />
+                <marker date="1531407715280" expanded="false" signature="2044:2050" ph=" }" />
+                <marker date="1531407715280" expanded="false" signature="2088:2099" ph=" { " />
+                <marker date="1531407715280" expanded="false" signature="2116:2122" ph=" }" />
+                <marker date="1531407715280" expanded="false" signature="2152:2163" ph=" { " />
+                <marker date="1531407715280" expanded="false" signature="2176:2182" ph=" }" />
+                <marker date="1531407715280" expanded="false" signature="2222:2233" ph=" { " />
+                <marker date="1531407715280" expanded="false" signature="2252:2258" ph=" }" />
+                <marker date="1531407715280" expanded="false" signature="2292:2303" ph=" { " />
+                <marker date="1531407715280" expanded="false" signature="2320:2326" ph=" }" />
+                <marker date="1531407715280" expanded="false" signature="2374:2385" ph=" { " />
+                <marker date="1531407715280" expanded="false" signature="2412:2418" ph=" }" />
+                <marker date="1531407715280" expanded="false" signature="2451:2462" ph=" { " />
+                <marker date="1531407715280" expanded="false" signature="2478:2484" ph=" }" />
+                <marker date="1531407715280" expanded="false" signature="2530:2541" ph=" { " />
+                <marker date="1531407715280" expanded="false" signature="2566:2572" ph=" }" />
+                <marker date="1531407715280" expanded="false" signature="2605:2616" ph=" { " />
+                <marker date="1531407715280" expanded="false" signature="2632:2638" ph=" }" />
+                <marker date="1531407715280" expanded="false" signature="2684:2695" ph=" { " />
+                <marker date="1531407715280" expanded="false" signature="2720:2726" ph=" }" />
+                <marker date="1531407715280" expanded="false" signature="2769:2780" ph=" { " />
+                <marker date="1531407715280" expanded="false" signature="2806:2812" ph=" }" />
+                <marker date="1531407715280" expanded="false" signature="2878:2889" ph=" { " />
+                <marker date="1531407715280" expanded="false" signature="2934:2940" ph=" }" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -223,6 +284,7 @@
       <find>Categoria</find>
       <find>h</find>
       <find>href</find>
+      <find>session</find>
     </findStrings>
     <replaceStrings>
       <replace>Atleta</replace>
@@ -246,7 +308,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/SISFARJ/src/main/java/dados/usuario/UsuarioDAO.java" />
         <option value="$PROJECT_DIR$/SISFARJ/src/main/java/servlet/Dashboard.java" />
         <option value="$PROJECT_DIR$/SISFARJ/src/main/java/servlet/CadastrarUsuario.java" />
         <option value="$PROJECT_DIR$/SISFARJ/src/main/java/servlet/ExemploServlet.java" />
@@ -284,19 +345,20 @@
         <option value="$PROJECT_DIR$/SISFARJ/src/main/java/dominio/Classe.java" />
         <option value="$PROJECT_DIR$/SISFARJ/src/main/java/dominio/Associacao.java" />
         <option value="$PROJECT_DIR$/SISFARJ/src/main/java/dados/datamapper/AssociacaoDM.java" />
-        <option value="$PROJECT_DIR$/SISFARJ/src/main/java/dados/datamapper/CompeticaoDM.java" />
         <option value="$PROJECT_DIR$/SISFARJ/src/main/java/dados/datamapper/CategoriaDM.java" />
         <option value="$PROJECT_DIR$/SISFARJ/src/main/java/dominio/DiretorTecnico.java" />
         <option value="$PROJECT_DIR$/SISFARJ/src/main/java/servlet/secretario/ListarAssociacoes.java" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/ff83190b-5376-429d-95ff-50ea5cd16fd9/console.sql" />
         <option value="$PROJECT_DIR$/SISFARJ/src/main/java/dominio/Atleta.java" />
         <option value="$PROJECT_DIR$/SISFARJ/src/main/java/dados/datamapper/AtletaDM.java" />
-        <option value="$PROJECT_DIR$/SISFARJ/src/main/java/dados/Database.java" />
         <option value="$PROJECT_DIR$/SISFARJ/src/main/java/servlet/secretario/CadastrarAtleta.java" />
         <option value="$PROJECT_DIR$/SISFARJ/web/cadastrar_atleta.jsp" />
         <option value="$PROJECT_DIR$/SISFARJ/web/listar_atletas.jsp" />
-        <option value="$PROJECT_DIR$/SISFARJ/web/transferir_atleta.jsp" />
+        <option value="$PROJECT_DIR$/SISFARJ/src/main/java/dados/Database.java" />
+        <option value="$PROJECT_DIR$/SISFARJ/src/main/java/dados/datamapper/CompeticaoDM.java" />
+        <option value="$PROJECT_DIR$/SISFARJ/src/main/java/servlet/secretario/AlterarCadastroAtleta.java" />
         <option value="$PROJECT_DIR$/SISFARJ/src/main/java/servlet/secretario/TransferirAtleta.java" />
+        <option value="$PROJECT_DIR$/SISFARJ/web/transferir_atleta.jsp" />
       </list>
     </option>
   </component>
@@ -413,6 +475,10 @@
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="util">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT USER_OBJECT="Root">
@@ -467,6 +533,20 @@
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="SISFARJ">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="src/main/java">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
             <PATH_ELEMENT USER_OBJECT="dominio">
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
@@ -486,6 +566,28 @@
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT USER_OBJECT="dados">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="SISFARJ">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="src/main/java">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="dados">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="datamapper">
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
@@ -1555,12 +1657,12 @@
       <workItem from="1531242472535" duration="60000" />
       <workItem from="1531242554696" duration="9473000" />
       <workItem from="1531357927995" duration="10369000" />
-      <workItem from="1531401345485" duration="6333000" />
+      <workItem from="1531401345485" duration="9521000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="29712000" />
+    <option name="totallyTimeSpent" value="32900000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1920" y="-3" width="1920" height="1083" extended-state="6" />
@@ -1587,7 +1689,7 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.34969324" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3200409" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -1613,7 +1715,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="13" />
+      <option name="time" value="15" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1622,10 +1724,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/SISFARJ/web/erro_identificacao.jsp" />
-    <entry file="file://$PROJECT_DIR$/SISFARJ/src/main/java/dados/endereco/EnderecoDAO.java" />
-    <entry file="file://$PROJECT_DIR$/SISFARJ/src/main/java/servlet/atleta/CadastrarAtleta.java" />
-    <entry file="file://$PROJECT_DIR$/SISFARJ/src/main/java/servlet/associacao/FiliarAssociacao.java" />
     <entry file="file://$PROJECT_DIR$/SISFARJ/src/main/java/servlet/associacao/ListarAssociacoes.java" />
     <entry file="file://$PROJECT_DIR$/SISFARJ/src/main/java/servlet/atleta/ListarAtletas.java" />
     <entry file="file://$PROJECT_DIR$/SISFARJ/src/main/java/dados/endereco/EnderecoData.java" />
@@ -1634,14 +1732,6 @@
     <entry file="file://$PROJECT_DIR$/SISFARJ/src/main/java/dados/DataMapper.java" />
     <entry file="file://$PROJECT_DIR$/SISFARJ/src/main/java/dados/atleta/AtletaData.java" />
     <entry file="file://$PROJECT_DIR$/SISFARJ/src/main/java/dados/associacao/AssociacaoData.java" />
-    <entry file="file://$PROJECT_DIR$/SISFARJ/src/main/java/dominio/Secretario.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/ff83190b-5376-429d-95ff-50ea5cd16fd9/console_1.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1669,22 +1759,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="dbDummy://dbtable:/e4b1c2bc/ff83190b-5376-429d-95ff-50ea5cd16fd9/sisfarj.public.associacao">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/SISFARJ/src/main/java/dominio/Competicao.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="82">
           <caret line="72" column="0" lean-forward="false" selection-start-line="72" selection-start-column="0" selection-end-line="94" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1782,6 +1863,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="229">
           <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1795,34 +1879,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SISFARJ/src/main/java/dados/datamapper/CompeticaoDM.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="193">
-          <caret line="22" column="40" lean-forward="false" selection-start-line="22" selection-start-column="40" selection-end-line="22" selection-end-column="40" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#728#740#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/SISFARJ/src/main/java/dominio/Atleta.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
           <caret line="62" column="45" lean-forward="false" selection-start-line="62" selection-start-column="45" selection-end-line="62" selection-end-column="45" />
           <folding>
             <element signature="e#2099#2100#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SISFARJ/src/main/java/dados/datamapper/CentroAquaticoDM.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="20">
-          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#704#720#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1848,17 +1910,7 @@
             <element signature="method#get#0;class#UsuarioDM#0" expanded="false" />
             <element signature="method#get#1;class#UsuarioDM#0" expanded="false" />
             <element signature="method#create#0;class#UsuarioDM#0" expanded="false" />
-            <element signature="method#update#0;class#UsuarioDM#0" expanded="false" />
-            <element signature="method#findAll#0;class#UsuarioDM#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SISFARJ/src/main/java/dados/Database.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="14" column="30" lean-forward="false" selection-start-line="14" selection-start-column="30" selection-end-line="14" selection-end-column="30" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1948,15 +2000,15 @@
     <entry file="file://$PROJECT_DIR$/SISFARJ/web/listar_associacoes.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="200">
-          <caret line="10" column="6" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <caret line="10" column="6" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/SISFARJ/src/main/java/servlet/secretario/FiliarAssociacao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="17" column="13" lean-forward="false" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+        <state relative-caret-position="400">
+          <caret line="20" column="13" lean-forward="false" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
           <folding />
         </state>
       </provider>
@@ -1967,8 +2019,6 @@
           <caret line="40" column="29" lean-forward="false" selection-start-line="40" selection-start-column="29" selection-end-line="40" selection-end-column="29" />
           <folding>
             <element signature="method#create#0;class#AssociacaoDM#0" expanded="false" />
-            <element signature="method#update#0;class#AssociacaoDM#0" expanded="false" />
-            <element signature="method#findAll#0;class#AssociacaoDM#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1981,10 +2031,50 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/SISFARJ/src/main/java/dominio/Secretario.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="320">
+          <caret line="46" column="29" lean-forward="false" selection-start-line="46" selection-start-column="16" selection-end-line="46" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SISFARJ/src/main/java/dados/Database.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="17" column="51" lean-forward="true" selection-start-line="17" selection-start-column="51" selection-end-line="17" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SISFARJ/src/main/java/dados/datamapper/CentroAquaticoDM.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-680">
+          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SISFARJ/src/main/java/dados/datamapper/CompeticaoDM.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="262">
+          <caret line="23" column="70" lean-forward="true" selection-start-line="23" selection-start-column="70" selection-end-line="23" selection-end-column="70" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/javax/javaee-web-api/7.0/javaee-web-api-7.0.jar!/javax/servlet/http/HttpServlet.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="223">
+          <caret line="34" column="19" lean-forward="false" selection-start-line="34" selection-start-column="19" selection-end-line="34" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/SISFARJ/src/main/java/servlet/secretario/CadastrarAtleta.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="102" column="0" lean-forward="false" selection-start-line="102" selection-start-column="0" selection-end-line="105" selection-end-column="5" />
+        <state relative-caret-position="-1358">
+          <caret line="18" column="13" lean-forward="false" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
           <folding />
         </state>
       </provider>
@@ -1992,31 +2082,110 @@
     <entry file="file://$PROJECT_DIR$/SISFARJ/src/main/java/dominio/Associacao.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="223">
-          <caret line="130" column="29" lean-forward="true" selection-start-line="130" selection-start-column="29" selection-end-line="130" selection-end-column="29" />
-          <folding />
+          <caret line="130" column="29" lean-forward="false" selection-start-line="130" selection-start-column="29" selection-end-line="130" selection-end-column="29" />
+          <folding>
+            <marker date="1531407715280" expanded="false" signature="1560:1571" ph=" { " />
+            <marker date="1531407715280" expanded="false" signature="1581:1587" ph=" }" />
+            <marker date="1531407715280" expanded="false" signature="1622:1633" ph=" { " />
+            <marker date="1531407715280" expanded="false" signature="1646:1652" ph=" }" />
+            <marker date="1531407715280" expanded="false" signature="1689:1700" ph=" { " />
+            <marker date="1531407715280" expanded="false" signature="1720:1726" ph=" }" />
+            <marker date="1531407715280" expanded="false" signature="1780:1791" ph=" { " />
+            <marker date="1531407715280" expanded="false" signature="1824:1830" ph=" }" />
+            <marker date="1531407715280" expanded="false" signature="1863:1874" ph=" { " />
+            <marker date="1531407715280" expanded="false" signature="1892:1898" ph=" }" />
+            <marker date="1531407715280" expanded="false" signature="1946:1957" ph=" { " />
+            <marker date="1531407715280" expanded="false" signature="1986:1992" ph=" }" />
+            <marker date="1531407715280" expanded="false" signature="2021:2032" ph=" { " />
+            <marker date="1531407715280" expanded="false" signature="2044:2050" ph=" }" />
+            <marker date="1531407715280" expanded="false" signature="2088:2099" ph=" { " />
+            <marker date="1531407715280" expanded="false" signature="2116:2122" ph=" }" />
+            <marker date="1531407715280" expanded="false" signature="2152:2163" ph=" { " />
+            <marker date="1531407715280" expanded="false" signature="2176:2182" ph=" }" />
+            <marker date="1531407715280" expanded="false" signature="2222:2233" ph=" { " />
+            <marker date="1531407715280" expanded="false" signature="2252:2258" ph=" }" />
+            <marker date="1531407715280" expanded="false" signature="2292:2303" ph=" { " />
+            <marker date="1531407715280" expanded="false" signature="2320:2326" ph=" }" />
+            <marker date="1531407715280" expanded="false" signature="2374:2385" ph=" { " />
+            <marker date="1531407715280" expanded="false" signature="2412:2418" ph=" }" />
+            <marker date="1531407715280" expanded="false" signature="2451:2462" ph=" { " />
+            <marker date="1531407715280" expanded="false" signature="2478:2484" ph=" }" />
+            <marker date="1531407715280" expanded="false" signature="2530:2541" ph=" { " />
+            <marker date="1531407715280" expanded="false" signature="2566:2572" ph=" }" />
+            <marker date="1531407715280" expanded="false" signature="2605:2616" ph=" { " />
+            <marker date="1531407715280" expanded="false" signature="2632:2638" ph=" }" />
+            <marker date="1531407715280" expanded="false" signature="2684:2695" ph=" { " />
+            <marker date="1531407715280" expanded="false" signature="2720:2726" ph=" }" />
+            <marker date="1531407715280" expanded="false" signature="2769:2780" ph=" { " />
+            <marker date="1531407715280" expanded="false" signature="2806:2812" ph=" }" />
+            <marker date="1531407715280" expanded="false" signature="2878:2889" ph=" { " />
+            <marker date="1531407715280" expanded="false" signature="2934:2940" ph=" }" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/SISFARJ/src/main/java/servlet/secretario/AlterarCadastroAtleta.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="17" column="13" lean-forward="false" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+        <state relative-caret-position="248">
+          <caret line="68" column="25" lean-forward="false" selection-start-line="68" selection-start-column="25" selection-end-line="68" selection-end-column="25" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/SISFARJ/src/main/java/servlet/secretario/TransferirAtleta.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="373">
-          <caret line="34" column="0" lean-forward="true" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+        <state relative-caret-position="395">
+          <caret line="115" column="41" lean-forward="false" selection-start-line="115" selection-start-column="26" selection-end-line="115" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SISFARJ/src/main/java/util/MiddlewareSessao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SISFARJ/web/alertas.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2451">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/SISFARJ/web/transferir_atleta.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="22" column="79" lean-forward="false" selection-start-line="22" selection-start-column="79" selection-end-line="22" selection-end-column="79" />
+        <state relative-caret-position="449">
+          <caret line="43" column="26" lean-forward="true" selection-start-line="43" selection-start-column="26" selection-end-line="43" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/e4b1c2bc/ff83190b-5376-429d-95ff-50ea5cd16fd9/sisfarj.public.atleta">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/e4b1c2bc/ff83190b-5376-429d-95ff-50ea5cd16fd9/sisfarj.public.associacao">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>

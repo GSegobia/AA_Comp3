@@ -17,10 +17,9 @@
         <h2 class="text-center text-uppercase text-secondary mb-0">Transferir Atleta</h2>
         <hr class="mb-5">
         <div class="container">
-            <form class="form" action="transferirAtleta" method="post">
+            <form class="form" action="transferirAtleta?id=<%=atleta.getId()%>" method="post">
                 <h4>Dados do Atleta</h4>
                 <div class="form-row">
-                    <input type="hidden" name="id" value="<%=atleta.getId()%>">
                     <div class="form-group col-md-4">
                         <label for="nome">Nome</label>
                         <input type="text" class="form-control" readonly id="nome" name="nome" value="<%=atleta.getNome()%>">
@@ -34,7 +33,16 @@
                         <input type="text" class="form-control" readonly id="matriculaAssociacao" name="matriculaAssociacao" value="<%=assocAtual.getMatricula()%>" >
                     </div>
                 </div>
-
+                <div class="form-row">
+                    <div class="form-group col-md-8">
+                        <label for="nomeAssoc">Nome da Associação Atual</label>
+                        <input type="text" class="form-control" readonly id="nomeAssoc" name="nomeAssoc" value="<%=assocAtual.getNome()%>">
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="siglaAssoc">Sigla Associação Atual</label>
+                        <input type="text" class="form-control" readonly id="siglaAssoc" name="siglaAssoc" value="<%=assocAtual.getSigla()%>">
+                    </div>
+                </div>
                 <hr/>
                 <h4>Dados para transferência do Atleta</h4>
                 <div class="form-row">

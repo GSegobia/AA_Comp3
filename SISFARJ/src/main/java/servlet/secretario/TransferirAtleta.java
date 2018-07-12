@@ -1,9 +1,6 @@
 package servlet.secretario;
 
-import dominio.Associacao;
-import dominio.Atleta;
-import dominio.PermissaoUsuario;
-import dominio.Usuario;
+import dominio.*;
 import exceptions.MatriculaAssociacaoNaoEncontrada;
 import util.MiddlewareSessao;
 
@@ -59,6 +56,7 @@ public class TransferirAtleta extends HttpServlet {
                 if(!possuiPermissao) { informarErroPermissao(req, resp); }
                 else {
 
+                    Secretario secretario = new Secretario(u.getId(), u.getNome(), u.getMatricula(), u.getSenha(), u.getPermissaoId());
                     int idAtleta = Integer.valueOf(req.getParameter("id"));
 
                     Atleta atleta = Atleta.get(idAtleta);
@@ -76,7 +74,9 @@ public class TransferirAtleta extends HttpServlet {
 
                         SimpleDateFormat sdf = new SimpleDateFormat("YYYY-MM-dd");
 
-                        int idAssociacaoAlterar = Associacao.get(novaMatricula).getId();
+                        Associacao associacao = Associacao.get(novaMatricula);
+
+                        int idAssociacaoAlterar = associacao.getId();
 
                         atleta.setAssociacao_id(idAssociacaoAlterar);
                         atleta.setNumero_oficio(numeroOficio);
@@ -84,7 +84,9 @@ public class TransferirAtleta extends HttpServlet {
                         atleta.setData_entrada_associacao(sdf.parse(dataEntrada));
                         atleta.setNum_comprovante_pgto(numComprovantePgto);
 
-                        Atleta.update(atleta);
+                        secretario.alterarAtleta(atleta);
+                        informarSucessoCadastro(req,resp);
+
                     }
 
                 }
@@ -102,11 +104,16 @@ public class TransferirAtleta extends HttpServlet {
 
     private void informarErroCadastro(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.setAttribute("erroTransferencia", true);
-        req.getRequestDispatcher("transferir_atleta.jsp").forward(req, resp);
+        doGet(req,resp);
     }
 
     private void informarErroPreenchimento(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.setAttribute("erroPreenchimento", true);
-        req.getRequestDispatcher("transferir_atleta.jsp").forward(req, resp);
+        doGet(req,resp);
+    }
+
+    public void informarSucessoCadastro(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        req.setAttribute("sucessoCadastro", true);
+        doGet(req,resp);
     }
 }
