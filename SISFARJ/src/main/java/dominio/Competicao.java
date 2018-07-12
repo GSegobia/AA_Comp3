@@ -1,5 +1,9 @@
 package dominio;
 
+import dados.datamapper.CompeticaoDM;
+import exceptions.ModeloNaoExiste;
+
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -66,17 +70,27 @@ public class Competicao {
         this.tamanhoPiscina = tamanhoPiscina;
     }
 
-    public static ArrayList<Competicao> findAll(){
+    public static ArrayList<Competicao> findAll() throws SQLException, ClassNotFoundException {
 
-        ArrayList<Competicao> lista = new ArrayList<Competicao>();
-
-        return lista;
+        return CompeticaoDM.findAll();
     }
 
-    public static Competicao get(int competicaoId){
+    public static Competicao get(int competicaoId) throws SQLException, ClassNotFoundException, ModeloNaoExiste {
 
-        Competicao competicao = null;
+        Competicao competicao = CompeticaoDM.get(competicaoId);
+
+        if( competicao == null ) {
+            throw new ModeloNaoExiste("competicao",competicaoId);
+        }
 
         return competicao;
+    }
+
+    public void create(Competicao c) throws SQLException,ClassNotFoundException {
+        CompeticaoDM.create(c);
+    }
+
+    public void update(Competicao c) throws SQLException, ClassNotFoundException {
+        CompeticaoDM.update(c);
     }
 }

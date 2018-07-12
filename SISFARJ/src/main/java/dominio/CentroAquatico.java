@@ -1,8 +1,11 @@
 package dominio;
 
-/**
- * Created by over on 11/07/18.
- */
+import dados.datamapper.CentroAquaticoDM;
+import exceptions.ModeloNaoExiste;
+
+import java.sql.SQLException;
+import java.util.ArrayList;
+
 public class CentroAquatico {
     private int id;
     private String nome;
@@ -53,4 +56,29 @@ public class CentroAquatico {
     public void setTamanho_piscina(int tamanho_piscina) {
         this.tamanho_piscina = tamanho_piscina;
     }
+
+    public static ArrayList<CentroAquatico> findAll() throws SQLException, ClassNotFoundException {
+
+        return CentroAquaticoDM.findAll();
+    }
+
+    public static CentroAquatico get(int id) throws SQLException, ClassNotFoundException, ModeloNaoExiste {
+
+        CentroAquatico centro = CentroAquaticoDM.get(id);
+
+        if( centro == null ) {
+            throw new ModeloNaoExiste("centro aquatico",id);
+        }
+
+        return centro;
+    }
+
+    public void create(CentroAquatico c) throws SQLException,ClassNotFoundException {
+        CentroAquaticoDM.create(c);
+    }
+
+    public void update(CentroAquatico c) throws SQLException, ClassNotFoundException {
+        CentroAquaticoDM.update(c);
+    }
+
 }

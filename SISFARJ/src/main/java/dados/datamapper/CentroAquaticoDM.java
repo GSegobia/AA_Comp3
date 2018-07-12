@@ -61,7 +61,7 @@ public class CentroAquaticoDM {
         int linhasAtualizadas;
 
         String query = String.format(
-                "UPDATE CentroAquatico SET nome='%s',endereco='%s',tamanho_piscina=%d where id=%d;",
+                "UPDATE centro_aquatico SET nome='%s',endereco='%s',tamanho_piscina=%d where id=%d;",
                 modelo.getNome(),
                 modelo.getEndereco(),
                 modelo.getTamanho_piscina(),
