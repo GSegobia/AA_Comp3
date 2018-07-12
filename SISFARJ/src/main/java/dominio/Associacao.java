@@ -134,7 +134,7 @@ public class Associacao {
         return AssociacaoDM.update(a);
     }
 
-    public static ArrayList<Associacao> getAssociacoes() throws SQLException, ClassNotFoundException {
+    public static ArrayList<Associacao> findAll() throws SQLException, ClassNotFoundException {
         return AssociacaoDM.findAll();
     }
 }
