@@ -1,5 +1,6 @@
 package servlet.secretario;
 
+import clojure.lang.Obj;
 import dominio.*;
 import exceptions.MatriculaAssociacaoNaoEncontrada;
 import org.omg.CORBA.INTERNAL;
@@ -49,8 +50,9 @@ public class AlterarCadastroAtleta extends HttpServlet {
         if(!resp.isCommitted()) {
             try {
                 Usuario u = (Usuario) req.getSession().getAttribute("usuario");
-                Boolean possuiPermissao = Usuario.checaPermissao(PermissaoUsuario.SECRETARIO.id, u.getId());
-                if(!possuiPermissao) { informarErroPermissao(req, resp); }
+                Boolean possuiPermissaoSecretario = Usuario.checaPermissao(PermissaoUsuario.SECRETARIO.id, u.getId());
+                Boolean possuiPermissaoDiretor = Usuario.checaPermissao(PermissaoUsuario.DIRETOR_TECNICO.id, u.getId());
+                if(!possuiPermissaoSecretario && !possuiPermissaoDiretor) { informarErroPermissao(req, resp); }
                 else{
                     int id = Integer.valueOf(req.getParameter("id").trim());
                     String nome = req.getParameter("nome").trim();
@@ -68,7 +70,7 @@ public class AlterarCadastroAtleta extends HttpServlet {
                         informarErroPreenchimento(req, resp);
                     }else {
                         SimpleDateFormat sdf = new SimpleDateFormat("YYYY-MM-dd");
-                        Secretario secretario = new Secretario(u.getId(), u.getNome(), u.getMatricula(), u.getSenha(), u.getPermissaoId());
+
                         Associacao associacao = Associacao.get(matriculaAssociacao);
                         Atleta atleta = new Atleta(
                                 id,
@@ -82,8 +84,21 @@ public class AlterarCadastroAtleta extends HttpServlet {
                                 sdf.parse(dataEntrada),
                                 numComprovantePgto
                         );
-                        secretario.alterarAtleta(atleta);
-                        informarSucessoAlteracao(req, resp);
+
+                        if(possuiPermissaoSecretario) {
+                            Secretario secretario = new Secretario(u.getId(), u.getNome(), u.getMatricula(),
+                                    u.getSenha(), u.getPermissaoId());
+
+                            secretario.alterarAtleta(atleta);
+                            informarSucessoAlteracao(req, resp);
+                        } else if(possuiPermissaoDiretor){
+
+                            DiretorTecnico diretor = new DiretorTecnico(u.getId(), u.getNome(), u.getMatricula(),
+                                    u.getSenha(), u.getPermissaoId());
+
+                            diretor.alterarAtleta(atleta);
+                            informarSucessoAlteracao(req, resp);
+                        }
                     }
                 }
             }catch (MatriculaAssociacaoNaoEncontrada e) {
