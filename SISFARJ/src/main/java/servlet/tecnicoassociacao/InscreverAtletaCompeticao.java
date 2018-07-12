@@ -1,5 +1,7 @@
 package servlet.tecnicoassociacao;
 
+import dominio.PermissaoUsuario;
+import dominio.Usuario;
 import util.MiddlewareSessao;
 
 import javax.servlet.ServletException;
@@ -19,7 +21,13 @@ public class InscreverAtletaCompeticao extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         MiddlewareSessao.validar(req,resp);
         if(!resp.isCommitted()) {
-
+            try {
+                Usuario u = (Usuario) req.getSession().getAttribute("usuario");
+                Usuario.checaPermissao(PermissaoUsuario.TECNICO_ASSOCIACAO.id, u.getId());
+            } catch (Exception e) {
+                e.printStackTrace();
+                informarErroPermissao(req, resp);
+            }
         }
     }
 
@@ -27,8 +35,18 @@ public class InscreverAtletaCompeticao extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         MiddlewareSessao.validar(req,resp);
         if(!resp.isCommitted()) {
-
+            try {
+                Usuario u = (Usuario) req.getSession().getAttribute("usuario");
+                Usuario.checaPermissao(PermissaoUsuario.TECNICO_ASSOCIACAO.id, u.getId());
+            } catch (Exception e) {
+                e.printStackTrace();
+                informarErroPermissao(req, resp);
+            }
         }
+    }
+
+    public void informarErroPermissao(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        resp.sendRedirect("sem_permissao.jsp");
     }
 
 }

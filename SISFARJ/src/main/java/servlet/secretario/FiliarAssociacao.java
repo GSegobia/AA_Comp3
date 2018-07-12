@@ -1,5 +1,7 @@
 package servlet.secretario;
 
+import dominio.PermissaoUsuario;
+import dominio.Usuario;
 import util.MiddlewareSessao;
 
 import javax.servlet.ServletException;
@@ -19,7 +21,15 @@ public class FiliarAssociacao extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         MiddlewareSessao.validar(req,resp);
         if(!resp.isCommitted()) {
-            getServletContext().getRequestDispatcher("/filiar_associacao.jsp").forward(req, resp);
+            try {
+                Usuario u = (Usuario) req.getSession().getAttribute("usuario");
+                Usuario.checaPermissao(PermissaoUsuario.SECRETARIO.id, u.getId());
+
+                getServletContext().getRequestDispatcher("/filiar_associacao.jsp").forward(req, resp);
+            } catch (Exception e) {
+                e.printStackTrace();
+                informarErroPermissao(req, resp);
+            }
         }
     }
 
@@ -27,8 +37,18 @@ public class FiliarAssociacao extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         MiddlewareSessao.validar(req,resp);
         if(!resp.isCommitted()) {
-
+            try {
+                Usuario u = (Usuario) req.getSession().getAttribute("usuario");
+                Usuario.checaPermissao(PermissaoUsuario.SECRETARIO.id, u.getId());
+            } catch (Exception e) {
+                e.printStackTrace();
+                informarErroPermissao(req, resp);
+            }
         }
+    }
+
+    public void informarErroPermissao(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        resp.sendRedirect("sem_permissao.jsp");
     }
 
 }

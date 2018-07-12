@@ -1,6 +1,5 @@
 package dominio;
 
-import com.sun.xml.internal.ws.org.objectweb.asm.ClassAdapter;
 import exceptions.ModeloNaoExiste;
 
 import java.sql.SQLException;

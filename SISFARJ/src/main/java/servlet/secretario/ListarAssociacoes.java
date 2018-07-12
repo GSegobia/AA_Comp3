@@ -1,6 +1,8 @@
 package servlet.secretario;
 
 import dominio.Associacao;
+import dominio.PermissaoUsuario;
+import dominio.Usuario;
 import util.MiddlewareSessao;
 
 import javax.servlet.ServletException;
@@ -22,13 +24,20 @@ public class ListarAssociacoes extends HttpServlet {
         MiddlewareSessao.validar(req,resp);
         if(!resp.isCommitted()) {
             try {
+                Usuario u = (Usuario) req.getSession().getAttribute("usuario");
+                Usuario.checaPermissao(PermissaoUsuario.SECRETARIO.id, u.getId());
+
                 ArrayList<Associacao> associacoes = Associacao.getAssociacoes();
                 req.setAttribute("associacoes", associacoes);
                 req.getRequestDispatcher("listar_associacoes.jsp").forward(req, resp);
             } catch (Exception e) {
                 e.printStackTrace();
-                req.setAttribute("associacoes", null);
+                informarErroPermissao(req, resp);
             }
         }
+    }
+
+    public void informarErroPermissao(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        resp.sendRedirect("sem_permissao.jsp");
     }
 }

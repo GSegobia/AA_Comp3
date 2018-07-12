@@ -1,5 +1,7 @@
 package servlet.diretortecnico;
 
+import dominio.PermissaoUsuario;
+import dominio.Usuario;
 import util.MiddlewareSessao;
 
 import javax.servlet.ServletException;
@@ -19,7 +21,16 @@ public class AlterarLocaisCompeticao extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         MiddlewareSessao.validar(req,resp);
         if(!resp.isCommitted()) {
+            try {
+                Usuario u = (Usuario) req.getSession().getAttribute("usuario");
+                Boolean possuiPermissao = Usuario.checaPermissao(PermissaoUsuario.DIRETOR_TECNICO.id, u.getId()) || Usuario.checaPermissao(PermissaoUsuario.TECNICO_ASSOCIACAO.id, u.getId());
+                if(!possuiPermissao) { informarErroPermissao(req, resp); }
+                else {
 
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
     }
 
@@ -27,8 +38,21 @@ public class AlterarLocaisCompeticao extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         MiddlewareSessao.validar(req,resp);
         if(!resp.isCommitted()) {
+            try {
+                Usuario u = (Usuario) req.getSession().getAttribute("usuario");
+                Boolean possuiPermissao = Usuario.checaPermissao(PermissaoUsuario.DIRETOR_TECNICO.id, u.getId()) || Usuario.checaPermissao(PermissaoUsuario.TECNICO_ASSOCIACAO.id, u.getId());
+                if(!possuiPermissao) { informarErroPermissao(req, resp); }
+                else {
 
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
+    }
+
+    public void informarErroPermissao(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        resp.sendRedirect("sem_permissao.jsp");
     }
     
 }
