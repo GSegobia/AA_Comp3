@@ -57,8 +57,14 @@ public class Usuario {
         this.senha = novaSenha;
     }
 
-    public static Usuario get(int usuarioId) throws SQLException, ClassNotFoundException, ModeloNaoExiste {
-        return UsuarioDM.get(usuarioId);
+    public static Usuario get(int id) throws SQLException, ClassNotFoundException, ModeloNaoExiste {
+        Usuario u = UsuarioDM.get(id);
+
+        if(u==null){
+            throw new ModeloNaoExiste("usuario",id);
+        }
+
+        return UsuarioDM.get(id);
     }
 
     public static boolean create(int id, String nome, String matricula, String senha, int permissao_id) throws SQLException, ClassNotFoundException{
