@@ -13,7 +13,7 @@
         <h2 class="text-center text-uppercase text-secondary mb-0">Cadastrar Atleta</h2>
         <hr class="mb-5">
         <div class="container">
-            <form class="form" action="atleta" method="post">
+            <form class="form" action="cadastrarAtleta" method="post">
                 <h4>Dados do Atleta</h4>
                 <div class="form-row">
                     <div class="form-group col-md-6">

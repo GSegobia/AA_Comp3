@@ -21,7 +21,7 @@ public class AtletaDM {
                 rs.getDate("data_oficio"),
                 rs.getString("numero_oficio"),
                 rs.getDate("data_entrada_associacao"),
-                rs.getString("numero_comprovante_pgto")
+                rs.getString("num_comprovante_pgto")
         );
     }
 
@@ -54,7 +54,7 @@ public class AtletaDM {
         int linhasAtualizadas;
 
         String query = String.format(
-                "Insert into Atleta (associacao_id,categoria_id,matricula,nome,data_nascimento,data_oficio,numero_oficio,data_entrada_associacao, numero_comprovante_pgto) " +
+                "Insert into Atleta (associacao_id,categoria_id,matricula,nome,data_nascimento,data_oficio,numero_oficio,data_entrada_associacao, num_comprovante_pgto) " +
                         "values(%d,%d,'%s','%s','%s','%s','%s','%s','%s');",
                 modelo.getAssociacao_id(),
                 modelo.getCategoria_id(),
@@ -77,7 +77,7 @@ public class AtletaDM {
 
         String query = String.format(
                 "UPDATE Atleta SET associacao_id=%d,categoria_id=%d,matricula=\'%s\',nome=\'%s\',data_nascimento=\'%s\'," +
-                        "data_oficio=\'%s\',numero_oficio=\'%s\',data_entrada_associacao=\'%s\', numero_comprovante_pgto='%s' where id=%d;",
+                        "data_oficio=\'%s\',numero_oficio=\'%s\',data_entrada_associacao=\'%s\', num_comprovante_pgto='%s' where id=%d;",
                 modelo.getAssociacao_id(),
                 modelo.getCategoria_id(),
                 modelo.getMatricula(),
