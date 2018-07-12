@@ -49,15 +49,43 @@
 </script>
 <% } %>
 
-<!-- Erro: Cadastro -->
+<!-- Erro: Cadastro Atleta -->
 <%
-    Boolean erroCadastro = (Boolean) request.getAttribute("erroCadastro");
-    if(erroCadastro != null && erroCadastro) {
+    Boolean erroCadastroAtleta = (Boolean) request.getAttribute("erroCadastro");
+    if(erroCadastroAtleta != null && erroCadastroAtleta) {
 %>
 <script>
     swal({
         title: "Erro",
         text: "Não foi possível cadastrar o Atleta.",
+        icon: "error"
+    })
+</script>
+<% } %>
+
+<!-- Sucesso: Filiar Associacao -->
+<%
+    Boolean sucessoFiliarAssociacao = (Boolean) request.getAttribute("sucessoFiliarAssociacao");
+    if(sucessoFiliarAssociacao != null && sucessoFiliarAssociacao) {
+%>
+<script>
+    swal({
+        title: "Sucesso",
+        text: "Nova Associacao fialiada com sucesso!",
+        icon: "success"
+    })
+</script>
+<% } %>
+
+<!-- Erro: Filiar Associcao -->
+<%
+    Boolean erroFiliarAssociacao = (Boolean) request.getAttribute("erroFiliarAssociacao");
+    if(erroFiliarAssociacao != null && erroFiliarAssociacao) {
+%>
+<script>
+    swal({
+        title: "Erro",
+        text: "Não foi possível filiar a Associação.",
         icon: "error"
     })
 </script>

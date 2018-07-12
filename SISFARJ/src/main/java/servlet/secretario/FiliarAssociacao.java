@@ -12,7 +12,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.sql.Date;
 import java.text.SimpleDateFormat;
 
 /**
@@ -95,12 +94,12 @@ public class FiliarAssociacao extends HttpServlet {
     }
 
     public void informarSucessoCadastro(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.setAttribute("sucessoCadastro", true);
+        req.setAttribute("sucessoFiliarAssociacao", true);
         req.getRequestDispatcher("filiar_associacao.jsp").forward(req, resp);
     }
 
     public void informarErroCadastro(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.setAttribute("erroCadastro", true);
+        req.setAttribute("erroFiliarAssociacao", true);
         req.getRequestDispatcher("filiar_associacao.jsp").forward(req, resp);
     }
 }
