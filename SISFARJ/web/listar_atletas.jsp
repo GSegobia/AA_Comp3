@@ -44,7 +44,7 @@
                     <td><%=a.getNumero_oficio() %></td>
                     <td>
                         <div class="btn-group btn-group-sm" role="toolbar">
-                            <button type="button" class="btn btn-info btn-sm"> <i class="fa fa-edit"></i></button>
+                            <button type="button" class="btn btn-info btn-sm" onclick="window.location = 'alterarCadastroAtleta?id=<%=a.getId() %>';"> <i class="fa fa-edit"></i></button>
                             <button type="button" class="btn btn-success btn-sm"> <i class="fa fa-exchange"></i></button>
                         </div>
                     </td>

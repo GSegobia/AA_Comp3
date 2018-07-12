@@ -63,6 +63,34 @@
 </script>
 <% } %>
 
+<!-- Sucesso: Alterar Atleta -->
+<%
+    Boolean sucessoAlterar = (Boolean) request.getAttribute("sucessoAlterar");
+    if(sucessoAlterar != null && sucessoAlterar) {
+%>
+<script>
+    swal({
+        title: "Sucesso",
+        text: "Atleta alterado com sucesso!",
+        icon: "success"
+    })
+</script>
+<% } %>
+
+<!-- Erro: Alterar Atleta -->
+<%
+    Boolean erroAlterar = (Boolean) request.getAttribute("erroAlterar");
+    if(erroAlterar != null && erroAlterar) {
+%>
+<script>
+    swal({
+        title: "Erro",
+        text: "Não foi possível alterar atleta!",
+        icon: "error"
+    })
+</script>
+<% } %>
+
 <!-- Erro: Matrícula da Associação -->
 <%
     Boolean erroMatriculaAssociacao = (Boolean) request.getAttribute("erroMatriculaAssociacao");
