@@ -15,7 +15,7 @@ public class CompeticaoDM {
         return new Competicao(
                 rs.getInt("id"),
                 rs.getString("nome"),
-                rs.getInt("centroAquaticoId"),
+                rs.getInt("centro_aquatico_id"),
                 rs.getDate("dataCompeticao"),
                 rs.getInt("tamanhoPiscina"));
     }
