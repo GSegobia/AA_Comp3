@@ -46,9 +46,8 @@
             </div>
             <ul class="list-group list-group-flush">
                 <li class="list-group-item"><a href="cadastrarAtleta">Cadastrar Atleta</a></li>
-                <li class="list-group-item"><a href="listarAtletas">Listar Atletas</a></li>
+                <li class="list-group-item"><a href="listarAtletas">Listar Atletas(Transferir e Editar)</a></li>
                 <li class="list-group-item"><a href="inscreverAtletaCompeticao">Inscrever Atleta em Competição</a></li>
-                <li class="list-group-item"><a href="transferirAtleta">Transferir Atleta</a></li>
             </ul>
         </div>
         <!-- Competições -->
