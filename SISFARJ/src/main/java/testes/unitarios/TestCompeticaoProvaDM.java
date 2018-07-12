@@ -16,8 +16,8 @@ public class TestCompeticaoProvaDM {
 
     @Test
     public void get() throws SQLException, ClassNotFoundException, ModeloNaoExiste {
-        CompeticaoProva c = CompeticaoProvaDM.get(1);
-        assert(c != null);
+        CompeticaoProva cp = CompeticaoProvaDM.get(1);
+        assert(cp != null);
     }
 
     @Test
@@ -29,14 +29,14 @@ public class TestCompeticaoProvaDM {
 
     @Test
     public void create() throws SQLException, ClassNotFoundException {
-        CompeticaoProva c = new CompeticaoProva(1,1);
-        assert(CompeticaoProvaDM.create(c));
+        CompeticaoProva cp = new CompeticaoProva(1,1);
+        assert(CompeticaoProvaDM.create(cp));
     }
 
     @Test
-    public void findAll() throws SQLException, ClassNotFoundException {
-        int[] c = CompeticaoProvaDM.findAllProvaInCompeticao(1);
-        assert(c != null);
+    public void findAllProvaInCompeticao() throws SQLException, ClassNotFoundException {
+        int[] cp = CompeticaoProvaDM.findAllProvaInCompeticao(1);
+        assert(cp != null);
     }
 
 }
