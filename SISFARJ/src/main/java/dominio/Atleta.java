@@ -5,13 +5,16 @@ import exceptions.ModeloNaoExiste;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Date;
 
 public class Atleta {
 
     private int id,associacao_id,categoria_id;
-    private String matricula,nome,data_nascimento,data_oficio,numero_oficio,data_entrada_associacao;
+    private String matricula,nome,numero_oficio;
+    private Date data_nascimento, data_entrada_associacao, data_oficio;
 
-    public Atleta(int id, int associacao_id, int categoria_id, String matricula, String nome, String data_nascimento, String data_oficio, String numero_oficio, String data_entrada_associacao) {
+    public Atleta(int id, int associacao_id, int categoria_id, String matricula, String nome, Date data_nascimento,
+                  Date data_oficio, String numero_oficio, Date data_entrada_associacao) {
         this.id = id;
         this.associacao_id = associacao_id;
         this.categoria_id = categoria_id;
@@ -24,7 +27,8 @@ public class Atleta {
 
     }
 
-    public Atleta(int associacao_id, int categoria_id, String matricula, String nome, String data_nascimento, String data_oficio, String numero_oficio, String data_entrada_associacao) {
+    public Atleta(int associacao_id, int categoria_id, String matricula, String nome, Date data_nascimento,
+                  Date data_oficio, String numero_oficio, Date data_entrada_associacao) {
         this.associacao_id = associacao_id;
         this.categoria_id = categoria_id;
         this.matricula = matricula;
@@ -56,11 +60,11 @@ public class Atleta {
         return nome;
     }
 
-    public String getData_nascimento() {
+    public Date getData_nascimento() {
         return data_nascimento;
     }
 
-    public String getData_oficio() {
+    public Date getData_oficio() {
         return data_oficio;
     }
 
@@ -68,7 +72,7 @@ public class Atleta {
         return numero_oficio;
     }
 
-    public String getData_entrada_associacao() {
+    public Date getData_entrada_associacao() {
         return data_entrada_associacao;
     }
 
@@ -92,11 +96,11 @@ public class Atleta {
         this.nome = nome;
     }
 
-    public void setData_nascimento(String data_nascimento) {
+    public void setData_nascimento(Date data_nascimento) {
         this.data_nascimento = data_nascimento;
     }
 
-    public void setData_oficio(String data_oficio) {
+    public void setData_oficio(Date data_oficio) {
         this.data_oficio = data_oficio;
     }
 
@@ -104,7 +108,7 @@ public class Atleta {
         this.numero_oficio = numero_oficio;
     }
 
-    public void setData_entrada_associacao(String data_entrada_associacao) {
+    public void setData_entrada_associacao(Date data_entrada_associacao) {
         this.data_entrada_associacao = data_entrada_associacao;
     }
 
