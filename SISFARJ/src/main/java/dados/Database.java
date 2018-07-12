@@ -12,7 +12,7 @@ public class Database {
     public static Connection getConnect() throws ClassNotFoundException, SQLException {
         String url = "jdbc:postgresql://localhost:5432/sisfarj";
         String usuario = "postgres";
-        String senha = "postgres    ";
+        String senha = "postgres";
 
         if(conn == null){
             Class.forName("org.postgresql.Driver");
@@ -25,25 +25,17 @@ public class Database {
         Statement stmt;
         ResultSet rs = null;
         conn = Database.getConnect();
-
-        try{
-            stmt = conn.createStatement();
-            rs = stmt.executeQuery(query);
-        } catch(Exception e) {
-            System.err.println(e.toString());
-        }
-
+        stmt = conn.createStatement();
+        rs = stmt.executeQuery(query);
         return rs;
     }
     //Usar para update, insert e delete
     public static int doUpdate(String query) throws ClassNotFoundException, SQLException {
         Statement stmt;
         int updatesDone = 0;
-
         conn = Database.getConnect();
         stmt = conn.createStatement();
         updatesDone = stmt.executeUpdate(query);
-
         return updatesDone;
     }
 }
