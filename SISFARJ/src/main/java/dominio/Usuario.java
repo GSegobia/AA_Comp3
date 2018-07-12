@@ -23,6 +23,15 @@ public class Usuario {
         this.senha = senha;
         this.permissao_id = permissao_id;
     }
+
+    public Usuario(String matricula, String nome, String senha, int permissao_id) {
+
+        this.matricula = matricula;
+        this.nome = nome;
+        this.senha = senha;
+        this.permissao_id = permissao_id;
+    }
+
     public void setId(int id) {
         this.id = id;
     }
@@ -67,20 +76,14 @@ public class Usuario {
         return UsuarioDM.get(id);
     }
 
-    public static boolean create(int id, String nome, String matricula, String senha, int permissao_id) throws SQLException, ClassNotFoundException{
-        Usuario novo_usuario = new Usuario(id, nome, matricula, senha, permissao_id);
+    public static void create(Usuario usuario) throws SQLException, ClassNotFoundException{
 
-        return UsuarioDM.create(novo_usuario);
+        UsuarioDM.create(usuario);
     }
 
-    public static boolean update(int id, String nome, String matricula, String senha, int permissao_id) throws SQLException, ClassNotFoundException {
-        Usuario usuarioAtualizado = new Usuario(id, nome, matricula, senha, permissao_id);
+    public static void update(Usuario usuario) throws SQLException, ClassNotFoundException {
 
-        return UsuarioDM.update(usuarioAtualizado);
-    }
-
-    public static boolean update(Usuario usuarioAtualizado) throws SQLException, ClassNotFoundException {
-        return UsuarioDM.update(usuarioAtualizado);
+        UsuarioDM.update(usuario);
     }
 
     public static boolean checaPermissao(int numeroPermissao, int idUsuario) throws SQLException, ClassNotFoundException, ModeloNaoExiste {

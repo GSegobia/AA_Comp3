@@ -14,6 +14,25 @@ public class Secretario extends Usuario {
         super(id,nome, matricula, senha,permissao);
     }
 
+    public void filiarAssociacao(Associacao associacao) throws ClassNotFoundException, SQLException, ModeloNaoExiste{
+
+        Usuario tecnico = new TecnicoAssociacao("Técnico " + associacao.getSigla(), associacao.getMatricula(),
+                                            "123456", 2);
+
+        Associacao.create(associacao);
+        Usuario.create(tecnico);
+    }
+
+    public void alterarFiliacao(Associacao associacao) throws ClassNotFoundException, SQLException{
+
+        Associacao.update(associacao);
+    }
+
+    public ArrayList<Associacao> listarAssociacao() throws ClassNotFoundException, SQLException {
+
+        return Associacao.findAll();
+    }
+
     public void cadastrarAtleta(Atleta atleta) throws ClassNotFoundException, SQLException {
 
         Atleta.create(atleta);
@@ -33,6 +52,11 @@ public class Secretario extends Usuario {
 
         return Atleta.get(idAtleta);
     }
-    public void transferirAtleta() {}
+    public void transferirAtleta(int idAssociacao, Atleta atleta) throws ClassNotFoundException, SQLException{
+
+        atleta.setAssociacao_id(idAssociacao);
+
+        Atleta.update(atleta);
+    }
 
 }
