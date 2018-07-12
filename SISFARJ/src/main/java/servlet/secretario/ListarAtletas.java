@@ -1,6 +1,7 @@
 package servlet.secretario;
 
 import dominio.Atleta;
+import util.MiddlewareSessao;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -18,13 +19,16 @@ public class ListarAtletas extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        try {
-            ArrayList<Atleta> atletas= Atleta.findAll();
-            req.setAttribute("atletas", atletas);
-            getServletContext().getRequestDispatcher("/listar_atletas.jsp").forward(req,resp);
-        } catch (Exception e) {
-            e.printStackTrace();
-            req.setAttribute("atletas", null);
+        MiddlewareSessao.validar(req,resp);
+        if(!resp.isCommitted()) {
+            try {
+                ArrayList<Atleta> atletas = Atleta.findAll();
+                req.setAttribute("atletas", atletas);
+                getServletContext().getRequestDispatcher("/listar_atletas.jsp").forward(req, resp);
+            } catch (Exception e) {
+                e.printStackTrace();
+                req.setAttribute("atletas", null);
+            }
         }
     }
 }

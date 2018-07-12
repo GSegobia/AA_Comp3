@@ -9,19 +9,17 @@
 </header>
 <div class="container">
     <div class="card-group mb-3">
-        <!-- Associações -->
+        <!-- ECUs Abertos -->
         <div class="card p-3 col-md-4 text-center">
             <ul class="list-group list-group-flush">
                 <li class="list-group-item"><a href="listarBalizamentoCompeticao">Listar balizamento competição</a></li>
             </ul>
         </div>
-        <!-- Atletas -->
         <div class="card p-3 col-md-4 text-center">
             <ul class="list-group list-group-flush">
                 <li class="list-group-item"><a href="listarPontuacaoCompeticao">Listar pontuação competição</a></li>
             </ul>
         </div>
-        <!-- Competições -->
         <div class="card p-3 col-md-4 text-center">
             <ul class="list-group list-group-flush">
                 <li class="list-group-item"><a href="listarPontuacaoFinal">Listar pontuação final</a></li>
@@ -49,6 +47,8 @@
             <ul class="list-group list-group-flush">
                 <li class="list-group-item"><a href="cadastrarAtleta">Cadastrar Atleta</a></li>
                 <li class="list-group-item"><a href="listarAtletas">Listar Atletas</a></li>
+                <li class="list-group-item"><a href="inscreverAtletaCompeticao">Inscrever Atleta em Competição</a></li>
+                <li class="list-group-item"><a href="transferirAtleta">Transferir Atleta</a></li>
             </ul>
         </div>
         <!-- Competições -->
@@ -58,7 +58,10 @@
                 <h5 class="card-title" style="text-align: center">Competições</h5>
             </div>
             <ul class="list-group list-group-flush">
-                <li class="list-group-item"><a href="competicoes">Listar Competições</a></li>
+                <li class="list-group-item"><a href="criarCompeticao">Criar Competição</a></li>
+                <li class="list-group-item"><a href="listarLocaisCompeticao">Listar Locais de Competição</a></li>
+                <li class="list-group-item"><a href="inserirResultadoAtleta">Inserir Resultado do Atleta</a></li>
+                <li class="list-group-item"><a href="listarCompeticoes">Listar Competições</a></li>
             </ul>
         </div>
     </div>
