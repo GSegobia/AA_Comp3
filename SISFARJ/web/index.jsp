@@ -35,7 +35,7 @@
             </div>
             <ul class="list-group list-group-flush">
                 <li class="list-group-item"><a href="filiarAssociacao">Filiar Associação</a></li>
-                <li class="list-group-item"><a href="listarAssociacoes">Listar Associações</a></li>
+                <li class="list-group-item"><a href="listarAssociacoes">Listar Associações (Transferir e Editar)</a></li>
             </ul>
         </div>
         <!-- Atletas -->
@@ -46,7 +46,7 @@
             </div>
             <ul class="list-group list-group-flush">
                 <li class="list-group-item"><a href="cadastrarAtleta">Cadastrar Atleta</a></li>
-                <li class="list-group-item"><a href="listarAtletas">Listar Atletas(Transferir e Editar)</a></li>
+                <li class="list-group-item"><a href="listarAtletas">Listar Atletas (Transferir e Editar)</a></li>
                 <li class="list-group-item"><a href="inscreverAtletaCompeticao">Inscrever Atleta em Competição</a></li>
             </ul>
         </div>

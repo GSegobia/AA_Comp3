@@ -29,7 +29,7 @@ public class TestProvaDM {
 
     @Test
     public void create() throws SQLException, ClassNotFoundException {
-        Prova p = new Prova("caso_teste",1,1,1,1);
+        Prova p = new Prova("caso_teste",1,1,1);
         assert(ProvaDM.create(p));
     }
 

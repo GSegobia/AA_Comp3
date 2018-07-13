@@ -22,6 +22,7 @@
                 <th scope="col">#</th>
                 <th scope="col">Matrícula</th>
                 <th scope="col">Nome</th>
+                <th scope="col">Ações</th>
             </tr>
             </thead>
             <tbody>
@@ -30,6 +31,11 @@
                     <th scope="row"><%=a.getId() %></th>
                     <td><%=a.getMatricula() %></td>
                     <td><%=a.getNome() %></td>
+                    <td>
+                        <div class="btn-group btn-group-sm" role="toolbar">
+                            <a class="btn btn-info btn-sm" href="alterarFiliacaoAssociacao?id=<%=a.getId()%>"> <i class="fa fa-edit"></i></a>
+                        </div>
+                    </td>
                 </tr>
             <% } %>
             </tbody>

@@ -1,5 +1,6 @@
 <%@ page import="dominio.Associacao" %>
-<%@ page import="dominio.Atleta" %><%--
+<%@ page import="dominio.Atleta" %>
+<%--
   Created by IntelliJ IDEA.
   User: joaovaraujo
   Date: 12/07/18

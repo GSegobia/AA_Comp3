@@ -38,8 +38,8 @@ public class ProvaDM {
         int linhasAtualizadas;
 
         String query = String.format(
-                "Insert into Prova (nome,classe_id,categoria_id,competica_id) " +
-                        "values('%s',%d,%d,%d,%d);",
+                "Insert into Prova (nome,classe_id,categoria_id,competicao_id) " +
+                        "values('%s',%d,%d,%d);",
                 modelo.getNome(),
                 modelo.getClasse_id(),
                 modelo.getCategoria_id(),

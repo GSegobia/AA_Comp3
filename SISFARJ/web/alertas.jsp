@@ -91,6 +91,34 @@
 </script>
 <% } %>
 
+<!-- Sucesso: Alterar Filiacao Associacao -->
+<%
+    Boolean sucessoAlterarFiliacaoAssociacao = (Boolean) request.getAttribute("sucessoAlterarFiliacaoAssociacao");
+    if(sucessoAlterarFiliacaoAssociacao != null && sucessoAlterarFiliacaoAssociacao) {
+%>
+<script>
+    swal({
+        title: "Sucesso",
+        text: "Alteração na filiação realizada com sucesso!",
+        icon: "success"
+    })
+</script>
+<% } %>
+
+<!-- Erro: Alterar Filiacao Associcao -->
+<%
+    Boolean erroAlterarFiliacaoAssociacao = (Boolean) request.getAttribute("erroAlterarFiliacaoAssociacao");
+    if(erroAlterarFiliacaoAssociacao != null && erroAlterarFiliacaoAssociacao) {
+%>
+<script>
+    swal({
+        title: "Erro",
+        text: "Não foi possível alterar a fialiação da Associação.",
+        icon: "error"
+    })
+</script>
+<% } %>
+
 <!-- Sucesso: Alterar Atleta -->
 <%
     Boolean sucessoAlterar = (Boolean) request.getAttribute("sucessoAlterar");

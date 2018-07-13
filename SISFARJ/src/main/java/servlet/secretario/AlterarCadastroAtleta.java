@@ -119,16 +119,16 @@ public class AlterarCadastroAtleta extends HttpServlet {
 
     public void informarErroAlteracao(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.setAttribute("erroAlterar", true);
-        req.getRequestDispatcher("index.jsp").forward(req, resp);
+        doGet(req, resp);
     }
     public void informarErroMatriculaAssociacao(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.setAttribute("erroMatriculaAssociacao", true);
-        req.getRequestDispatcher("alterar_cadastro_atleta.jsp").forward(req, resp);
+        doGet(req, resp);
     }
 
     public void informarErroPreenchimento(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.setAttribute("erroPreenchimento", true);
-        req.getRequestDispatcher("alterar_cadastro_atleta.jsp").forward(req, resp);
+        doGet(req, resp);
     }
 
     public void informarErroPermissao(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
