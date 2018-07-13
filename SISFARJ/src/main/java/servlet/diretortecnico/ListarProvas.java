@@ -19,13 +19,27 @@ public class ListarProvas extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        MiddlewareSessao.validar(req,resp);
+        //MiddlewareSessao.validar(req,resp);
         if(!resp.isCommitted()) {
             try {
+                Boolean possuiPermissao = false;
                 Usuario u = (Usuario) req.getSession().getAttribute("usuario");
-                Boolean possuiPermissao = Usuario.checaPermissao(PermissaoUsuario.DIRETOR_TECNICO.id, u.getId()) || Usuario.checaPermissao(PermissaoUsuario.TECNICO_ASSOCIACAO.id, u.getId());
-                if(!possuiPermissao) { informarErroPermissao(req, resp); }
-                else {
+
+                if(u != null) {
+                    possuiPermissao = Usuario.checaPermissao(PermissaoUsuario.DIRETOR_TECNICO.id, u.getId()) || Usuario.checaPermissao(PermissaoUsuario.TECNICO_ASSOCIACAO.id, u.getId());
+                }else{
+                    //informarErroPermissao(req, resp);
+                    String query = req.getQueryString();
+                    int competicao_id = this.recuperarId(query);
+                    ArrayList<Prova> provas = Competicao.listarProvas(competicao_id);
+                    Competicao c = Competicao.get(competicao_id);
+                    req.setAttribute("provas", provas);
+                    req.setAttribute("competicao", c);
+                    getServletContext().getRequestDispatcher("/listar_provas.jsp").forward(req, resp);
+                }
+                if(!possuiPermissao) {
+
+                }else {
                     String query = req.getQueryString();
                     int competicao_id = this.recuperarId(query);
                     DiretorTecnico diretor = new DiretorTecnico(u.getId(), u.getNome(), u.getMatricula(), u.getSenha(), u.getPermissaoId());

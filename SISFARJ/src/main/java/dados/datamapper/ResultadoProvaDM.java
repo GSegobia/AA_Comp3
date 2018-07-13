@@ -6,6 +6,7 @@ import exceptions.ModeloNaoExiste;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 public class ResultadoProvaDM {
 
@@ -54,5 +55,16 @@ public class ResultadoProvaDM {
     }
 
 
+    public static ArrayList<ResultadoProva> findAllByTempo(int id) throws SQLException, ClassNotFoundException, ModeloNaoExiste {
+        ArrayList<ResultadoProva> rp = new ArrayList<>();
+        ResultSet rs = Database.doSelect("Select * from resultado_provas WHERE prova_id="+id+" ORDER BY tempo");
+
+        if(rs.next()){
+            do {
+                rp.add(mapModel(rs));
+            } while(rs.next());
+        }
+        return rp;
+    }
 }
 

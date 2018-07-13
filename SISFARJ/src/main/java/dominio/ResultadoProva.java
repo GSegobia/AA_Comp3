@@ -1,8 +1,10 @@
 package dominio;
 
 import dados.datamapper.ResultadoProvaDM;
+import exceptions.ModeloNaoExiste;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 public class ResultadoProva {
 
@@ -36,6 +38,10 @@ public class ResultadoProva {
 
     public static void create(ResultadoProva rp) throws SQLException, ClassNotFoundException {
         ResultadoProvaDM.create(rp);
+    }
+
+    public static ArrayList<ResultadoProva> findAllByTempo(int id) throws SQLException, ModeloNaoExiste, ClassNotFoundException {
+        return ResultadoProvaDM.findAllByTempo(id);
     }
 
 }
