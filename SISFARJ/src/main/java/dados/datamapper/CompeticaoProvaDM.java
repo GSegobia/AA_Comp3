@@ -53,12 +53,12 @@ public class CompeticaoProvaDM {
     public static int[] findAllProvaInCompeticao(int competicao_id) throws ClassNotFoundException, SQLException {
         int[] listaProvas= {};
 
-        String query = String.format("Select prova_id from competicao_prova where competicao_id=%d",competicao_id);
+        String query = String.format("Select id_atleta from competicao_prova where id_prova=%d",competicao_id);
         ResultSet rs = Database.doSelect(query);
 
         if(rs.next()){
             do {
-                listaProvas = ArrayUtils.add(listaProvas,rs.getInt("prova_id"));
+                listaProvas = ArrayUtils.add(listaProvas,rs.getInt("id_atleta"));
             } while(rs.next());
         }
 

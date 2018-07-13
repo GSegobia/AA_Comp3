@@ -1,9 +1,6 @@
 package servlet.diretortecnico;
 
-import dominio.Competicao;
-import dominio.DiretorTecnico;
-import dominio.PermissaoUsuario;
-import dominio.Usuario;
+import dominio.*;
 import util.MiddlewareSessao;
 
 import javax.servlet.ServletException;
@@ -15,11 +12,10 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 /**
- * Created by Fellipe Bravo on 11/07/18.
- * Edited by João V. Araújo on 12/07/18.
+ * Created by  João V. Araújo on 12/07/18.
  */
-@WebServlet("/listarCompeticoes")
-public class ListarCompeticoes extends HttpServlet {
+@WebServlet("/listarProvas")
+public class ListarProvas extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -30,15 +26,23 @@ public class ListarCompeticoes extends HttpServlet {
                 Boolean possuiPermissao = Usuario.checaPermissao(PermissaoUsuario.DIRETOR_TECNICO.id, u.getId()) || Usuario.checaPermissao(PermissaoUsuario.TECNICO_ASSOCIACAO.id, u.getId());
                 if(!possuiPermissao) { informarErroPermissao(req, resp); }
                 else {
+                    String query = req.getQueryString();
+                    int competicao_id = this.recuperarId(query);
                     DiretorTecnico diretor = new DiretorTecnico(u.getId(), u.getNome(), u.getMatricula(), u.getSenha(), u.getPermissaoId());
-                    ArrayList<Competicao> competicoes = diretor.listarCompeticoes();
-                    req.setAttribute("competicoes", competicoes);
-                    getServletContext().getRequestDispatcher("/listar_competicoes.jsp").forward(req, resp);
+                    ArrayList<Prova> provas = diretor.listarProvas(competicao_id);
+                    Competicao c = Competicao.get(competicao_id);
+                    req.setAttribute("provas", provas);
+                    req.setAttribute("competicao", c);
+                    getServletContext().getRequestDispatcher("/listar_provas.jsp").forward(req, resp);
                 }
             } catch (Exception e) {
                 e.printStackTrace();
             }
         }
+    }
+
+    private int recuperarId(String query){
+        return Integer.valueOf(query.substring(query.lastIndexOf("=") + 1));
     }
 
     public void informarErroPermissao(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

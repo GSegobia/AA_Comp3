@@ -34,6 +34,10 @@ public class DiretorTecnico extends Secretario {
         Competicao.create(competicao);
     }
 
+    public void inserirTempoAtleta(ResultadoProva rp) throws SQLException, ClassNotFoundException{
+        ResultadoProva.create(rp);
+    }
+
     public void alterarCompeticao(Competicao competicao) throws SQLException, ClassNotFoundException{
 
         Competicao.update(competicao);
@@ -45,6 +49,21 @@ public class DiretorTecnico extends Secretario {
 
         return competicoes;
     }
+
+    public ArrayList<Prova> listarProvas(int id) throws SQLException, ModeloNaoExiste, ClassNotFoundException {
+
+        ArrayList<Prova> provas = Competicao.listarProvas(id);
+
+        return provas;
+    }
+
+    public ArrayList<Atleta> listarAtletaInProva(int id) throws SQLException, ModeloNaoExiste, ClassNotFoundException {
+
+        ArrayList<Atleta> atletas = Prova.listarAtletas(id);
+
+        return atletas;
+    }
+
 
     public Competicao selecionarCompeticao(int idCompeticao) throws SQLException, ModeloNaoExiste, ClassNotFoundException {
 

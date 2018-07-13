@@ -18,8 +18,7 @@ public class ProvaDM {
                 rs.getString("nome"),
                 rs.getInt("classe_id"),
                 rs.getInt("categoria_id"),
-                rs.getInt("competicao_id"),
-                rs.getInt("prova_atleta_id")
+                rs.getInt("competicao_id")
         );
     }
 
@@ -41,13 +40,12 @@ public class ProvaDM {
         int linhasAtualizadas;
 
         String query = String.format(
-                "Insert into Prova (nome,classe_id,categoria_id,competica_id,prova_atleta_id) " +
+                "Insert into Prova (nome,classe_id,categoria_id,competica_id) " +
                         "values('%s',%d,%d,%d,%d);",
                 modelo.getNome(),
                 modelo.getClasse_id(),
                 modelo.getCategoria_id(),
-                modelo.getCompeticao_id(),
-                modelo.getProva_atleta_id()
+                modelo.getCompeticao_id()
             );
 
         linhasAtualizadas = Database.doUpdate(query);
