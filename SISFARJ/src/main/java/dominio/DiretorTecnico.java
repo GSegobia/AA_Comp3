@@ -64,9 +64,4 @@ public class DiretorTecnico extends Secretario {
     public Competicao selecionarCompeticao(int idCompeticao) throws SQLException, ModeloNaoExiste, ClassNotFoundException {
         return Competicao.get(idCompeticao);
     }
-
-    public void selecionarProva() {}
-    public void informarTempoProva() {}
-    public void informarTerminoLancamentoTempoDaProva() {}
-
 }

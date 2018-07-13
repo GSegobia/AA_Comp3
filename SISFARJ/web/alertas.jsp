@@ -147,6 +147,35 @@
 </script>
 <% } %>
 
+<!-- Sucesso: Alterar Local -->
+<%
+    Boolean sucessoAlterarLocalCompeticao = (Boolean) request.getAttribute("sucessoAlterarLocalCompeticao");
+    if(sucessoAlterarLocalCompeticao != null && sucessoAlterarLocalCompeticao) {
+%>
+<script>
+    swal({
+        title: "Sucesso",
+        text: "Local alterado com sucesso!",
+        icon: "success"
+    })
+</script>
+<% } %>
+
+<!-- Erro: Alterar Local -->
+<%
+    Boolean erroAlterarLocalCompeticao = (Boolean) request.getAttribute("erroAlterar");
+    if(erroAlterarLocalCompeticao != null && erroAlterarLocalCompeticao) {
+%>
+<script>
+    swal({
+        title: "Erro",
+        text: "Não foi possível alterar o Local!",
+        icon: "error"
+    })
+</script>
+<% } %>
+
+
 <!-- Erro: Matrícula da Associação -->
 <%
     Boolean erroMatriculaAssociacao = (Boolean) request.getAttribute("erroMatriculaAssociacao");
