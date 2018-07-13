@@ -1,5 +1,6 @@
 package servlet.diretortecnico;
 
+import dominio.CentroAquatico;
 import dominio.DiretorTecnico;
 import dominio.PermissaoUsuario;
 import dominio.Usuario;
@@ -47,9 +48,18 @@ public class IncluirLocaisCompeticao extends HttpServlet {
                 else {
                     DiretorTecnico diretor = new DiretorTecnico(u.getId(), u.getNome(), u.getMatricula(), u.getSenha(),
                                                     u.getPermissaoId());
+
+                    String nome = req.getParameter("nome").trim();
+                    String endereco = req.getParameter("endereco").trim();
+                    int tamanho = Integer.parseInt(req.getParameter("tamanho    ").trim());
+
+                    CentroAquatico centro = new CentroAquatico(nome, endereco, tamanho);
+                    diretor.incluirLocalCompeticao(centro);
+                    informarSucessoCadastro(req, resp);
                 }
             } catch (Exception e) {
                 e.printStackTrace();
+                informarErroCadastro(req, resp);
             }
         }
     }
@@ -58,4 +68,13 @@ public class IncluirLocaisCompeticao extends HttpServlet {
         resp.sendRedirect("sem_permissao.jsp");
     }
 
+    public void informarErroCadastro(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        req.setAttribute("erroCadastro", true);
+        req.getRequestDispatcher("criar_local_competicao.jsp").forward(req, resp);
+    }
+
+    public void informarSucessoCadastro(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        req.setAttribute("sucessoCadastro", true);
+        req.getRequestDispatcher("criar_local_competicao.jsp").forward(req, resp);
+    }
 }

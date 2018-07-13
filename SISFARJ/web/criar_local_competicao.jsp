@@ -13,7 +13,7 @@
         <h2 class="text-center text-uppercase text-secondary mb-0">Criar Local de Competição</h2>
         <hr class="mb-5">
         <div class="container">
-            <form class="form" action="criarCompeticao" method="post">
+            <form class="form" action="incluirLocaisCompeticao" method="post">
                 <h4>Dados Local de Competição</h4>
                 <div class="form-group">
                     <label for="nome">Nome</label>
@@ -26,9 +26,9 @@
                 <div class="form-group">
                     <label for="tamanho">Tamanho Piscina</label>
                     <br>
-                    <select class="from-control" id="tamanho" >
-                        <option name="tamanhoPisicna" value="25">25 metros</option>
-                        <option name="tamanhoPisicna" value="50">50 metros</option>
+                    <select class="from-control" id="tamanho" name="tamanho" >
+                        <option name="tamanhoPiscina" value="25">25 metros</option>
+                        <option name="tamanhoPiscina" value="50">50 metros</option>
                     </select>
                 </div>
                 <div class="form-group">
