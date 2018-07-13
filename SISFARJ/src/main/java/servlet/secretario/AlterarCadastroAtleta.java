@@ -28,8 +28,8 @@ public class AlterarCadastroAtleta extends HttpServlet {
                 Boolean possuiPermissao = Usuario.checaPermissao(PermissaoUsuario.SECRETARIO.id, u.getId());
                 if(!possuiPermissao) { informarErroPermissao(req, resp); }
                 else {
-                    String query = req.getQueryString();
-                    Atleta atleta = Atleta.get(this.recuperarId(query));
+                    int id = Integer.valueOf(req.getParameter("id"));
+                    Atleta atleta = Atleta.get(id);
                     Associacao associacao = Associacao.get(atleta.getAssociacao_id());
                     req.setAttribute("atleta", atleta);
                     req.setAttribute("associacao", associacao);
@@ -86,15 +86,15 @@ public class AlterarCadastroAtleta extends HttpServlet {
                             Secretario secretario = new Secretario(u.getId(), u.getNome(), u.getMatricula(),
                                     u.getSenha(), u.getPermissaoId());
 
-                            secretario.alterarAtleta(atleta);
-                            informarSucessoAlteracao(req, resp);
-                        } else if(possuiPermissaoDiretor){
+                            if(secretario.alterarAtleta(atleta)) informarSucessoAlteracao(req, resp);
+                            else informarErroAlteracao(req, resp);
+                        } else {
 
                             DiretorTecnico diretor = new DiretorTecnico(u.getId(), u.getNome(), u.getMatricula(),
                                     u.getSenha(), u.getPermissaoId());
 
-                            diretor.alterarAtleta(atleta);
-                            informarSucessoAlteracao(req, resp);
+                            if(diretor.alterarAtleta(atleta)) informarSucessoAlteracao(req, resp);
+                            else informarErroAlteracao(req, resp);
                         }
                     }
                 }
@@ -108,17 +108,13 @@ public class AlterarCadastroAtleta extends HttpServlet {
         }
     }
 
-    private int recuperarId(String query){
-        return Integer.valueOf(query.substring(query.lastIndexOf("=") + 1));
-    }
-
     public void informarSucessoAlteracao(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.setAttribute("sucessoAlterar", true);
-        req.getRequestDispatcher("index.jsp").forward(req, resp);
+        req.setAttribute("sucessoAlterarAtleta", true);
+        doGet(req, resp);
     }
 
     public void informarErroAlteracao(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.setAttribute("erroAlterar", true);
+        req.setAttribute("erroAlterarAtleta", true);
         doGet(req, resp);
     }
     public void informarErroMatriculaAssociacao(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

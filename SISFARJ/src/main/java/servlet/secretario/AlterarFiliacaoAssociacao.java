@@ -28,8 +28,8 @@ public class AlterarFiliacaoAssociacao extends HttpServlet {
                 Boolean possuiPermissao = Usuario.checaPermissao(PermissaoUsuario.SECRETARIO.id, u.getId());
                 if(!possuiPermissao) { informarErroPermissao(req, resp); }
                 else {
-                    String query = req.getQueryString();
-                    Associacao associacao = Associacao.get(this.recuperarId(query));
+                    int id = Integer.valueOf(req.getParameter("id"));
+                    Associacao associacao = Associacao.get(id);
                     req.setAttribute("associacao", associacao);
                     req.getRequestDispatcher("alterar_filiacao_associacao.jsp").forward(req, resp);
                 }
@@ -69,18 +69,16 @@ public class AlterarFiliacaoAssociacao extends HttpServlet {
                         a.setDataOficio(sdf.parse(data));
                         a.setNumComprovantePgto(numComprovantePgto);
                         a.setEndereco(endereco);
+                        req.setAttribute("associacao", a);
                         if(Associacao.update(a)) informarSucessoAlteracao(req, resp);
                         else informarErroAlteracao(req, resp);
                     }
                 }
             } catch (Exception e) {
                 e.printStackTrace();
+                informarErroAlteracao(req, resp);
             }
         }
-    }
-
-    private int recuperarId(String query){
-        return Integer.valueOf(query.substring(query.lastIndexOf("=") + 1));
     }
 
     public void informarErroPermissao(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -88,17 +86,17 @@ public class AlterarFiliacaoAssociacao extends HttpServlet {
     }
 
     public void informarErroPreenchimento(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.setAttribute("erroPreenchimento"+req.getQueryString(), true);
+        req.setAttribute("erroPreenchimento", true);
         doGet(req, resp);
     }
 
     public void informarSucessoAlteracao(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.setAttribute("sucessoAlterarFiliacaoAssociacao"+req.getQueryString(), true);
+        req.setAttribute("sucessoAlterarFiliacaoAssociacao", true);
         doGet(req, resp);
     }
 
     public void informarErroAlteracao(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.setAttribute("erroAlterarFiliacaoAssociacao"+req.getQueryString(), true);
+        req.setAttribute("erroAlterarFiliacaoAssociacao", true);
         doGet(req, resp);
     }
 }

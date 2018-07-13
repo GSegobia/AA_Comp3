@@ -27,17 +27,11 @@ public class TransferirAtleta extends HttpServlet {
                 Boolean possuiPermissao = Usuario.checaPermissao(PermissaoUsuario.SECRETARIO.id, u.getId());
                 if(!possuiPermissao) { informarErroPermissao(req, resp); }
                 else {
-
                     int idAtleta = Integer.valueOf(req.getParameter("id"));
-
                     Atleta a = Atleta.get(idAtleta);
-
                     Associacao assocAtual = Associacao.get(a.getAssociacao_id());
-
                     req.setAttribute("atleta", a);
-
                     req.setAttribute("associacaoAtual", assocAtual);
-
                     getServletContext().getRequestDispatcher("/transferir_atleta.jsp").forward(req, resp);
                 }
             } catch (Exception e) {
@@ -55,7 +49,6 @@ public class TransferirAtleta extends HttpServlet {
                 Boolean possuiPermissao = Usuario.checaPermissao(PermissaoUsuario.SECRETARIO.id, u.getId());
                 if(!possuiPermissao) { informarErroPermissao(req, resp); }
                 else {
-
                     Secretario secretario = new Secretario(u.getId(), u.getNome(), u.getMatricula(), u.getSenha(), u.getPermissaoId());
                     int idAtleta = Integer.valueOf(req.getParameter("id"));
 
@@ -77,21 +70,21 @@ public class TransferirAtleta extends HttpServlet {
                         Associacao associacao = Associacao.get(novaMatricula);
 
                         int idAssociacaoAlterar = associacao.getId();
-
                         atleta.setAssociacao_id(idAssociacaoAlterar);
                         atleta.setNumero_oficio(numeroOficio);
                         atleta.setData_oficio(sdf.parse(dataOficio));
                         atleta.setData_entrada_associacao(sdf.parse(dataEntrada));
                         atleta.setNum_comprovante_pgto(numComprovantePgto);
 
-                        secretario.alterarAtleta(atleta);
-                        informarSucessoCadastro(req,resp);
+                        if(secretario.alterarAtleta(atleta)) informarSucessoTransferencia(req,resp);
+                        else informarErroTransferencia(req, resp);
 
                     }
 
                 }
             } catch (MatriculaAssociacaoNaoEncontrada e) {
-                informarErroCadastro(req, resp);
+                e.printStackTrace();
+                informarErroMatriculaAssociacao(req, resp);
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -102,9 +95,14 @@ public class TransferirAtleta extends HttpServlet {
         resp.sendRedirect("sem_permissao.jsp");
     }
 
-    private void informarErroCadastro(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    private void informarErroTransferencia(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.setAttribute("erroTransferencia", true);
         doGet(req,resp);
+    }
+
+    public void informarErroMatriculaAssociacao(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        req.setAttribute("erroMatriculaAssociacao", true);
+        doGet(req, resp);
     }
 
     private void informarErroPreenchimento(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -112,8 +110,8 @@ public class TransferirAtleta extends HttpServlet {
         doGet(req,resp);
     }
 
-    public void informarSucessoCadastro(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.setAttribute("sucessoCadastro", true);
+    public void informarSucessoTransferencia(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        req.setAttribute("sucessoTransferencia", true);
         doGet(req,resp);
     }
 }

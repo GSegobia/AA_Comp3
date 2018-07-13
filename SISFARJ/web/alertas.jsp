@@ -121,8 +121,8 @@
 
 <!-- Sucesso: Alterar Atleta -->
 <%
-    Boolean sucessoAlterar = (Boolean) request.getAttribute("sucessoAlterar");
-    if(sucessoAlterar != null && sucessoAlterar) {
+    Boolean sucessoAlterarAtleta = (Boolean) request.getAttribute("sucessoAlterarAtleta");
+    if(sucessoAlterarAtleta != null && sucessoAlterarAtleta) {
 %>
 <script>
     swal({
@@ -135,13 +135,13 @@
 
 <!-- Erro: Alterar Atleta -->
 <%
-    Boolean erroAlterar = (Boolean) request.getAttribute("erroAlterar");
-    if(erroAlterar != null && erroAlterar) {
+    Boolean erroAlterarAtleta = (Boolean) request.getAttribute("erroAlterarAtleta");
+    if(erroAlterarAtleta != null && erroAlterarAtleta) {
 %>
 <script>
     swal({
         title: "Erro",
-        text: "Não foi possível alterar atleta!",
+        text: "Não foi possível alterar o Atleta!",
         icon: "error"
     })
 </script>

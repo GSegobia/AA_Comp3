@@ -38,7 +38,7 @@
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label for="dataEntrada">Data de Entrada</label>
-                        <input type="date" class="form-control" id="dataEntrada" value="now()" name="dataEntrada">
+                        <input type="date" class="form-control" id="dataEntrada" name="dataEntrada">
                     </div>
                     <div class="form-group col-md-6">
                         <label for="matriculaAssociacao">Matrícula da Associação</label>
