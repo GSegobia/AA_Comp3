@@ -3,12 +3,10 @@ package dados.datamapper;
 import dados.Database;
 import dominio.ProvaAtleta;
 import exceptions.ModeloNaoExiste;
+import org.apache.commons.lang3.ArrayUtils;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import org.apache.commons.lang3.ArrayUtils;
 
 public class ProvaAtletaDM {
 
@@ -26,13 +24,13 @@ public class ProvaAtletaDM {
 
         ResultSet rs = Database.doSelect(query);
 
-        while(rs.next()){
+        if(rs.next()){
             a = mapModel(rs);
         }
 
         if(a == null) {
             throw new ModeloNaoExiste("prova_atleta",id);
-        };
+        }
 
         return a;
     }

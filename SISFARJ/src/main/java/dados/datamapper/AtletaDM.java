@@ -25,17 +25,6 @@ public class AtletaDM {
         );
     }
 
-    public static boolean exists(int id) throws ClassNotFoundException, SQLException {
-        ResultSet rs = Database.doSelect("Select count(id) from Atleta where id=" +id);
-        int numeroOcorrencias = 0;
-
-        while(rs.next()){
-            numeroOcorrencias = rs.getInt("count");
-        }
-
-        return numeroOcorrencias > 0;
-    }
-
     public static Atleta get(int id) throws ClassNotFoundException, SQLException, ModeloNaoExiste {
         Atleta a = null;
         String query = String.format("Select * from Atleta where id=%d",id);
@@ -45,7 +34,7 @@ public class AtletaDM {
         while(rs.next()){
             a = mapModel(rs);
         }
-        if(a == null) throw new ModeloNaoExiste("atleta",id);
+        if(a == null) throw new ModeloNaoExiste("Atleta",id);
 
         return a;
     }

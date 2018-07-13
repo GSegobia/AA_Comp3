@@ -37,12 +37,12 @@ public class CompeticaoDM {
         String query = String.format("Select * from Competicao where id =%d", id);
         ResultSet rs = Database.doSelect(query);
 
-        while(rs.next()){
+        if(rs.next()){
                 c = mapModel(rs);
         }
 
         if(c == null){
-            throw new ModeloNaoExiste("competicao",id);
+            throw new ModeloNaoExiste("Competicao",id);
         }
         return c;
     }

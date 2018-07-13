@@ -14,23 +14,23 @@ public class DiretorTecnico extends Secretario {
         super(id,nome, matricula, senha, permissao);
     }
 
-    public void incluirLocalCompeticao(CentroAquatico centro) throws SQLException, ClassNotFoundException{
+    public DiretorTecnico(String nome, String matricula, String senha){
+        super(nome, matricula, senha, PermissaoUsuario.DIRETOR_TECNICO.id);
+    }
 
+    public void incluirLocalCompeticao(CentroAquatico centro) throws SQLException, ClassNotFoundException{
         CentroAquatico.create(centro);
     }
 
     public ArrayList<CentroAquatico> listarLocaisCompeticao() throws SQLException, ClassNotFoundException{
-
         return CentroAquatico.findAll();
     }
 
     public void alterarLocalCompeticao(CentroAquatico centro) throws SQLException, ClassNotFoundException{
-
         CentroAquatico.update(centro);
     }
 
     public void criarCompeticao(Competicao competicao) throws SQLException, ClassNotFoundException{
-
         Competicao.create(competicao);
     }
 
@@ -39,15 +39,11 @@ public class DiretorTecnico extends Secretario {
     }
 
     public void alterarCompeticao(Competicao competicao) throws SQLException, ClassNotFoundException{
-
         Competicao.update(competicao);
     }
 
-    public ArrayList<Competicao> listarCompeticoes() throws SQLException, ModeloNaoExiste, ClassNotFoundException {
-
-        ArrayList<Competicao> competicoes = Competicao.findAll();
-
-        return competicoes;
+    public ArrayList<Competicao> listarCompeticoes() throws SQLException, ClassNotFoundException {
+        return Competicao.findAll();
     }
 
     public ArrayList<Prova> listarProvas(int id) throws SQLException, ModeloNaoExiste, ClassNotFoundException {
@@ -66,7 +62,6 @@ public class DiretorTecnico extends Secretario {
 
 
     public Competicao selecionarCompeticao(int idCompeticao) throws SQLException, ModeloNaoExiste, ClassNotFoundException {
-
         return Competicao.get(idCompeticao);
     }
 

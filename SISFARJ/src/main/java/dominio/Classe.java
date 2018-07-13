@@ -27,10 +27,6 @@ public class Classe {
         return id;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
     public String getNome() {
         return nome;
     }
@@ -43,7 +39,7 @@ public class Classe {
         return ClasseDM.get(id);
     }
 
-    public ArrayList<Classe> findAll() throws ClassNotFoundException, SQLException, ModeloNaoExiste {
+    public ArrayList<Classe> findAll() throws ClassNotFoundException, SQLException {
         return ClasseDM.findAll();
     }
 }

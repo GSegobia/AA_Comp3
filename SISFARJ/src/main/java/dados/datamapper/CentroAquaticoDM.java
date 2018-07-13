@@ -34,7 +34,7 @@ public class CentroAquaticoDM {
         String query = String.format("Select * from centro_aquatico where id =%d", id);
         ResultSet rs = Database.doSelect(query);
 
-        while(rs.next()){
+        if(rs.next()){
             c = mapModel(rs);
         }
 

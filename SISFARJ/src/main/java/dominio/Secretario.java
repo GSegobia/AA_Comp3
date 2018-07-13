@@ -14,55 +14,52 @@ public class Secretario extends Usuario {
         super(id,nome, matricula, senha,permissao);
     }
 
-    public void filiarAssociacao(Associacao associacao) throws ClassNotFoundException, SQLException, ModeloNaoExiste{
-
-        Usuario tecnico = new TecnicoAssociacao("Tecnico " + associacao.getSigla(), associacao.getMatricula(),
-                                            "123456", 2);
-
-        Associacao.create(associacao);
-        Usuario.create(tecnico);
+    public Secretario(String matricula, String nome, String senha, int permissao) {
+        super(matricula, nome, senha, permissao);
     }
 
-    public void alterarFiliacao(Associacao associacao) throws ClassNotFoundException, SQLException{
+    public Secretario(String matricula, String nome, String senha) {
+        super(matricula, nome, senha, PermissaoUsuario.SECRETARIO.id);
+    }
 
-        Associacao.update(associacao);
+    public boolean filiarAssociacao(Associacao associacao) throws ClassNotFoundException, SQLException, ModeloNaoExiste {
+        Usuario tecnico = new TecnicoAssociacao("Tecnico " + associacao.getSigla(), associacao.getMatricula(),
+                                            "123456", 2);
+        return Associacao.create(associacao) && Usuario.create(tecnico);
+    }
+
+    public boolean alterarFiliacao(Associacao associacao) throws ClassNotFoundException, SQLException{
+        return Associacao.update(associacao);
     }
 
     public Associacao selecionarAssociacao(int idAssociacao) throws ClassNotFoundException, SQLException,
                                                             ModeloNaoExiste{
-
         return Associacao.get(idAssociacao);
     }
 
     public ArrayList<Associacao> listarAssociacao() throws ClassNotFoundException, SQLException {
-
         return Associacao.findAll();
     }
 
-    public void cadastrarAtleta(Atleta atleta) throws ClassNotFoundException, SQLException {
-
-        Atleta.create(atleta);
+    public boolean cadastrarAtleta(Atleta atleta) throws ClassNotFoundException, SQLException {
+        return Atleta.create(atleta);
     }
 
-    public void alterarAtleta(Atleta atleta) throws ClassNotFoundException, SQLException {
-
-        Atleta.update(atleta);
+    public boolean alterarAtleta(Atleta atleta) throws ClassNotFoundException, SQLException {
+        return Atleta.update(atleta);
     }
 
     public ArrayList<Atleta> listarAtletas() throws ClassNotFoundException, SQLException{
-
         return Atleta.findAll();
     }
 
     public Atleta selecionarAtleta(int idAtleta) throws ClassNotFoundException, SQLException, ModeloNaoExiste {
-
         return Atleta.get(idAtleta);
     }
-    public void transferirAtleta(int idAssociacao, Atleta atleta) throws ClassNotFoundException, SQLException{
 
+    public boolean transferirAtleta(int idAssociacao, Atleta atleta) throws ClassNotFoundException, SQLException{
         atleta.setAssociacao_id(idAssociacao);
-
-        Atleta.update(atleta);
+        return Atleta.update(atleta);
     }
 
 }

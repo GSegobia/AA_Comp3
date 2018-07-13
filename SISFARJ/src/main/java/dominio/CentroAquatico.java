@@ -29,10 +29,6 @@ public class CentroAquatico {
         return id;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
     public String getNome() {
         return nome;
     }
@@ -58,12 +54,10 @@ public class CentroAquatico {
     }
 
     public static ArrayList<CentroAquatico> findAll() throws SQLException, ClassNotFoundException {
-
         return CentroAquaticoDM.findAll();
     }
 
     public static CentroAquatico get(int id) throws SQLException, ClassNotFoundException, ModeloNaoExiste {
-
         return CentroAquaticoDM.get(id);
     }
 

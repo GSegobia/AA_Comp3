@@ -35,10 +35,6 @@ public class Competicao {
         return id;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
     public String getNome() {
         return nome;
     }
@@ -72,19 +68,11 @@ public class Competicao {
     }
 
     public static ArrayList<Competicao> findAll() throws SQLException, ClassNotFoundException {
-
         return CompeticaoDM.findAll();
     }
 
     public static Competicao get(int competicaoId) throws SQLException, ClassNotFoundException, ModeloNaoExiste {
-
-        Competicao competicao = CompeticaoDM.get(competicaoId);
-
-        if( competicao == null ) {
-            throw new ModeloNaoExiste("competicao",competicaoId);
-        }
-
-        return competicao;
+        return CompeticaoDM.get(competicaoId);
     }
 
     public static ArrayList<Prova> listarProvas(int competicaoId) throws SQLException, ClassNotFoundException, ModeloNaoExiste {
@@ -105,7 +93,7 @@ public class Competicao {
         CompeticaoDM.create(c);
     }
 
-    public static void update(Competicao c) throws SQLException, ClassNotFoundException {
-        CompeticaoDM.update(c);
+    public static boolean update(Competicao c) throws SQLException, ClassNotFoundException {
+        return CompeticaoDM.update(c);
     }
 }
