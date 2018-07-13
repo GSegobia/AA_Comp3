@@ -1,5 +1,6 @@
 package servlet.diretortecnico;
 
+import dominio.DiretorTecnico;
 import dominio.PermissaoUsuario;
 import dominio.Usuario;
 import util.MiddlewareSessao;
@@ -26,7 +27,7 @@ public class IncluirLocaisCompeticao extends HttpServlet {
                 Boolean possuiPermissao = Usuario.checaPermissao(PermissaoUsuario.DIRETOR_TECNICO.id, u.getId()) || Usuario.checaPermissao(PermissaoUsuario.TECNICO_ASSOCIACAO.id, u.getId());
                 if(!possuiPermissao) { informarErroPermissao(req, resp); }
                 else {
-
+                    req.getRequestDispatcher("criar_local_competicao.jsp").forward(req, resp);
                 }
             } catch (Exception e) {
                 e.printStackTrace();
@@ -44,7 +45,8 @@ public class IncluirLocaisCompeticao extends HttpServlet {
                 Boolean possuiPermissao = Usuario.checaPermissao(PermissaoUsuario.DIRETOR_TECNICO.id, u.getId()) || Usuario.checaPermissao(PermissaoUsuario.TECNICO_ASSOCIACAO.id, u.getId());
                 if(!possuiPermissao) { informarErroPermissao(req, resp); }
                 else {
-
+                    DiretorTecnico diretor = new DiretorTecnico(u.getId(), u.getNome(), u.getMatricula(), u.getSenha(),
+                                                    u.getPermissaoId());
                 }
             } catch (Exception e) {
                 e.printStackTrace();

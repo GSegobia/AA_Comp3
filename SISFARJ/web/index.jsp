@@ -58,9 +58,11 @@
             </div>
             <ul class="list-group list-group-flush">
                 <li class="list-group-item"><a href="criarCompeticao">Criar Competição</a></li>
+                <li class="list-group-item"><a href="incluirLocaisCompeticao">Incluir Locais de Competições</a></li>
                 <li class="list-group-item"><a href="listarLocaisCompeticao">Listar Locais de Competição</a></li>
                 <li class="list-group-item"><a href="listarCompeticoes">Inserir Resultado do Atleta</a></li>
                 <li class="list-group-item"><a href="listarCompeticoes">Listar Competições</a></li>
+                <li class="list-group-item"><a href="incluirLocaisCompeticao">Incluir Locais de Competições</a></li>
             </ul>
         </div>
     </div>
