@@ -24,7 +24,7 @@ public class ListarAtletas extends HttpServlet implements Identificacao {
         if(req.getSession().getAttribute("associacao") == null) validarIdentidade(req, resp);
         else {
             try {
-                List<Atleta> atletas = Secretario.listarAtletas();
+                List<Atleta> atletas = Atleta.findAll();
                 req.setAttribute("atletas", atletas);
                 getServletContext().getRequestDispatcher("/listar_atletas.jsp").forward(req, resp);
             } catch (Exception e) {
