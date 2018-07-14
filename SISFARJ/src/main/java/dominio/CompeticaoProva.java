@@ -44,15 +44,18 @@ public class CompeticaoProva {
     }
 
     public static CompeticaoProva get(int id) throws SQLException, ClassNotFoundException, ModeloNaoExiste {
-        return CompeticaoProvaDM.get(id);
+        CompeticaoProvaDM dm = new CompeticaoProvaDM();
+        return dm.get(id);
     }
 
     public static boolean create(CompeticaoProva prova) throws SQLException, ClassNotFoundException {
-        return CompeticaoProvaDM.create(prova);
+        CompeticaoProvaDM dm = new CompeticaoProvaDM();
+        return dm.create(prova);
     }
 
     public static int[] findAllProvaInCompeticao(int competicao_id) throws SQLException, ClassNotFoundException {
-        return CompeticaoProvaDM.findAllProvaInCompeticao(competicao_id);
+        CompeticaoProvaDM dm = new CompeticaoProvaDM();
+        return dm.findAllProvaInCompeticao(competicao_id);
     }
 
 }

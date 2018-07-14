@@ -1,5 +1,6 @@
 package dados.datamapper;
 
+import dados.DataMapper;
 import dados.Database;
 import dominio.Associacao;
 import exceptions.MatriculaAssociacaoNaoEncontrada;
@@ -8,10 +9,12 @@ import exceptions.ModeloNaoExiste;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 
-public class AssociacaoDM {
+public class AssociacaoDM implements DataMapper<Associacao> {
 
-    private static Associacao mapModel(ResultSet rs) throws ClassNotFoundException, SQLException {
+    @Override
+    public Associacao mapModel(ResultSet rs) throws SQLException {
         return new Associacao(
                 rs.getInt("id"),
                 rs.getString("numero_oficio"),
@@ -25,46 +28,42 @@ public class AssociacaoDM {
         );
     }
 
-    public static Associacao get(int id) throws ClassNotFoundException, SQLException, ModeloNaoExiste {
+    @Override
+    public Associacao get(int id) throws SQLException, ModeloNaoExiste, ClassNotFoundException {
         Associacao a = null;
+        String query = String.format("SELECT * FROM Associacao WHERE id=%d",id);
 
-        String query = String.format("Select * from Associacao where id=%d",id);
+        Database db = new Database();
+        ResultSet rs = db.doSelect(query);
+        db.closeConnection();
 
-        ResultSet rs = Database.doSelect(query);
-
-        if(rs.next()){
-            a = mapModel(rs);
-        }
-
+        if(rs.next()) a = mapModel(rs);
         if(a == null) throw new ModeloNaoExiste("Associacao", id);
 
         return a;
     }
 
-    public static Associacao get(String matricula) throws ClassNotFoundException, SQLException, MatriculaAssociacaoNaoEncontrada {
+    public Associacao get(String matricula) throws ClassNotFoundException, SQLException, MatriculaAssociacaoNaoEncontrada {
         Associacao a = null;
+        String query = String.format("SELECT * FROM Associacao WHERE matricula='%s'",matricula);
 
-        String query = String.format("Select * from Associacao where matricula='%s'",matricula);
+        Database db = new Database();
+        ResultSet rs = db.doSelect(query);
+        db.closeConnection();
 
-        ResultSet rs = Database.doSelect(query);
-
-        if(rs.next()){
-            a = mapModel(rs);
-        }
-
-        if( a == null ){
-            throw new MatriculaAssociacaoNaoEncontrada(matricula);
-        }
+        if(rs.next()) a = mapModel(rs);
+        if(a == null) throw new MatriculaAssociacaoNaoEncontrada(matricula);
 
         return a;
     }
 
-    public static boolean create(Associacao modelo) throws ClassNotFoundException, SQLException {
+    @Override
+    public boolean create(Associacao modelo) throws SQLException, ClassNotFoundException {
         int linhasAtualizadas;
 
         String query = String.format(
-                "Insert into Associacao (numero_oficio,data_oficio,nome,sigla,matricula,endereco,telefone,num_comprovante_pgto) " +
-                        "values(\'%s\',\'%s\',\'%s\',\'%s\',\'%s\',\'%s\',\'%s\',\'%s\');",
+                "INSERT INTO Associacao (numero_oficio,data_oficio,nome,sigla,matricula,endereco,telefone,num_comprovante_pgto) " +
+                        "VALUES(\'%s\',\'%s\',\'%s\',\'%s\',\'%s\',\'%s\',\'%s\',\'%s\');",
                 modelo.getNumeroOficio(),
                 modelo.getDataOficio(),
                 modelo.getNome(),
@@ -75,12 +74,15 @@ public class AssociacaoDM {
                 modelo.getNumComprovantePgto()
         );
 
-        linhasAtualizadas = Database.doUpdate(query);
+        Database db = new Database();
+        linhasAtualizadas = db.doUpdate(query);
+        db.closeConnection();
 
         return linhasAtualizadas > 0;
     }
 
-    public static boolean update(Associacao modelo) throws ClassNotFoundException, SQLException {
+    @Override
+    public boolean update(Associacao modelo) throws SQLException, ClassNotFoundException {
         int linhasAtualizadas;
 
         String query = String.format(
@@ -97,14 +99,18 @@ public class AssociacaoDM {
                 modelo.getId()
         );
 
-        linhasAtualizadas = Database.doUpdate(query);
+        Database db = new Database();
+        linhasAtualizadas = db.doUpdate(query);
+        db.closeConnection();
 
         return linhasAtualizadas > 0;
     }
 
-    public static ArrayList<Associacao> findAll() throws ClassNotFoundException, SQLException {
-        ArrayList<Associacao> associacoes = new ArrayList<Associacao>();
-        ResultSet rs = Database.doSelect("SELECT a.id,\n" +
+    @Override
+    public List<Associacao> findAll() throws SQLException, ClassNotFoundException {
+        ArrayList<Associacao> associacoes = new ArrayList<>();
+
+        String query = "SELECT a.id,\n" +
                 "a.numero_oficio,\n" +
                 "a.data_oficio,\n" +
                 "a.nome,\n" +
@@ -115,13 +121,13 @@ public class AssociacaoDM {
                 "a.endereco\n" +
                 " FROM associacao AS a\n" +
                 "ORDER BY\n" +
-                "a.nome ASC\n");
+                "a.nome ASC\n";
 
-        while(rs.next()){
-            Associacao u = mapModel(rs);
-            associacoes.add(u);
-        }
+        Database db = new Database();
+        ResultSet rs = db.doSelect(query);
+        db.closeConnection();
 
+        while(rs.next()) associacoes.add(mapModel(rs));
         return associacoes;
     }
 }

@@ -64,19 +64,23 @@ public class Usuario {
     }
 
     public static Usuario get(int id) throws SQLException, ClassNotFoundException, ModeloNaoExiste {
-        return UsuarioDM.get(id);
+        UsuarioDM dm = new UsuarioDM();
+        return dm.get(id);
     }
 
     public static boolean create(Usuario usuario) throws SQLException, ClassNotFoundException{
-        return UsuarioDM.create(usuario);
+        UsuarioDM dm = new UsuarioDM();
+        return dm.create(usuario);
     }
 
     public static boolean update(Usuario usuario) throws SQLException, ClassNotFoundException {
-        return UsuarioDM.update(usuario);
+        UsuarioDM dm = new UsuarioDM();
+        return dm.update(usuario);
     }
 
     public static boolean checaPermissao(int numeroPermissao, int idUsuario) throws SQLException, ClassNotFoundException, ModeloNaoExiste {
-        return numeroPermissao == UsuarioDM.get(idUsuario).getPermissaoId();
+        UsuarioDM dm = new UsuarioDM();
+        return numeroPermissao == dm.get(idUsuario).getPermissaoId();
     }
 
     private static String gerarSenha(){
@@ -84,6 +88,7 @@ public class Usuario {
     }
 
     public static Usuario identificar(String matricula, String senha) throws SQLException, ClassNotFoundException, DadosIdentificacaoIncorretos {
-        return UsuarioDM.get(matricula, senha);
+        UsuarioDM dm = new UsuarioDM();
+        return dm.get(matricula, senha);
     }
 }

@@ -1,5 +1,6 @@
 package dados.datamapper;
 
+import dados.DataMapper;
 import dados.Database;
 import dominio.CentroAquatico;
 import exceptions.ModeloNaoExiste;
@@ -7,9 +8,12 @@ import exceptions.ModeloNaoExiste;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 
-public class CentroAquaticoDM {
-    private static CentroAquatico mapModel(ResultSet rs) throws ClassNotFoundException, SQLException {
+public class CentroAquaticoDM implements DataMapper<CentroAquatico> {
+
+    @Override
+    public CentroAquatico mapModel(ResultSet rs) throws SQLException {
         return new CentroAquatico(
                 rs.getInt("id"),
                 rs.getString("nome"),
@@ -17,35 +21,35 @@ public class CentroAquaticoDM {
                 rs.getInt("tamanho_piscina"));
     }
 
-    public static ArrayList<CentroAquatico> findAll() throws SQLException, ClassNotFoundException{
-        ArrayList<CentroAquatico> centroAquaticos = new ArrayList<CentroAquatico>();
-        ResultSet rs = Database.doSelect("Select * from centro_aquatico");
+    @Override
+    public List<CentroAquatico> findAll() throws SQLException, ClassNotFoundException{
+        ArrayList<CentroAquatico> centrosAquaticos = new ArrayList<>();
 
-        if(rs.next()){
-            do {
-                centroAquaticos.add(mapModel(rs));
-            } while(rs.next());
-        }
-        return centroAquaticos;
+        Database db = new Database();
+        ResultSet rs = db.doSelect("Select * from centro_aquatico");
+        db.closeConnection();
+
+        while(rs.next()) centrosAquaticos.add(mapModel(rs));
+        return centrosAquaticos;
     }
 
-    public static CentroAquatico get(int id) throws SQLException, ClassNotFoundException, ModeloNaoExiste {
+    @Override
+    public CentroAquatico get(int id) throws SQLException, ClassNotFoundException, ModeloNaoExiste {
         CentroAquatico c = null;
         String query = String.format("Select * from centro_aquatico where id =%d", id);
-        ResultSet rs = Database.doSelect(query);
 
-        if(rs.next()){
-            c = mapModel(rs);
-        }
+        Database db = new Database();
+        ResultSet rs = db.doSelect(query);
+        db.closeConnection();
 
-        if(c == null){
-            throw new ModeloNaoExiste("Centro Aquatico",id);
-        }
+        if(rs.next()) c = mapModel(rs);
+        if(c == null) throw new ModeloNaoExiste("Centro Aquatico",id);
 
         return c;
     }
 
-    public static boolean create(CentroAquatico modelo) throws SQLException,ClassNotFoundException {
+    @Override
+    public boolean create(CentroAquatico modelo) throws SQLException,ClassNotFoundException {
         int linhasAtualizadas;
 
         String query = String.format(
@@ -56,12 +60,15 @@ public class CentroAquaticoDM {
                 modelo.getTamanho_piscina()
         );
 
-        linhasAtualizadas = Database.doUpdate(query);
+        Database db = new Database();
+        linhasAtualizadas = db.doUpdate(query);
+        db.closeConnection();
 
         return linhasAtualizadas > 0;
     }
 
-    public static boolean update(CentroAquatico modelo) throws SQLException, ClassNotFoundException {
+    @Override
+    public boolean update(CentroAquatico modelo) throws SQLException, ClassNotFoundException {
         int linhasAtualizadas;
 
         String query = String.format(
@@ -72,7 +79,9 @@ public class CentroAquaticoDM {
                 modelo.getId()
         );
 
-        linhasAtualizadas = Database.doUpdate(query);
+        Database db = new Database();
+        linhasAtualizadas = db.doUpdate(query);
+        db.closeConnection();
 
         return linhasAtualizadas > 0;
     }

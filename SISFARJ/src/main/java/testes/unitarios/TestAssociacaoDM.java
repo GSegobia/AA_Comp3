@@ -4,59 +4,62 @@ import dados.datamapper.AssociacaoDM;
 import dominio.Associacao;
 import exceptions.MatriculaAssociacaoNaoEncontrada;
 import exceptions.ModeloNaoExiste;
+import org.easymock.EasyMockSupport;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.List;
 
 /**
  * Created by Fellipe Bravo on 12/07/18.
  */
-public class TestAssociacaoDM {
+public class TestAssociacaoDM extends EasyMockSupport {
+
+    AssociacaoDM dm = new AssociacaoDM();
 
     @Test
     public void get() throws SQLException, ClassNotFoundException, ModeloNaoExiste {
-        Associacao a = AssociacaoDM.get(1);
+        Associacao a = dm.get(1);
         assert(a != null);
     }
 
     @Test
     public void getInvalido() throws SQLException, ClassNotFoundException, ModeloNaoExiste {
-        Associacao a = AssociacaoDM.get(-1);
+        Associacao a = dm.get(-1);
         assert(a == null);
     }
 
     @Test
     public void getMatricula() throws SQLException, ClassNotFoundException, MatriculaAssociacaoNaoEncontrada {
-        Associacao a = AssociacaoDM.get("12838128");
+        Associacao a = dm.get("12838128");
         assert (a != null);
     }
 
     @Test
     public void getMatriculaInvalida() {
         Assertions.assertThrows(MatriculaAssociacaoNaoEncontrada.class, () -> {
-            AssociacaoDM.get("");
+            dm.get("");
         });
     }
 
     @Test
     public void create() throws SQLException, ClassNotFoundException {
         Associacao a = new Associacao("caso_teste", Calendar.getInstance().getTime(), "caso_teste", "caso_teste", "caso_teste", "caso_teste", "caso_teste", "caso_teste");
-        assert(AssociacaoDM.create(a));
+        assert(dm.create(a));
     }
 
     @Test
     public void update() throws SQLException, ClassNotFoundException, MatriculaAssociacaoNaoEncontrada {
         Associacao a = Associacao.get("caso_teste");
         a.setSigla("TESTANDO");
-        assert(AssociacaoDM.update(a));
+        assert(dm.update(a));
     }
 
     @Test
     public void findAll() throws SQLException, ClassNotFoundException {
-        ArrayList<Associacao> a = Associacao.findAll();
+        List<Associacao> a = dm.findAll();
         assert(a != null);
     }
 

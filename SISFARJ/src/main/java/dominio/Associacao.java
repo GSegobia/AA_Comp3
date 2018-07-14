@@ -5,8 +5,8 @@ import exceptions.MatriculaAssociacaoNaoEncontrada;
 import exceptions.ModeloNaoExiste;
 
 import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 /**
  * Created by Fellipe Bravo on 10/07/18.
@@ -114,22 +114,27 @@ public class Associacao {
     }
 
     public static Associacao get(int id) throws SQLException, ClassNotFoundException, ModeloNaoExiste {
-        return AssociacaoDM.get(id);
+        AssociacaoDM dm = new AssociacaoDM();
+        return dm.get(id);
     }
 
     public static Associacao get(String matricula) throws SQLException, ClassNotFoundException, MatriculaAssociacaoNaoEncontrada {
-        return AssociacaoDM.get(matricula);
+        AssociacaoDM dm = new AssociacaoDM();
+        return dm.get(matricula);
     }
 
     public static boolean create(Associacao a) throws SQLException, ClassNotFoundException, ModeloNaoExiste {
-        return AssociacaoDM.create(a);
+        AssociacaoDM dm = new AssociacaoDM();
+        return dm.create(a);
     }
 
     public static boolean update(Associacao a) throws SQLException, ClassNotFoundException{
-        return AssociacaoDM.update(a);
+        AssociacaoDM dm = new AssociacaoDM();
+        return dm.update(a);
     }
 
-    public static ArrayList<Associacao> findAll() throws SQLException, ClassNotFoundException {
-        return AssociacaoDM.findAll();
+    public static List<Associacao> findAll() throws SQLException, ClassNotFoundException {
+        AssociacaoDM dm = new AssociacaoDM();
+        return dm.findAll();
     }
 }

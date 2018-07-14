@@ -1,5 +1,6 @@
 package dados.datamapper;
 
+import dados.DataMapper;
 import dados.Database;
 import dominio.Atleta;
 import exceptions.ModeloNaoExiste;
@@ -7,10 +8,12 @@ import exceptions.ModeloNaoExiste;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 
-public class AtletaDM {
+public class AtletaDM implements DataMapper<Atleta> {
 
-    private static Atleta mapModel(ResultSet rs) throws ClassNotFoundException, SQLException {
+    @Override
+    public Atleta mapModel(ResultSet rs) throws SQLException {
         return new Atleta(
                 rs.getInt("id"),
                 rs.getInt("associacao_id"),
@@ -25,21 +28,23 @@ public class AtletaDM {
         );
     }
 
-    public static Atleta get(int id) throws ClassNotFoundException, SQLException, ModeloNaoExiste {
+    @Override
+    public Atleta get(int id) throws ClassNotFoundException, SQLException, ModeloNaoExiste {
         Atleta a = null;
-        String query = String.format("Select * from Atleta where id=%d",id);
+        String query = String.format("SELECT * FROM Atleta WHERE id=%d",id);
 
-        ResultSet rs = Database.doSelect(query);
+        Database db = new Database();
+        ResultSet rs = db.doSelect(query);
+        db.closeConnection();
 
-        while(rs.next()){
-            a = mapModel(rs);
-        }
+        if(rs.next()) a = mapModel(rs);
         if(a == null) throw new ModeloNaoExiste("Atleta",id);
 
         return a;
     }
 
-    public static boolean create(Atleta modelo) throws ClassNotFoundException, SQLException {
+    @Override
+    public boolean create(Atleta modelo) throws ClassNotFoundException, SQLException {
         int linhasAtualizadas;
 
         String query = String.format(
@@ -56,17 +61,20 @@ public class AtletaDM {
                 modelo.getNum_comprovante_pgto()
             );
 
-        linhasAtualizadas = Database.doUpdate(query);
+        Database db = new Database();
+        linhasAtualizadas = db.doUpdate(query);
+        db.closeConnection();
 
         return linhasAtualizadas > 0;
     }
 
-    public static boolean update(Atleta modelo) throws ClassNotFoundException, SQLException {
+    @Override
+    public boolean update(Atleta modelo) throws ClassNotFoundException, SQLException {
         int linhasAtualizadas;
 
         String query = String.format(
                 "UPDATE Atleta SET associacao_id=%d,categoria_id=%d,matricula=\'%s\',nome=\'%s\',data_nascimento=\'%s\'," +
-                        "data_oficio=\'%s\',numero_oficio=\'%s\',data_entrada_associacao=\'%s\', num_comprovante_pgto='%s' where id=%d;",
+                        "data_oficio=\'%s\',numero_oficio=\'%s\',data_entrada_associacao=\'%s\', num_comprovante_pgto='%s' WHERE id=%d;",
                 modelo.getAssociacao_id(),
                 modelo.getCategoria_id(),
                 modelo.getMatricula(),
@@ -79,21 +87,23 @@ public class AtletaDM {
                 modelo.getId()
         );
 
-        linhasAtualizadas = Database.doUpdate(query);
+        Database db = new Database();
+        linhasAtualizadas = db.doUpdate(query);
+        db.closeConnection();
 
         return linhasAtualizadas > 0;
     }
 
-    public static ArrayList<Atleta> findAll() throws ClassNotFoundException, SQLException {
-        ArrayList<Atleta> Atletas = new ArrayList<Atleta>();
-        ResultSet rs = Database.doSelect("Select * from Atleta");
+    @Override
+    public List<Atleta> findAll() throws ClassNotFoundException, SQLException {
+        ArrayList<Atleta> a = new ArrayList<>();
 
-        if(rs.next()){
-            do {
-                Atletas.add(mapModel(rs));
-            } while(rs.next());
-        }
-        return Atletas;
+        Database db = new Database();
+        ResultSet rs = db.doSelect("SELECT * FROM Atleta");
+        db.closeConnection();
+
+        while(rs.next()) a.add(mapModel(rs));
+        return a;
     }
 
 }

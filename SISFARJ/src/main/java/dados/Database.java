@@ -7,35 +7,28 @@ import java.sql.*;
  */
 public class Database {
 
-    private static Connection conn;
+    private Connection conn;
 
-    public static Connection getConnect() throws ClassNotFoundException, SQLException {
+    public Database() throws ClassNotFoundException, SQLException {
         String url = "jdbc:postgresql://localhost:5432/sisfarj";
         String usuario = "postgres";
         String senha = "postgres";
-
-        if(conn == null){
-            Class.forName("org.postgresql.Driver");
-            conn = DriverManager.getConnection(url,usuario,senha);
-        }
-        return conn;
+        Class.forName("org.postgresql.Driver");
+        conn = DriverManager.getConnection(url,usuario,senha);
     }
 
-    public static ResultSet doSelect(String query) throws ClassNotFoundException, SQLException{
-        Statement stmt;
-        ResultSet rs = null;
-        conn = Database.getConnect();
-        stmt = conn.createStatement();
-        rs = stmt.executeQuery(query);
-        return rs;
+    public void closeConnection() throws SQLException {
+        conn.close();
     }
+
+    public ResultSet doSelect(String query) throws SQLException{
+        Statement stmt = conn.createStatement();
+        return stmt.executeQuery(query);
+    }
+
     //Usar para update, insert e delete
-    public static int doUpdate(String query) throws ClassNotFoundException, SQLException {
-        Statement stmt;
-        int updatesDone = 0;
-        conn = Database.getConnect();
-        stmt = conn.createStatement();
-        updatesDone = stmt.executeUpdate(query);
-        return updatesDone;
+    public int doUpdate(String query) throws SQLException {
+        Statement stmt = conn.createStatement();
+        return stmt.executeUpdate(query);
     }
 }

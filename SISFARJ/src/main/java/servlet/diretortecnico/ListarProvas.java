@@ -1,7 +1,6 @@
 package servlet.diretortecnico;
 
 import dominio.*;
-import util.MiddlewareSessao;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -9,7 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by  João V. Araújo on 12/07/18.
@@ -31,7 +30,7 @@ public class ListarProvas extends HttpServlet {
                     //informarErroPermissao(req, resp);
                     String query = req.getQueryString();
                     int competicao_id = this.recuperarId(query);
-                    ArrayList<Prova> provas = Competicao.listarProvas(competicao_id);
+                    List<Prova> provas = Competicao.listarProvas(competicao_id);
                     Competicao c = Competicao.get(competicao_id);
                     req.setAttribute("provas", provas);
                     req.setAttribute("competicao", c);
@@ -43,7 +42,7 @@ public class ListarProvas extends HttpServlet {
                     String query = req.getQueryString();
                     int competicao_id = this.recuperarId(query);
                     DiretorTecnico diretor = new DiretorTecnico(u.getId(), u.getNome(), u.getMatricula(), u.getSenha(), u.getPermissaoId());
-                    ArrayList<Prova> provas = diretor.listarProvas(competicao_id);
+                    List<Prova> provas = diretor.listarProvas(competicao_id);
                     Competicao c = Competicao.get(competicao_id);
                     req.setAttribute("provas", provas);
                     req.setAttribute("competicao", c);

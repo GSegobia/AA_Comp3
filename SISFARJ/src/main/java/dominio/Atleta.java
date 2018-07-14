@@ -5,9 +5,9 @@ import exceptions.ModeloNaoExiste;
 
 import java.sql.SQLException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 
 public class Atleta {
 
@@ -121,7 +121,8 @@ public class Atleta {
     }
 
     public static Atleta get(int id) throws ClassNotFoundException,SQLException, ModeloNaoExiste {
-        return AtletaDM.get(id);
+        AtletaDM dm = new AtletaDM();
+        return dm.get(id);
     }
 
     public static String gerarMatricula() {
@@ -130,13 +131,16 @@ public class Atleta {
     }
 
     public static boolean create(Atleta atleta) throws ClassNotFoundException,SQLException {
-        return AtletaDM.create(atleta);
+        AtletaDM dm = new AtletaDM();
+        return dm.create(atleta);
     }
     public static boolean update(Atleta atleta) throws ClassNotFoundException,SQLException {
-        return AtletaDM.update(atleta);
+        AtletaDM dm = new AtletaDM();
+        return dm.update(atleta);
     }
 
-    public static ArrayList<Atleta> findAll() throws ClassNotFoundException,SQLException {
-        return AtletaDM.findAll();
+    public static List<Atleta> findAll() throws ClassNotFoundException,SQLException {
+        AtletaDM dm = new AtletaDM();
+        return dm.findAll();
     }
 }

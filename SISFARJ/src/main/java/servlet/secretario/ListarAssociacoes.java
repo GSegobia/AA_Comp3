@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.ArrayList;
+import java.util.List;
 
 
 @WebServlet("/listarAssociacoes")
@@ -26,7 +26,7 @@ public class ListarAssociacoes extends HttpServlet {
                 Boolean possuiPermissao = Usuario.checaPermissao(PermissaoUsuario.SECRETARIO.id, u.getId());
                 if(!possuiPermissao) { informarErroPermissao(req, resp); }
                 else {
-                    ArrayList<Associacao> associacoes = Associacao.findAll();
+                    List<Associacao> associacoes = Associacao.findAll();
                     req.setAttribute("associacoes", associacoes);
                     req.getRequestDispatcher("listar_associacoes.jsp").forward(req, resp);
                 }

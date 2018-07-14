@@ -7,43 +7,45 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.List;
 
 /**
  * Created by Fellipe Bravo on 12/07/18.
  */
 public class TestAtletaDM {
 
+    AtletaDM dm = new AtletaDM();
+
     @Test
     public void get() throws SQLException, ClassNotFoundException, ModeloNaoExiste {
-        Atleta a = AtletaDM.get(1);
+        Atleta a = dm.get(1);
         assert(a != null);
     }
 
     @Test
     public void getInvalido() {
         Assertions.assertThrows(ModeloNaoExiste.class, () -> {
-            AtletaDM.get(-1);
+            dm.get(-1);
         });
     }
 
     @Test
     public void create() throws SQLException, ClassNotFoundException {
         Atleta a = new Atleta(1, 1, "caso_teste", "caso_teste", Calendar.getInstance().getTime(), Calendar.getInstance().getTime(), "caso_teste", Calendar.getInstance().getTime(), "caso_teste");
-        assert(AtletaDM.create(a));
+        assert(dm.create(a));
     }
 
     @Test
     public void update() throws SQLException, ClassNotFoundException, ModeloNaoExiste {
         Atleta a = Atleta.get(1);
         a.setNome("TESTANDO");
-        assert(AtletaDM.update(a));
+        assert(dm.update(a));
     }
 
     @Test
     public void findAll() throws SQLException, ClassNotFoundException {
-        ArrayList<Atleta> a = AtletaDM.findAll();
+        List<Atleta> a = dm.findAll();
         assert(a != null);
     }
 

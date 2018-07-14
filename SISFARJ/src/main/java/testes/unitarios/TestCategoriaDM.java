@@ -7,29 +7,31 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.sql.SQLException;
-import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Fellipe Bravo on 12/07/18.
  */
 public class TestCategoriaDM {
 
+    CategoriaDM dm = new CategoriaDM();
+
     @Test
     public void get() throws SQLException, ClassNotFoundException, ModeloNaoExiste {
-        Categoria c = CategoriaDM.get(1);
+        Categoria c = dm.get(1);
         assert(c != null);
     }
 
     @Test
     public void getInvalido() {
         Assertions.assertThrows(ModeloNaoExiste.class, () -> {
-            CategoriaDM.get(-1);
+            dm.get(-1);
         });
     }
 
     @Test
     public void findAll() throws SQLException, ClassNotFoundException {
-        ArrayList<Categoria> c = CategoriaDM.findAll();
+        List<Categoria> c = dm.findAll();
         assert(c != null);
     }
 

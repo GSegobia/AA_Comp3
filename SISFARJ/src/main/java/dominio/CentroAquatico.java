@@ -4,7 +4,7 @@ import dados.datamapper.CentroAquaticoDM;
 import exceptions.ModeloNaoExiste;
 
 import java.sql.SQLException;
-import java.util.ArrayList;
+import java.util.List;
 
 public class CentroAquatico {
     private int id;
@@ -53,20 +53,24 @@ public class CentroAquatico {
         this.tamanho_piscina = tamanho_piscina;
     }
 
-    public static ArrayList<CentroAquatico> findAll() throws SQLException, ClassNotFoundException {
-        return CentroAquaticoDM.findAll();
+    public static List<CentroAquatico> findAll() throws SQLException, ClassNotFoundException {
+        CentroAquaticoDM dm = new CentroAquaticoDM();
+        return dm.findAll();
     }
 
     public static CentroAquatico get(int id) throws SQLException, ClassNotFoundException, ModeloNaoExiste {
-        return CentroAquaticoDM.get(id);
+        CentroAquaticoDM dm = new CentroAquaticoDM();
+        return dm.get(id);
     }
 
-    public static void create(CentroAquatico c) throws SQLException,ClassNotFoundException {
-        CentroAquaticoDM.create(c);
+    public static boolean create(CentroAquatico c) throws SQLException,ClassNotFoundException {
+        CentroAquaticoDM dm = new CentroAquaticoDM();
+        return dm.create(c);
     }
 
-    public static void update(CentroAquatico c) throws SQLException, ClassNotFoundException {
-        CentroAquaticoDM.update(c);
+    public static boolean update(CentroAquatico c) throws SQLException, ClassNotFoundException {
+        CentroAquaticoDM dm = new CentroAquaticoDM();
+        return dm.update(c);
     }
 
 }

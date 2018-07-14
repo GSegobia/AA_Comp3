@@ -4,6 +4,7 @@ import exceptions.ModeloNaoExiste;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by over on 05/07/18.
@@ -22,7 +23,7 @@ public class DiretorTecnico extends Secretario {
         CentroAquatico.create(centro);
     }
 
-    public ArrayList<CentroAquatico> listarLocaisCompeticao() throws SQLException, ClassNotFoundException{
+    public List<CentroAquatico> listarLocaisCompeticao() throws SQLException, ClassNotFoundException{
         return CentroAquatico.findAll();
     }
 
@@ -42,15 +43,12 @@ public class DiretorTecnico extends Secretario {
         Competicao.update(competicao);
     }
 
-    public ArrayList<Competicao> listarCompeticoes() throws SQLException, ClassNotFoundException {
+    public List<Competicao> listarCompeticoes() throws SQLException, ClassNotFoundException {
         return Competicao.findAll();
     }
 
-    public ArrayList<Prova> listarProvas(int id) throws SQLException, ModeloNaoExiste, ClassNotFoundException {
-
-        ArrayList<Prova> provas = Competicao.listarProvas(id);
-
-        return provas;
+    public List<Prova> listarProvas(int id) throws SQLException, ModeloNaoExiste, ClassNotFoundException {
+        return Competicao.listarProvas(id);
     }
 
     public ArrayList<Atleta> listarAtletaInProva(int id) throws SQLException, ModeloNaoExiste, ClassNotFoundException {

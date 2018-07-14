@@ -1,5 +1,6 @@
 package dados.datamapper;
 
+import dados.DataMapper;
 import dados.Database;
 import dominio.Competicao;
 import exceptions.ModeloNaoExiste;
@@ -7,11 +8,12 @@ import exceptions.ModeloNaoExiste;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 
-public class CompeticaoDM {
+public class CompeticaoDM implements DataMapper<Competicao> {
 
-    private static Competicao mapModel(ResultSet rs) throws ClassNotFoundException, SQLException {
-
+    @Override
+    public Competicao mapModel(ResultSet rs) throws SQLException {
         return new Competicao(
                 rs.getInt("id"),
                 rs.getString("nome"),
@@ -20,34 +22,34 @@ public class CompeticaoDM {
                 rs.getInt("tamanho_piscina"));
     }
 
-    public static ArrayList<Competicao> findAll() throws SQLException, ClassNotFoundException{
+    @Override
+    public List<Competicao> findAll() throws SQLException, ClassNotFoundException{
         ArrayList<Competicao> competicaos = new ArrayList<Competicao>();
-        ResultSet rs = Database.doSelect("Select * from Competicao");
 
-        if(rs.next()){
-            do {
-                competicaos.add(mapModel(rs));
-            } while(rs.next());
-        }
+        Database db = new Database();
+        ResultSet rs = db.doSelect("Select * from Competicao");
+        db.closeConnection();
+
+        while(rs.next()) competicaos.add(mapModel(rs));
         return competicaos;
     }
 
-    public static Competicao get(int id) throws SQLException, ClassNotFoundException, ModeloNaoExiste {
+    @Override
+    public Competicao get(int id) throws SQLException, ClassNotFoundException, ModeloNaoExiste {
         Competicao c = null;
         String query = String.format("Select * from Competicao where id =%d", id);
-        ResultSet rs = Database.doSelect(query);
 
-        if(rs.next()){
-                c = mapModel(rs);
-        }
+        Database db = new Database();
+        ResultSet rs = db.doSelect(query);
+        db.closeConnection();
 
-        if(c == null){
-            throw new ModeloNaoExiste("Competicao",id);
-        }
+        if(rs.next()) c = mapModel(rs);
+        if(c == null) throw new ModeloNaoExiste("Competicao",id);
         return c;
     }
 
-    public static boolean create(Competicao modelo) throws SQLException,ClassNotFoundException {
+    @Override
+    public boolean create(Competicao modelo) throws SQLException,ClassNotFoundException {
         int linhasAtualizadas;
 
         String query = String.format(
@@ -59,12 +61,15 @@ public class CompeticaoDM {
                 modelo.getTamanhoPiscina()
         );
 
-        linhasAtualizadas = Database.doUpdate(query);
+        Database db = new Database();
+        linhasAtualizadas = db.doUpdate(query);
+        db.closeConnection();
 
         return linhasAtualizadas > 0;
     }
 
-    public static boolean update(Competicao modelo) throws SQLException, ClassNotFoundException {
+    @Override
+    public boolean update(Competicao modelo) throws SQLException, ClassNotFoundException {
         int linhasAtualizadas;
 
         String query = String.format(
@@ -76,7 +81,9 @@ public class CompeticaoDM {
                 modelo.getId()
         );
 
-        linhasAtualizadas = Database.doUpdate(query);
+        Database db = new Database();
+        linhasAtualizadas = db.doUpdate(query);
+        db.closeConnection();
 
         return linhasAtualizadas > 0;
     }

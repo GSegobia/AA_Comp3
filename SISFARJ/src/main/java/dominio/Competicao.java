@@ -7,6 +7,7 @@ import exceptions.ModeloNaoExiste;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 public class Competicao {
 
@@ -67,33 +68,39 @@ public class Competicao {
         this.tamanhoPiscina = tamanhoPiscina;
     }
 
-    public static ArrayList<Competicao> findAll() throws SQLException, ClassNotFoundException {
-        return CompeticaoDM.findAll();
+    public static List<Competicao> findAll() throws SQLException, ClassNotFoundException {
+        CompeticaoDM dm = new CompeticaoDM();
+        return dm.findAll();
     }
 
     public static Competicao get(int competicaoId) throws SQLException, ClassNotFoundException, ModeloNaoExiste {
-        return CompeticaoDM.get(competicaoId);
+        CompeticaoDM dm = new CompeticaoDM();
+        return dm.get(competicaoId);
     }
 
-    public static ArrayList<Prova> listarProvas(int competicaoId) throws SQLException, ClassNotFoundException, ModeloNaoExiste {
-        ArrayList<Prova> provas = new ArrayList<Prova>();
-        int prova[] = CompeticaoProvaDM.findAllProvaInCompeticao(competicaoId);
+    public static List<Prova> listarProvas(int competicaoId) throws SQLException, ClassNotFoundException, ModeloNaoExiste {
+        ArrayList<Prova> provas = new ArrayList<>();
+
+        CompeticaoProvaDM dm = new CompeticaoProvaDM();
+        int prova[] = dm.findAllProvaInCompeticao(competicaoId);
+
         for (int i =0; i < prova.length; i++){
             Prova p = Prova.get(prova[i]);
-            if(p ==null){
-                throw new ModeloNaoExiste("prova",prova[i]);
-            }else{
-                provas.add(p);
-            }
+
+            if(p ==null) throw new ModeloNaoExiste("prova",prova[i]);
+            else provas.add(p);
         }
+
         return provas;
     }
 
-    public static void create(Competicao c) throws SQLException,ClassNotFoundException {
-        CompeticaoDM.create(c);
+    public static boolean create(Competicao c) throws SQLException,ClassNotFoundException {
+        CompeticaoDM dm = new CompeticaoDM();
+        return dm.create(c);
     }
 
     public static boolean update(Competicao c) throws SQLException, ClassNotFoundException {
-        return CompeticaoDM.update(c);
+        CompeticaoDM dm = new CompeticaoDM();
+        return dm.update(c);
     }
 }

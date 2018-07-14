@@ -4,7 +4,7 @@ import dados.datamapper.ResultadoProvaDM;
 import exceptions.ModeloNaoExiste;
 
 import java.sql.SQLException;
-import java.util.ArrayList;
+import java.util.List;
 
 public class ResultadoProva {
 
@@ -36,12 +36,14 @@ public class ResultadoProva {
 
     public void setPontuacao(int pontuacao){ this.pontuacao = pontuacao;}
 
-    public static void create(ResultadoProva rp) throws SQLException, ClassNotFoundException {
-        ResultadoProvaDM.create(rp);
+    public static boolean create(ResultadoProva rp) throws SQLException, ClassNotFoundException {
+        ResultadoProvaDM dm = new ResultadoProvaDM();
+        return dm.create(rp);
     }
 
-    public static ArrayList<ResultadoProva> findAllByTempo(int id) throws SQLException, ModeloNaoExiste, ClassNotFoundException {
-        return ResultadoProvaDM.findAllByTempo(id);
+    public static List<ResultadoProva> findAllByTempo(int id) throws SQLException, ModeloNaoExiste, ClassNotFoundException {
+        ResultadoProvaDM dm = new ResultadoProvaDM();
+        return dm.findAllByTempo(id);
     }
 
 }

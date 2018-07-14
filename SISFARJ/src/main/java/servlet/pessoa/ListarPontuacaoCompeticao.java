@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Fellipe Bravo on 11/07/18.
@@ -28,7 +29,7 @@ public class ListarPontuacaoCompeticao extends HttpServlet {
         String query = req.getQueryString();
         int id = this.recuperarId(query);
         if(id == 0){
-            ArrayList<Competicao> competicoes = null;
+            List<Competicao> competicoes = null;
 
             try {
                 competicoes = Competicao.findAll();
@@ -41,7 +42,7 @@ public class ListarPontuacaoCompeticao extends HttpServlet {
             }
         }else{
             try {
-                ArrayList<ResultadoProva> rp = ResultadoProva.findAllByTempo(id);
+                List<ResultadoProva> rp = ResultadoProva.findAllByTempo(id);
                 ArrayList<Atleta> at = new ArrayList<>();
                 for (ResultadoProva r: rp) {
                     Atleta atleta = Atleta.get(r.getAtleta_id());

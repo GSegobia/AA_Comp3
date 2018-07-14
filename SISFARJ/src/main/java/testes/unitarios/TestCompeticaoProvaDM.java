@@ -1,6 +1,5 @@
 package testes.unitarios;
 
-import dados.datamapper.CompeticaoDM;
 import dados.datamapper.CompeticaoProvaDM;
 import dominio.CompeticaoProva;
 import exceptions.ModeloNaoExiste;
@@ -14,28 +13,30 @@ import java.sql.SQLException;
  */
 public class TestCompeticaoProvaDM {
 
+    CompeticaoProvaDM dm = new CompeticaoProvaDM();
+
     @Test
     public void get() throws SQLException, ClassNotFoundException, ModeloNaoExiste {
-        CompeticaoProva cp = CompeticaoProvaDM.get(1);
+        CompeticaoProva cp = dm.get(1);
         assert(cp != null);
     }
 
     @Test
     public void getInvalido() {
         Assertions.assertThrows(ModeloNaoExiste.class, () -> {
-            CompeticaoDM.get(-1);
+            dm.get(-1);
         });
     }
 
     @Test
     public void create() throws SQLException, ClassNotFoundException {
         CompeticaoProva cp = new CompeticaoProva(1,1);
-        assert(CompeticaoProvaDM.create(cp));
+        assert(dm.create(cp));
     }
 
     @Test
     public void findAllProvaInCompeticao() throws SQLException, ClassNotFoundException {
-        int[] cp = CompeticaoProvaDM.findAllProvaInCompeticao(1);
+        int[] cp = dm.findAllProvaInCompeticao(1);
         assert(cp != null);
     }
 

@@ -13,28 +13,30 @@ import java.sql.SQLException;
  */
 public class TestProvaAtletaDM {
 
+    ProvaAtletaDM dm = new ProvaAtletaDM();
+
     @Test
     public void get() throws SQLException, ClassNotFoundException, ModeloNaoExiste {
-        ProvaAtleta pa = ProvaAtletaDM.get(1);
+        ProvaAtleta pa = dm.get(1);
         assert(pa != null);
     }
 
     @Test
     public void getInvalido() {
         Assertions.assertThrows(ModeloNaoExiste.class, () -> {
-            ProvaAtletaDM.get(-1);
+            dm.get(-1);
         });
     }
 
     @Test
     public void create() throws SQLException, ClassNotFoundException {
         ProvaAtleta pa = new ProvaAtleta(1,1);
-        assert(ProvaAtletaDM.create(pa));
+        assert(dm.create(pa));
     }
 
     @Test
     public void findAllAtletaInProva() throws SQLException, ClassNotFoundException {
-        int[] pa = ProvaAtletaDM.findAllAtletaInProva(1);
+        int[] pa = dm.findAllAtletaInProva(1);
         assert(pa != null);
     }
 

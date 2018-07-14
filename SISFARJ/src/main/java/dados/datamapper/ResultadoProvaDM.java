@@ -1,5 +1,6 @@
 package dados.datamapper;
 
+import dados.DataMapper;
 import dados.Database;
 import dominio.ResultadoProva;
 import exceptions.ModeloNaoExiste;
@@ -7,10 +8,12 @@ import exceptions.ModeloNaoExiste;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 
-public class ResultadoProvaDM {
+public class ResultadoProvaDM implements DataMapper<ResultadoProva> {
 
-    private static ResultadoProva mapModel(ResultSet rs) throws ClassNotFoundException, SQLException, ModeloNaoExiste {
+    @Override
+    public ResultadoProva mapModel(ResultSet rs) throws SQLException {
         return new ResultadoProva(
                 rs.getString("tempo"),
                 rs.getInt("prova_id"),
@@ -18,25 +21,24 @@ public class ResultadoProvaDM {
         );
     }
 
-    public static ResultadoProva get(int id) throws ClassNotFoundException, SQLException, ModeloNaoExiste {
-        ResultadoProva a = null;
+    @Override
+    public ResultadoProva get(int id) throws ClassNotFoundException, SQLException, ModeloNaoExiste {
+        ResultadoProva rp = null;
 
         String query = String.format("Select * from resultado_provas where prova_id=%d",id);
 
-        ResultSet rs = Database.doSelect(query);
+        Database db = new Database();
+        ResultSet rs = db.doSelect(query);
+        db.closeConnection();
 
-        while(rs.next()){
-            a = mapModel(rs);
-        }
+        if(rs.next()) rp = mapModel(rs);
+        if(rp == null) throw new ModeloNaoExiste("resultado_provas",id);
 
-        if(a == null) {
-            throw new ModeloNaoExiste("resultado_provas",id);
-        }
-
-        return a;
+        return rp;
     }
 
-    public static boolean create(ResultadoProva rp) throws ClassNotFoundException, SQLException {
+    @Override
+    public boolean create(ResultadoProva rp) throws ClassNotFoundException, SQLException {
         int linhasAtualizadas;
 
         String query = String.format(
@@ -49,21 +51,31 @@ public class ResultadoProvaDM {
 
         );
 
-        linhasAtualizadas = Database.doUpdate(query);
+        Database db = new Database();
+        linhasAtualizadas = db.doUpdate(query);
+        db.closeConnection();
 
         return linhasAtualizadas > 0;
     }
 
+    @Override
+    public boolean update(ResultadoProva resultadoProva) throws SQLException, ClassNotFoundException {
+        return false;
+    }
 
-    public static ArrayList<ResultadoProva> findAllByTempo(int id) throws SQLException, ClassNotFoundException, ModeloNaoExiste {
+    @Override
+    public List<ResultadoProva> findAll() throws SQLException, ClassNotFoundException {
+        return null;
+    }
+
+    public List<ResultadoProva> findAllByTempo(int id) throws SQLException, ClassNotFoundException, ModeloNaoExiste {
         ArrayList<ResultadoProva> rp = new ArrayList<>();
-        ResultSet rs = Database.doSelect("Select * from resultado_provas WHERE prova_id="+id+" ORDER BY tempo");
 
-        if(rs.next()){
-            do {
-                rp.add(mapModel(rs));
-            } while(rs.next());
-        }
+        Database db = new Database();
+        ResultSet rs = db.doSelect("Select * from resultado_provas WHERE prova_id="+id+" ORDER BY tempo");
+        db.closeConnection();
+
+        while(rs.next()) rp.add(mapModel(rs));
         return rp;
     }
 }

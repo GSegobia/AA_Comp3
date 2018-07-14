@@ -4,7 +4,7 @@ import dados.datamapper.CategoriaDM;
 import exceptions.ModeloNaoExiste;
 
 import java.sql.SQLException;
-import java.util.ArrayList;
+import java.util.List;
 
 public class Categoria {
     private int id;
@@ -32,10 +32,12 @@ public class Categoria {
     }
 
     public Categoria get(int id) throws ClassNotFoundException,SQLException, ModeloNaoExiste {
-        return CategoriaDM.get(id);
+        CategoriaDM dm = new CategoriaDM();
+        return dm.get(id);
     }
 
-    public ArrayList<Categoria> findAll() throws ClassNotFoundException, SQLException {
-        return CategoriaDM.findAll();
+    public List<Categoria> findAll() throws ClassNotFoundException, SQLException {
+        CategoriaDM dm = new CategoriaDM();
+        return dm.findAll();
     }
 }

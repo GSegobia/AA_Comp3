@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Fellipe Bravo on 11/07/18.
@@ -30,7 +30,7 @@ public class ListarLocaisCompeticao extends HttpServlet {
                 if(!possuiPermissao) { informarErroPermissao(req, resp); }
                 else {
                     DiretorTecnico diretor = new DiretorTecnico(u.getId(), u.getNome(), u.getMatricula(), u.getSenha(), u.getPermissaoId());
-                    ArrayList<CentroAquatico> lc = diretor.listarLocaisCompeticao();
+                    List<CentroAquatico> lc = diretor.listarLocaisCompeticao();
                     req.setAttribute("lcompeticoes", lc);
                     getServletContext().getRequestDispatcher("/listar_locais_competicao.jsp").forward(req, resp);
                 }

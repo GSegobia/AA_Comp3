@@ -3,7 +3,7 @@ package dominio;
 import exceptions.ModeloNaoExiste;
 
 import java.sql.SQLException;
-import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by over on 05/07/18.
@@ -37,7 +37,7 @@ public class Secretario extends Usuario {
         return Associacao.get(idAssociacao);
     }
 
-    public ArrayList<Associacao> listarAssociacao() throws ClassNotFoundException, SQLException {
+    public List<Associacao> listarAssociacao() throws ClassNotFoundException, SQLException {
         return Associacao.findAll();
     }
 
@@ -49,7 +49,7 @@ public class Secretario extends Usuario {
         return Atleta.update(atleta);
     }
 
-    public ArrayList<Atleta> listarAtletas() throws ClassNotFoundException, SQLException{
+    public List<Atleta> listarAtletas() throws ClassNotFoundException, SQLException{
         return Atleta.findAll();
     }
 

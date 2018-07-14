@@ -1,5 +1,6 @@
 package dados.datamapper;
 
+import dados.DataMapper;
 import dados.Database;
 import dominio.Usuario;
 import exceptions.DadosIdentificacaoIncorretos;
@@ -8,11 +9,13 @@ import exceptions.ModeloNaoExiste;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 
 
-public class UsuarioDM {
+public class UsuarioDM implements DataMapper<Usuario> {
 
-    private static Usuario mapModel(ResultSet rs) throws SQLException {
+    @Override
+    public Usuario mapModel(ResultSet rs) throws SQLException {
         return new Usuario(
                 rs.getInt("id"),
                 rs.getString("matricula"),
@@ -22,37 +25,38 @@ public class UsuarioDM {
         );
     }
 
-    public static Usuario get(int id) throws ClassNotFoundException, SQLException, ModeloNaoExiste {
+    @Override
+    public Usuario get(int id) throws ClassNotFoundException, SQLException, ModeloNaoExiste {
         Usuario u = null;
         String query = String.format("Select * from usuario where id=%d",id);
 
-        ResultSet rs = Database.doSelect(query);
+        Database db = new Database();
+        ResultSet rs = db.doSelect(query);
+        db.closeConnection();
 
-        if(rs.next()){
-            u = mapModel(rs);
-        }
-
+        if(rs.next()) u = mapModel(rs);
         if(u == null) throw new ModeloNaoExiste("Usuario",id);
 
         return u;
     }
 
-    public static Usuario get(String matricula, String senha) throws ClassNotFoundException, SQLException, DadosIdentificacaoIncorretos {
+    public Usuario get(String matricula, String senha) throws ClassNotFoundException, SQLException, DadosIdentificacaoIncorretos {
         Usuario u = null;
 
         String query = String.format("SELECT * FROM usuario as u WHERE u.matricula='%s' AND u.senha='%s'", matricula, senha);
-        ResultSet rs = Database.doSelect(query);
 
-        if(rs.next()){
-            u = mapModel(rs);
-        }
+        Database db = new Database();
+        ResultSet rs = db.doSelect(query);
+        db.closeConnection();
 
+        if(rs.next()) u = mapModel(rs);
         if(u == null) throw new DadosIdentificacaoIncorretos();
 
         return u;
     }
 
-    public static boolean create(Usuario modelo) throws ClassNotFoundException, SQLException {
+    @Override
+    public boolean create(Usuario modelo) throws ClassNotFoundException, SQLException {
         int linhasAtualizadas = 0;
 
         String query = String.format(
@@ -60,12 +64,15 @@ public class UsuarioDM {
                 modelo.getMatricula(), modelo.getNome(), modelo.getSenha(),modelo.getPermissaoId()
             );
 
-        linhasAtualizadas = Database.doUpdate(query);
+        Database db = new Database();
+        linhasAtualizadas = db.doUpdate(query);
+        db.closeConnection();
 
         return linhasAtualizadas > 0;
     }
 
-    public static boolean update(Usuario modelo) throws ClassNotFoundException, SQLException {
+    @Override
+    public boolean update(Usuario modelo) throws ClassNotFoundException, SQLException {
         int linhasAtualizadas = 0;
 
         String query = String.format(
@@ -73,19 +80,22 @@ public class UsuarioDM {
                 modelo.getNome(),modelo.getSenha(),modelo.getPermissaoId(),modelo.getId()
         );
 
-        linhasAtualizadas = Database.doUpdate(query);
+        Database db = new Database();
+        linhasAtualizadas = db.doUpdate(query);
+        db.closeConnection();
 
         return linhasAtualizadas > 0;
     }
 
-    public static ArrayList<Usuario> findAll() throws ClassNotFoundException, SQLException {
-        ArrayList<Usuario> usuarios = new ArrayList<Usuario>();
-        ResultSet rs = Database.doSelect("Select * from usuario");
+    @Override
+    public List<Usuario> findAll() throws ClassNotFoundException, SQLException {
+        ArrayList<Usuario> usuarios = new ArrayList<>();
 
-        while(rs.next()){
-            usuarios.add(mapModel(rs));
-        }
+        Database db = new Database();
+        ResultSet rs = db.doSelect("Select * from usuario");
+        db.closeConnection();
 
+        while(rs.next()) usuarios.add(mapModel(rs));
         return usuarios;
     }
 }

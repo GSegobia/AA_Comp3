@@ -39,15 +39,18 @@ public class ProvaAtleta {
     }
 
     public static ProvaAtleta get(int id) throws SQLException, ClassNotFoundException, ModeloNaoExiste {
-        return ProvaAtletaDM.get(id);
+        ProvaAtletaDM dm = new ProvaAtletaDM();
+        return dm.get(id);
     }
 
     public static boolean create(ProvaAtleta prova) throws SQLException, ClassNotFoundException {
-        return ProvaAtletaDM.create(prova);
+        ProvaAtletaDM dm = new ProvaAtletaDM();
+        return dm.create(prova);
     }
 
     public static int[] findAllAtletaInProva(int provaId) throws SQLException, ClassNotFoundException {
-        return ProvaAtletaDM.findAllAtletaInProva(provaId);
+        ProvaAtletaDM dm = new ProvaAtletaDM();
+        return dm.findAllAtletaInProva(provaId);
     }
 
 }

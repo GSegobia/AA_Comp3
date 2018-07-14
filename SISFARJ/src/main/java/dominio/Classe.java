@@ -4,7 +4,7 @@ import dados.datamapper.ClasseDM;
 import exceptions.ModeloNaoExiste;
 
 import java.sql.SQLException;
-import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by over on 11/07/18.
@@ -36,10 +36,12 @@ public class Classe {
     }
 
     public Classe get(int id) throws ClassNotFoundException, SQLException, ModeloNaoExiste {
-        return ClasseDM.get(id);
+        ClasseDM dm = new ClasseDM();
+        return dm.get(id);
     }
 
-    public ArrayList<Classe> findAll() throws ClassNotFoundException, SQLException {
-        return ClasseDM.findAll();
+    public List<Classe> findAll() throws ClassNotFoundException, SQLException {
+        ClasseDM dm = new ClasseDM();
+        return dm.findAll();
     }
 }

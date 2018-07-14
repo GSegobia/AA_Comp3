@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Fellipe Bravo on 11/07/18.
@@ -28,7 +28,7 @@ public class CriarCompeticao extends HttpServlet {
                 Boolean possuiPermissao = Usuario.checaPermissao(PermissaoUsuario.DIRETOR_TECNICO.id, u.getId()) || Usuario.checaPermissao(PermissaoUsuario.TECNICO_ASSOCIACAO.id, u.getId());
                 if(!possuiPermissao) { informarErroPermissao(req, resp); }
                 else {
-                    ArrayList<CentroAquatico> locais = CentroAquatico.findAll();
+                    List<CentroAquatico> locais = CentroAquatico.findAll();
 
                     req.setAttribute("locaisProva", locais);
                     req.getRequestDispatcher("criar_competicao.jsp").forward(req, resp);

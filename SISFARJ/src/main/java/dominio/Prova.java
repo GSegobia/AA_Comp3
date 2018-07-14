@@ -7,6 +7,7 @@ import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.List;
 
 public class Prova {
 
@@ -70,36 +71,38 @@ public class Prova {
         this.competicao_id = competicao_id;
     }
 
-    public static void create(Prova prova) throws SQLException, ClassNotFoundException {
-        ProvaDM.create(prova);
+    public static boolean create(Prova prova) throws SQLException, ClassNotFoundException {
+        ProvaDM dm = new ProvaDM();
+        return dm.create(prova);
     }
 
     public static Prova get(int id) throws ClassNotFoundException,SQLException, ModeloNaoExiste {
-        return ProvaDM.get(id);
+        ProvaDM dm = new ProvaDM();
+        return dm.get(id);
     }
 
-    public static ArrayList<Prova> findAll() throws SQLException, ClassNotFoundException {
-        return ProvaDM.findAll();
+    public static List<Prova> findAll() throws SQLException, ClassNotFoundException {
+        ProvaDM dm = new ProvaDM();
+        return dm.findAll();
     }
 
     public static ArrayList<Atleta> listarAtletas(int id) throws SQLException, ClassNotFoundException, ModeloNaoExiste {
         int atleta[] =  ProvaAtleta.findAllAtletaInProva(id);
-        ArrayList<Atleta> atletas = new ArrayList<Atleta>();
+        ArrayList<Atleta> atletas = new ArrayList<>();
+
         for(int i = 0; i < atleta.length; i++){
             Atleta a = Atleta.get(atleta[i]);
-            if(a == null){
-                throw new ModeloNaoExiste("prova",atleta[i]);
-            }else{
-                atletas.add(a);
-            }
+
+            if(a == null) throw new ModeloNaoExiste("prova",atleta[i]);
+            else atletas.add(a);
         }
+
         return atletas;
     }
 
     public static int calcularPontuacao(String tempo) {
-        if (tempo.equals("")) {
-            return 0;
-        } else {
+        if (tempo.equals("")) return 0;
+        else {
             String timeStamp = new SimpleDateFormat("mmss").format(Calendar.getInstance().getTime());
             return Integer.valueOf("0" + timeStamp);
         }
