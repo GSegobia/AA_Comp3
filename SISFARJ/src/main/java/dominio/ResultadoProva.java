@@ -11,7 +11,7 @@ public class ResultadoProva {
     private String tempo;
     private int prova_id;
     private int atleta_id;
-    private int pontuacao;
+    private String pontuacao;
 
     public ResultadoProva(String tempo, int prova_id, int atleta_id){
         this.tempo = tempo;
@@ -20,13 +20,20 @@ public class ResultadoProva {
         this.pontuacao = Prova.calcularPontuacao(tempo);
     }
 
+    public ResultadoProva(String tempo, int prova_id, int atleta_id, String pontuacao){
+        this.tempo = tempo;
+        this.prova_id = prova_id;
+        this.atleta_id = atleta_id;
+        this.pontuacao = pontuacao;
+    }
+
     public String getTempo(){return  this.tempo;}
 
     public int getProva_id(){return  this.prova_id;}
 
     public int getAtleta_id(){return  this.atleta_id;}
 
-    public int getPontuacao(){return  this.pontuacao;}
+    public String getPontuacao(){return  this.pontuacao;}
 
     public void setTempo(String tempo){ this.tempo = tempo;}
 
@@ -34,7 +41,7 @@ public class ResultadoProva {
 
     public void setAtleta_id(int id){ this.atleta_id = id;}
 
-    public void setPontuacao(int pontuacao){ this.pontuacao = pontuacao;}
+    public void setPontuacao(String pontuacao){ this.pontuacao = pontuacao;}
 
     public static boolean create(ResultadoProva rp) throws SQLException, ClassNotFoundException {
         ResultadoProvaDM dm = new ResultadoProvaDM();

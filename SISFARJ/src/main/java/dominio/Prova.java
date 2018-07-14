@@ -100,11 +100,11 @@ public class Prova {
         return atletas;
     }
 
-    public static int calcularPontuacao(String tempo) {
-        if (tempo.equals("")) return 0;
+    public static String calcularPontuacao(String tempo) {
+        if (tempo.equals("") || Integer.valueOf(tempo) == 0) return "Desclassificado";
         else {
             String timeStamp = new SimpleDateFormat("mmss").format(Calendar.getInstance().getTime());
-            return Integer.valueOf("0" + timeStamp);
+            return "0" + timeStamp;
         }
     }
 }

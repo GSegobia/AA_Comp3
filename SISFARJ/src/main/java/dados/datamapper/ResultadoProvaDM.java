@@ -17,7 +17,8 @@ public class ResultadoProvaDM implements DataMapper<ResultadoProva> {
         return new ResultadoProva(
                 rs.getString("tempo"),
                 rs.getInt("prova_id"),
-                rs.getInt("atleta_id")
+                rs.getInt("atleta_id"),
+                rs.getString("pontuacao")
         );
     }
 
@@ -43,8 +44,8 @@ public class ResultadoProvaDM implements DataMapper<ResultadoProva> {
 
         String query = String.format(
                 "Insert into resultado_provas (tempo, prova_id,atleta_id, pontuacao) " +
-                        "values(%d,%d,%d,%d);",
-                Integer.valueOf(rp.getTempo()),
+                        "values('%s',%d,%d,'%s');",
+                rp.getTempo(),
                 rp.getProva_id(),
                 rp.getAtleta_id(),
                 rp.getPontuacao()

@@ -67,7 +67,7 @@ public class ProvaAtletaDM implements DataMapper<ProvaAtleta> {
     public int[] findAllAtletaInProva(int idProva) throws ClassNotFoundException, SQLException {
         int[] listaAtletas= {};
 
-        String query = String.format("Select id_atleta from prova_atleta where id_prova=%d",idProva);
+        String query = String.format("Select Distinct id_atleta from prova_atleta where id_prova=%d",idProva);
 
         Database db = new Database();
         ResultSet rs = db.doSelect(query);
