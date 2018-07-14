@@ -8,6 +8,7 @@ import exceptions.ModeloNaoExiste;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 
 public class ProvaDM implements DataMapper<Prova> {
 
@@ -63,7 +64,7 @@ public class ProvaDM implements DataMapper<Prova> {
     }
 
     @Override
-    public ArrayList<Prova> findAll() throws ClassNotFoundException, SQLException {
+    public List<Prova> findAll() throws ClassNotFoundException, SQLException {
         ArrayList<Prova> Provas = new ArrayList<>();
 
         Database db = new Database();
