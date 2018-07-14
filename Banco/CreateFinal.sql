@@ -27,7 +27,8 @@ create table atleta(
 	data_entrada_associacao date not null,
 	categoria_id int not null references categoria(id),
 	numero_oficio varchar(15) not null,
-	data_oficio date not null
+	data_oficio date not null,
+	num_comprovante_pgto varchar not null
 );
 
 create table classe(
@@ -65,7 +66,8 @@ create table competicao_prova(
 
 create table resultado_provas(
 	id serial primary key,
-	tempo int not null,
+	tempo varchar(20) not null,
+	pontuacao varchar (20) not null,
 	prova_id int not null references competicao_prova(id),
 	atleta_id int not null references atleta(id)
 );
