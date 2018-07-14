@@ -16,8 +16,8 @@ public class CompeticaoProvaDM implements DataMapper<CompeticaoProva> {
     public CompeticaoProva mapModel(ResultSet rs) throws SQLException {
         return new CompeticaoProva(
                 rs.getInt("id"),
-                rs.getInt("competicao_id"),
-                rs.getInt("prova_id")
+                rs.getInt("id_prova"),
+                rs.getInt("id_atleta")
         );
     }
 
@@ -41,7 +41,7 @@ public class CompeticaoProvaDM implements DataMapper<CompeticaoProva> {
         int linhasAtualizadas;
 
         String query = String.format(
-                "Insert into competicao_prova (competicao_id,prova_id) " +
+                "Insert into competicao_prova (id_prova, id_atleta) " +
                         "values(%d,%d);",
                 modelo.getCompeticao_id(),
                 modelo.getProva_id()

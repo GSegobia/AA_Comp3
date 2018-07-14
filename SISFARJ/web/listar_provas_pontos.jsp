@@ -31,7 +31,7 @@
 
             <% for(int i = 0; i < rp.size(); i++) {%>
             <tr>
-                <th scope="col"><%=at.get(i).getId()%></th>
+                <th scope="col"><%=i+1%></th>
                 <th scope="col"><%=at.get(i).getNome()%></th>
                 <th scope="col"><%=aas.get(i).getSigla()%></th>
                 <th scope="col"><%=rp.get(i).getTempo()%></th>

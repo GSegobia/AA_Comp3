@@ -38,7 +38,7 @@ public class TestCompeticaoDM {
 
     @Test
     public void update() throws SQLException, ClassNotFoundException, ModeloNaoExiste {
-        Competicao c = Competicao.get(1);
+        Competicao c = Competicao.get(2);
         c.setNome("TESTANDO");
         assert(dm.update(c));
     }
