@@ -8,6 +8,7 @@ import exceptions.ModeloNaoExiste;
 import org.easymock.EasyMockSupport;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import testes.mock.MockAssociacaoDM;
 
 import java.sql.SQLException;
 import java.text.ParseException;
@@ -18,7 +19,7 @@ import java.util.List;
  */
 public class TestAssociacaoDM extends EasyMockSupport {
 
-    AssociacaoDM dm = new AssociacaoDM();
+    AssociacaoDM dm = new MockAssociacaoDM();
 
     @Test
     public void get() throws SQLException, ClassNotFoundException, ModeloNaoExiste {
@@ -27,14 +28,15 @@ public class TestAssociacaoDM extends EasyMockSupport {
     }
 
     @Test
-    public void getInvalido() throws SQLException, ClassNotFoundException, ModeloNaoExiste {
-        Associacao a = dm.get(-1);
-        assert(a == null);
+    public void getInvalido() {
+        Assertions.assertThrows(ModeloNaoExiste.class, () -> {
+            dm.get(-1);
+        });
     }
 
     @Test
     public void getMatricula() throws SQLException, ClassNotFoundException, MatriculaAssociacaoNaoEncontrada {
-        Associacao a = dm.get("12838128");
+        Associacao a = dm.get("mock");
         assert (a != null);
     }
 
@@ -53,7 +55,7 @@ public class TestAssociacaoDM extends EasyMockSupport {
 
     @Test
     public void update() throws SQLException, ClassNotFoundException, MatriculaAssociacaoNaoEncontrada {
-        Associacao a = Associacao.get("caso_teste");
+        Associacao a = dm.get("mock");
         a.setSigla("TESTANDO");
         assert(dm.update(a));
     }
