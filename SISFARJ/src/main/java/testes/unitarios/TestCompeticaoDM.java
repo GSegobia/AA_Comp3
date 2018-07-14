@@ -2,6 +2,7 @@ package testes.unitarios;
 
 import dados.datamapper.CompeticaoDM;
 import dominio.Competicao;
+import exceptions.ErroPreenchimento;
 import exceptions.ModeloNaoExiste;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -32,7 +33,7 @@ public class TestCompeticaoDM {
     }
 
     @Test
-    public void create() throws SQLException, ClassNotFoundException {
+    public void create() throws SQLException, ClassNotFoundException, ErroPreenchimento {
         Competicao c = new Competicao("caso_teste", 1, Calendar.getInstance().getTime(), 1);
         assert(dm.create(c));
     }

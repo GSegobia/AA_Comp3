@@ -23,7 +23,7 @@ public class ListarLocaisCompeticao extends HttpServlet implements Identificacao
         if(req.getSession().getAttribute("associacao") == null) validarIdentidade(req, resp);
         else {
             try {
-                List<CentroAquatico> lc = DiretorTecnico.listarLocaisCompeticao();
+                List<CentroAquatico> lc = CentroAquatico.findAll();
                 req.setAttribute("lcompeticoes", lc);
                 getServletContext().getRequestDispatcher("/listar_locais_competicao.jsp").forward(req, resp);
             } catch (Exception e) {

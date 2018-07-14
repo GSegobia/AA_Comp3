@@ -25,8 +25,8 @@ public class ListarProvas extends HttpServlet implements Identificacao {
         else {
             try {
                 int competicao_id = Integer.valueOf(req.getParameter("id"));
-                List<Prova> provas = DiretorTecnico.listarProvas(competicao_id);
                 Competicao c = Competicao.get(competicao_id);
+                List<Prova> provas = c.listarProvas(competicao_id);
                 req.setAttribute("provas", provas);
                 req.setAttribute("competicao", c);
                 getServletContext().getRequestDispatcher("/listar_provas.jsp").forward(req, resp);

@@ -2,6 +2,7 @@ package servlet.diretortecnico;
 
 import dominio.Atleta;
 import dominio.DiretorTecnico;
+import dominio.Prova;
 import dominio.ResultadoProva;
 import servlet.Identificacao;
 
@@ -25,7 +26,7 @@ public class InserirResultadoAtleta extends HttpServlet implements Identificacao
         else {
             try {
                 int prova_id = Integer.valueOf(req.getParameter("id"));
-                ArrayList<Atleta> atletas = DiretorTecnico.listarAtletaInProva(prova_id);
+                ArrayList<Atleta> atletas = Prova.listarAtletas(prova_id);
                 req.setAttribute("atletas", atletas);
                 req.setAttribute("id_prova", prova_id);
                 getServletContext().getRequestDispatcher("/inserir_resultado_atleta.jsp").forward(req, resp);
@@ -47,7 +48,7 @@ public class InserirResultadoAtleta extends HttpServlet implements Identificacao
             else {
                 for(int i=0; i< id.length; i++){
                     ResultadoProva rp = new ResultadoProva(tempo[i], prova_id, Integer.valueOf(id[i]));
-                    DiretorTecnico.inserirTempoAtleta(rp);
+                    rp.create(rp);
                 }
                 informarSucessoInserirTempo(req, resp);
             }
