@@ -8,6 +8,7 @@ import org.junit.jupiter.api.Test;
 import testes.mock.MockCompeticaoProvaDM;
 
 import java.sql.SQLException;
+import java.util.List;
 
 /**
  * Created by Fellipe Bravo on 12/07/18.
@@ -57,6 +58,12 @@ public class TestCompeticaoProvaDM {
         c.setProva_id(2);
         assert(c.getProva_id() == 2);
         assert(!dm.update(c));
+    }
+
+    @Test
+    public void findAll() throws SQLException, ClassNotFoundException {
+        List<CompeticaoProva> c = dm.findAll();
+        assert(c != null);
     }
 
     @Test
