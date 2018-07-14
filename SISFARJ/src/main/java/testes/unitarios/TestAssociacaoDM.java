@@ -2,6 +2,7 @@ package testes.unitarios;
 
 import dados.datamapper.AssociacaoDM;
 import dominio.Associacao;
+import exceptions.ErroPreenchimento;
 import exceptions.MatriculaAssociacaoNaoEncontrada;
 import exceptions.ModeloNaoExiste;
 import org.easymock.EasyMockSupport;
@@ -9,7 +10,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.sql.SQLException;
-import java.util.Calendar;
+import java.text.ParseException;
 import java.util.List;
 
 /**
@@ -45,8 +46,8 @@ public class TestAssociacaoDM extends EasyMockSupport {
     }
 
     @Test
-    public void create() throws SQLException, ClassNotFoundException {
-        Associacao a = new Associacao("caso_teste", Calendar.getInstance().getTime(), "caso_teste", "caso_teste", "caso_teste", "caso_teste", "caso_teste", "caso_teste");
+    public void create() throws SQLException, ClassNotFoundException, ErroPreenchimento, ParseException {
+        Associacao a = new Associacao("caso_teste", "2018-07-01", "caso_teste", "caso_teste", "caso_teste", "caso_teste", "caso_teste", "caso_teste");
         assert(dm.create(a));
     }
 

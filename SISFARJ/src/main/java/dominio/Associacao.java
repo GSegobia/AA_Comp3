@@ -2,10 +2,13 @@ package dominio;
 
 import dados.datamapper.AssociacaoDM;
 import exceptions.DadosIdentificacaoIncorretos;
+import exceptions.ErroPreenchimento;
 import exceptions.MatriculaAssociacaoNaoEncontrada;
 import exceptions.ModeloNaoExiste;
 
 import java.sql.SQLException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
@@ -35,9 +38,13 @@ public class Associacao {
         this.numComprovantePgto = numComprovantePgto;
     }
 
-    public Associacao(String numeroOficio, Date dataOficio, String nome, String sigla, String matricula, String endereco, String telefone, String numComprovantePgto) {
+    public Associacao(String numeroOficio, String dataOficio, String nome, String sigla, String matricula, String endereco, String telefone, String numComprovantePgto) throws ErroPreenchimento, ParseException {
+        if(nome.equals("") || sigla.equals("") || numeroOficio.equals("") || telefone.equals("") ||
+                dataOficio.equals("") || numComprovantePgto.equals("") || endereco.equals("")) throw new ErroPreenchimento(Associacao.class.getName());
+
+        SimpleDateFormat sdf = new SimpleDateFormat("YYYY-MM-dd");
         this.numeroOficio = numeroOficio;
-        this.dataOficio = dataOficio;
+        this.dataOficio = sdf.parse(dataOficio);
         this.nome = nome;
         this.sigla = sigla;
         this.matricula = matricula;
