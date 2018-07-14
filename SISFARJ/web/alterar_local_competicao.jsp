@@ -29,8 +29,12 @@
                         <input type="text" class="form-control" id="endereco" name="endereco" placeholder="Altere aqui o endereço" value="<%= lc.getEndereco()%>">
                     </div>
                     <div class="form-group col-md-2">
-                        <label for="piscina">Tamanho da Piscina</label>
-                        <input type="text" class="form-control" id="piscina" name="piscina" placeholder="Altere aqui a piscina" value="<%= lc.getTamanho_piscina()%>">
+                        <label for="piscina">Tamanho Piscina</label>
+                        <br>
+                        <select class="from-control" id="piscina" name="piscina" >
+                            <option name="piscina" value="25">25 metros</option>
+                            <option name="piscina" value="50">50 metros</option>
+                        </select>
                     </div>
                 </div>
                 <div class="form-group">

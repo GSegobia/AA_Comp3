@@ -78,8 +78,9 @@ public class AssociacaoDM implements DataMapper<Associacao> {
         int linhasAtualizadas;
 
         String query = String.format(
-                "INSERT INTO Associacao (numero_oficio,data_oficio,nome,sigla,matricula,endereco,telefone,num_comprovante_pgto) " +
-                        "VALUES(\'%s\',\'%s\',\'%s\',\'%s\',\'%s\',\'%s\',\'%s\',\'%s\');",
+                "INSERT INTO Associacao (senha, numero_oficio,data_oficio,nome,sigla,matricula,endereco,telefone,num_comprovante_pgto) " +
+                        "VALUES(\'%s\',\'%s\',\'%s\',\'%s\',\'%s\',\'%s\',\'%s\',\'%s\',\'%s\');",
+                modelo.geraSenha(),
                 modelo.getNumeroOficio(),
                 modelo.getDataOficio(),
                 modelo.getNome(),

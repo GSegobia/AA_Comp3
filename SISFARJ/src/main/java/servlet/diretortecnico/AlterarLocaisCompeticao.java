@@ -40,6 +40,7 @@ public class AlterarLocaisCompeticao extends HttpServlet implements Identificaca
             int id = Integer.valueOf(req.getParameter("id").trim());
             String nome = req.getParameter("nome").trim();
             String endereco = req.getParameter("endereco").trim();
+            System.out.println(req.getParameter("piscina").trim());
             int tamanho = Integer.valueOf(req.getParameter("piscina").trim());
 
             // TODO: Exception lançada pela camada de domínio

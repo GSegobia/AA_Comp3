@@ -150,4 +150,8 @@ public class Associacao {
         AssociacaoDM dm = new AssociacaoDM();
         return dm.get(matricula, senha);
     }
+
+    public String geraSenha(){
+        return "123456";
+    }
 }
