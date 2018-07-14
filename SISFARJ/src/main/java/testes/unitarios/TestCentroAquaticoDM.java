@@ -5,6 +5,7 @@ import dominio.CentroAquatico;
 import exceptions.ModeloNaoExiste;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import testes.mock.MockCentroAquaticoDM;
 
 import java.sql.SQLException;
 import java.util.List;
@@ -14,7 +15,7 @@ import java.util.List;
  */
 public class TestCentroAquaticoDM {
 
-    CentroAquaticoDM dm = new CentroAquaticoDM();
+    CentroAquaticoDM dm = new MockCentroAquaticoDM();
 
     @Test
     public void get() throws SQLException, ClassNotFoundException, ModeloNaoExiste {
@@ -31,15 +32,32 @@ public class TestCentroAquaticoDM {
 
     @Test
     public void create() throws SQLException, ClassNotFoundException {
-        CentroAquatico c = new CentroAquatico("caso_teste","caso_teste",1);
+        CentroAquatico c = new CentroAquatico(1, "caso_teste", "caso_teste", 1);
         assert(dm.create(c));
     }
 
     @Test
+    public void createInvalido() throws SQLException, ClassNotFoundException {
+        CentroAquatico c = new CentroAquatico(1, "TESTANDO", "TESTANDO", 1);
+        assert(!dm.create(c));
+    }
+
+    @Test
     public void update() throws SQLException, ClassNotFoundException, ModeloNaoExiste {
-        CentroAquatico c = CentroAquatico.get(1);
+        CentroAquatico c = dm.get(1);
+        assert(c.getNome().equals("mock"));
         c.setNome("TESTANDO");
+        assert(c.getNome().equals("TESTANDO"));
         assert(dm.update(c));
+    }
+
+    @Test
+    public void updateInvalido() throws SQLException, ClassNotFoundException, ModeloNaoExiste {
+        CentroAquatico c = dm.get(1);
+        assert(c.getNome().equals("mock"));
+        c.setNome("TESTANDOa");
+        assert(c.getNome().equals("TESTANDOa"));
+        assert(!dm.update(c));
     }
 
     @Test
