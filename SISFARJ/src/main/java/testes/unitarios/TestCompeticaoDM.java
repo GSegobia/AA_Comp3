@@ -19,6 +19,9 @@ public class TestCompeticaoDM {
 
     CompeticaoDM dm = new MockCompeticaoDM();
 
+    public TestCompeticaoDM() throws ErroPreenchimento {
+    }
+
     @Test
     public void get() throws SQLException, ClassNotFoundException, ModeloNaoExiste {
         Competicao c = dm.get(1);
@@ -39,7 +42,7 @@ public class TestCompeticaoDM {
     }
 
     @Test
-    public void createInvalido() throws SQLException, ClassNotFoundException {
+    public void createInvalido() throws SQLException, ClassNotFoundException, ErroPreenchimento {
         Competicao c = new Competicao("TESTANDO", 1, Calendar.getInstance().getTime(), 1);
         assert(!dm.create(c));
     }
