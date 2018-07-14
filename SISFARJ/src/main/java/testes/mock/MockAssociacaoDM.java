@@ -37,12 +37,12 @@ public class MockAssociacaoDM extends AssociacaoDM {
 
     @Override
     public boolean create(Associacao modelo) throws SQLException, ClassNotFoundException {
-        return true;
+        return modelo.getSigla().equals("caso_teste");
     }
 
     @Override
     public boolean update(Associacao modelo) throws SQLException, ClassNotFoundException {
-        return true;
+        return modelo.getSigla().equals("TESTANDO");
     }
 
     @Override
