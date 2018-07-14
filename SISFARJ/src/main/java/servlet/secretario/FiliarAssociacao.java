@@ -45,7 +45,7 @@ public class FiliarAssociacao extends HttpServlet implements Identificacao {
                     telefone,
                     numComprovantePgto
             );
-            Secretario.filiarAssociacao(associacao);
+            associacao.create(associacao);
             informarSucessoCadastro(req, resp);
         }
         catch (ErroPreenchimento e) {

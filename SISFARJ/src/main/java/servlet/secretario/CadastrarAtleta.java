@@ -58,7 +58,7 @@ public class CadastrarAtleta extends HttpServlet implements Identificacao {
                         sdf.parse(dataEntrada),
                         numComprovantePgto
                 );
-                Secretario.cadastrarAtleta(atleta);
+                atleta.create(atleta);
                 informarSucessoCadastro(req, resp);
             }
         } catch (MatriculaAssociacaoNaoEncontrada e) {

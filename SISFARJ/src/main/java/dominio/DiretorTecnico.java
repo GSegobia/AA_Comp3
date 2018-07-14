@@ -19,16 +19,16 @@ public class DiretorTecnico extends Secretario {
         super(nome, matricula, senha, PermissaoUsuario.DIRETOR_TECNICO.id);
     }
 
-    public static void incluirLocalCompeticao(CentroAquatico centro) throws SQLException, ClassNotFoundException{
-        CentroAquatico.create(centro);
+    public static boolean incluirLocalCompeticao(CentroAquatico centro) throws SQLException, ClassNotFoundException{
+        return CentroAquatico.create(centro);
     }
 
     public static List<CentroAquatico> listarLocaisCompeticao() throws SQLException, ClassNotFoundException{
         return CentroAquatico.findAll();
     }
 
-    public static void alterarLocalCompeticao(CentroAquatico centro) throws SQLException, ClassNotFoundException{
-        CentroAquatico.update(centro);
+    public static boolean alterarLocalCompeticao(CentroAquatico centro) throws SQLException, ClassNotFoundException{
+        return CentroAquatico.update(centro);
     }
 
     public static void criarCompeticao(Competicao competicao) throws SQLException, ClassNotFoundException{

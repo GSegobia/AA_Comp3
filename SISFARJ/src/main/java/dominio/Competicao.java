@@ -2,6 +2,7 @@ package dominio;
 
 import dados.datamapper.CompeticaoDM;
 import dados.datamapper.CompeticaoProvaDM;
+import exceptions.ErroPreenchimento;
 import exceptions.ModeloNaoExiste;
 
 import java.sql.SQLException;
@@ -25,7 +26,8 @@ public class Competicao {
         this.tamanhoPiscina = tamanhoPiscina;
     }
 
-    public Competicao(String nome, int centroAquaticoId, Date dataCompeticao, int tamanhoPiscina){
+    public Competicao(String nome, Integer centroAquaticoId, Date dataCompeticao, Integer tamanhoPiscina) throws ErroPreenchimento {
+        if(nome.equals("") || centroAquaticoId == null || dataCompeticao == null || tamanhoPiscina == null) throw new ErroPreenchimento(Competicao.class.getName());
         this.nome = nome;
         this.centroAquaticoId = centroAquaticoId;
         this.dataCompeticao = dataCompeticao;

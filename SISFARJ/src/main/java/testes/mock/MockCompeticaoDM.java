@@ -2,6 +2,7 @@ package testes.mock;
 
 import dados.datamapper.CompeticaoDM;
 import dominio.Competicao;
+import exceptions.ErroPreenchimento;
 import exceptions.ModeloNaoExiste;
 
 import java.sql.SQLException;
@@ -16,6 +17,9 @@ import java.util.Random;
 public class MockCompeticaoDM extends CompeticaoDM {
 
     Competicao c = new Competicao("mock", 1, Calendar.getInstance().getTime(), 1);
+
+    public MockCompeticaoDM() throws ErroPreenchimento {
+    }
 
     @Override
     public Competicao get(int id) throws ClassNotFoundException, SQLException, ModeloNaoExiste {

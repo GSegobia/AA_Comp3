@@ -31,8 +31,8 @@ public class IncluirLocaisCompeticao extends HttpServlet implements Identificaca
             int tamanho = Integer.parseInt(req.getParameter("tamanho").trim());
 
             CentroAquatico centro = new CentroAquatico(nome, endereco, tamanho);
-            DiretorTecnico.incluirLocalCompeticao(centro);
-            informarSucessoCadastro(req, resp);
+            if(centro.create(centro))informarSucessoCadastro(req, resp);
+            else informarErroCadastro(req, resp);
 
         } catch (Exception e) {
             e.printStackTrace();

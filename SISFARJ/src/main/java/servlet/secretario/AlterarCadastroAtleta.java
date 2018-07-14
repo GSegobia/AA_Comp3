@@ -74,7 +74,7 @@ public class AlterarCadastroAtleta extends HttpServlet implements Identificacao 
                         numComprovantePgto
                 );
 
-                if(DiretorTecnico.alterarAtleta(atleta)) informarSucessoAlteracao(req, resp);
+                if(atleta.update(atleta)) informarSucessoAlteracao(req, resp);
                 else informarErroAlteracao(req, resp);
             }
         }catch (MatriculaAssociacaoNaoEncontrada e) {

@@ -24,7 +24,7 @@ public class ListarCompeticoes extends HttpServlet implements Identificacao {
         if(req.getSession().getAttribute("associacao") == null) validarIdentidade(req, resp);
         else {
             try {
-                List<Competicao> competicoes = DiretorTecnico.listarCompeticoes();
+                List<Competicao> competicoes = Competicao.findAll();
                 req.setAttribute("competicoes", competicoes);
                 getServletContext().getRequestDispatcher("/listar_competicoes.jsp").forward(req, resp);
             } catch (Exception e) {

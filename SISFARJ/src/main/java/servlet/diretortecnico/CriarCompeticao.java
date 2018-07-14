@@ -15,7 +15,7 @@ import java.util.List;
  * Created by Fellipe Bravo on 11/07/18.
  */
 @WebServlet("/criarCompeticao")
-public class CriarCompeticao extends HttpServlet implements Identificacao {
+public class    CriarCompeticao extends HttpServlet implements Identificacao {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

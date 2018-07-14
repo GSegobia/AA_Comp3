@@ -48,8 +48,8 @@ public class AlterarLocaisCompeticao extends HttpServlet implements Identificaca
                 informarErroPreenchimento(req, resp);
             }else{
                 CentroAquatico ca = new CentroAquatico(id, nome, endereco, tamanho);
-                DiretorTecnico.alterarLocalCompeticao(ca);
-                informarSucessoAlteracaoLocalCompeticao(req, resp);
+                if(ca.update(ca))informarSucessoAlteracaoLocalCompeticao(req, resp);
+                else informarErroAlteracaoLocalCompeticao(req, resp);
             }
         } catch (Exception e) {
             e.printStackTrace();
