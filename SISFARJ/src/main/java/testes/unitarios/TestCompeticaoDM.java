@@ -5,6 +5,7 @@ import dominio.Competicao;
 import exceptions.ModeloNaoExiste;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import testes.mock.MockCompeticaoDM;
 
 import java.sql.SQLException;
 import java.util.Calendar;
@@ -15,7 +16,7 @@ import java.util.List;
  */
 public class TestCompeticaoDM {
 
-    CompeticaoDM dm = new CompeticaoDM();
+    CompeticaoDM dm = new MockCompeticaoDM();
 
     @Test
     public void get() throws SQLException, ClassNotFoundException, ModeloNaoExiste {
@@ -37,10 +38,27 @@ public class TestCompeticaoDM {
     }
 
     @Test
+    public void createInvalido() throws SQLException, ClassNotFoundException {
+        Competicao c = new Competicao("TESTANDO", 1, Calendar.getInstance().getTime(), 1);
+        assert(!dm.create(c));
+    }
+
+    @Test
     public void update() throws SQLException, ClassNotFoundException, ModeloNaoExiste {
-        Competicao c = Competicao.get(2);
+        Competicao c = dm.get(1);
+        assert(c.getNome().equals("mock"));
         c.setNome("TESTANDO");
+        assert(c.getNome().equals("TESTANDO"));
         assert(dm.update(c));
+    }
+
+    @Test
+    public void updateInvalido() throws SQLException, ClassNotFoundException, ModeloNaoExiste {
+        Competicao c = dm.get(1);
+        assert(c.getNome().equals("mock"));
+        c.setNome("TESTANDOa");
+        assert(c.getNome().equals("TESTANDOa"));
+        assert(!dm.update(c));
     }
 
     @Test
