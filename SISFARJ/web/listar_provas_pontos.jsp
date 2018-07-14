@@ -1,7 +1,7 @@
-<%@ page import="dominio.ResultadoProva" %>
-<%@ page import="java.util.ArrayList" %>
+<%@ page import="dominio.Associacao" %>
 <%@ page import="dominio.Atleta" %>
-<%@ page import="dominio.Associacao" %><%--
+<%@ page import="dominio.ResultadoProva" %>
+<%@ page import="java.util.ArrayList" %><%--
   Created by IntelliJ IDEA.
   User: joaovaraujo
   Date: 13/07/18

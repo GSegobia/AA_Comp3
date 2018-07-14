@@ -1,9 +1,7 @@
 package servlet.diretortecnico;
 
 import dominio.CentroAquatico;
-import dominio.PermissaoUsuario;
-import dominio.Usuario;
-import util.MiddlewareSessao;
+import servlet.Identificacao;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -17,48 +15,30 @@ import java.util.List;
  * Created by Fellipe Bravo on 11/07/18.
  */
 @WebServlet("/criarCompeticao")
-public class CriarCompeticao extends HttpServlet {
+public class CriarCompeticao extends HttpServlet implements Identificacao {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        MiddlewareSessao.validar(req,resp);
-        if(!resp.isCommitted()) {
+        if(req.getSession().getAttribute("associacao") == null) validarIdentidade(req, resp);
+        else {
             try {
-                Usuario u = (Usuario) req.getSession().getAttribute("usuario");
-                Boolean possuiPermissao = Usuario.checaPermissao(PermissaoUsuario.DIRETOR_TECNICO.id, u.getId()) || Usuario.checaPermissao(PermissaoUsuario.TECNICO_ASSOCIACAO.id, u.getId());
-                if(!possuiPermissao) { informarErroPermissao(req, resp); }
-                else {
-                    List<CentroAquatico> locais = CentroAquatico.findAll();
-
-                    req.setAttribute("locaisProva", locais);
-                    req.getRequestDispatcher("criar_competicao.jsp").forward(req, resp);
-                }
+                List<CentroAquatico> locais = CentroAquatico.findAll();
+                req.setAttribute("locaisProva", locais);
+                getServletContext().getRequestDispatcher("/criar_competicao.jsp").forward(req, resp);
             } catch (Exception e) {
                 e.printStackTrace();
-                informarErroPermissao(req, resp);
             }
         }
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        MiddlewareSessao.validar(req,resp);
-        if(!resp.isCommitted()) {
-            try {
-                Usuario u = (Usuario) req.getSession().getAttribute("usuario");
-                Boolean possuiPermissao = Usuario.checaPermissao(PermissaoUsuario.DIRETOR_TECNICO.id, u.getId()) || Usuario.checaPermissao(PermissaoUsuario.TECNICO_ASSOCIACAO.id, u.getId());
-                if(!possuiPermissao) { informarErroPermissao(req, resp); }
-                else {
 
-                }
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        }
     }
 
-    public void informarErroPermissao(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        resp.sendRedirect("sem_permissao.jsp");
+    @Override
+    public void validarIdentidade(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        req.setAttribute("referencia", "/criar_competicao.jsp");
+        getServletContext().getRequestDispatcher("/identificar.jsp").forward(req, resp);
     }
-
 }

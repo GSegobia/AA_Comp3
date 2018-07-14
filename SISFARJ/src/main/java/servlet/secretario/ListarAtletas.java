@@ -1,10 +1,8 @@
 package servlet.secretario;
 
 import dominio.Atleta;
-import dominio.PermissaoUsuario;
 import dominio.Secretario;
-import dominio.Usuario;
-import util.MiddlewareSessao;
+import servlet.Identificacao;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -19,32 +17,25 @@ import java.util.List;
  * Edited by João V. Araújo on 12/07/18.
  */
 @WebServlet("/listarAtletas")
-public class ListarAtletas extends HttpServlet {
+public class ListarAtletas extends HttpServlet implements Identificacao {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        MiddlewareSessao.validar(req,resp);
-        if(!resp.isCommitted()) {
+        if(req.getSession().getAttribute("associacao") == null) validarIdentidade(req, resp);
+        else {
             try {
-                Usuario u = (Usuario) req.getSession().getAttribute("usuario");
-                Boolean possuiPermissao = Usuario.checaPermissao(PermissaoUsuario.SECRETARIO.id, u.getId());
-                if(!possuiPermissao) { informarErroPermissao(req, resp); }
-                else {
-                    Secretario secretario = new Secretario(u.getId(), u.getNome(), u.getMatricula(), u.getSenha(), u.getPermissaoId());
-                    List<Atleta> atletas = secretario.listarAtletas();
-                    req.setAttribute("atletas", atletas);
-                    getServletContext().getRequestDispatcher("/listar_atletas.jsp").forward(req, resp);
-                }
-
+                List<Atleta> atletas = Secretario.listarAtletas();
+                req.setAttribute("atletas", atletas);
+                getServletContext().getRequestDispatcher("/listar_atletas.jsp").forward(req, resp);
             } catch (Exception e) {
                 e.printStackTrace();
-                informarErroPermissao(req, resp);
             }
         }
     }
 
-    public void informarErroPermissao(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        resp.sendRedirect("sem_permissao.jsp");
+    @Override
+    public void validarIdentidade(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        req.setAttribute("referencia", "/listar_atletas.jsp");
+        getServletContext().getRequestDispatcher("/identificar.jsp").forward(req, resp);
     }
-
 }

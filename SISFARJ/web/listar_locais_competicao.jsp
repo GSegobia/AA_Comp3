@@ -6,8 +6,8 @@
   To change this template use File | Settings | File Templates.
 --%>
 
-<%@ page import="java.util.ArrayList" %>
 <%@ page import="dominio.CentroAquatico" %>
+<%@ page import="java.util.ArrayList" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <% ArrayList<CentroAquatico> lcompeticao = (ArrayList<CentroAquatico>) request.getAttribute("lcompeticoes"); %>
 

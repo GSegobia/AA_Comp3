@@ -27,7 +27,7 @@ public class CompeticaoDM implements DataMapper<Competicao> {
         ArrayList<Competicao> competicaos = new ArrayList<Competicao>();
 
         Database db = new Database();
-        ResultSet rs = db.doSelect("Select * from Competicao");
+        ResultSet rs = db.doSelect("SELECT * from Competicao");
         db.closeConnection();
 
         while(rs.next()) competicaos.add(mapModel(rs));
@@ -37,7 +37,7 @@ public class CompeticaoDM implements DataMapper<Competicao> {
     @Override
     public Competicao get(int id) throws SQLException, ClassNotFoundException, ModeloNaoExiste {
         Competicao c = null;
-        String query = String.format("Select * from Competicao where id =%d", id);
+        String query = String.format("SELECT * from Competicao where id =%d", id);
 
         Database db = new Database();
         ResultSet rs = db.doSelect(query);

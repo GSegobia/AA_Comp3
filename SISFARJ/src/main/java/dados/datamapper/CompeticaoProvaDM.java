@@ -24,7 +24,7 @@ public class CompeticaoProvaDM implements DataMapper<CompeticaoProva> {
     @Override
     public CompeticaoProva get(int id) throws ClassNotFoundException, SQLException, ModeloNaoExiste {
         CompeticaoProva a = null;
-        String query = String.format("Select * from competicao_prova where id=%d",id);
+        String query = String.format("SELECT * from competicao_prova where id=%d",id);
 
         Database db = new Database();
         ResultSet rs = db.doSelect(query);
@@ -67,7 +67,7 @@ public class CompeticaoProvaDM implements DataMapper<CompeticaoProva> {
     public int[] findAllProvaInCompeticao(int competicao_id) throws ClassNotFoundException, SQLException {
         int[] listaProvas= {};
 
-        String query = String.format("Select id_atleta from competicao_prova where id_prova=%d",competicao_id);
+        String query = String.format("SELECT id_atleta from competicao_prova where id_prova=%d",competicao_id);
 
         Database db = new Database();
         ResultSet rs = db.doSelect(query);

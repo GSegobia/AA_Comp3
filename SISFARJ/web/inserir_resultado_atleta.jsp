@@ -1,5 +1,4 @@
 <%@ page import="dominio.Atleta" %>
-<%@ page import="dominio.Associacao" %>
 <%@ page import="java.util.ArrayList" %>
 <%--
   Created by IntelliJ IDEA.

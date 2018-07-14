@@ -2,9 +2,7 @@ package servlet.diretortecnico;
 
 import dominio.Competicao;
 import dominio.DiretorTecnico;
-import dominio.PermissaoUsuario;
-import dominio.Usuario;
-import util.MiddlewareSessao;
+import servlet.Identificacao;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -19,30 +17,25 @@ import java.util.List;
  * Edited by João V. Araújo on 12/07/18.
  */
 @WebServlet("/listarCompeticoes")
-public class ListarCompeticoes extends HttpServlet {
+public class ListarCompeticoes extends HttpServlet implements Identificacao {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        MiddlewareSessao.validar(req,resp);
-        if(!resp.isCommitted()) {
+        if(req.getSession().getAttribute("associacao") == null) validarIdentidade(req, resp);
+        else {
             try {
-                Usuario u = (Usuario) req.getSession().getAttribute("usuario");
-                Boolean possuiPermissao = Usuario.checaPermissao(PermissaoUsuario.DIRETOR_TECNICO.id, u.getId()) || Usuario.checaPermissao(PermissaoUsuario.TECNICO_ASSOCIACAO.id, u.getId());
-                if(!possuiPermissao) { informarErroPermissao(req, resp); }
-                else {
-                    DiretorTecnico diretor = new DiretorTecnico(u.getId(), u.getNome(), u.getMatricula(), u.getSenha(), u.getPermissaoId());
-                    List<Competicao> competicoes = diretor.listarCompeticoes();
-                    req.setAttribute("competicoes", competicoes);
-                    getServletContext().getRequestDispatcher("/listar_competicoes.jsp").forward(req, resp);
-                }
+                List<Competicao> competicoes = DiretorTecnico.listarCompeticoes();
+                req.setAttribute("competicoes", competicoes);
+                getServletContext().getRequestDispatcher("/listar_competicoes.jsp").forward(req, resp);
             } catch (Exception e) {
                 e.printStackTrace();
             }
         }
     }
 
-    public void informarErroPermissao(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        resp.sendRedirect("sem_permissao.jsp");
+    @Override
+    public void validarIdentidade(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        req.setAttribute("referencia", "/listar_competicoes.jsp");
+        getServletContext().getRequestDispatcher("/identificar.jsp").forward(req, resp);
     }
-
 }

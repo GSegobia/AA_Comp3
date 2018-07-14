@@ -1,7 +1,6 @@
 package dominio;
 
 import dados.datamapper.UsuarioDM;
-import exceptions.DadosIdentificacaoIncorretos;
 import exceptions.ModeloNaoExiste;
 
 import java.sql.SQLException;
@@ -81,14 +80,5 @@ public class Usuario {
     public static boolean checaPermissao(int numeroPermissao, int idUsuario) throws SQLException, ClassNotFoundException, ModeloNaoExiste {
         UsuarioDM dm = new UsuarioDM();
         return numeroPermissao == dm.get(idUsuario).getPermissaoId();
-    }
-
-    private static String gerarSenha(){
-        return "123456";
-    }
-
-    public static Usuario identificar(String matricula, String senha) throws SQLException, ClassNotFoundException, DadosIdentificacaoIncorretos {
-        UsuarioDM dm = new UsuarioDM();
-        return dm.get(matricula, senha);
     }
 }

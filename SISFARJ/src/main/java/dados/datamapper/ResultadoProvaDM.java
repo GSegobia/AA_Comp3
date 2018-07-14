@@ -26,7 +26,7 @@ public class ResultadoProvaDM implements DataMapper<ResultadoProva> {
     public ResultadoProva get(int id) throws ClassNotFoundException, SQLException, ModeloNaoExiste {
         ResultadoProva rp = null;
 
-        String query = String.format("Select * from resultado_provas where prova_id=%d",id);
+        String query = String.format("SELECT * from resultado_provas where prova_id=%d",id);
 
         Database db = new Database();
         ResultSet rs = db.doSelect(query);
@@ -73,7 +73,7 @@ public class ResultadoProvaDM implements DataMapper<ResultadoProva> {
         ArrayList<ResultadoProva> rp = new ArrayList<>();
 
         Database db = new Database();
-        ResultSet rs = db.doSelect("Select * from resultado_provas WHERE prova_id="+id+" ORDER BY tempo");
+        ResultSet rs = db.doSelect("SELECT * from resultado_provas WHERE prova_id="+id+" ORDER BY tempo");
         db.closeConnection();
 
         while(rs.next()) rp.add(mapModel(rs));

@@ -1,6 +1,9 @@
 package servlet.diretortecnico;
 
-import dominio.*;
+import dominio.Competicao;
+import dominio.DiretorTecnico;
+import dominio.Prova;
+import servlet.Identificacao;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -14,52 +17,28 @@ import java.util.List;
  * Created by  João V. Araújo on 12/07/18.
  */
 @WebServlet("/listarProvas")
-public class ListarProvas extends HttpServlet {
+public class ListarProvas extends HttpServlet implements Identificacao {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        //MiddlewareSessao.validar(req,resp);
-        if(!resp.isCommitted()) {
+        if(req.getSession().getAttribute("associacao") == null) validarIdentidade(req, resp);
+        else {
             try {
-                Boolean possuiPermissao = false;
-                Usuario u = (Usuario) req.getSession().getAttribute("usuario");
-
-                if(u != null) {
-                    possuiPermissao = Usuario.checaPermissao(PermissaoUsuario.DIRETOR_TECNICO.id, u.getId()) || Usuario.checaPermissao(PermissaoUsuario.TECNICO_ASSOCIACAO.id, u.getId());
-                }else{
-                    //informarErroPermissao(req, resp);
-                    String query = req.getQueryString();
-                    int competicao_id = this.recuperarId(query);
-                    List<Prova> provas = Competicao.listarProvas(competicao_id);
-                    Competicao c = Competicao.get(competicao_id);
-                    req.setAttribute("provas", provas);
-                    req.setAttribute("competicao", c);
-                    getServletContext().getRequestDispatcher("/listar_provas.jsp").forward(req, resp);
-                }
-                if(!possuiPermissao) {
-
-                }else {
-                    String query = req.getQueryString();
-                    int competicao_id = this.recuperarId(query);
-                    DiretorTecnico diretor = new DiretorTecnico(u.getId(), u.getNome(), u.getMatricula(), u.getSenha(), u.getPermissaoId());
-                    List<Prova> provas = diretor.listarProvas(competicao_id);
-                    Competicao c = Competicao.get(competicao_id);
-                    req.setAttribute("provas", provas);
-                    req.setAttribute("competicao", c);
-                    getServletContext().getRequestDispatcher("/listar_provas.jsp").forward(req, resp);
-                }
+                int competicao_id = Integer.valueOf(req.getParameter("id"));
+                List<Prova> provas = DiretorTecnico.listarProvas(competicao_id);
+                Competicao c = Competicao.get(competicao_id);
+                req.setAttribute("provas", provas);
+                req.setAttribute("competicao", c);
+                getServletContext().getRequestDispatcher("/listar_provas.jsp").forward(req, resp);
             } catch (Exception e) {
                 e.printStackTrace();
             }
         }
     }
 
-    private int recuperarId(String query){
-        return Integer.valueOf(query.substring(query.lastIndexOf("=") + 1));
+    @Override
+    public void validarIdentidade(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        req.setAttribute("referencia", "/index.jsp");
+        getServletContext().getRequestDispatcher("/identificar.jsp").forward(req, resp);
     }
-
-    public void informarErroPermissao(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        resp.sendRedirect("sem_permissao.jsp");
-    }
-
 }

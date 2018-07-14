@@ -1,6 +1,7 @@
 package dominio;
 
 import dados.datamapper.AssociacaoDM;
+import exceptions.DadosIdentificacaoIncorretos;
 import exceptions.MatriculaAssociacaoNaoEncontrada;
 import exceptions.ModeloNaoExiste;
 
@@ -136,5 +137,10 @@ public class Associacao {
     public static List<Associacao> findAll() throws SQLException, ClassNotFoundException {
         AssociacaoDM dm = new AssociacaoDM();
         return dm.findAll();
+    }
+
+    public static Associacao identificar(String matricula, String senha) throws SQLException, ClassNotFoundException, DadosIdentificacaoIncorretos {
+        AssociacaoDM dm = new AssociacaoDM();
+        return dm.get(matricula, senha);
     }
 }

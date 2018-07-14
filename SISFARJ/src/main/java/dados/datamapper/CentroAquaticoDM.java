@@ -26,7 +26,7 @@ public class CentroAquaticoDM implements DataMapper<CentroAquatico> {
         ArrayList<CentroAquatico> centrosAquaticos = new ArrayList<>();
 
         Database db = new Database();
-        ResultSet rs = db.doSelect("Select * from centro_aquatico");
+        ResultSet rs = db.doSelect("SELECT * from centro_aquatico");
         db.closeConnection();
 
         while(rs.next()) centrosAquaticos.add(mapModel(rs));
@@ -36,7 +36,7 @@ public class CentroAquaticoDM implements DataMapper<CentroAquatico> {
     @Override
     public CentroAquatico get(int id) throws SQLException, ClassNotFoundException, ModeloNaoExiste {
         CentroAquatico c = null;
-        String query = String.format("Select * from centro_aquatico where id =%d", id);
+        String query = String.format("SELECT * from centro_aquatico where id =%d", id);
 
         Database db = new Database();
         ResultSet rs = db.doSelect(query);

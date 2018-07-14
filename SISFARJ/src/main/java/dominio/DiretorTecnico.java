@@ -19,47 +19,44 @@ public class DiretorTecnico extends Secretario {
         super(nome, matricula, senha, PermissaoUsuario.DIRETOR_TECNICO.id);
     }
 
-    public void incluirLocalCompeticao(CentroAquatico centro) throws SQLException, ClassNotFoundException{
+    public static void incluirLocalCompeticao(CentroAquatico centro) throws SQLException, ClassNotFoundException{
         CentroAquatico.create(centro);
     }
 
-    public List<CentroAquatico> listarLocaisCompeticao() throws SQLException, ClassNotFoundException{
+    public static List<CentroAquatico> listarLocaisCompeticao() throws SQLException, ClassNotFoundException{
         return CentroAquatico.findAll();
     }
 
-    public void alterarLocalCompeticao(CentroAquatico centro) throws SQLException, ClassNotFoundException{
+    public static void alterarLocalCompeticao(CentroAquatico centro) throws SQLException, ClassNotFoundException{
         CentroAquatico.update(centro);
     }
 
-    public void criarCompeticao(Competicao competicao) throws SQLException, ClassNotFoundException{
+    public static void criarCompeticao(Competicao competicao) throws SQLException, ClassNotFoundException{
         Competicao.create(competicao);
     }
 
-    public void inserirTempoAtleta(ResultadoProva rp) throws SQLException, ClassNotFoundException{
+    public static void inserirTempoAtleta(ResultadoProva rp) throws SQLException, ClassNotFoundException{
         ResultadoProva.create(rp);
     }
 
-    public void alterarCompeticao(Competicao competicao) throws SQLException, ClassNotFoundException{
+    public static void alterarCompeticao(Competicao competicao) throws SQLException, ClassNotFoundException{
         Competicao.update(competicao);
     }
 
-    public List<Competicao> listarCompeticoes() throws SQLException, ClassNotFoundException {
+    public static List<Competicao> listarCompeticoes() throws SQLException, ClassNotFoundException {
         return Competicao.findAll();
     }
 
-    public List<Prova> listarProvas(int id) throws SQLException, ModeloNaoExiste, ClassNotFoundException {
+    public static List<Prova> listarProvas(int id) throws SQLException, ModeloNaoExiste, ClassNotFoundException {
         return Competicao.listarProvas(id);
     }
 
-    public ArrayList<Atleta> listarAtletaInProva(int id) throws SQLException, ModeloNaoExiste, ClassNotFoundException {
-
+    public static ArrayList<Atleta> listarAtletaInProva(int id) throws SQLException, ModeloNaoExiste, ClassNotFoundException {
         ArrayList<Atleta> atletas = Prova.listarAtletas(id);
-
         return atletas;
     }
 
-
-    public Competicao selecionarCompeticao(int idCompeticao) throws SQLException, ModeloNaoExiste, ClassNotFoundException {
+    public static Competicao selecionarCompeticao(int idCompeticao) throws SQLException, ModeloNaoExiste, ClassNotFoundException {
         return Competicao.get(idCompeticao);
     }
 }

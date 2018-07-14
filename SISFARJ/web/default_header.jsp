@@ -54,8 +54,8 @@
 <nav class="navbar navbar-expand-lg bg-secondary fixed-top text-uppercase" id="mainNav">
     <div class="container">
         <a class="navbar-brand js-scroll-trigger" href="#page-top">
-            <% if (session.getAttribute("usuario") != null) { %>
-            Olá, ${sessionScope.usuario.getNome()}!
+            <% if (session.getAttribute("associacao") != null) { %>
+            Olá, ${sessionScope.associacao.getNome()}!
             <% } %>
         </a>
         <button class="navbar-toggler navbar-toggler-right text-uppercase bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -66,11 +66,7 @@
                 <li class="nav-item mx-0 mx-lg-1">
                     <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="<%=request.getContextPath()+"/"%>">Dashboard</a>
                 </li>
-                <% if (session.getAttribute("usuario") == null) { %>
-                <li class="nav-item mx-0 mx-lg-1" >
-                    <a class="nav-link py-3 px-0 px-lg-3 rounded" data-toggle="modal" href="#" data-target="#login-modal">Acessar</a >
-                </li >
-                <% } else { %>
+                <% if (session.getAttribute("associacao") != null) { %>
                 <li class="nav-item mx-0 mx-lg-1">
                     <form name="submitForm" method="post" action="sair">
                         <button class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" type="submit" href="#">Sair</button>
@@ -81,32 +77,3 @@
         </div>
     </div>
 </nav>
-
-<!-- Login Modal -->
-<div class="modal fade" tabindex="-1" role="dialog" id="login-modal">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Acessar</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <form class="form" action="identificar" method="post">
-                    <div class="form-group">
-                        <label for="matricula">Matrícula</label>
-                        <input type="text" class="form-control" id="matricula" name="matricula" placeholder="Digite a sua matrícula">
-                    </div>
-                    <div class="form-group">
-                        <label for="senha">Senha</label>
-                        <input type="password" class="form-control" id="senha" name="senha" placeholder="Digite a sua senha">
-                    </div>
-                    <div class="form-group">
-                        <button type="submit" class="btn btn-primary btn-block">Login</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>

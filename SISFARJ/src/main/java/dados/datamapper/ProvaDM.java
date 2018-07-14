@@ -25,7 +25,7 @@ public class ProvaDM implements DataMapper<Prova> {
     @Override
     public Prova get(int id) throws ClassNotFoundException, SQLException, ModeloNaoExiste {
         Prova p = null;
-        String query = String.format("Select * from Prova where id=%d",id);
+        String query = String.format("SELECT * from Prova where id=%d",id);
 
         Database db = new Database();
         ResultSet rs = db.doSelect(query);
@@ -67,7 +67,7 @@ public class ProvaDM implements DataMapper<Prova> {
         ArrayList<Prova> Provas = new ArrayList<>();
 
         Database db = new Database();
-        ResultSet rs = db.doSelect("Select * from Prova");
+        ResultSet rs = db.doSelect("SELECT * from Prova");
         db.closeConnection();
 
         while(rs.next()) Provas.add(mapModel(rs));

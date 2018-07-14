@@ -24,7 +24,7 @@ public class ProvaAtletaDM implements DataMapper<ProvaAtleta> {
     @Override
     public ProvaAtleta get(int id) throws ClassNotFoundException, SQLException, ModeloNaoExiste {
         ProvaAtleta a = null;
-        String query = String.format("Select * from prova_atleta where id=%d",id);
+        String query = String.format("SELECT * from prova_atleta where id=%d",id);
 
         Database db = new Database();
         ResultSet rs = db.doSelect(query);

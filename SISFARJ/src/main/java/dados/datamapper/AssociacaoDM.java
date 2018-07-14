@@ -3,6 +3,7 @@ package dados.datamapper;
 import dados.DataMapper;
 import dados.Database;
 import dominio.Associacao;
+import exceptions.DadosIdentificacaoIncorretos;
 import exceptions.MatriculaAssociacaoNaoEncontrada;
 import exceptions.ModeloNaoExiste;
 
@@ -53,6 +54,21 @@ public class AssociacaoDM implements DataMapper<Associacao> {
 
         if(rs.next()) a = mapModel(rs);
         if(a == null) throw new MatriculaAssociacaoNaoEncontrada(matricula);
+
+        return a;
+    }
+
+    public Associacao get(String matricula, String senha) throws ClassNotFoundException, SQLException, DadosIdentificacaoIncorretos {
+        Associacao a = null;
+
+        String query = String.format("SELECT * FROM associacao as a WHERE a.matricula='%s' AND a.senha='%s'", matricula, senha);
+
+        Database db = new Database();
+        ResultSet rs = db.doSelect(query);
+        db.closeConnection();
+
+        if(rs.next()) a = mapModel(rs);
+        if(a == null) throw new DadosIdentificacaoIncorretos();
 
         return a;
     }

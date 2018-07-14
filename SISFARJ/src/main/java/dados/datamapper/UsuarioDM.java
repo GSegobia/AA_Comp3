@@ -3,7 +3,6 @@ package dados.datamapper;
 import dados.DataMapper;
 import dados.Database;
 import dominio.Usuario;
-import exceptions.DadosIdentificacaoIncorretos;
 import exceptions.ModeloNaoExiste;
 
 import java.sql.ResultSet;
@@ -28,7 +27,7 @@ public class UsuarioDM implements DataMapper<Usuario> {
     @Override
     public Usuario get(int id) throws ClassNotFoundException, SQLException, ModeloNaoExiste {
         Usuario u = null;
-        String query = String.format("Select * from usuario where id=%d",id);
+        String query = String.format("SELECT * from usuario where id=%d",id);
 
         Database db = new Database();
         ResultSet rs = db.doSelect(query);
@@ -36,21 +35,6 @@ public class UsuarioDM implements DataMapper<Usuario> {
 
         if(rs.next()) u = mapModel(rs);
         if(u == null) throw new ModeloNaoExiste("Usuario",id);
-
-        return u;
-    }
-
-    public Usuario get(String matricula, String senha) throws ClassNotFoundException, SQLException, DadosIdentificacaoIncorretos {
-        Usuario u = null;
-
-        String query = String.format("SELECT * FROM usuario as u WHERE u.matricula='%s' AND u.senha='%s'", matricula, senha);
-
-        Database db = new Database();
-        ResultSet rs = db.doSelect(query);
-        db.closeConnection();
-
-        if(rs.next()) u = mapModel(rs);
-        if(u == null) throw new DadosIdentificacaoIncorretos();
 
         return u;
     }
@@ -92,7 +76,7 @@ public class UsuarioDM implements DataMapper<Usuario> {
         ArrayList<Usuario> usuarios = new ArrayList<>();
 
         Database db = new Database();
-        ResultSet rs = db.doSelect("Select * from usuario");
+        ResultSet rs = db.doSelect("SELECT * from usuario");
         db.closeConnection();
 
         while(rs.next()) usuarios.add(mapModel(rs));
