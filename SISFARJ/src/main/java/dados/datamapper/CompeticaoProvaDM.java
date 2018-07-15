@@ -64,10 +64,25 @@ public class CompeticaoProvaDM implements DataMapper<CompeticaoProva> {
         return null;
     }
 
+    public int findProvaCompeticao(int competicao_id, int prova_id) throws ClassNotFoundException, SQLException {
+        int listaProvas = -1;
+
+        String query = String.format("SELECT id from competicao_prova where id_prova=%d and id_atleta=%d",competicao_id,prova_id);
+
+        Database db = new Database();
+        ResultSet rs = db.doSelect(query);
+        db.closeConnection();
+
+
+        while (rs.next()) listaProvas = rs.getInt("id");
+
+        return listaProvas;
+    }
+
     public int[] findAllProvaInCompeticao(int competicao_id) throws ClassNotFoundException, SQLException {
         int[] listaProvas= {};
 
-        String query = String.format("SELECT id_atleta from competicao_prova where id_prova=%d",competicao_id);
+        String query = String.format("SELECT distinct id_atleta from competicao_prova where id_prova=%d",competicao_id);
 
         Database db = new Database();
         ResultSet rs = db.doSelect(query);

@@ -24,7 +24,7 @@ public class ListarPontuacaoCompeticao extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        int id = Integer.valueOf(req.getParameter("id"));
+        int id = Integer.valueOf(req.getParameter("idProva"));
         if(id == 0){
             List<Competicao> competicoes = null;
             try {
@@ -37,7 +37,9 @@ public class ListarPontuacaoCompeticao extends HttpServlet {
         }
         else {
             try {
-                List<ResultadoProva> rp = ResultadoProva.findAllByTempo(id);
+                int prova_id = Integer.valueOf(req.getParameter("idProva"));
+                int competicao_id = Integer.valueOf(req.getParameter("idCompeticao"));
+                ArrayList<ResultadoProva> rp = ResultadoProva.findAllByTempo(prova_id, competicao_id);
                 ArrayList<Atleta> at = new ArrayList<>();
                 for (ResultadoProva r: rp) {
                     Atleta atleta = Atleta.get(r.getAtleta_id());

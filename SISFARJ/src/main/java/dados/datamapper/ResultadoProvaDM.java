@@ -69,7 +69,7 @@ public class ResultadoProvaDM implements DataMapper<ResultadoProva> {
         return null;
     }
 
-    public List<ResultadoProva> findAllByTempo(int id) throws SQLException, ClassNotFoundException, ModeloNaoExiste {
+    public ArrayList<ResultadoProva> findAllByTempo(int id) throws SQLException, ClassNotFoundException, ModeloNaoExiste {
         ArrayList<ResultadoProva> rp = new ArrayList<>();
 
         Database db = new Database();

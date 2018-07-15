@@ -1,5 +1,6 @@
 package dominio;
 
+import exceptions.ErroPreenchimento;
 import exceptions.ModeloNaoExiste;
 
 import java.sql.SQLException;
@@ -19,28 +20,28 @@ public class DiretorTecnico extends Secretario {
         super(nome, matricula, senha, PermissaoUsuario.DIRETOR_TECNICO.id);
     }
 
-    public static boolean incluirLocalCompeticao(CentroAquatico centro) throws SQLException, ClassNotFoundException{
-        return CentroAquatico.create(centro);
+    public static boolean incluirLocalCompeticao(CentroAquatico centro) throws SQLException, ClassNotFoundException, ErroPreenchimento {
+        return centro.create(centro);
     }
 
     public static List<CentroAquatico> listarLocaisCompeticao() throws SQLException, ClassNotFoundException{
         return CentroAquatico.findAll();
     }
 
-    public static boolean alterarLocalCompeticao(CentroAquatico centro) throws SQLException, ClassNotFoundException{
-        return CentroAquatico.update(centro);
+    public static boolean alterarLocalCompeticao(CentroAquatico centro) throws SQLException, ClassNotFoundException, ErroPreenchimento {
+        return centro.update(centro);
     }
 
-    public static void criarCompeticao(Competicao competicao) throws SQLException, ClassNotFoundException{
-        Competicao.create(competicao);
+    public static void criarCompeticao(Competicao competicao) throws SQLException, ClassNotFoundException, ErroPreenchimento {
+        competicao.create(competicao);
     }
 
-    public static void inserirTempoAtleta(ResultadoProva rp) throws SQLException, ClassNotFoundException{
-        ResultadoProva.create(rp);
+    public static void inserirTempoAtleta(ResultadoProva rp) throws SQLException, ClassNotFoundException, ErroPreenchimento {
+        rp.create(rp);
     }
 
-    public static void alterarCompeticao(Competicao competicao) throws SQLException, ClassNotFoundException{
-        Competicao.update(competicao);
+    public static void alterarCompeticao(Competicao competicao) throws SQLException, ClassNotFoundException, ErroPreenchimento {
+        competicao.update(competicao);
     }
 
     public static List<Competicao> listarCompeticoes() throws SQLException, ClassNotFoundException {
@@ -51,8 +52,8 @@ public class DiretorTecnico extends Secretario {
         return Competicao.listarProvas(id);
     }
 
-    public static ArrayList<Atleta> listarAtletaInProva(int id) throws SQLException, ModeloNaoExiste, ClassNotFoundException {
-        ArrayList<Atleta> atletas = Prova.listarAtletas(id);
+    public static ArrayList<Atleta> listarAtletaInProva(int id, int id2) throws SQLException, ModeloNaoExiste, ClassNotFoundException {
+        ArrayList<Atleta> atletas = Prova.listarAtletas(id, id2);
         return atletas;
     }
 

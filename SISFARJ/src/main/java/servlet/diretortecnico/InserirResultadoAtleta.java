@@ -1,9 +1,7 @@
 package servlet.diretortecnico;
 
-import dominio.Atleta;
-import dominio.DiretorTecnico;
-import dominio.Prova;
-import dominio.ResultadoProva;
+import clojure.lang.Compiler;
+import dominio.*;
 import servlet.Identificacao;
 
 import javax.servlet.ServletException;
@@ -25,10 +23,12 @@ public class InserirResultadoAtleta extends HttpServlet implements Identificacao
         if(req.getSession().getAttribute("associacao") == null) validarIdentidade(req, resp);
         else {
             try {
-                int prova_id = Integer.valueOf(req.getParameter("id"));
-                ArrayList<Atleta> atletas = Prova.listarAtletas(prova_id);
+                int prova_id = Integer.valueOf(req.getParameter("idProva"));
+                int competicao_id = Integer.valueOf(req.getParameter("idCompeticao"));
+                int provacompeticao = CompeticaoProva.findProvaCompeticao(competicao_id, prova_id);
+                ArrayList<Atleta> atletas = Prova.listarAtletas(competicao_id, prova_id);
                 req.setAttribute("atletas", atletas);
-                req.setAttribute("id_prova", prova_id);
+                req.setAttribute("id_prova", provacompeticao);
                 getServletContext().getRequestDispatcher("/inserir_resultado_atleta.jsp").forward(req, resp);
             } catch (Exception e) {
                 e.printStackTrace();
@@ -66,12 +66,12 @@ public class InserirResultadoAtleta extends HttpServlet implements Identificacao
 
     public void informarSucessoInserirTempo(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.setAttribute("sucessoAlterar", true);
-        getServletContext().getRequestDispatcher("/index.jsp").forward(req, resp);
+        getServletContext().getRequestDispatcher("/inserir_resultado_atleta.jsp").forward(req, resp);
     }
 
     public void informarErroInserirTempo(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.setAttribute("erroAlterar", true);
-        getServletContext().getRequestDispatcher("/index.jsp").forward(req, resp);
+        getServletContext().getRequestDispatcher("/inserir_resultado_atleta.jsp").forward(req, resp);
     }
 
     public void informarErroPreenchimento(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

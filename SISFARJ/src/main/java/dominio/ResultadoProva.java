@@ -1,10 +1,11 @@
 package dominio;
 
 import dados.datamapper.ResultadoProvaDM;
+import exceptions.ErroPreenchimento;
 import exceptions.ModeloNaoExiste;
 
 import java.sql.SQLException;
-import java.util.List;
+import java.util.ArrayList;
 
 public class ResultadoProva {
 
@@ -43,14 +44,16 @@ public class ResultadoProva {
 
     public void setPontuacao(String pontuacao){ this.pontuacao = pontuacao;}
 
-    public static boolean create(ResultadoProva rp) throws SQLException, ClassNotFoundException {
+    public boolean create(ResultadoProva rp) throws SQLException, ClassNotFoundException, ErroPreenchimento {
+        if(rp.getTempo().equals("")) throw new ErroPreenchimento(ResultadoProva.class.getName());
         ResultadoProvaDM dm = new ResultadoProvaDM();
         return dm.create(rp);
     }
 
-    public static List<ResultadoProva> findAllByTempo(int id) throws SQLException, ModeloNaoExiste, ClassNotFoundException {
+    public static ArrayList<ResultadoProva> findAllByTempo(int id_competicao, int id_prova) throws SQLException, ModeloNaoExiste, ClassNotFoundException {
+        int provaCompeticao = CompeticaoProva.findProvaCompeticao(id_competicao, id_prova);
         ResultadoProvaDM dm = new ResultadoProvaDM();
-        return dm.findAllByTempo(id);
+        return dm.findAllByTempo(provaCompeticao);
     }
 
 }

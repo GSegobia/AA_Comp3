@@ -32,13 +32,13 @@ public class TestProvaDM {
 
     @Test
     public void create() throws SQLException, ClassNotFoundException {
-        Prova p = new Prova(1, "mock", 1 , 3, 1);
+        Prova p = new Prova(1, "mock", 1 , 3);
         assert(dm.create(p));
     }
 
     @Test
     public void createInvalido() throws SQLException, ClassNotFoundException {
-        Prova p = new Prova(1, "mock", 1 , 1, 1);
+        Prova p = new Prova(1, "mock", 1 , 1);
         assert(!dm.create(p));
     }
 

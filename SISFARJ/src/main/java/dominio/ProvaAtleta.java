@@ -43,7 +43,7 @@ public class ProvaAtleta {
         return dm.get(id);
     }
 
-    public static boolean create(ProvaAtleta prova) throws SQLException, ClassNotFoundException {
+    public boolean create(ProvaAtleta prova) throws SQLException, ClassNotFoundException {
         ProvaAtletaDM dm = new ProvaAtletaDM();
         return dm.create(prova);
     }

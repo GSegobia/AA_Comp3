@@ -1,6 +1,7 @@
 package dominio;
 
 import dados.datamapper.CentroAquaticoDM;
+import exceptions.ErroPreenchimento;
 import exceptions.ModeloNaoExiste;
 
 import java.sql.SQLException;
@@ -63,12 +64,14 @@ public class CentroAquatico {
         return dm.get(id);
     }
 
-    public static boolean create(CentroAquatico c) throws SQLException,ClassNotFoundException {
+    public boolean create(CentroAquatico c) throws SQLException, ClassNotFoundException, ErroPreenchimento {
+        if(c.getNome().equals("") || c.getEndereco().equals("")) throw new ErroPreenchimento(CentroAquatico.class.getName());
         CentroAquaticoDM dm = new CentroAquaticoDM();
         return dm.create(c);
     }
 
-    public static boolean update(CentroAquatico c) throws SQLException, ClassNotFoundException {
+    public boolean update(CentroAquatico c) throws SQLException, ClassNotFoundException, ErroPreenchimento {
+        if(c.getNome().equals("") || c.getEndereco().equals("")) throw new ErroPreenchimento(CentroAquatico.class.getName());
         CentroAquaticoDM dm = new CentroAquaticoDM();
         return dm.update(c);
     }

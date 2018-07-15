@@ -18,8 +18,7 @@ public class ProvaDM implements DataMapper<Prova> {
                 rs.getInt("id"),
                 rs.getString("nome"),
                 rs.getInt("classe_id"),
-                rs.getInt("categoria_id"),
-                rs.getInt("competicao_id")
+                rs.getInt("categoria_id")
         );
     }
 
@@ -43,12 +42,11 @@ public class ProvaDM implements DataMapper<Prova> {
         int linhasAtualizadas;
 
         String query = String.format(
-                "Insert into Prova (nome,classe_id,categoria_id,competicao_id) " +
-                        "values('%s',%d,%d,%d);",
+                "Insert into Prova (nome,classe_id,categoria_id) " +
+                        "values('%s',%d,%d);",
                 modelo.getNome(),
                 modelo.getClasse_id(),
-                modelo.getCategoria_id(),
-                modelo.getCompeticao_id()
+                modelo.getCategoria_id()
             );
 
         Database db = new Database();

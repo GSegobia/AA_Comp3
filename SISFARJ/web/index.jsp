@@ -17,7 +17,7 @@
         </div>
         <div class="card p-3 col-md-4 text-center">
             <ul class="list-group list-group-flush">
-                <li class="list-group-item"><a href="listarPontuacaoCompeticao?id=0">Listar pontuação competição</a></li>
+                <li class="list-group-item"><a href="listarPontuacaoCompeticao?idProva=0">Listar pontuação competição</a></li>
             </ul>
         </div>
         <div class="card p-3 col-md-4 text-center">

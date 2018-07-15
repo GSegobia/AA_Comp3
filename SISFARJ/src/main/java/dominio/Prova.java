@@ -15,23 +15,20 @@ public class Prova {
     private String nome;
     private int classe_id;
     private int categoria_id;
-    private int competicao_id;
 
-    public Prova(String nome, int classe_id, int categoria_id, int competicao_id) {
+    public Prova(String nome, int classe_id, int categoria_id) {
         this.nome = nome;
         this.classe_id = classe_id;
         this.categoria_id = categoria_id;
-        this.competicao_id = competicao_id;
 
     }
 
-    public Prova(int id, String nome, int classe_id, int categoria_id, int competicao_id) {
+    public Prova(int id, String nome, int classe_id, int categoria_id) {
 
         this.id = id;
         this.nome = nome;
         this.classe_id = classe_id;
         this.categoria_id = categoria_id;
-        this.competicao_id = competicao_id;
 
     }
 
@@ -63,15 +60,7 @@ public class Prova {
         this.categoria_id = categoria_id;
     }
 
-    public int getCompeticao_id() {
-        return competicao_id;
-    }
-
-    public void setCompeticao_id(int competicao_id) {
-        this.competicao_id = competicao_id;
-    }
-
-    public static boolean create(Prova prova) throws SQLException, ClassNotFoundException {
+    public boolean create(Prova prova) throws SQLException, ClassNotFoundException {
         ProvaDM dm = new ProvaDM();
         return dm.create(prova);
     }
@@ -86,17 +75,19 @@ public class Prova {
         return dm.findAll();
     }
 
-    public static ArrayList<Atleta> listarAtletas(int id) throws SQLException, ClassNotFoundException, ModeloNaoExiste {
-        int atleta[] =  ProvaAtleta.findAllAtletaInProva(id);
+    public static ArrayList<Atleta> listarAtletas(int id_competicao, int id_prova) throws SQLException, ClassNotFoundException, ModeloNaoExiste {
+        int provaCompeticao = CompeticaoProva.findProvaCompeticao(id_competicao, id_prova);
+
         ArrayList<Atleta> atletas = new ArrayList<>();
+        if (provaCompeticao != -1){
+            int atleta[] =  ProvaAtleta.findAllAtletaInProva(provaCompeticao);
 
-        for(int i = 0; i < atleta.length; i++){
-            Atleta a = Atleta.get(atleta[i]);
-
-            if(a == null) throw new ModeloNaoExiste("prova",atleta[i]);
-            else atletas.add(a);
+            for(int i = 0; i < atleta.length; i++){
+                Atleta a = Atleta.get(atleta[i]);
+                if(a == null) throw new ModeloNaoExiste("prova",atleta[i]);
+                else atletas.add(a);
+            }
         }
-
         return atletas;
     }
 

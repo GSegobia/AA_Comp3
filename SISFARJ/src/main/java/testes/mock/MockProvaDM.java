@@ -14,7 +14,7 @@ import java.util.Random;
  */
 public class MockProvaDM extends ProvaDM {
 
-    Prova p = new Prova(1, "mock", 1 , 1, 1);
+    Prova p = new Prova(1, "mock", 1 , 1);
 
     @Override
     public Prova get(int id) throws ClassNotFoundException, SQLException, ModeloNaoExiste {

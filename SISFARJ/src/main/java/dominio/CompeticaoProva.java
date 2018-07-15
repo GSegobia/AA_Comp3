@@ -53,6 +53,11 @@ public class CompeticaoProva {
         return dm.create(prova);
     }
 
+    public static int findProvaCompeticao(int competicao_id, int prova_id) throws SQLException, ClassNotFoundException {
+        CompeticaoProvaDM dm = new CompeticaoProvaDM();
+        return dm.findProvaCompeticao(competicao_id, prova_id);
+    }
+
     public static int[] findAllProvaInCompeticao(int competicao_id) throws SQLException, ClassNotFoundException {
         CompeticaoProvaDM dm = new CompeticaoProvaDM();
         return dm.findAllProvaInCompeticao(competicao_id);

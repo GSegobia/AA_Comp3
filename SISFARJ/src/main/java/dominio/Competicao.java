@@ -26,8 +26,7 @@ public class Competicao {
         this.tamanhoPiscina = tamanhoPiscina;
     }
 
-    public Competicao(String nome, Integer centroAquaticoId, Date dataCompeticao, Integer tamanhoPiscina) throws ErroPreenchimento {
-        if(nome.equals("") || centroAquaticoId == null || dataCompeticao == null || tamanhoPiscina == null) throw new ErroPreenchimento(Competicao.class.getName());
+    public Competicao(String nome, Integer centroAquaticoId, Date dataCompeticao, Integer tamanhoPiscina) {
         this.nome = nome;
         this.centroAquaticoId = centroAquaticoId;
         this.dataCompeticao = dataCompeticao;
@@ -96,12 +95,14 @@ public class Competicao {
         return provas;
     }
 
-    public static boolean create(Competicao c) throws SQLException,ClassNotFoundException {
+    public boolean create(Competicao c) throws SQLException, ClassNotFoundException, ErroPreenchimento {
+        if(c.getNome().equals("") || (Integer) c.getCentroAquaticoId() == null || c.getDataCompeticao() == null || (Integer)c.getTamanhoPiscina()== null) throw new ErroPreenchimento(Competicao.class.getName());
         CompeticaoDM dm = new CompeticaoDM();
         return dm.create(c);
     }
 
-    public static boolean update(Competicao c) throws SQLException, ClassNotFoundException {
+    public boolean update(Competicao c) throws SQLException, ClassNotFoundException, ErroPreenchimento {
+        if(c.getNome().equals("") || (Integer) c.getCentroAquaticoId() == null || c.getDataCompeticao() == null || (Integer)c.getTamanhoPiscina()== null) throw new ErroPreenchimento(Competicao.class.getName());
         CompeticaoDM dm = new CompeticaoDM();
         return dm.update(c);
     }
