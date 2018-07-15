@@ -2,6 +2,7 @@ package servlet.secretario;
 
 import dominio.Associacao;
 import dominio.Atleta;
+import exceptions.ErroPreenchimento;
 import exceptions.MatriculaAssociacaoNaoEncontrada;
 import servlet.Identificacao;
 
@@ -49,32 +50,30 @@ public class TransferirAtleta extends HttpServlet implements Identificacao {
             String dataEntrada = req.getParameter("dataEntrada").trim();
             String numComprovantePgto = req.getParameter("numComprovantePgto").trim();
 
-            // TODO: Exception lançada pela camada de domínio
-            if (novaMatricula.equals("") || numeroOficio.equals("") || dataOficio.equals("") ||
-                    dataEntrada.equals("") || numComprovantePgto.equals("")) {
-                informarErroPreenchimento(req, resp);
-            } else {
 
-                SimpleDateFormat sdf = new SimpleDateFormat("YYYY-MM-dd");
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 
-                Associacao associacao = Associacao.get(novaMatricula);
+            Associacao associacao = Associacao.get(novaMatricula);
 
-                int idAssociacaoAlterar = associacao.getId();
-                atleta.setAssociacao_id(idAssociacaoAlterar);
-                atleta.setNumero_oficio(numeroOficio);
-                atleta.setData_oficio(sdf.parse(dataOficio));
-                atleta.setData_entrada_associacao(sdf.parse(dataEntrada));
-                atleta.setNum_comprovante_pgto(numComprovantePgto);
+            int idAssociacaoAlterar = associacao.getId();
+            atleta.setAssociacao_id(idAssociacaoAlterar);
+            atleta.setNumero_oficio(numeroOficio);
+            atleta.setData_oficio(sdf.parse(dataOficio));
+            atleta.setData_entrada_associacao(sdf.parse(dataEntrada));
+            atleta.setNum_comprovante_pgto(numComprovantePgto);
 
-//                if(atleta.update(atleta)) informarSucessoTransferencia(req,resp);
-//                else informarErroTransferencia(req, resp);
-
-            }
+            atleta.update();
+            informarSucessoTransferencia(req,resp);
+            
         } catch (MatriculaAssociacaoNaoEncontrada e) {
             e.printStackTrace();
             informarErroMatriculaAssociacao(req, resp);
+        } catch(ErroPreenchimento e){
+            e.printStackTrace();
+            informarErroPreenchimento(req, resp);
         } catch (Exception e) {
             e.printStackTrace();
+            informarErroTransferencia(req, resp);
         }
     }
 

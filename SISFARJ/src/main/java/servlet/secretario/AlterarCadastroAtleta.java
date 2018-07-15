@@ -2,6 +2,7 @@ package servlet.secretario;
 
 import dominio.Associacao;
 import dominio.Atleta;
+import exceptions.ErroPreenchimento;
 import exceptions.MatriculaAssociacaoNaoEncontrada;
 import servlet.Identificacao;
 
@@ -51,34 +52,31 @@ public class AlterarCadastroAtleta extends HttpServlet implements Identificacao 
 //  Fellipe -                  String categoria = req.getParameter("categoria").trim();
 
             // TODO: Exception lançada pela camada de domínio
-            if(nome.equals("") || dataNascimento.equals("") || numeroOficio.equals("") ||
-                    dataOficio.equals("") || dataEntrada.equals("") || matriculaAssociacao.equals("") ||
-                    numComprovantePgto.equals("")) {
-                informarErroPreenchimento(req, resp);
-            }
-            else {
-                SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 
-                Associacao associacao = Associacao.get(matriculaAssociacao);
-                Atleta atleta = new Atleta(
-                        id,
-                        associacao.getId(),
-                        1,                     // Fellipe - TODO: Inserir combobox de categoria na .jsp e tratar valor
-                        associacao.getMatricula(),
-                        nome,
-                        sdf.parse(dataNascimento),
-                        sdf.parse(dataOficio),
-                        numeroOficio,
-                        sdf.parse(dataEntrada),
-                        numComprovantePgto
-                );
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 
-//                if(atleta.update(atleta)) informarSucessoAlteracao(req, resp);
-//                else informarErroAlteracao(req, resp);
-            }
-        }catch (MatriculaAssociacaoNaoEncontrada e) {
+            Associacao associacao = Associacao.get(matriculaAssociacao);
+            Atleta atleta = new Atleta(
+                    id,
+                    associacao.getId(),
+                    1,                     // Fellipe - TODO: Inserir combobox de categoria na .jsp e tratar valor
+                    associacao.getMatricula(),
+                    nome,
+                    sdf.parse(dataNascimento),
+                    sdf.parse(dataOficio),
+                    numeroOficio,
+                    sdf.parse(dataEntrada),
+                    numComprovantePgto
+            );
+
+            atleta.update();
+            informarSucessoAlteracao(req, resp);
+        } catch (MatriculaAssociacaoNaoEncontrada e) {
             e.printStackTrace();
             informarErroMatriculaAssociacao(req, resp);
+        } catch (ErroPreenchimento e){
+            e.printStackTrace();
+            informarErroPreenchimento(req, resp);
         } catch (Exception e) {
             e.printStackTrace();
             informarErroAlteracao(req, resp);
