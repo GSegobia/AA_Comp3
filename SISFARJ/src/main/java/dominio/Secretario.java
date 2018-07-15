@@ -39,25 +39,25 @@ public class Secretario extends Usuario {
         return Associacao.findAll();
     }
 
-    public static boolean cadastrarAtleta(Atleta atleta) throws ClassNotFoundException, SQLException {
-        return Atleta.create(atleta);
-    }
+//    public static boolean cadastrarAtleta(Atleta atleta) throws ClassNotFoundException, SQLException {
+//        return Atleta.create(atleta);
+//    }
 
-    public static boolean alterarAtleta(Atleta atleta) throws ClassNotFoundException, SQLException {
-        return Atleta.update(atleta);
-    }
+//    public static boolean alterarAtleta(Atleta atleta) throws ClassNotFoundException, SQLException {
+//        return Atleta.update(atleta);
+//    }
 
-    public static List<Atleta> listarAtletas() throws ClassNotFoundException, SQLException{
-        return Atleta.findAll();
-    }
+//    public static List<Atleta> listarAtletas() throws ClassNotFoundException, SQLException{
+//        return Atleta.findAll();
+////    }
+//
+//    public static Atleta selecionarAtleta(int idAtleta) throws ClassNotFoundException, SQLException, ModeloNaoExiste {
+//        return Atleta.get(idAtleta);
+//    }
 
-    public static Atleta selecionarAtleta(int idAtleta) throws ClassNotFoundException, SQLException, ModeloNaoExiste {
-        return Atleta.get(idAtleta);
-    }
-
-    public static boolean transferirAtleta(int idAssociacao, Atleta atleta) throws ClassNotFoundException, SQLException{
-        atleta.setAssociacao_id(idAssociacao);
-        return Atleta.update(atleta);
-    }
+//    public static boolean transferirAtleta(int idAssociacao, Atleta atleta) throws ClassNotFoundException, SQLException{
+//        atleta.setAssociacao_id(idAssociacao);
+//        return Atleta.update();
+//    }
 
 }

@@ -67,8 +67,8 @@ public class TransferirAtleta extends HttpServlet implements Identificacao {
                 atleta.setData_entrada_associacao(sdf.parse(dataEntrada));
                 atleta.setNum_comprovante_pgto(numComprovantePgto);
 
-                if(atleta.update(atleta)) informarSucessoTransferencia(req,resp);
-                else informarErroTransferencia(req, resp);
+//                if(atleta.update(atleta)) informarSucessoTransferencia(req,resp);
+//                else informarErroTransferencia(req, resp);
 
             }
         } catch (MatriculaAssociacaoNaoEncontrada e) {

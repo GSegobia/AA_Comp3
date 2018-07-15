@@ -3,6 +3,7 @@ package servlet.secretario;
 import dominio.Associacao;
 import dominio.Atleta;
 import dominio.Secretario;
+import exceptions.ErroPreenchimento;
 import exceptions.MatriculaAssociacaoNaoEncontrada;
 import servlet.Identificacao;
 
@@ -13,6 +14,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
+import java.util.Date;
 
 /**
  * Created by Fellipe Bravo on 10/07/18.
@@ -39,32 +41,30 @@ public class CadastrarAtleta extends HttpServlet implements Identificacao {
             String numComprovantePgto = req.getParameter("numComprovantePgto").trim();
 //                    String categoria = req.getParameter("categoria").trim();
 
-            // TODO: Exception lançada pela camada de domínio
-            if (nome.equals("") || dataNascimento.equals("") || numeroOficio.equals("") ||
-                    dataOficio.equals("") || dataEntrada.equals("") || matriculaAssociacao.equals("") ||
-                    numComprovantePgto.equals("")) {
-                informarErroPreenchimento(req, resp);
-            } else {
-                SimpleDateFormat sdf = new SimpleDateFormat("YYYY-MM-dd");
-                Associacao associacao = Associacao.get(matriculaAssociacao);
-                Atleta atleta = new Atleta(
-                        associacao.getId(),
-                        1,                     // TODO: Inserir combobox de categoria na .jsp e tratar valor
-                        associacao.getMatricula(),
-                        nome,
-                        sdf.parse(dataNascimento),
-                        sdf.parse(dataOficio),
-                        numeroOficio,
-                        sdf.parse(dataEntrada),
-                        numComprovantePgto
-                );
-                atleta.create(atleta);
-                informarSucessoCadastro(req, resp);
-            }
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+
+            Associacao associacao = Associacao.get(matriculaAssociacao);
+            Atleta atleta = new Atleta(
+                    associacao.getId(),
+                    1,                     // TODO: Inserir combobox de categoria na .jsp e tratar valor
+                    associacao.getMatricula(),
+                    nome,
+                    sdf.parse(dataNascimento),
+                    sdf.parse(dataOficio),
+                    numeroOficio,
+                    sdf.parse(dataEntrada),
+                    numComprovantePgto
+            );
+            atleta.create();
+            informarSucessoCadastro(req, resp);
+
         } catch (MatriculaAssociacaoNaoEncontrada e) {
             e.printStackTrace();
             informarErroMatriculaAssociacao(req, resp);
-        } catch (Exception e) {
+        } catch (ErroPreenchimento e){
+            e.printStackTrace();
+            informarErroPreenchimento(req, resp);
+        }catch (Exception e) {
             e.printStackTrace();
             informarErroCadastro(req, resp);
         }

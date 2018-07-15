@@ -58,7 +58,7 @@ public class AlterarCadastroAtleta extends HttpServlet implements Identificacao 
                 informarErroPreenchimento(req, resp);
             }
             else {
-                SimpleDateFormat sdf = new SimpleDateFormat("YYYY-MM-dd");
+                SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 
                 Associacao associacao = Associacao.get(matriculaAssociacao);
                 Atleta atleta = new Atleta(
@@ -74,8 +74,8 @@ public class AlterarCadastroAtleta extends HttpServlet implements Identificacao 
                         numComprovantePgto
                 );
 
-                if(atleta.update(atleta)) informarSucessoAlteracao(req, resp);
-                else informarErroAlteracao(req, resp);
+//                if(atleta.update(atleta)) informarSucessoAlteracao(req, resp);
+//                else informarErroAlteracao(req, resp);
             }
         }catch (MatriculaAssociacaoNaoEncontrada e) {
             e.printStackTrace();

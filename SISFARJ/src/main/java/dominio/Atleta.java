@@ -1,6 +1,7 @@
 package dominio;
 
 import dados.datamapper.AtletaDM;
+import exceptions.ErroPreenchimento;
 import exceptions.ModeloNaoExiste;
 
 import java.sql.SQLException;
@@ -17,21 +18,22 @@ public class Atleta {
 
     public Atleta(int id, int associacao_id, int categoria_id, String matricula, String nome, Date data_nascimento,
                   Date data_oficio, String numero_oficio, Date data_entrada_associacao, String num_comprovante_pgto) {
-        this.id = id;
-        this.associacao_id = associacao_id;
-        this.categoria_id = categoria_id;
-        this.matricula = matricula;
-        this.nome = nome;
-        this.data_nascimento = data_nascimento;
-        this.data_oficio = data_oficio;
-        this.numero_oficio = numero_oficio;
-        this.data_entrada_associacao = data_entrada_associacao;
-        this.num_comprovante_pgto = num_comprovante_pgto;
 
+            this.id = id;
+            this.associacao_id = associacao_id;
+            this.categoria_id = categoria_id;
+            this.matricula = matricula;
+            this.nome = nome;
+            this.data_nascimento = data_nascimento;
+            this.data_oficio = data_oficio;
+            this.numero_oficio = numero_oficio;
+            this.data_entrada_associacao = data_entrada_associacao;
+            this.num_comprovante_pgto = num_comprovante_pgto;
     }
 
     public Atleta(int associacao_id, int categoria_id, String matricula, String nome, Date data_nascimento,
                   Date data_oficio, String numero_oficio, Date data_entrada_associacao, String num_comprovante_pgto) {
+
         this.associacao_id = associacao_id;
         this.categoria_id = categoria_id;
         this.matricula = matricula;
@@ -120,26 +122,47 @@ public class Atleta {
         this.data_entrada_associacao = data_entrada_associacao;
     }
 
-    public static Atleta get(int id) throws ClassNotFoundException,SQLException, ModeloNaoExiste {
+    public static Atleta get(int id) throws ClassNotFoundException, SQLException, ModeloNaoExiste {
         AtletaDM dm = new AtletaDM();
         return dm.get(id);
     }
 
-    public static String gerarMatricula() {
+    public String gerarMatricula() {
         String timeStamp = new SimpleDateFormat("yyyyMMddHHmmss").format(Calendar.getInstance().getTime());
         return "002018" + timeStamp;
     }
 
-    public static boolean create(Atleta atleta) throws ClassNotFoundException,SQLException {
-        AtletaDM dm = new AtletaDM();
-        return dm.create(atleta);
-    }
-    public static boolean update(Atleta atleta) throws ClassNotFoundException,SQLException {
-        AtletaDM dm = new AtletaDM();
-        return dm.update(atleta);
+    public boolean create() throws ClassNotFoundException, SQLException, ErroPreenchimento {
+
+        if (this.associacao_id == 0 || this.categoria_id == 0 || this.matricula.equals("") ||
+                this.nome.equals("") || this.data_nascimento == null || this.data_oficio == null ||
+                this.numero_oficio.equals("") || this.data_entrada_associacao.equals("") ||
+                this.num_comprovante_pgto.equals("")) {
+
+            throw new ErroPreenchimento(Atleta.class.getName());
+        } else{
+
+            AtletaDM dm = new AtletaDM();
+            return dm.create(this);
+        }
     }
 
-    public static List<Atleta> findAll() throws ClassNotFoundException,SQLException {
+    public boolean update() throws ClassNotFoundException, SQLException, ErroPreenchimento {
+
+        if (this.id == 0 || this.associacao_id == 0 || this.categoria_id == 0 || this.matricula.equals("") ||
+                this.nome.equals("") || this.data_nascimento == null || this.data_oficio == null ||
+                this.numero_oficio.equals("") || this.data_entrada_associacao.equals("") ||
+                this.num_comprovante_pgto.equals("")) {
+
+            throw new ErroPreenchimento(Atleta.class.getName());
+        } else {
+
+            AtletaDM dm = new AtletaDM();
+            return dm.update(this);
+        }
+    }
+
+    public static List<Atleta> findAll() throws ClassNotFoundException, SQLException {
         AtletaDM dm = new AtletaDM();
         return dm.findAll();
     }
