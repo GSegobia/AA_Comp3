@@ -5,19 +5,19 @@ import dominio.Associacao;
 import exceptions.ErroPreenchimento;
 import exceptions.MatriculaAssociacaoNaoEncontrada;
 import exceptions.ModeloNaoExiste;
-import org.easymock.EasyMockSupport;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import testes.mock.MockAssociacaoDM;
 
 import java.sql.SQLException;
 import java.text.ParseException;
+import java.util.Calendar;
 import java.util.List;
 
 /**
  * Created by Fellipe Bravo on 12/07/18.
  */
-public class TestAssociacaoDM extends EasyMockSupport {
+public class TestAssociacaoDM {
 
     AssociacaoDM dm = new MockAssociacaoDM();
 
@@ -47,17 +47,17 @@ public class TestAssociacaoDM extends EasyMockSupport {
         });
     }
 
-//    @Test
-//    public void create() throws SQLException, ClassNotFoundException, ErroPreenchimento, ParseException {
-//        Associacao a = new Associacao("caso_teste", "2018-07-01", "caso_teste", "caso_teste", "caso_teste", "caso_teste", "caso_teste", "caso_teste");
-//        assert(dm.create(a));
-//    }
-//
-//    @Test
-//    public void createInvalido() throws SQLException, ClassNotFoundException, ErroPreenchimento, ParseException {
-//        Associacao a = new Associacao("caso_teste", "2018-07-01", "caso_teste", "caso_teste", "caso_teste", "caso_teste", "caso_teste", "caso_teste");
-//        assert(dm.create(a));
-//    }
+    @Test
+    public void create() throws SQLException, ClassNotFoundException, ErroPreenchimento, ParseException {
+        Associacao a = new Associacao("caso_teste", Calendar.getInstance().getTime(), "caso_teste", "caso_teste", "caso_teste", "caso_teste", "caso_teste", "caso_teste", "caso_teste");
+        assert(dm.create(a));
+    }
+
+    @Test
+    public void createInvalido() throws SQLException, ClassNotFoundException, ErroPreenchimento, ParseException {
+        Associacao a = new Associacao("caso_teste", Calendar.getInstance().getTime(), "caso_teste", "testando", "caso_teste", "caso_teste", "caso_teste", "caso_teste", "caso_teste");
+        assert(!dm.create(a));
+    }
 
     @Test
     public void update() throws SQLException, ClassNotFoundException, MatriculaAssociacaoNaoEncontrada {

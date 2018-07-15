@@ -3,12 +3,10 @@ package testes.mock;
 import dados.datamapper.AssociacaoDM;
 import dominio.Associacao;
 import exceptions.DadosIdentificacaoIncorretos;
-import exceptions.ErroPreenchimento;
 import exceptions.MatriculaAssociacaoNaoEncontrada;
 import exceptions.ModeloNaoExiste;
 
 import java.sql.SQLException;
-import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
