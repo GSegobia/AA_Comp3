@@ -44,12 +44,12 @@ public class IncluirLocaisCompeticao extends HttpServlet implements Identificaca
     }
 
     public void informarErroCadastro(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.setAttribute("erroCadastro", true);
+        req.setAttribute("sucessoCadastroLocalCompeticao", true);
         getServletContext().getRequestDispatcher("/criar_local_competicao.jsp").forward(req, resp);
     }
 
     public void informarSucessoCadastro(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.setAttribute("sucessoCadastro", true);
+        req.setAttribute("erroCadastroLocalCompeticao", true);
         getServletContext().getRequestDispatcher("/criar_local_competicao.jsp").forward(req, resp);
     }
 

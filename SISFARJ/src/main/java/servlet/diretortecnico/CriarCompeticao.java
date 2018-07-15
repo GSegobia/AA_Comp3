@@ -46,7 +46,6 @@ public class    CriarCompeticao extends HttpServlet implements Identificacao {
 
             SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 
-            System.out.println(req.getParameterNames().toString());
             String[] prova =  req.getParameterValues("prova[]");
             String nome = req.getParameter("nomeCompeticao").trim();
             String dataCompeticao = req.getParameter("dataCompeticao").trim();
@@ -74,12 +73,12 @@ public class    CriarCompeticao extends HttpServlet implements Identificacao {
     }
 
     public void informarSucessoCriarCompeticao(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.setAttribute("sucessoCadastro", true);
+        req.setAttribute("sucessoCadastroCompeticao", true);
         doGet(req, resp);
     }
 
     public void informarErroCriarCompeticao(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.setAttribute("erroCadastro", true);
+        req.setAttribute("erroCadastroCompeticao", true);
         doGet(req, resp);
     }
 

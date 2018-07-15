@@ -33,7 +33,7 @@
                 <td><%=c.getDataCompeticao() %></td>
                 <td style="border:none;">
                     <div class="btn-group btn-group-sm" role="toolbar">
-                        <button type="button" class="btn btn-info btn-sm"> <i class="fa fa-edit"></i></button>
+                        <button type="button" class="btn btn-info btn-sm" onclick="window.location = 'alterarCompeticao?id=<%=c.getId() %>';"> <i class="fa fa-edit"></i></button>
                         <button type="button" class="btn btn-success btn-sm" onclick="window.location = 'listarProvas?id=<%=c.getId() %>';"> <i class="fa fa-exchange"></i></button>
                     </div>
                 </td>

@@ -163,7 +163,7 @@
 
 <!-- Erro: Alterar Local -->
 <%
-    Boolean erroAlterarLocalCompeticao = (Boolean) request.getAttribute("erroAlterar");
+    Boolean erroAlterarLocalCompeticao = (Boolean) request.getAttribute("sucessoAlterarLocalCompeticao");
     if(erroAlterarLocalCompeticao != null && erroAlterarLocalCompeticao) {
 %>
 <script>
@@ -199,6 +199,122 @@
     swal({
         title: "Erro",
         text: "Existem campos que não foram preenchidos corretamente.",
+        icon: "error"
+    })
+</script>
+<% } %>
+
+<!-- Sucesso: Alterar Competicao -->
+
+<%
+    Boolean sucessoAlterarCompeticao = (Boolean) request.getAttribute("sucessoAlterarCompeticao");
+    if(sucessoAlterarCompeticao != null && sucessoAlterarCompeticao) {
+%>
+<script>
+    swal({
+        title: "Sucesso",
+        text: "Competicao alterada com sucesso!",
+        icon: "success"
+    })
+</script>
+<% } %>
+
+<!-- Erro: Alterar Local -->
+<%
+    Boolean erroAlterarCompeticao = (Boolean) request.getAttribute("erroAlterarCompeticao");
+    if(erroAlterarCompeticao != null && erroAlterarCompeticao) {
+%>
+<script>
+    swal({
+        title: "Erro",
+        text: "Não foi possível competicao!",
+        icon: "error"
+    })
+</script>
+<% } %>
+
+<!-- Sucesso: Cadastrar Competicao -->
+
+<%
+    Boolean sucessoCadastroCompeticao = (Boolean) request.getAttribute("sucessoCadastroCompeticao");
+    if(sucessoCadastroCompeticao != null && sucessoCadastroCompeticao) {
+%>
+<script>
+    swal({
+        title: "Sucesso",
+        text: "Competicao cadastrada com sucesso!",
+        icon: "success"
+    })
+</script>
+<% } %>
+
+<!-- Erro: Cadastrar Competicao -->
+<%
+    Boolean erroCadastroCompeticao = (Boolean) request.getAttribute("erroCadastroCompeticao");
+    if(erroCadastroCompeticao != null && erroCadastroCompeticao) {
+%>
+<script>
+    swal({
+        title: "Erro",
+        text: "Não foi possível cadastrar competicao!",
+        icon: "error"
+    })
+</script>
+<% } %>
+
+<!-- Sucesso: Cadastrar Local Competicao -->
+
+<%
+    Boolean sucessoCadastroLocalCompeticao = (Boolean) request.getAttribute("sucessoCadastroLocalCompeticao");
+    if(sucessoCadastroLocalCompeticao != null && sucessoCadastroLocalCompeticao) {
+%>
+<script>
+    swal({
+        title: "Sucesso",
+        text: "Local competicao alterada com sucesso!",
+        icon: "success"
+    })
+</script>
+<% } %>
+
+<!-- Erro: Cadastrar Local Competicao-->
+<%
+    Boolean erroCadastroLocalCompeticao = (Boolean) request.getAttribute("erroCadastroLocalCompeticao");
+    if(erroCadastroLocalCompeticao != null && erroCadastroLocalCompeticao) {
+%>
+<script>
+    swal({
+        title: "Erro",
+        text: "Não foi possível cadastrar Local competicao!",
+        icon: "error"
+    })
+</script>
+<% } %>
+
+<!-- Sucesso: Inserir Resultado Atleta -->
+
+<%
+    Boolean sucessoInserirResultadoAtleta = (Boolean) request.getAttribute("sucessoInserirResultadoAtleta");
+    if(sucessoInserirResultadoAtleta != null && sucessoInserirResultadoAtleta) {
+%>
+<script>
+    swal({
+        title: "Sucesso",
+        text: "Resultado inserido com sucesso!",
+        icon: "success"
+    })
+</script>
+<% } %>
+
+<!-- Erro: Inserir Resultado Atleta -->
+<%
+    Boolean erroInserirResultadoAtleta = (Boolean) request.getAttribute("erroInserirResultadoAtleta");
+    if(erroInserirResultadoAtleta != null && erroInserirResultadoAtleta) {
+%>
+<script>
+    swal({
+        title: "Erro",
+        text: "Não foi possível inserir resultado!",
         icon: "error"
     })
 </script>

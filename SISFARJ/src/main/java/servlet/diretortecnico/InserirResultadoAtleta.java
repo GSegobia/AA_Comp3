@@ -62,12 +62,12 @@ public class InserirResultadoAtleta extends HttpServlet implements Identificacao
     }
 
     public void informarSucessoInserirTempo(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.setAttribute("sucessoAlterar", true);
+        req.setAttribute("sucessoInserirResultadoAtleta", true);
         getServletContext().getRequestDispatcher("/inserir_resultado_atleta.jsp").forward(req, resp);
     }
 
     public void informarErroInserirTempo(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.setAttribute("erroAlterar", true);
+        req.setAttribute("erroInserirResultadoAtleta", true);
         getServletContext().getRequestDispatcher("/inserir_resultado_atleta.jsp").forward(req, resp);
     }
 

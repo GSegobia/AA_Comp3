@@ -63,7 +63,7 @@ public class AlterarLocaisCompeticao extends HttpServlet implements Identificaca
     }
 
     public void informarErroAlteracaoLocalCompeticao(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.setAttribute("erroAlterar", true);
+        req.setAttribute("sucessoAlterarLocalCompeticao", true);
         doGet(req, resp);
     }
 

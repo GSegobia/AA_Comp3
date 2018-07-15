@@ -27,7 +27,7 @@ public class CompeticaoDM implements DataMapper<Competicao> {
         ArrayList<Competicao> competicaos = new ArrayList<Competicao>();
 
         Database db = new Database();
-        ResultSet rs = db.doSelect("SELECT * from Competicao");
+        ResultSet rs = db.doSelect("SELECT * from Competicao ORDER by id");
         db.closeConnection();
 
         while(rs.next()) competicaos.add(mapModel(rs));
