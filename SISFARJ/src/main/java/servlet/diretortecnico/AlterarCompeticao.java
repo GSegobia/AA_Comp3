@@ -25,9 +25,4 @@ public class AlterarCompeticao extends HttpServlet implements Identificacao {
 
     }
 
-    @Override
-    public void validarIdentidade(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.setAttribute("referencia", "/index.jsp");
-        getServletContext().getRequestDispatcher("/identificar.jsp").forward(req, resp);
-    }
 }

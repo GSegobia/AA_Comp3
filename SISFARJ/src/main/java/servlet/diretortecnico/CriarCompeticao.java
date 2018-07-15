@@ -36,9 +36,4 @@ public class    CriarCompeticao extends HttpServlet implements Identificacao {
 
     }
 
-    @Override
-    public void validarIdentidade(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.setAttribute("referencia", "/criar_competicao.jsp");
-        getServletContext().getRequestDispatcher("/identificar.jsp").forward(req, resp);
-    }
 }

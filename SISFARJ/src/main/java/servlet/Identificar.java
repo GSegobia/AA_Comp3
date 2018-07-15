@@ -42,7 +42,7 @@ public class Identificar extends HttpServlet {
         req.getSession().setAttribute("associacao", associacao);
         req.getSession().setMaxInactiveInterval(600);
         req.setAttribute("sucessoIdentificacao", true);
-        getServletContext().getRequestDispatcher(referencia).forward(req, resp);
+        resp.sendRedirect(referencia);
     }
 
     public void informarErroIdentificacao(String referencia, HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

@@ -1,7 +1,6 @@
 package servlet.diretortecnico;
 
 import dominio.CentroAquatico;
-import dominio.DiretorTecnico;
 import servlet.Identificacao;
 
 import javax.servlet.ServletException;
@@ -40,11 +39,6 @@ public class IncluirLocaisCompeticao extends HttpServlet implements Identificaca
         }
     }
 
-    @Override
-    public void validarIdentidade(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.setAttribute("referencia", "/criar_local_competicao.jsp");
-        getServletContext().getRequestDispatcher("/identificar.jsp").forward(req, resp);
-    }
 
     public void informarErroCadastro(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.setAttribute("erroCadastro", true);

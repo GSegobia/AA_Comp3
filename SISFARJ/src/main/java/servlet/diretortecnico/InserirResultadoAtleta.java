@@ -1,7 +1,9 @@
 package servlet.diretortecnico;
 
-import clojure.lang.Compiler;
-import dominio.*;
+import dominio.Atleta;
+import dominio.CompeticaoProva;
+import dominio.Prova;
+import dominio.ResultadoProva;
 import servlet.Identificacao;
 
 import javax.servlet.ServletException;
@@ -56,12 +58,6 @@ public class InserirResultadoAtleta extends HttpServlet implements Identificacao
             e.printStackTrace();
             informarErroInserirTempo(req, resp);
         }
-    }
-
-    @Override
-    public void validarIdentidade(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.setAttribute("referencia", "/index.jsp");
-        getServletContext().getRequestDispatcher("/identificar.jsp").forward(req, resp);
     }
 
     public void informarSucessoInserirTempo(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

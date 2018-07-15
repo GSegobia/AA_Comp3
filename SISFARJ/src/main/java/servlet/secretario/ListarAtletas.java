@@ -1,7 +1,6 @@
 package servlet.secretario;
 
 import dominio.Atleta;
-import dominio.Secretario;
 import servlet.Identificacao;
 
 import javax.servlet.ServletException;
@@ -33,9 +32,4 @@ public class ListarAtletas extends HttpServlet implements Identificacao {
         }
     }
 
-    @Override
-    public void validarIdentidade(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.setAttribute("referencia", "/listar_atletas.jsp");
-        getServletContext().getRequestDispatcher("/identificar.jsp").forward(req, resp);
-    }
 }
