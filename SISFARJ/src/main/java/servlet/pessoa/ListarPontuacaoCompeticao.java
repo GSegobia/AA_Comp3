@@ -41,23 +41,21 @@ public class ListarPontuacaoCompeticao extends HttpServlet {
                 int competicao_id = Integer.valueOf(req.getParameter("idCompeticao"));
                 ArrayList<ResultadoProva> rp = ResultadoProva.findAllByTempo(prova_id, competicao_id);
                 ArrayList<Atleta> at = new ArrayList<>();
-                for (ResultadoProva r: rp) {
+                ArrayList<Associacao> aas = new ArrayList<>();
+                for (ResultadoProva r : rp) {
                     Atleta atleta = Atleta.get(r.getAtleta_id());
                     at.add(atleta);
                 }
-                try {
-                    ArrayList<Associacao> aas = new ArrayList<>();
-                    for (Atleta a: at ) {
-                        Associacao as = Associacao.get(a.getAssociacao_id());
-                        aas.add(as);
-                    }
-                    req.setAttribute("resultados", rp);
-                    req.setAttribute("atletas", at);
-                    req.setAttribute("associacao", aas);
-                    getServletContext().getRequestDispatcher("/listar_provas_pontos.jsp").forward(req, resp);
-                } catch (ModeloNaoExiste modeloNaoExiste) {
-                    modeloNaoExiste.printStackTrace();
+                for (Atleta a : at) {
+                    Associacao as = Associacao.get(a.getAssociacao_id());
+                    aas.add(as);
                 }
+                req.setAttribute("resultados", rp);
+                req.setAttribute("atletas", at);
+                req.setAttribute("associacao", aas);
+                getServletContext().getRequestDispatcher("/listar_provas_pontos.jsp").forward(req, resp);
+            }catch (ModeloNaoExiste modeloNaoExiste) {
+                modeloNaoExiste.printStackTrace();
             } catch (Exception e) {
                 e.printStackTrace();
             }

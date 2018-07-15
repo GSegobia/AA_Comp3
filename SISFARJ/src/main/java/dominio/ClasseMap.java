@@ -24,31 +24,31 @@ public enum ClasseMap {
     public static String getValue(Integer id) {
         switch(id){
             case 1:
-                return "MIRIM";
+                return MIRIM.toString();
             case 2:
-                return "MIRIM_I";
+                return MIRIM_I.toString();
             case 3:
-                return "MIRIM_II";
+                return MIRIM_II.toString();
             case 4:
-                return "PETIZ_I";
+                return PETIZ_I.toString();
             case 5:
-                return "PETIZ_II";
+                return PETIZ_II.toString();
             case 6:
-                return "INFANTIL_I";
+                return INFANTIL_I.toString();
             case 7:
-                return "INFANTIL_II";
+                return INFANTIL_II.toString();
             case 8:
-                return "JUVENIL_I";
+                return JUVENIL_I.toString();
             case 9:
-                return "JUVENIL_II";
+                return JUVENIL_II.toString();
             case 10:
-                return "JUNIOR_I";
+                return JUNIOR_I.toString();
             case 11:
-                return "JUNIOR_II";
+                return JUNIOR_II.toString();
             case 12:
-                return "SENIOR";
+                return SENIOR.toString();
             case 13:
-                return "MASTER";
+                return MASTER.toString();
             default:
                 throw new IllegalArgumentException();
         }

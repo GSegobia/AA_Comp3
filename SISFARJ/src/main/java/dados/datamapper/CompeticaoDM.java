@@ -87,4 +87,26 @@ public class CompeticaoDM implements DataMapper<Competicao> {
 
         return linhasAtualizadas > 0;
     }
+
+
+    public int getCompeticaoId(Competicao modelo) throws SQLException, ClassNotFoundException {
+        int id = 0;
+
+        String query = String.format(
+                "Select id from Competicao where nome='%s'and centro_aquatico_id=%d and data_competicao='%s'and tamanho_piscina=%d;",
+                modelo.getNome(),
+                modelo.getCentroAquaticoId(),
+                modelo.getDataCompeticao(),
+                modelo.getTamanhoPiscina(),
+                modelo.getId()
+        );
+        ResultSet rs;
+        Database db = new Database();
+        rs = db.doSelect(query);
+        db.closeConnection();
+
+        while(rs.next()) id = rs.getInt("id");
+
+        return id;
+    }
 }

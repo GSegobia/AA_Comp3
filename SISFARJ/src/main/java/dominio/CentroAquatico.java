@@ -70,8 +70,8 @@ public class CentroAquatico {
         return dm.create(c);
     }
 
-    public boolean update(CentroAquatico c) throws SQLException, ClassNotFoundException, ErroPreenchimento {
-        if(c.getNome().equals("") || c.getEndereco().equals("")) throw new ErroPreenchimento(CentroAquatico.class.getName());
+    public boolean update(CentroAquatico c) throws ErroPreenchimento, SQLException, ClassNotFoundException {
+        if(c.getEndereco().equals("")) throw new ErroPreenchimento(CentroAquatico.class.getName());
         CentroAquaticoDM dm = new CentroAquaticoDM();
         return dm.update(c);
     }

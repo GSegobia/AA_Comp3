@@ -1,6 +1,7 @@
 package servlet.diretortecnico;
 
 import dominio.CentroAquatico;
+import exceptions.ErroPreenchimento;
 import servlet.Identificacao;
 
 import javax.servlet.ServletException;
@@ -9,6 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.sql.SQLException;
 
 /**
  * Created by Fellipe Bravo on 11/07/18.
@@ -39,18 +41,17 @@ public class AlterarLocaisCompeticao extends HttpServlet implements Identificaca
             int id = Integer.valueOf(req.getParameter("id").trim());
             String nome = req.getParameter("nome").trim();
             String endereco = req.getParameter("endereco").trim();
-            System.out.println(req.getParameter("piscina").trim());
             int tamanho = Integer.valueOf(req.getParameter("piscina").trim());
 
-            // TODO: Exception lançada pela camada de domínio
-            if(endereco.equals("")) {
-                informarErroPreenchimento(req, resp);
-            }else{
-                CentroAquatico ca = new CentroAquatico(id, nome, endereco, tamanho);
-                if(ca.update(ca))informarSucessoAlteracaoLocalCompeticao(req, resp);
-                else informarErroAlteracaoLocalCompeticao(req, resp);
-            }
-        } catch (Exception e) {
+            CentroAquatico ca = new CentroAquatico(id, nome, endereco, tamanho);
+
+            if(ca.update(ca))informarSucessoAlteracaoLocalCompeticao(req, resp);
+            else informarErroAlteracaoLocalCompeticao(req, resp);
+
+        } catch (ErroPreenchimento e) {
+            e.printStackTrace();
+            informarErroAlteracaoLocalCompeticao(req, resp);
+        } catch (Exception e){
             e.printStackTrace();
             informarErroAlteracaoLocalCompeticao(req, resp);
         }

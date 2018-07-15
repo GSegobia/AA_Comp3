@@ -43,7 +43,7 @@
 <script>
     swal({
         title: "Sucesso",
-        text: "Novo Atleta cadastrado com sucesso!",
+        text: "Cadastrado com sucesso!",
         icon: "success"
     })
 </script>
@@ -57,7 +57,7 @@
 <script>
     swal({
         title: "Erro",
-        text: "Não foi possível cadastrar o Atleta.",
+        text: "Não foi possível cadastrar.",
         icon: "error"
     })
 </script>

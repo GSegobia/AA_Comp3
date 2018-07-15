@@ -4,6 +4,7 @@ import dominio.Atleta;
 import dominio.CompeticaoProva;
 import dominio.Prova;
 import dominio.ResultadoProva;
+import exceptions.ErroPreenchimento;
 import servlet.Identificacao;
 
 import javax.servlet.ServletException;
@@ -45,16 +46,16 @@ public class InserirResultadoAtleta extends HttpServlet implements Identificacao
             String[] id =  req.getParameterValues("id[]");
             String[] tempo = req.getParameterValues("tempo[]");
 
-            // TODO: Exception lançada pela camada de domínio
-            if(tempo.equals("")) { informarErroPreenchimento(req, resp); }
-            else {
-                for(int i=0; i< id.length; i++){
-                    ResultadoProva rp = new ResultadoProva(tempo[i], prova_id, Integer.valueOf(id[i]));
-                    rp.create(rp);
-                }
-                informarSucessoInserirTempo(req, resp);
+            for(int i=0; i< id.length; i++){
+                ResultadoProva rp = new ResultadoProva(tempo[i], prova_id, Integer.valueOf(id[i]));
+                rp.create(rp);
             }
-        } catch (Exception e) {
+            informarSucessoInserirTempo(req, resp);
+
+        } catch (ErroPreenchimento e) {
+            e.printStackTrace();
+            informarErroInserirTempo(req, resp);
+        } catch (Exception e){
             e.printStackTrace();
             informarErroInserirTempo(req, resp);
         }

@@ -95,6 +95,11 @@ public class Competicao {
         return provas;
     }
 
+    public int getCompeticaoId(Competicao c) throws SQLException, ClassNotFoundException {
+        CompeticaoDM dm = new CompeticaoDM();
+        return dm.getCompeticaoId(c);
+    }
+
     public boolean create(Competicao c) throws SQLException, ClassNotFoundException, ErroPreenchimento {
         if(c.getNome().equals("") || (Integer) c.getCentroAquaticoId() == null || c.getDataCompeticao() == null || (Integer)c.getTamanhoPiscina()== null) throw new ErroPreenchimento(Competicao.class.getName());
         CompeticaoDM dm = new CompeticaoDM();

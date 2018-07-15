@@ -1,6 +1,7 @@
 package servlet.diretortecnico;
 
 import dominio.CentroAquatico;
+import exceptions.ErroPreenchimento;
 import servlet.Identificacao;
 
 import javax.servlet.ServletException;
@@ -33,12 +34,14 @@ public class IncluirLocaisCompeticao extends HttpServlet implements Identificaca
             if(centro.create(centro))informarSucessoCadastro(req, resp);
             else informarErroCadastro(req, resp);
 
-        } catch (Exception e) {
+        } catch (ErroPreenchimento e){
+            e.printStackTrace();
+            informarErroCadastro(req, resp);
+        }catch (Exception e) {
             e.printStackTrace();
             informarErroCadastro(req, resp);
         }
     }
-
 
     public void informarErroCadastro(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.setAttribute("erroCadastro", true);
