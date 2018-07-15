@@ -1,7 +1,6 @@
 package servlet.secretario;
 
 import dominio.Associacao;
-import dominio.Secretario;
 import exceptions.ErroPreenchimento;
 import servlet.Identificacao;
 
@@ -56,12 +55,6 @@ public class FiliarAssociacao extends HttpServlet implements Identificacao {
             e.printStackTrace();
             informarErroCadastro(req, resp);
         }
-    }
-
-    @Override
-    public void validarIdentidade(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.setAttribute("referencia", "/filiar_associacao.jsp");
-        getServletContext().getRequestDispatcher("/identificar.jsp").forward(req, resp);
     }
 
     public void informarErroPreenchimento(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

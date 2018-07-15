@@ -1,7 +1,6 @@
 package servlet.diretortecnico;
 
 import dominio.CentroAquatico;
-import dominio.DiretorTecnico;
 import servlet.Identificacao;
 
 import javax.servlet.ServletException;
@@ -55,12 +54,6 @@ public class AlterarLocaisCompeticao extends HttpServlet implements Identificaca
             e.printStackTrace();
             informarErroAlteracaoLocalCompeticao(req, resp);
         }
-    }
-
-    @Override
-    public void validarIdentidade(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.setAttribute("referencia", "/index.jsp");
-        getServletContext().getRequestDispatcher("/identificar.jsp").forward(req, resp);
     }
 
     public void informarSucessoAlteracaoLocalCompeticao(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

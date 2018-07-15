@@ -25,9 +25,4 @@ public class InscreverAtletaCompeticao extends HttpServlet implements Identifica
 
     }
 
-    @Override
-    public void validarIdentidade(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.setAttribute("referencia", "/inscrever_atleta_competicao.jsp");
-        getServletContext().getRequestDispatcher("/identificar.jsp").forward(req, resp);
-    }
 }

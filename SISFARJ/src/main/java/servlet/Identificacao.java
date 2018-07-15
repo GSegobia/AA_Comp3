@@ -9,5 +9,8 @@ import java.io.IOException;
  * Created by Fellipe Bravo on 14/07/18.
  */
 public interface Identificacao {
-    void validarIdentidade(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException;
+    default void validarIdentidade(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        req.setAttribute("referencia", req.getRequestURI());
+        req.getServletContext().getRequestDispatcher("/identificar.jsp").forward(req, resp);
+    }
 }

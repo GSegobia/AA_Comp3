@@ -29,9 +29,4 @@ public class ListarAssociacoes extends HttpServlet implements Identificacao {
         }
     }
 
-    @Override
-    public void validarIdentidade(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.setAttribute("referencia", "/listar_associacoes.jsp");
-        getServletContext().getRequestDispatcher("/identificar.jsp").forward(req, resp);
-    }
 }

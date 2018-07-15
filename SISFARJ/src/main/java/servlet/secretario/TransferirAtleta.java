@@ -2,7 +2,6 @@ package servlet.secretario;
 
 import dominio.Associacao;
 import dominio.Atleta;
-import dominio.Secretario;
 import exceptions.MatriculaAssociacaoNaoEncontrada;
 import servlet.Identificacao;
 
@@ -77,12 +76,6 @@ public class TransferirAtleta extends HttpServlet implements Identificacao {
         } catch (Exception e) {
             e.printStackTrace();
         }
-    }
-
-    @Override
-    public void validarIdentidade(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.setAttribute("referencia", "/index.jsp");
-        getServletContext().getRequestDispatcher("/identificar.jsp").forward(req, resp);
     }
 
     private void informarErroTransferencia(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

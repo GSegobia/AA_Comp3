@@ -2,7 +2,6 @@ package servlet.secretario;
 
 import dominio.Associacao;
 import dominio.Atleta;
-import dominio.Secretario;
 import exceptions.ErroPreenchimento;
 import exceptions.MatriculaAssociacaoNaoEncontrada;
 import servlet.Identificacao;
@@ -14,7 +13,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
-import java.util.Date;
 
 /**
  * Created by Fellipe Bravo on 10/07/18.
@@ -68,12 +66,6 @@ public class CadastrarAtleta extends HttpServlet implements Identificacao {
             e.printStackTrace();
             informarErroCadastro(req, resp);
         }
-    }
-
-    @Override
-    public void validarIdentidade(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.setAttribute("referencia", "/cadastrar_atleta.jsp");
-        getServletContext().getRequestDispatcher("/identificar.jsp").forward(req, resp);
     }
 
     public void informarSucessoCadastro(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

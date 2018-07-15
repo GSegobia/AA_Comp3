@@ -1,7 +1,6 @@
 package servlet.diretortecnico;
 
 import dominio.Competicao;
-import dominio.DiretorTecnico;
 import servlet.Identificacao;
 
 import javax.servlet.ServletException;
@@ -33,9 +32,4 @@ public class ListarCompeticoes extends HttpServlet implements Identificacao {
         }
     }
 
-    @Override
-    public void validarIdentidade(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.setAttribute("referencia", "/listar_competicoes.jsp");
-        getServletContext().getRequestDispatcher("/identificar.jsp").forward(req, resp);
-    }
 }

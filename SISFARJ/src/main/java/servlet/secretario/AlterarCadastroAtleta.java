@@ -2,7 +2,6 @@ package servlet.secretario;
 
 import dominio.Associacao;
 import dominio.Atleta;
-import dominio.DiretorTecnico;
 import exceptions.MatriculaAssociacaoNaoEncontrada;
 import servlet.Identificacao;
 
@@ -84,12 +83,6 @@ public class AlterarCadastroAtleta extends HttpServlet implements Identificacao 
             e.printStackTrace();
             informarErroAlteracao(req, resp);
         }
-    }
-
-    @Override
-    public void validarIdentidade(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.setAttribute("referencia", "/index.jsp");
-        getServletContext().getRequestDispatcher("/identificar.jsp").forward(req, resp);
     }
 
     public void informarSucessoAlteracao(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

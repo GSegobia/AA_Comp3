@@ -67,12 +67,6 @@ public class AlterarFiliacaoAssociacao extends HttpServlet implements Identifica
         }
     }
 
-    @Override
-    public void validarIdentidade(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.setAttribute("referencia", "/index.jsp");
-        getServletContext().getRequestDispatcher("/identificar.jsp").forward(req, resp);
-    }
-
     public void informarErroPreenchimento(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.setAttribute("erroPreenchimento", true);
         doGet(req, resp);
