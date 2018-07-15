@@ -36,6 +36,7 @@ public class AlterarFiliacaoAssociacao extends HttpServlet implements Identifica
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         try {
+            int id =  Integer.valueOf(req.getParameter("id").trim());
             String nome = req.getParameter("nome").trim();
             String sigla = req.getParameter("sigla").trim();
             String numeroOficio = req.getParameter("numeroOficio").trim();
@@ -46,7 +47,7 @@ public class AlterarFiliacaoAssociacao extends HttpServlet implements Identifica
 
             // TODO: Exception lançada pela camada de domínio
 
-            Associacao a = (Associacao) req.getAttribute("associacao");
+            Associacao a = Associacao.get(id);
             SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 
             a.setNome(nome);

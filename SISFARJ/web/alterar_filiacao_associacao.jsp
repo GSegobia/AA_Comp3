@@ -18,6 +18,9 @@
             <form class="form" action="alterarFiliacaoAssociacao" method="post">
                 <h4>Dados da Associação</h4>
                 <div class="form-row">
+                    <div style="display:none;" class="form-group col-md-6">
+                        <input style="display:none;" type="text" class="form-control" id="id" name="id" placeholder="Digite o Nome do Atleta" value="<%= associacao.getId()%>">
+                    </div>
                     <div class="form-group col-md-9">
                         <label for="nome">Nome</label>
                         <input type="text" class="form-control" id="nome" name="nome" placeholder="Digite o Nome da Associação" value="<%= associacao.getNome()%>">
@@ -38,7 +41,7 @@
                     </div>
                     <div class="form-group col-md-4">
                         <label for="data">Data</label>
-                        <input type="date" class="form-control" id="data" name="data">
+                        <input type="date" class="form-control" id="data" name="data" value="<%= associacao.getDataOficio()%>">
                     </div>
                 </div>
                 <div class="form-group">
