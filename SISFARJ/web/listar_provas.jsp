@@ -45,7 +45,7 @@
                     <div class="btn-group btn-group-sm" role="toolbar">
                         <button type="button" class="btn btn-success btn-sm" onclick="window.location = 'inserirResultadoAtleta?idProva=<%=p.getId() %>&idCompeticao=<%=c.getId()%>';"> <i class="fa fa-edit"></i></button>
                         <button type="button" class="btn btn-warning btn-sm" onclick="window.location = 'inscreverAtletaCompeticao?idProva=<%=p.getId() %>&idCompeticao=<%=c.getId()%>'" > <i class="fa fa-exchange"></i></button>
-                        <button type="button" class="btn btn-info btn-sm" onclick="window.location = 'listarBalizamento?idProva=<%=p.getId() %>&idCompeticao=<%=c.getId()%>';"> <i class="fa fa-eye"></i></button>
+                        <button type="button" class="btn btn-info btn-sm" onclick="window.location = 'listarBalizamentoCompeticao?idProva=<%=p.getId() %>&idCompeticao=<%=c.getId()%>';"> <i class="fa fa-eye"></i></button>
                         <button type="button" class="btn btn-link btn-sm" onclick="window.location = 'listarPontuacaoCompeticao?idProva=<%=p.getId() %>&idCompeticao=<%=c.getId()%>'" > <i class="fa fa-bar-chart"></i></button>
                     </div>
                 </td>

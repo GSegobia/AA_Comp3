@@ -5,10 +5,11 @@
 <%--
   Created by IntelliJ IDEA.
   User: joaovaraujo
-  Date: 13/07/18
-  Time: 00:56
+  Date: 15/07/18
+  Time: 17:38
   To change this template use File | Settings | File Templates.
 --%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <% ArrayList<ResultadoProva> rp = (ArrayList<ResultadoProva>) request.getAttribute("resultados"); %>
 <% ArrayList<Atleta> at = (ArrayList<Atleta>) request.getAttribute("atletas"); %>
@@ -27,7 +28,6 @@
                 <th scope="col">Nome do Atleta</th>
                 <th scope="col">Sigla Associação</th>
                 <th scope="col">Tempo</th>
-                <th scope="col">Pontos</th>
             </tr>
 
             <% for(int i = 0; i < rp.size(); i++) {%>
@@ -36,7 +36,6 @@
                 <th scope="col"><%=at.get(i).getNome()%></th>
                 <th scope="col"><%=aas.get(i).getSigla()%></th>
                 <th scope="col"><%=rp.get(i).getTempo()%></th>
-                <th scope="col"><%=rp.get(i).getPontuacao()%></th>
             </tr>
             <% }%>
             </thead>

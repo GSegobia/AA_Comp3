@@ -56,4 +56,10 @@ public class ResultadoProva {
         return dm.findAllByTempo(provaCompeticao);
     }
 
+    public static ArrayList<ResultadoProva> findAllBy8(int id_competicao, int id_prova) throws SQLException, ModeloNaoExiste, ClassNotFoundException {
+        int provaCompeticao = CompeticaoProva.findProvaCompeticao(id_competicao, id_prova);
+        ResultadoProvaDM dm = new ResultadoProvaDM();
+        return dm.findAllBy8(provaCompeticao);
+    }
+
 }

@@ -79,5 +79,16 @@ public class ResultadoProvaDM implements DataMapper<ResultadoProva> {
         while(rs.next()) rp.add(mapModel(rs));
         return rp;
     }
+
+    public ArrayList<ResultadoProva> findAllBy8(int id) throws SQLException, ClassNotFoundException, ModeloNaoExiste {
+        ArrayList<ResultadoProva> rp = new ArrayList<>();
+
+        Database db = new Database();
+        ResultSet rs = db.doSelect("SELECT * from resultado_provas WHERE prova_id="+id+" ORDER BY id LIMIT 8");
+        db.closeConnection();
+
+        while(rs.next()) rp.add(mapModel(rs));
+        return rp;
+    }
 }
 

@@ -12,7 +12,7 @@
         <!-- ECUs Abertos -->
         <div class="card p-3 col-md-4 text-center">
             <ul class="list-group list-group-flush">
-                <li class="list-group-item"><a href="listarBalizamentoCompeticao">Listar balizamento competição</a></li>
+                <li class="list-group-item"><a href="listarBalizamentoCompeticao?idProva=0">Listar balizamento competição</a></li>
             </ul>
         </div>
         <div class="card p-3 col-md-4 text-center">
