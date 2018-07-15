@@ -47,17 +47,17 @@ public class TestAssociacaoDM extends EasyMockSupport {
         });
     }
 
-    @Test
-    public void create() throws SQLException, ClassNotFoundException, ErroPreenchimento, ParseException {
-        Associacao a = new Associacao("caso_teste", "2018-07-01", "caso_teste", "caso_teste", "caso_teste", "caso_teste", "caso_teste", "caso_teste");
-        assert(dm.create(a));
-    }
-
-    @Test
-    public void createInvalido() throws SQLException, ClassNotFoundException, ErroPreenchimento, ParseException {
-        Associacao a = new Associacao("caso_teste", "2018-07-01", "caso_teste", "caso_teste", "caso_teste", "caso_teste", "caso_teste", "caso_teste");
-        assert(dm.create(a));
-    }
+//    @Test
+//    public void create() throws SQLException, ClassNotFoundException, ErroPreenchimento, ParseException {
+//        Associacao a = new Associacao("caso_teste", "2018-07-01", "caso_teste", "caso_teste", "caso_teste", "caso_teste", "caso_teste", "caso_teste");
+//        assert(dm.create(a));
+//    }
+//
+//    @Test
+//    public void createInvalido() throws SQLException, ClassNotFoundException, ErroPreenchimento, ParseException {
+//        Associacao a = new Associacao("caso_teste", "2018-07-01", "caso_teste", "caso_teste", "caso_teste", "caso_teste", "caso_teste", "caso_teste");
+//        assert(dm.create(a));
+//    }
 
     @Test
     public void update() throws SQLException, ClassNotFoundException, MatriculaAssociacaoNaoEncontrada {

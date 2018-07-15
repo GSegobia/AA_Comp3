@@ -48,13 +48,9 @@
                         <input type="date" class="form-control" id="dataEntrada" name="dataEntrada" value="<%= atleta.getData_entrada_associacao()%>">
                     </div>
                     <div class="form-group col-md-6">
-                        <label for="matriculaAssociacao">Matrícula da Associação</label>
-                        <input type="text" class="form-control" id="matriculaAssociacao" name="matriculaAssociacao" placeholder="Digite a Matrícula da Associação" value="<%= associacao.getMatricula()%>" >
+                        <label for="numComprovantePgto">Número do Comprovante de Pagamento</label>
+                        <input type="text" class="form-control" id="numComprovantePgto" name="numComprovantePgto" placeholder="Digite o Número do Comprovante de Pagamento" value="<%= atleta.getNum_comprovante_pgto()%>">
                     </div>
-                </div>
-                <div class="form-group">
-                    <label for="numComprovantePgto">Número do Comprovante de Pagamento</label>
-                    <input type="text" class="form-control" id="numComprovantePgto" name="numComprovantePgto" placeholder="Digite o Número do Comprovante de Pagamento" value="<%= atleta.getNum_comprovante_pgto()%>">
                 </div>
                 <div class="form-group">
                     <button type="submit" class="btn btn-primary btn-block">Alterar</button>

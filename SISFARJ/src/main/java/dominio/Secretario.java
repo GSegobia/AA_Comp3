@@ -22,22 +22,22 @@ public class Secretario extends Usuario {
         super(matricula, nome, senha, PermissaoUsuario.SECRETARIO.id);
     }
 
-    public static boolean filiarAssociacao(Associacao associacao) throws ClassNotFoundException, SQLException, ModeloNaoExiste {
-        return Associacao.create(associacao);
-    }
-
-    public static boolean alterarFiliacao(Associacao associacao) throws ClassNotFoundException, SQLException{
-        return Associacao.update(associacao);
-    }
-
-    public static Associacao selecionarAssociacao(int idAssociacao) throws ClassNotFoundException, SQLException,
-                                                            ModeloNaoExiste{
-        return Associacao.get(idAssociacao);
-    }
-
-    public static List<Associacao> listarAssociacao() throws ClassNotFoundException, SQLException {
-        return Associacao.findAll();
-    }
+//    public static boolean filiarAssociacao(Associacao associacao) throws ClassNotFoundException, SQLException, ModeloNaoExiste {
+//        return Associacao.create(associacao);
+//    }
+//
+//    public static boolean alterarFiliacao(Associacao associacao) throws ClassNotFoundException, SQLException{
+//        return Associacao.update(associacao);
+//    }
+//
+//    public static Associacao selecionarAssociacao(int idAssociacao) throws ClassNotFoundException, SQLException,
+//                                                            ModeloNaoExiste{
+//        return Associacao.get(idAssociacao);
+//    }
+//
+//    public static List<Associacao> listarAssociacao() throws ClassNotFoundException, SQLException {
+//        return Associacao.findAll();
+//    }
 
 //    public static boolean cadastrarAtleta(Atleta atleta) throws ClassNotFoundException, SQLException {
 //        return Atleta.create(atleta);

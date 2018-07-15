@@ -64,7 +64,7 @@ public class TransferirAtleta extends HttpServlet implements Identificacao {
 
             atleta.update();
             informarSucessoTransferencia(req,resp);
-            
+
         } catch (MatriculaAssociacaoNaoEncontrada e) {
             e.printStackTrace();
             informarErroMatriculaAssociacao(req, resp);

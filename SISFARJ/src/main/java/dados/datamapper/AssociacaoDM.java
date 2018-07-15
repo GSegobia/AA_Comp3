@@ -25,7 +25,8 @@ public class AssociacaoDM implements DataMapper<Associacao> {
                 rs.getString("matricula"),
                 rs.getString("endereco"),
                 rs.getString("telefone"),
-                rs.getString("num_comprovante_pgto")
+                rs.getString("num_comprovante_pgto"),
+                rs.getString("senha")
         );
     }
 
@@ -133,6 +134,7 @@ public class AssociacaoDM implements DataMapper<Associacao> {
                 "a.nome,\n" +
                 "a.sigla,\n" +
                 "a.matricula,\n" +
+                "a.senha,\n" +
                 "a.telefone,\n" +
                 "a.num_comprovante_pgto,\n" +
                 "a.endereco\n" +

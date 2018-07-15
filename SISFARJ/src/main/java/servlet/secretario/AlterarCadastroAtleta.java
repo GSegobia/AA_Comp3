@@ -47,33 +47,23 @@ public class AlterarCadastroAtleta extends HttpServlet implements Identificacao 
             String numeroOficio = req.getParameter("numeroOficio").trim();
             String dataOficio = req.getParameter("dataOficio").trim();
             String dataEntrada = req.getParameter("dataEntrada").trim();
-            String matriculaAssociacao = req.getParameter("matriculaAssociacao").trim();
             String numComprovantePgto = req.getParameter("numComprovantePgto").trim();
 //  Fellipe -                  String categoria = req.getParameter("categoria").trim();
 
-            // TODO: Exception lançada pela camada de domínio
-
             SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 
-            Associacao associacao = Associacao.get(matriculaAssociacao);
-            Atleta atleta = new Atleta(
-                    id,
-                    associacao.getId(),
-                    1,                     // Fellipe - TODO: Inserir combobox de categoria na .jsp e tratar valor
-                    associacao.getMatricula(),
-                    nome,
-                    sdf.parse(dataNascimento),
-                    sdf.parse(dataOficio),
-                    numeroOficio,
-                    sdf.parse(dataEntrada),
-                    numComprovantePgto
-            );
+            //Associacao associacao = (Associacao)req.getAttribute("associacao");
+            Atleta atleta = Atleta.get(id);
+
+            atleta.setNome(nome);
+            atleta.setData_nascimento(sdf.parse(dataNascimento));
+            atleta.setData_oficio(sdf.parse(dataOficio));
+            atleta.setData_entrada_associacao(sdf.parse(dataEntrada));
+            atleta.setNumero_oficio(numeroOficio);
+            atleta.setNum_comprovante_pgto(numComprovantePgto);
 
             atleta.update();
             informarSucessoAlteracao(req, resp);
-        } catch (MatriculaAssociacaoNaoEncontrada e) {
-            e.printStackTrace();
-            informarErroMatriculaAssociacao(req, resp);
         } catch (ErroPreenchimento e){
             e.printStackTrace();
             informarErroPreenchimento(req, resp);

@@ -1,6 +1,7 @@
 package servlet.secretario;
 
 import dominio.Associacao;
+import exceptions.ErroPreenchimento;
 import servlet.Identificacao;
 
 import javax.servlet.ServletException;
@@ -22,7 +23,7 @@ public class AlterarFiliacaoAssociacao extends HttpServlet implements Identifica
         if(req.getSession().getAttribute("associacao") == null) validarIdentidade(req, resp);
         else {
             try {
-                int id = Integer.valueOf(req.getParameter("id"));
+                int id =  Integer.valueOf(req.getParameter("id").trim());
                 Associacao associacao = Associacao.get(id);
                 req.setAttribute("associacao", associacao);
                 getServletContext().getRequestDispatcher("/alterar_filiacao_associacao.jsp").forward(req, resp);
@@ -44,24 +45,27 @@ public class AlterarFiliacaoAssociacao extends HttpServlet implements Identifica
             String endereco = req.getParameter("endereco").trim();
 
             // TODO: Exception lançada pela camada de domínio
-            if(nome.equals("") || sigla.equals("") || numeroOficio.equals("") || telefone.equals("") ||
-                    data.equals("") || numComprovantePgto.equals("") || endereco.equals("")){
-                informarErroPreenchimento(req, resp);
-            } else {
-                Associacao a = (Associacao) req.getAttribute("associacao");
-                SimpleDateFormat sdf = new SimpleDateFormat("YYYY-MM-dd");
-                a.setNome(nome);
-                a.setSigla(sigla);
-                a.setNumeroOficio(numeroOficio);
-                a.setTelefone(telefone);
-                a.setDataOficio(sdf.parse(data));
-                a.setNumComprovantePgto(numComprovantePgto);
-                a.setEndereco(endereco);
-                req.setAttribute("associacao", a);
-                if(Associacao.update(a)) informarSucessoAlteracao(req, resp);
-                else informarErroAlteracao(req, resp);
-            }
-        } catch (Exception e) {
+
+            Associacao a = (Associacao) req.getAttribute("associacao");
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+
+            a.setNome(nome);
+            a.setSigla(sigla);
+            a.setNumeroOficio(numeroOficio);
+            a.setTelefone(telefone);
+            a.setDataOficio(sdf.parse(data));
+            a.setNumComprovantePgto(numComprovantePgto);
+            a.setEndereco(endereco);
+            req.setAttribute("associacao", a);
+
+            a.update();
+            informarSucessoAlteracao(req, resp);
+        }
+        catch (ErroPreenchimento e){
+            e.printStackTrace();
+            informarErroPreenchimento(req, resp);
+        }
+        catch (Exception e) {
             e.printStackTrace();
             informarErroAlteracao(req, resp);
         }

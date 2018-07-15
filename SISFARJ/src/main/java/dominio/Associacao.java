@@ -16,17 +16,19 @@ import java.util.List;
  * Created by Fellipe Bravo on 10/07/18.
  */
 public class Associacao {
-    private Integer id;
+    private int id;
     private String numeroOficio;
     private Date dataOficio;
     private String nome;
     private String sigla;
     private String matricula;
+    private String senha;
     private String endereco;
     private String telefone;
     private String numComprovantePgto;
 
-    public Associacao(Integer id, String numeroOficio, Date dataOficio, String nome, String sigla, String matricula, String endereco, String telefone, String numComprovantePgto) {
+    public Associacao(int id, String numeroOficio, Date dataOficio, String nome, String sigla, String matricula, String endereco, String telefone, String numComprovantePgto, String senha) {
+
         this.id = id;
         this.numeroOficio = numeroOficio;
         this.dataOficio = dataOficio;
@@ -36,21 +38,23 @@ public class Associacao {
         this.endereco = endereco;
         this.telefone = telefone;
         this.numComprovantePgto = numComprovantePgto;
+        this.senha = senha;
+
+
     }
 
-    public Associacao(String numeroOficio, String dataOficio, String nome, String sigla, String matricula, String endereco, String telefone, String numComprovantePgto) throws ErroPreenchimento, ParseException {
-        if(nome.equals("") || sigla.equals("") || numeroOficio.equals("") || telefone.equals("") ||
-                dataOficio.equals("") || numComprovantePgto.equals("") || endereco.equals("")) throw new ErroPreenchimento(Associacao.class.getName());
+    public Associacao(String numeroOficio, Date dataOficio, String nome, String sigla, String matricula, String endereco, String telefone, String numComprovantePgto, String senha) throws ErroPreenchimento, ParseException {
 
-        SimpleDateFormat sdf = new SimpleDateFormat("YYYY-MM-dd");
+
         this.numeroOficio = numeroOficio;
-        this.dataOficio = sdf.parse(dataOficio);
+        this.dataOficio = dataOficio;
         this.nome = nome;
         this.sigla = sigla;
         this.matricula = matricula;
         this.endereco = endereco;
         this.telefone = telefone;
         this.numComprovantePgto = numComprovantePgto;
+        this.senha = senha;
     }
 
     public Integer getId() {
@@ -121,6 +125,10 @@ public class Associacao {
         this.numComprovantePgto = numComprovantePgto;
     }
 
+    public String getSenha() { return senha; }
+
+    public void setSenha(String senha) { this.senha = senha; }
+
     public static Associacao get(int id) throws SQLException, ClassNotFoundException, ModeloNaoExiste {
         AssociacaoDM dm = new AssociacaoDM();
         return dm.get(id);
@@ -131,14 +139,25 @@ public class Associacao {
         return dm.get(matricula);
     }
 
-    public static boolean create(Associacao a) throws SQLException, ClassNotFoundException, ModeloNaoExiste {
+    public boolean create() throws SQLException, ClassNotFoundException, ErroPreenchimento {
+
+        if(this.nome.equals("") || this.sigla.equals("") || this.numeroOficio.equals("") || this.telefone.equals("") ||
+                this.dataOficio == null || this.numComprovantePgto.equals("") || this.endereco.equals("") ||
+                this.senha.equals("") || this.matricula.equals(""))
+            throw new ErroPreenchimento(Associacao.class.getName());
+
         AssociacaoDM dm = new AssociacaoDM();
-        return dm.create(a);
+        return dm.create(this);
     }
 
-    public static boolean update(Associacao a) throws SQLException, ClassNotFoundException{
+    public boolean update() throws SQLException, ClassNotFoundException, ErroPreenchimento{
+        if(this.id == 0 ||  this.nome.equals("") || this.sigla.equals("") || this.numeroOficio.equals("") || this.telefone.equals("") ||
+                this.dataOficio == null || this.numComprovantePgto.equals("") || this.endereco.equals("") ||
+                this.senha.equals("") || this.matricula.equals(""))
+            throw new ErroPreenchimento(Associacao.class.getName());
+
         AssociacaoDM dm = new AssociacaoDM();
-        return dm.update(a);
+        return dm.update(this);
     }
 
     public static List<Associacao> findAll() throws SQLException, ClassNotFoundException {

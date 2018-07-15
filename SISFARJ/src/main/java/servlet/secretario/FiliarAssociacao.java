@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
 
 /**
  * Created by Fellipe Bravo on 10/07/18.
@@ -34,17 +35,20 @@ public class FiliarAssociacao extends HttpServlet implements Identificacao {
             String numComprovantePgto = req.getParameter("numComprovantePgto").trim();
             String endereco = req.getParameter("endereco").trim();
 
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+
             Associacao associacao = new Associacao(
                     numeroOficio,
-                    data,
+                    sdf.parse(data),
                     nome,
                     sigla,
-                    "MAT123" + sigla,
+                    "mat-" + sigla.toLowerCase(),
                     endereco,
                     telefone,
-                    numComprovantePgto
+                    numComprovantePgto,
+                    "123456"
             );
-            associacao.create(associacao);
+            associacao.create();
             informarSucessoCadastro(req, resp);
         }
         catch (ErroPreenchimento e) {

@@ -3,10 +3,12 @@ package testes.mock;
 import dados.datamapper.AssociacaoDM;
 import dominio.Associacao;
 import exceptions.DadosIdentificacaoIncorretos;
+import exceptions.ErroPreenchimento;
 import exceptions.MatriculaAssociacaoNaoEncontrada;
 import exceptions.ModeloNaoExiste;
 
 import java.sql.SQLException;
+import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
@@ -17,7 +19,9 @@ import java.util.Random;
  */
 public class MockAssociacaoDM extends AssociacaoDM {
 
-    Associacao a = new Associacao(1,"mock", Calendar.getInstance().getTime(), "mock", "mock", "mock", "mock", "mock", "mock");
+
+    Associacao a = new Associacao(1, "mock", Calendar.getInstance().getTime(), "mock",  "mock", "mock", "mock", "mock", "mock", "mock");
+
 
     @Override
     public Associacao get(int id) throws SQLException, ModeloNaoExiste, ClassNotFoundException {
