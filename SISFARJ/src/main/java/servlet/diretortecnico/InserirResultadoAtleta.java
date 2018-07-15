@@ -32,6 +32,9 @@ public class InserirResultadoAtleta extends HttpServlet implements Identificacao
                 ArrayList<Atleta> atletas = Prova.listarAtletas(competicao_id, prova_id);
                 req.setAttribute("atletas", atletas);
                 req.setAttribute("id_prova", provacompeticao);
+                req.setAttribute("idProva", provacompeticao);
+                req.setAttribute("idCompeticao", provacompeticao);
+
                 getServletContext().getRequestDispatcher("/inserir_resultado_atleta.jsp").forward(req, resp);
             } catch (Exception e) {
                 e.printStackTrace();
@@ -63,17 +66,12 @@ public class InserirResultadoAtleta extends HttpServlet implements Identificacao
 
     public void informarSucessoInserirTempo(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.setAttribute("sucessoInserirResultadoAtleta", true);
-        getServletContext().getRequestDispatcher("/inserir_resultado_atleta.jsp").forward(req, resp);
+        doGet(req, resp);
     }
 
     public void informarErroInserirTempo(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.setAttribute("erroInserirResultadoAtleta", true);
-        getServletContext().getRequestDispatcher("/inserir_resultado_atleta.jsp").forward(req, resp);
-    }
-
-    public void informarErroPreenchimento(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.setAttribute("erroPreenchimento", true);
-        getServletContext().getRequestDispatcher("/index.jsp").forward(req, resp);
+        doGet(req, resp);
     }
 
 }

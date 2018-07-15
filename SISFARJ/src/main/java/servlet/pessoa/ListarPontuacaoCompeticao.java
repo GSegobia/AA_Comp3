@@ -39,7 +39,7 @@ public class ListarPontuacaoCompeticao extends HttpServlet {
             try {
                 int prova_id = Integer.valueOf(req.getParameter("idProva"));
                 int competicao_id = Integer.valueOf(req.getParameter("idCompeticao"));
-                ArrayList<ResultadoProva> rp = ResultadoProva.findAllByTempo(prova_id, competicao_id);
+                ArrayList<ResultadoProva> rp = ResultadoProva.findAllByTempo(competicao_id, prova_id);
                 ArrayList<Atleta> at = new ArrayList<>();
                 ArrayList<Associacao> aas = new ArrayList<>();
                 for (ResultadoProva r : rp) {

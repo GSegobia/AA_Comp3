@@ -16,7 +16,6 @@
     <div class="container bg-white p-5 rounded">
         <h2 class="text-center text-uppercase text-secondary mb-0">Lista de Locais de Competicão</h2>
         <hr class="mb-5">
-        <% { // TODO: Adicionar mensagem de "Não foram encontrados atletas"%>
         <table class="table" style="margin-left: 20%">
             <thead>
             <tr>
@@ -33,7 +32,6 @@
                 <td style="border:none;">
                     <div class="btn-group btn-group-sm" role="toolbar">
                         <button type="button" class="btn btn-info btn-sm" onclick="window.location = 'alterarLocaisCompeticao?id=<%=c.getId() %>';"> <i class="fa fa-edit"></i></button>
-                        <button type="button" class="btn btn-success btn-sm"> <i class="fa fa-exchange"></i></button>
                     </div>
                 </td>
             </tr>

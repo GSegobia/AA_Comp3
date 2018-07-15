@@ -4,6 +4,7 @@ import dados.datamapper.ProvaAtletaDM;
 import exceptions.ModeloNaoExiste;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 public class ProvaAtleta {
 
@@ -51,6 +52,16 @@ public class ProvaAtleta {
     public static int[] findAllAtletaInProva(int provaId) throws SQLException, ClassNotFoundException {
         ProvaAtletaDM dm = new ProvaAtletaDM();
         return dm.findAllAtletaInProva(provaId);
+    }
+
+    public boolean verificarAtleta(int id_competicao, int id_prova, String matricula) throws SQLException, ModeloNaoExiste, ClassNotFoundException {
+        ArrayList<Atleta> atleta = Prova.listarAtletas(id_competicao, id_prova);
+        for (Atleta a: atleta) {
+            if(a.getMatricula().equals(matricula)){
+                return false;
+            }
+        }
+        return true;
     }
 
 }

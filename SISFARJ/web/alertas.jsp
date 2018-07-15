@@ -219,7 +219,7 @@
 </script>
 <% } %>
 
-<!-- Erro: Alterar Local -->
+<!-- Erro: Alterar Competicao -->
 <%
     Boolean erroAlterarCompeticao = (Boolean) request.getAttribute("erroAlterarCompeticao");
     if(erroAlterarCompeticao != null && erroAlterarCompeticao) {
@@ -227,7 +227,7 @@
 <script>
     swal({
         title: "Erro",
-        text: "Não foi possível competicao!",
+        text: "Não foi possível alterar competicao!",
         icon: "error"
     })
 </script>
@@ -315,6 +315,35 @@
     swal({
         title: "Erro",
         text: "Não foi possível inserir resultado!",
+        icon: "error"
+    })
+</script>
+<% } %>
+
+<!-- Sucesso: Inscrever Atleta Competicao -->
+
+<%
+    Boolean sucessoInserirAtletaCompeticao = (Boolean) request.getAttribute("sucessoInserirAtletaCompeticao");
+    if(sucessoInserirAtletaCompeticao != null && sucessoInserirAtletaCompeticao) {
+%>
+<script>
+    swal({
+        title: "Sucesso",
+        text: "Atleta inscrito com sucesso!",
+        icon: "success"
+    })
+</script>
+<% } %>
+
+<!-- Erro: Inscrever Atleta Competicao -->
+<%
+    Boolean erroInserirAtletaCompeticao = (Boolean) request.getAttribute("erroInserirAtletaCompeticao");
+    if(erroInserirAtletaCompeticao != null && erroInserirAtletaCompeticao) {
+%>
+<script>
+    swal({
+        title: "Erro",
+        text: "Não foi possível inscrever atleta, ele ja esta inscrito!",
         icon: "error"
     })
 </script>

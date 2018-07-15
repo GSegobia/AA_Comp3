@@ -1,7 +1,5 @@
 <%@ page import="dominio.CentroAquatico" %>
 <%@ page import="java.util.ArrayList" %>
-<%@ page import="dominio.CategoriaMap" %>
-<%@ page import="dominio.ClasseMap" %>
 <%@ page import="dominio.Prova" %><%--
   Created by IntelliJ IDEA.
   User: gsegobia

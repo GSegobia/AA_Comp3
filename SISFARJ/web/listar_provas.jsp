@@ -39,12 +39,14 @@
                 <td><%=c.getNome() %></td>
                 <td><%=c.getTamanhoPiscina() %></td>
                 <td><%=p.getNome() %></td>
-                <td><%=(CategoriaMap.getValue(p.getCategoria_id())) %></td>
-                <td><%=(ClasseMap.getValue(p.getClasse_id()))%></td>
+                <td><%=(CategoriaMap.getValue(p.getCategoria_id())).replace("_"," ") %></td>
+                <td><%=(ClasseMap.getValue(p.getClasse_id())).replace("_"," ")%></td>
                 <td style="border:none;">
                     <div class="btn-group btn-group-sm" role="toolbar">
-                        <button type="button" class="btn btn-info btn-sm" onclick="window.location = 'listarPontuacaoCompeticao?idProva=<%=p.getId() %>&idCompeticao=<%=c.getId()%>'" > <i class="fa fa-edit"></i></button>
-                        <button type="button" class="btn btn-success btn-sm" onclick="window.location = 'inserirResultadoAtleta?idProva=<%=p.getId() %>&idCompeticao=<%=c.getId()%>';"> <i class="fa fa-exchange"></i></button>
+                        <button type="button" class="btn btn-success btn-sm" onclick="window.location = 'inserirResultadoAtleta?idProva=<%=p.getId() %>&idCompeticao=<%=c.getId()%>';"> <i class="fa fa-edit"></i></button>
+                        <button type="button" class="btn btn-warning btn-sm" onclick="window.location = 'inscreverAtletaCompeticao?idProva=<%=p.getId() %>&idCompeticao=<%=c.getId()%>'" > <i class="fa fa-exchange"></i></button>
+                        <button type="button" class="btn btn-info btn-sm" onclick="window.location = 'listarBalizamento?idProva=<%=p.getId() %>&idCompeticao=<%=c.getId()%>';"> <i class="fa fa-eye"></i></button>
+                        <button type="button" class="btn btn-link btn-sm" onclick="window.location = 'listarPontuacaoCompeticao?idProva=<%=p.getId() %>&idCompeticao=<%=c.getId()%>'" > <i class="fa fa-bar-chart"></i></button>
                     </div>
                 </td>
             </tr>

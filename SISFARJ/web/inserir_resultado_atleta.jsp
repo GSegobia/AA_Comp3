@@ -10,7 +10,8 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <% ArrayList<Atleta> atletas = (ArrayList<Atleta>) request.getAttribute("atletas"); %>
 <% int id_prova = (int) request.getAttribute("id_prova");%>
-
+<% int idProva = (int) request.getAttribute("idProva");%>
+<% int idCompeticao = (int) request.getAttribute("idCompeticao");%>
 
 <%@include file="default_header.jsp"%>
 <section class="portfolio" style="padding-top:calc(6rem + 72px);padding-bottom:6rem" id="portfolio">
@@ -24,6 +25,8 @@
                 <div class="form-row">
                     <div style="display:none;" class="form-group col-md-6">
                         <input style="display:none;" type="text" class="form-control" id="id" name="prova_id" placeholder="ID Prova" value="<%= id_prova%>">
+                        <input style="display:none;" type="text" class="form-control" id="idProva" name="idProva" placeholder="ID Prova" value="<%= idProva%>">
+                        <input style="display:none;" type="text" class="form-control" id="idCompeticao" name="idCompeticao" placeholder="ID Prova" value="<%= idCompeticao%>">
                     </div>
                     <div style="display:none;" class="form-group col-md-6">
                         <input style="display:none;" type="text" class="form-control" id="id" name="id[]" placeholder="ID Atleta" value="<%= a.getId()%>">
