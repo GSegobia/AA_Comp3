@@ -1,6 +1,6 @@
 ﻿ALTER TABLE resultado_provas
-ADD tempo TYPE varchar(20);
+ALTER COLUMN tempo TYPE varchar(20);
 ALTER TABLE resultado_provas
-ALTER COLUMN pontuacao TYPE varchar(20);
+ADD pontuacao varchar(20) NOT NULL;
 ALTER TABLE atleta
 ADD num_comprovante_pgto VARCHAR(15) NOT NULL;
